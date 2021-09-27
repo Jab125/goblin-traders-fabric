@@ -1,0 +1,27 @@
+{
+  "annoyed_grunt1": {
+    "sounds": [
+      "goblintraders:annoyed_grunt1"
+    ]
+  },
+  "annoyed_grunt2": {
+    "sounds": [
+      "goblintraders:annoyed_grunt2"
+    ]
+  },
+  "idle_grunt1": {
+    "sounds": [
+      "goblintraders:idle_grunt1"
+    ]
+  },
+  "idle_grunt2": {
+    "sounds": [
+      "goblintraders:idle_grunt2"
+    ]
+  },
+  "idle_grunt3": {
+    "sounds": [
+      "goblintraders:idle_grunt3"
+    ]
+  }
+}
