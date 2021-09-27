@@ -1,4 +1,4 @@
-package net.hat.gt.register;
+package net.hat.gt.init;
 
 import net.hat.gt.GobT;
 import net.minecraft.sound.SoundEvent;

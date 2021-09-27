@@ -20,6 +20,9 @@
   "entrypoints": {
     "main": [
       "net.hat.gt.GobT"
+    ],
+    "client": [
+      "net.hat.gt.GobTClient"
     ]
   },
   "mixins": [
