@@ -1,26 +1,14 @@
 {
-  "annoyed_grunt1": {
+  "annoyed_grunt": {
     "sounds": [
-      "goblintraders:annoyed_grunt1"
-    ]
-  },
-  "annoyed_grunt2": {
-    "sounds": [
+      "goblintraders:annoyed_grunt1",
       "goblintraders:annoyed_grunt2"
     ]
   },
-  "idle_grunt1": {
+  "idle_grunt": {
     "sounds": [
-      "goblintraders:idle_grunt1"
-    ]
-  },
-  "idle_grunt2": {
-    "sounds": [
-      "goblintraders:idle_grunt2"
-    ]
-  },
-  "idle_grunt3": {
-    "sounds": [
+      "goblintraders:idle_grunt1",
+      "goblintraders:idle_grunt2",
       "goblintraders:idle_grunt3"
     ]
   }

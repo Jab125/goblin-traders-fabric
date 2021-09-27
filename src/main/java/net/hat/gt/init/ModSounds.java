@@ -10,12 +10,8 @@ import java.util.Map;
 
 public class ModSounds {
     private static final Map<SoundEvent, Identifier> SOUND_EVENTS = new LinkedHashMap<>();
-    //Blocks
-    public static final SoundEvent ANNOYED_GRUNT1 = create("annoyed_grunt1");
-    public static final SoundEvent ANNOYED_GRUNT2 = create("annoyed_grunt2");
-    public static final SoundEvent IDLE_GRUNT1 = create("idle_grunt1");
-    public static final SoundEvent IDLE_GRUNT2 = create("idle_grunt2");
-    public static final SoundEvent IDLE_GRUNT3 = create("idle_grunt3");
+    public static final SoundEvent ANNOYED_GRUNT = create("annoyed_grunt");
+    public static final SoundEvent IDLE_GRUNT = create("idle_grunt");
 
     private static SoundEvent create(String name) {
         Identifier id = new Identifier(GobT.MODID, name);
