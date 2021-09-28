@@ -7,7 +7,7 @@ import net.minecraft.client.render.entity.model.EntityModel;
 import net.minecraft.client.render.entity.model.EntityModelPartNames;
 import net.minecraft.client.util.math.MatrixStack;
 
-public class GoblinEntityModel extends EntityModel<GoblinEntity> {
+public class GoblinEntityModel extends EntityModel<AbstractGoblinEntity> {
 
     private final ModelPart base;
 
@@ -23,7 +23,7 @@ public class GoblinEntityModel extends EntityModel<GoblinEntity> {
     }
 
     @Override
-    public void setAngles(GoblinEntity entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch) {
+    public void setAngles(AbstractGoblinEntity entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch) {
     }
 
     @Override

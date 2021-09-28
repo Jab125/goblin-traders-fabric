@@ -5,14 +5,14 @@ import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.MobEntityRenderer;
 import net.minecraft.util.Identifier;
 
-public class GoblinEntityRenderer extends MobEntityRenderer<GoblinEntity, GoblinEntityModel> {
+public class GoblinEntityRenderer extends MobEntityRenderer<AbstractGoblinEntity, GoblinEntityModel> {
 
     public GoblinEntityRenderer(EntityRendererFactory.Context context) {
         super(context, new GoblinEntityModel(context.getPart(GobTClient.MODEL_CUBE_LAYER)), 0.5f);
     }
 
     @Override
-    public Identifier getTexture(GoblinEntity entity) {
+    public Identifier getTexture(AbstractGoblinEntity entity) {
         return new Identifier("goblintraders", "textures/entity/goblintrader/goblin_trader.png");
     }
 }
