@@ -14,15 +14,12 @@ import net.minecraft.util.Identifier;
 @SuppressWarnings("deprecation")
 @Environment(EnvType.CLIENT)
 public class GobTClient implements ClientModInitializer {
-    public static final EntityModelLayer GOBLIN_MODEL_LAYER = new EntityModelLayer(new Identifier("goblintraders", "cube"), "main");
+    public static final EntityModelLayer GOBLIN_MODEL_LAYER = new EntityModelLayer(new Identifier("goblintraders", "cube"), "goblin_render_layer");
     @Override
     public void onInitializeClient() {
-        /*
-         * Registers our Cube Entity's renderer, which provides a model and texture for the entity.
-         *
-         * Entity Renderers can also manipulate the model before it renders based on entity context (EndermanEntityRenderer#render).
-         */
+        //EntityRenderer
         EntityRendererRegistry.INSTANCE.register(ModEntities.GOBLIN_TRADER, GobinTraderRenderer::new);
-        EntityModelLayerRegistry.registerModelLayer(GOBLIN_MODEL_LAYER, () -> GoblinTraderModel.model());
+        //EntityLayer
+        EntityModelLayerRegistry.registerModelLayer(GOBLIN_MODEL_LAYER, GoblinTraderModel::getTexturedModelData);
     }
 }

@@ -6,11 +6,11 @@ import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.MobEntityRenderer;
 import net.minecraft.util.Identifier;
 
-public class GobinTraderRenderer extends MobEntityRenderer<AbstractGoblinEntity, GoblinTraderModel> {
+public class GobinTraderRenderer extends MobEntityRenderer<AbstractGoblinEntity, GoblinTraderModel<GoblinTraderEntity>> {
         public static final Identifier TEXTURE = GobT.id("textures/entity/goblintrader/goblin_trader.png");
 
     public GobinTraderRenderer(EntityRendererFactory.Context context) {
-        super(context, new GoblinTraderModel(context.getPart(GobTClient.GOBLIN_MODEL_LAYER)), 0.5f);
+        super(context, new GoblinTraderModel<>(context.getPart(GobTClient.GOBLIN_MODEL_LAYER)), .5F);
     }
 
     @Override
