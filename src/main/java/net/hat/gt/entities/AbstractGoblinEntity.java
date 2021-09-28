@@ -1,9 +1,7 @@
 package net.hat.gt.entities;
 
 import net.hat.gt.init.ModSounds;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.ExperienceOrbEntity;
-import net.minecraft.entity.Npc;
+import net.minecraft.entity.*;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.mob.MobEntity;
@@ -11,19 +9,33 @@ import net.minecraft.entity.passive.MerchantEntity;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
+import net.minecraft.nbt.NbtCompound;
+import net.minecraft.nbt.NbtHelper;
+import net.minecraft.recipe.Ingredient;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.stat.Stats;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.village.TradeOffer;
 import net.minecraft.village.TradeOfferList;
 import net.minecraft.village.TradeOffers;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
-public class AbstractGoblinEntity extends MerchantEntity implements Npc {
+import java.util.EnumSet;
+import java.util.List;
+import java.util.function.Predicate;
+
+public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc {
+
+    @Nullable
+    private BlockPos wanderTarget;
+    static Predicate<ItemEntity> FAVOURITE_FOOD;
 
     //register Goblin to Exist
     public AbstractGoblinEntity(EntityType<? extends MerchantEntity> entityType, World world) {
@@ -35,17 +47,16 @@ public class AbstractGoblinEntity extends MerchantEntity implements Npc {
     {
         this.goalSelector.add(0, new StopFollowingCustomerGoal(this));
         this.goalSelector.add(1, new EscapeDangerGoal(this, 0.5F));
-        //this.goalSelector.add(2, new TradeWithPlayerGoal(this));
-        this.goalSelector.add(3, new LookAtCustomerGoal(this));
         //this.goalSelector.add(4, new AttackRevengeTargetGoal(this));
-        //this.goalSelector.add(5, new FollowPotentialCustomerGoal(this));
-        //this.goalSelector.add(6, new FindFavouriteFoodGoal(this));
-        //this.goalSelector.add(7, new TemptGoal(this, 0.4D, Ingredient.of(this.getFavouriteFood()), false));
+        this.goalSelector.add(2, new PlayerPersistanceGoal(this, 2.0D, 0.35D));
+        this.goalSelector.add(3, new FindFavouriteFoodGoal());
+        this.goalSelector.add(7, new TemptGoal(this, 0.5, Ingredient.ofItems(this.getFavouriteFood().getItem()), false));
         //this.goalSelector.add(8, new EatFavouriteFoodGoal(this));
         //this.goalSelector.add(8, new WaterAvoidingRandomStrollGoal(this, 0.4D));
-        this.goalSelector.add(9, new WanderAroundFarGoal(this, 0.35D));
+        this.goalSelector.add(4, new WanderAroundFarGoal(this, 0.35D));
         //this.goalSelector.add(10, new InteractGoal(this, Player.class, 4.0F, 1.0F));
-        this.goalSelector.add(11, new LookAtEntityGoal(this, MobEntity.class, 8.0F));
+        this.goalSelector.add(5, new LookAtCustomerGoal(this));
+        this.goalSelector.add(6, new LookAtEntityGoal(this, MobEntity.class, 8.0F));
     }
 
 
@@ -60,20 +71,17 @@ public class AbstractGoblinEntity extends MerchantEntity implements Npc {
 
     @Override
     public ActionResult interactMob(PlayerEntity player, Hand hand) {
-        ItemStack itemStack = player.getStackInHand(hand);
         if (this.isAlive() && !this.hasCustomer()) {
             if (hand == Hand.MAIN_HAND) {
                 player.incrementStat(Stats.TALKED_TO_VILLAGER);
             }
-            if (this.getOffers().isEmpty()) {
-                return ActionResult.success(this.world.isClient);
-            } else {
+            if (!this.getOffers().isEmpty()) {
                 if (!this.world.isClient) {
                     this.setCurrentCustomer(player);
                     this.sendOffers(player, this.getDisplayName(), 1);
                 }
-                return ActionResult.success(this.world.isClient);
             }
+            return ActionResult.success(this.world.isClient);
         } else {
             return super.interactMob(player, hand);
         }
@@ -94,6 +102,23 @@ public class AbstractGoblinEntity extends MerchantEntity implements Npc {
             }
 
         }
+    }
+    @Override
+    public void writeCustomDataToNbt(NbtCompound nbt) {
+        super.writeCustomDataToNbt(nbt);
+        if (this.wanderTarget != null) {
+            nbt.put("WanderTarget", NbtHelper.fromBlockPos(this.wanderTarget));
+        }
+
+    }
+    @Override
+    public void readCustomDataFromNbt(NbtCompound nbt) {
+        super.readCustomDataFromNbt(nbt);
+        if (nbt.contains("WanderTarget")) {
+            this.wanderTarget = NbtHelper.toBlockPos(nbt.getCompound("WanderTarget"));
+        }
+
+        this.setBreedingAge(Math.max(0, this.getBreedingAge()));
     }
 
     @Nullable
@@ -117,21 +142,109 @@ public class AbstractGoblinEntity extends MerchantEntity implements Npc {
         return false;
     }
 
-    public static ItemStack getFavouriteFood() {
-        return null;
-    }
-
     @Override
-    protected SoundEvent getAmbientSound()
-    {
-        return ModSounds.IDLE_GRUNT;
-    }
+    protected SoundEvent getAmbientSound() {return ModSounds.IDLE_GRUNT;}
     @Override
-    protected SoundEvent getHurtSound(DamageSource source) {
+    protected SoundEvent getHurtSound(DamageSource source) {return ModSounds.IDLE_GRUNT;}
+    @Override
+    protected SoundEvent getDeathSound() {
         return ModSounds.IDLE_GRUNT;
     }
     @Override
     protected SoundEvent getTradingSound(boolean sold) {
         return (sold ? ModSounds.IDLE_GRUNT : ModSounds.ANNOYED_GRUNT);
+    }
+    public void setWanderTarget(@Nullable BlockPos pos) {
+        this.wanderTarget = pos;
+    }
+    @Nullable
+    BlockPos getWanderTarget() {
+        return this.wanderTarget;
+    }
+
+    class PlayerPersistanceGoal extends Goal {
+        final AbstractGoblinEntity trader;
+        final double proximityDistance;
+        final double speed;
+
+        PlayerPersistanceGoal(AbstractGoblinEntity trader, double proximityDistance, double speed) {
+            this.trader = trader;
+            this.proximityDistance = proximityDistance;
+            this.speed = speed;
+            this.setControls(EnumSet.of(Goal.Control.MOVE));
+        }
+
+        public void stop() {
+            AbstractGoblinEntity.this.navigation.stop();
+            this.trader.setWanderTarget(null);
+        }
+
+        public boolean canStart() {
+            BlockPos blockPos = this.trader.getWanderTarget();
+            return blockPos != null && this.isTooFarFrom(blockPos, this.proximityDistance);
+        }
+
+        public void tick() {
+            BlockPos blockPos = this.trader.getWanderTarget();
+            if (blockPos != null && AbstractGoblinEntity.this.navigation.isIdle()) {
+                if (this.isTooFarFrom(blockPos, 16.0D)) {
+                    Vec3d vec3d = (new Vec3d((double)blockPos.getX() - this.trader.getX(), (double)blockPos.getY() - this.trader.getY(), (double)blockPos.getZ() - this.trader.getZ())).normalize();
+                    Vec3d vec3d2 = vec3d.multiply(10.0D).add(this.trader.getX(), this.trader.getY(), this.trader.getZ());
+                    AbstractGoblinEntity.this.navigation.startMovingTo(vec3d2.x, vec3d2.y, vec3d2.z, this.speed);
+                } else {
+                    AbstractGoblinEntity.this.navigation.startMovingTo(blockPos.getX(), blockPos.getY(), blockPos.getZ(), this.speed);
+                }
+            }
+
+        }
+
+        private boolean isTooFarFrom(BlockPos pos, double proximityDistance) {
+            return !pos.isWithinDistance(this.trader.getPos(), proximityDistance);
+        }
+    }
+
+
+    public abstract ItemStack getFavouriteFood();
+    class FindFavouriteFoodGoal extends Goal {
+        public FindFavouriteFoodGoal() {
+            this.setControls(EnumSet.of(Goal.Control.MOVE));
+        }
+
+        public boolean canStart() {
+            if (!AbstractGoblinEntity.this.getEquippedStack(EquipmentSlot.MAINHAND).isEmpty()) {
+                return false;
+            } else if (AbstractGoblinEntity.this.getTarget() == null && AbstractGoblinEntity.this.getAttacker() == null) {
+                 if (AbstractGoblinEntity.this.getRandom().nextInt(10) != 0) {
+                    return false;
+                } else {
+                    List<ItemEntity> list = AbstractGoblinEntity.this.world.getEntitiesByClass(ItemEntity.class, AbstractGoblinEntity.this.getBoundingBox().expand(8.0D, 8.0D, 8.0D), AbstractGoblinEntity.FAVOURITE_FOOD);
+                    return !list.isEmpty() && AbstractGoblinEntity.this.getEquippedStack(EquipmentSlot.MAINHAND).isEmpty();
+                }
+            } else {
+                return false;
+            }
+        }
+
+        public void tick() {
+            List<ItemEntity> list = AbstractGoblinEntity.this.world.getEntitiesByClass(ItemEntity.class, AbstractGoblinEntity.this.getBoundingBox().expand(8.0D, 8.0D, 8.0D), AbstractGoblinEntity.FAVOURITE_FOOD);
+            ItemStack itemStack = AbstractGoblinEntity.this.getEquippedStack(EquipmentSlot.MAINHAND);
+            if (itemStack.isEmpty() && !list.isEmpty()) {
+                AbstractGoblinEntity.this.getNavigation().startMovingTo(list.get(0), 0.5);
+            }
+
+        }
+
+        public void start() {
+            List<ItemEntity> list = AbstractGoblinEntity.this.world.getEntitiesByClass(ItemEntity.class, AbstractGoblinEntity.this.getBoundingBox().expand(8.0D, 8.0D, 8.0D), AbstractGoblinEntity.FAVOURITE_FOOD);
+            if (!list.isEmpty()) {
+                AbstractGoblinEntity.this.getNavigation().startMovingTo(list.get(0), 0.5);
+            }
+
+        }
+    }
+
+    static {
+        FAVOURITE_FOOD = (item) -> !item.cannotPickup() && item.isAlive() && item.getStack().isOf(Items.APPLE);
+        //NEED TO GO BACK AND ADD CARROTS, ECT...
     }
 }
