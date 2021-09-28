@@ -43,23 +43,19 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
     }
 
     @Override
-    protected void initGoals()
-    {
-        this.goalSelector.add(0, new StopFollowingCustomerGoal(this));
-        this.goalSelector.add(1, new EscapeDangerGoal(this, 0.5F));
+    protected void initGoals() {
         //this.goalSelector.add(4, new AttackRevengeTargetGoal(this));
-        this.goalSelector.add(2, new PlayerPersistanceGoal(this, 2.0D, 0.35D));
-        this.goalSelector.add(3, new FindFavouriteFoodGoal());
-        this.goalSelector.add(7, new TemptGoal(this, 0.5, Ingredient.ofItems(this.getFavouriteFood().getItem()), false));
-        //this.goalSelector.add(8, new EatFavouriteFoodGoal(this));
-        //this.goalSelector.add(8, new WaterAvoidingRandomStrollGoal(this, 0.4D));
+        //this.goalSelector.add(8, new WaterAvoidingRandomStrollGoal(this, 0.4D));;
+        this.goalSelector.add(1, new FindFavouriteFoodGoal());
+        this.goalSelector.add(1, new StopFollowingCustomerGoal(this));
+        this.goalSelector.add(1, new EscapeDangerGoal(this, 0.5F));
+        this.goalSelector.add(1, new LookAtCustomerGoal(this));
+        this.goalSelector.add(1, new LookAtEntityGoal(this, MobEntity.class, 8.0F));
+        this.goalSelector.add(2, new FollowTargetGoal<>(this, PlayerEntity.class, true));
+        this.goalSelector.add(2, new GoToWalkTargetGoal(this, 0.35D));
+        this.goalSelector.add(3, new TemptGoal(this, 0.5, Ingredient.ofItems(this.getFavouriteFood().getItem()), false));
         this.goalSelector.add(4, new WanderAroundFarGoal(this, 0.35D));
-        //this.goalSelector.add(10, new InteractGoal(this, Player.class, 4.0F, 1.0F));
-        this.goalSelector.add(5, new LookAtCustomerGoal(this));
-        this.goalSelector.add(6, new LookAtEntityGoal(this, MobEntity.class, 8.0F));
     }
-
-
 
     @Override
     protected void afterUsing(TradeOffer offer) {
@@ -93,7 +89,7 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
         TradeOffers.Factory[] factorys2 = TradeOffers.WANDERING_TRADER_TRADES.get(2);
         if (factorys != null && factorys2 != null) {
             TradeOfferList tradeOfferList = this.getOffers();
-            this.fillRecipesFromPool(tradeOfferList, factorys, 5);
+            this.fillRecipesFromPool(tradeOfferList, factorys, 7);
             int i = this.random.nextInt(factorys2.length);
             TradeOffers.Factory factory = factorys2[i];
             TradeOffer tradeOffer = factory.create(this, this.random);
@@ -103,6 +99,7 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
 
         }
     }
+
     @Override
     public void writeCustomDataToNbt(NbtCompound nbt) {
         super.writeCustomDataToNbt(nbt);
@@ -111,6 +108,7 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
         }
 
     }
+
     @Override
     public void readCustomDataFromNbt(NbtCompound nbt) {
         super.readCustomDataFromNbt(nbt);
@@ -143,24 +141,36 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
     }
 
     @Override
-    protected SoundEvent getAmbientSound() {return ModSounds.IDLE_GRUNT;}
+    protected SoundEvent getAmbientSound() {
+        return ModSounds.IDLE_GRUNT;
+    }
+
     @Override
-    protected SoundEvent getHurtSound(DamageSource source) {return ModSounds.IDLE_GRUNT;}
+    protected SoundEvent getHurtSound(DamageSource source) {
+        return ModSounds.IDLE_GRUNT;
+    }
+
     @Override
     protected SoundEvent getDeathSound() {
         return ModSounds.IDLE_GRUNT;
     }
+
     @Override
     protected SoundEvent getTradingSound(boolean sold) {
         return (sold ? ModSounds.IDLE_GRUNT : ModSounds.ANNOYED_GRUNT);
     }
+
     public void setWanderTarget(@Nullable BlockPos pos) {
         this.wanderTarget = pos;
     }
+
     @Nullable
     BlockPos getWanderTarget() {
         return this.wanderTarget;
     }
+
+
+    public abstract ItemStack getFavouriteFood();
 
     class PlayerPersistanceGoal extends Goal {
         final AbstractGoblinEntity trader;
@@ -188,7 +198,7 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
             BlockPos blockPos = this.trader.getWanderTarget();
             if (blockPos != null && AbstractGoblinEntity.this.navigation.isIdle()) {
                 if (this.isTooFarFrom(blockPos, 16.0D)) {
-                    Vec3d vec3d = (new Vec3d((double)blockPos.getX() - this.trader.getX(), (double)blockPos.getY() - this.trader.getY(), (double)blockPos.getZ() - this.trader.getZ())).normalize();
+                    Vec3d vec3d = (new Vec3d((double) blockPos.getX() - this.trader.getX(), (double) blockPos.getY() - this.trader.getY(), (double) blockPos.getZ() - this.trader.getZ())).normalize();
                     Vec3d vec3d2 = vec3d.multiply(10.0D).add(this.trader.getX(), this.trader.getY(), this.trader.getZ());
                     AbstractGoblinEntity.this.navigation.startMovingTo(vec3d2.x, vec3d2.y, vec3d2.z, this.speed);
                 } else {
@@ -204,7 +214,6 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
     }
 
 
-    public abstract ItemStack getFavouriteFood();
     class FindFavouriteFoodGoal extends Goal {
         public FindFavouriteFoodGoal() {
             this.setControls(EnumSet.of(Goal.Control.MOVE));
@@ -214,7 +223,7 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
             if (!AbstractGoblinEntity.this.getEquippedStack(EquipmentSlot.MAINHAND).isEmpty()) {
                 return false;
             } else if (AbstractGoblinEntity.this.getTarget() == null && AbstractGoblinEntity.this.getAttacker() == null) {
-                 if (AbstractGoblinEntity.this.getRandom().nextInt(10) != 0) {
+                if (AbstractGoblinEntity.this.getRandom().nextInt(10) != 0) {
                     return false;
                 } else {
                     List<ItemEntity> list = AbstractGoblinEntity.this.world.getEntitiesByClass(ItemEntity.class, AbstractGoblinEntity.this.getBoundingBox().expand(8.0D, 8.0D, 8.0D), AbstractGoblinEntity.FAVOURITE_FOOD);
@@ -243,8 +252,8 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
         }
     }
 
+
     static {
         FAVOURITE_FOOD = (item) -> !item.cannotPickup() && item.isAlive() && item.getStack().isOf(Items.APPLE);
-        //NEED TO GO BACK AND ADD CARROTS, ECT...
     }
 }

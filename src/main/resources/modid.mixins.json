@@ -4,9 +4,9 @@
   "package": "net.hat.gt.mixin",
   "compatibilityLevel": "JAVA_16",
   "mixins": [
+    "TraderOffersMixin"
   ],
   "client": [
-    "ExampleMixin"
   ],
   "injectors": {
     "defaultRequire": 1
