@@ -5,8 +5,8 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.rendereregistry.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
-import net.hat.gt.entities.GoblinEntityModel;
-import net.hat.gt.entities.GoblinEntityRenderer;
+import net.hat.gt.entities.GobinTraderRenderer;
+import net.hat.gt.entities.GoblinTraderModel;
 import net.hat.gt.init.ModEntities;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.util.Identifier;
@@ -14,7 +14,7 @@ import net.minecraft.util.Identifier;
 @SuppressWarnings("deprecation")
 @Environment(EnvType.CLIENT)
 public class GobTClient implements ClientModInitializer {
-    public static final EntityModelLayer MODEL_CUBE_LAYER = new EntityModelLayer(new Identifier("goblintraders", "cube"), "main");
+    public static final EntityModelLayer GOBLIN_MODEL_LAYER = new EntityModelLayer(new Identifier("goblintraders", "cube"), "main");
     @Override
     public void onInitializeClient() {
         /*
@@ -22,7 +22,7 @@ public class GobTClient implements ClientModInitializer {
          *
          * Entity Renderers can also manipulate the model before it renders based on entity context (EndermanEntityRenderer#render).
          */
-        EntityRendererRegistry.INSTANCE.register(ModEntities.GOBLIN_TRADER, GoblinEntityRenderer::new);
-        EntityModelLayerRegistry.registerModelLayer(MODEL_CUBE_LAYER, GoblinEntityModel::getTexturedModelData);
+        EntityRendererRegistry.INSTANCE.register(ModEntities.GOBLIN_TRADER, GobinTraderRenderer::new);
+        EntityModelLayerRegistry.registerModelLayer(GOBLIN_MODEL_LAYER, () -> GoblinTraderModel.model());
     }
 }
