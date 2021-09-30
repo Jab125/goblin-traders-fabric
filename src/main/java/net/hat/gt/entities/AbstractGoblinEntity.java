@@ -1,6 +1,7 @@
 package net.hat.gt.entities;
 
 import net.hat.gt.init.ModSounds;
+import net.hat.gt.init.ModStats;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.damage.DamageSource;
@@ -69,7 +70,7 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
     public ActionResult interactMob(PlayerEntity player, Hand hand) {
         if (this.isAlive() && !this.hasCustomer()) {
             if (hand == Hand.MAIN_HAND) {
-                player.incrementStat(Stats.TALKED_TO_VILLAGER);
+                player.incrementStat(ModStats.TRADE_WITH_GOBLIN);
             }
             if (!this.getOffers().isEmpty()) {
                 if (!this.world.isClient) {
