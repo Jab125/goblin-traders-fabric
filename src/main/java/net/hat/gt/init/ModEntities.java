@@ -18,6 +18,7 @@ public class ModEntities {
 
     public static void registerEntities() {
         FabricDefaultAttributeRegistry.register(GOBLIN_TRADER, GoblinTraderEntity.createMobAttributes()
-                .add(EntityAttributes.GENERIC_MAX_HEALTH, 1.0D));
+                .add(EntityAttributes.GENERIC_MAX_HEALTH, 20.0D)
+                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.7D));
     }
 }

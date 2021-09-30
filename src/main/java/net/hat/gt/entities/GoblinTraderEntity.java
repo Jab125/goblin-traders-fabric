@@ -15,4 +15,10 @@ public class GoblinTraderEntity extends AbstractGoblinEntity{
     public ItemStack getFavouriteFood() {
         return new ItemStack(Items.APPLE);
     }
+
+    @Override
+    public boolean canAttackBack()
+    {
+        return true;
+    }
 }
