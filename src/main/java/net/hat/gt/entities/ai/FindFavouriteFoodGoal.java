@@ -34,9 +34,6 @@ public class FindFavouriteFoodGoal extends Goal
     @Override
     public void tick()
     {
-        //if(this.entity.isStunned())
-        //    return;
-
         this.entity.getLookControl().lookAt(this.itemEntity, 10.0F, (float) this.entity.getHeadRollingTimeLeft());
         this.entity.getNavigation().stop();
         Path path = this.entity.getNavigation().findPathTo(this.itemEntity, 0);
