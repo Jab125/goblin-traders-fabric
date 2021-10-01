@@ -39,6 +39,7 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
     @Nullable
     private BlockPos wanderTarget;
     private Set<UUID> tradedCustomers = new HashSet<>();
+    private int despawnDelay;
 
     //register Goblin to Exist
     public AbstractGoblinEntity(EntityType<? extends MerchantEntity> entityType, World world) {
@@ -147,6 +148,7 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
     @Override
     public void writeCustomDataToNbt(NbtCompound nbt) {
         super.writeCustomDataToNbt(nbt);
+        nbt.putInt("DespawnDelay", this.despawnDelay);
         if (this.wanderTarget != null) {
             nbt.put("WanderTarget", NbtHelper.fromBlockPos(this.wanderTarget));
         }
@@ -156,6 +158,9 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
     @Override
     public void readCustomDataFromNbt(NbtCompound nbt) {
         super.readCustomDataFromNbt(nbt);
+        if (nbt.contains("DespawnDelay", 99)) {
+            this.despawnDelay = nbt.getInt("DespawnDelay");
+        }
         if (nbt.contains("WanderTarget")) {
             this.wanderTarget = NbtHelper.toBlockPos(nbt.getCompound("WanderTarget"));
         }
