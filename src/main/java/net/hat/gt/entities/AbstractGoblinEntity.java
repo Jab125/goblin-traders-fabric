@@ -5,7 +5,6 @@ import net.hat.gt.init.ModSounds;
 import net.hat.gt.init.ModStats;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ExperienceOrbEntity;
-import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.Npc;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.damage.DamageSource;
@@ -14,7 +13,6 @@ import net.minecraft.entity.passive.MerchantEntity;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtHelper;
 import net.minecraft.recipe.Ingredient;
@@ -35,13 +33,11 @@ import org.jetbrains.annotations.Nullable;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
-import java.util.function.Predicate;
 
 public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc {
 
     @Nullable
     private BlockPos wanderTarget;
-    static Predicate<ItemEntity> FAVOURITE_FOOD;
     private Set<UUID> tradedCustomers = new HashSet<>();
 
     //register Goblin to Exist
@@ -216,9 +212,4 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
     public abstract ItemStack getFavouriteFood();
 
     public abstract boolean canAttackBack();
-
-
-    static {
-        FAVOURITE_FOOD = (item) -> !item.cannotPickup() && item.isAlive() && item.getStack().isOf(Items.APPLE);
-    }
 }

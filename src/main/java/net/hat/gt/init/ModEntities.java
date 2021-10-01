@@ -13,7 +13,7 @@ import net.minecraft.util.registry.Registry;
 public class ModEntities {
 
     public static final EntityType<GoblinTraderEntity> GOBLIN_TRADER = Registry.register(Registry.ENTITY_TYPE, new Identifier("goblintraders", "goblin_trader"),
-            FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, GoblinTraderEntity::new).dimensions(EntityDimensions.fixed(0.5f, 1.00f)).build()
+            FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, GoblinTraderEntity::new).dimensions(EntityDimensions.fixed(0.5f, 1.0f)).build()
     );
 
     public static void registerEntities() {
