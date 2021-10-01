@@ -3,7 +3,6 @@ package net.hat.gt.entities;
 import net.hat.gt.entities.ai.*;
 import net.hat.gt.init.ModSounds;
 import net.hat.gt.init.ModStats;
-import net.hat.gt.init.ModTrades;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ExperienceOrbEntity;
 import net.minecraft.entity.Npc;
@@ -26,8 +25,6 @@ import net.minecraft.util.UseAction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.village.TradeOffer;
-import net.minecraft.village.TradeOfferList;
-import net.minecraft.village.TradeOffers;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
@@ -126,23 +123,6 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
             {
                 //this.world.addParticle(new ItemStackParticleEffect(ParticleTypes.ITEM, stack), frontPosition.x, frontPosition.y, frontPosition.z, motion.x, motion.y + 0.05D, motion.z);
             }
-        }
-    }
-
-    @Override
-    protected void fillRecipes() {
-        TradeOffers.Factory[] factorys = ModTrades.GOBLIN_TRADER_TRADES.get(1);
-        TradeOffers.Factory[] factorys2 = ModTrades.GOBLIN_TRADER_TRADES.get(2);
-        if (factorys != null && factorys2 != null) {
-            TradeOfferList tradeOfferList = this.getOffers();
-            this.fillRecipesFromPool(tradeOfferList, factorys, 7);
-            int i = this.random.nextInt(factorys2.length);
-            TradeOffers.Factory factory = factorys2[i];
-            TradeOffer tradeOffer = factory.create(this, this.random);
-            if (tradeOffer != null) {
-                tradeOfferList.add(tradeOffer);
-            }
-
         }
     }
 
