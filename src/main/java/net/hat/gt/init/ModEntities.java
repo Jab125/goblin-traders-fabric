@@ -20,7 +20,5 @@ public class ModEntities {
         FabricDefaultAttributeRegistry.register(GOBLIN_TRADER, GoblinTraderEntity.createMobAttributes()
                 .add(EntityAttributes.GENERIC_MAX_HEALTH, 20.0D)
                 .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.7D));
-
-        //SpawnInit.init();
     }
 }

@@ -61,7 +61,7 @@ public class FollowPotentialCustomerGoal extends Goal
         this.entity.getNavigation().stop();
         this.potentialCustomer = null;
         this.timeout = 600;
-        this.coolDown = 300;
+        this.coolDown = 2400;
     }
 
     @Nullable

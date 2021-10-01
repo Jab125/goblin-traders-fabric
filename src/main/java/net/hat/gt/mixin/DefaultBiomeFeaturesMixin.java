@@ -18,6 +18,6 @@ public class DefaultBiomeFeaturesMixin{
     }
 
     private static void addGoblinTraderMob(SpawnSettings.Builder builder) {
-        builder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(ModEntities.GOBLIN_TRADER, 3, 1, 1));
+        builder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(ModEntities.GOBLIN_TRADER, 1, 1, 1));
     }
 }

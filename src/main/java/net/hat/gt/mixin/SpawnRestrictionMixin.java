@@ -1,5 +1,6 @@
 package net.hat.gt.mixin;
 
+import net.hat.gt.entities.GoblinTraderEntity;
 import net.hat.gt.init.ModEntities;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnRestriction;
