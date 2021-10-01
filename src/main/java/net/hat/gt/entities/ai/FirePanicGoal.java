@@ -54,7 +54,7 @@ public class FirePanicGoal extends Goal
     @Override
     public boolean shouldContinue()
     {
-        return !this.goblin.getNavigation().isIdle();
+        return !this.goblin.getNavigation().isIdle() && this.goblin.isAlive();
     }
 
     private boolean findRandomPosition()

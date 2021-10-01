@@ -48,7 +48,7 @@ public class AttackRevengeTargetGoal extends Goal
     @Override
     public boolean shouldContinue()
     {
-        return this.entity.getAttacker() != null && this.entity.getAttacker().isAlive() && this.entity.distanceTo(this.entity.getAttacker()) <= 10.0F && this.entity.getCurrentCustomer() == null;
+        return this.entity.isAlive() && this.entity.getAttacker() != null && this.entity.getAttacker().isAlive() && this.entity.distanceTo(this.entity.getAttacker()) <= 10.0F && this.entity.getCurrentCustomer() == null;
     }
 
     @Override

@@ -48,7 +48,7 @@ public class FindFavouriteFoodGoal extends Goal
     @Override
     public boolean shouldContinue()
     {
-        return this.itemEntity.isAlive() && this.entity.getNavigation().findPathTo(this.itemEntity, 0) != null;
+        return this.itemEntity.isAlive() && this.entity.isAlive() && this.entity.getNavigation().findPathTo(this.itemEntity, 0) != null;
     }
 
     @Nullable

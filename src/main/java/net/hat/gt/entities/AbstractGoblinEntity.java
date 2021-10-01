@@ -47,17 +47,17 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
 
     @Override
     protected void initGoals() {
-        this.goalSelector.add(0, new SwimGoal(this));
-        this.goalSelector.add(1, new FirePanicGoal(this, 0.5F));
-        this.goalSelector.add(2, new TradeWithPlayerGoal(this));
-        this.goalSelector.add(3, new LookAtCustomerGoal(this));
-        this.goalSelector.add(4, new AttackRevengeTargetGoal(this));
-        this.goalSelector.add(5, new FollowPotentialCustomerGoal(this));
-        this.goalSelector.add(6, new FindFavouriteFoodGoal(this));
-        this.goalSelector.add(7, new TemptGoal(this, 0.5, Ingredient.ofItems(this.getFavouriteFood().getItem()), false));
-        this.goalSelector.add(8, new EatFavouriteFoodGoal(this));
-        this.goalSelector.add(9, new WanderAroundFarGoal(this, 0.35D));
-        this.goalSelector.add(10, new LookAtEntityGoal(this, MobEntity.class, 8.0F));
+        this.goalSelector.add(1, new SwimGoal(this));
+        this.goalSelector.add(2, new FirePanicGoal(this, 0.5F));
+        this.goalSelector.add(3, new TradeWithPlayerGoal(this));
+        this.goalSelector.add(4, new LookAtCustomerGoal(this));
+        this.goalSelector.add(5, new AttackRevengeTargetGoal(this));
+        this.goalSelector.add(6, new FollowPotentialCustomerGoal(this));
+        this.goalSelector.add(7, new FindFavouriteFoodGoal(this));
+        this.goalSelector.add(8, new TemptGoal(this, 0.5, Ingredient.ofItems(this.getFavouriteFood().getItem()), false));
+        this.goalSelector.add(9, new EatFavouriteFoodGoal(this));
+        this.goalSelector.add(10, new WanderAroundFarGoal(this, 0.35D));
+        this.goalSelector.add(11, new LookAtEntityGoal(this, MobEntity.class, 8.0F));
     }
 
     @Override
@@ -88,7 +88,7 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
 
     @Override
     public ItemStack eatFood(World level, ItemStack stack) {
-        if(stack.getItem() == this.getFavouriteFood().getItem() && stack.getItem().getFoodComponent() != null)
+        if(stack.getItem() == this.getFavouriteFood().getItem() && stack.getItem().getFoodComponent() != null && this.isAlive())
         {
             this.setHealth(this.getHealth() + stack.getItem().getFoodComponent().getHunger());
         }
