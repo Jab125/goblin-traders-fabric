@@ -3,6 +3,7 @@ package net.hat.gt.entities;
 import net.hat.gt.entities.ai.*;
 import net.hat.gt.init.ModSounds;
 import net.hat.gt.init.ModStats;
+import net.hat.gt.init.ModTrades;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ExperienceOrbEntity;
 import net.minecraft.entity.Npc;
@@ -130,8 +131,8 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
 
     @Override
     protected void fillRecipes() {
-        TradeOffers.Factory[] factorys = TradeOffers.WANDERING_TRADER_TRADES.get(1);
-        TradeOffers.Factory[] factorys2 = TradeOffers.WANDERING_TRADER_TRADES.get(2);
+        TradeOffers.Factory[] factorys = ModTrades.GOBLIN_TRADER_TRADES.get(1);
+        TradeOffers.Factory[] factorys2 = ModTrades.GOBLIN_TRADER_TRADES.get(2);
         if (factorys != null && factorys2 != null) {
             TradeOfferList tradeOfferList = this.getOffers();
             this.fillRecipesFromPool(tradeOfferList, factorys, 7);
