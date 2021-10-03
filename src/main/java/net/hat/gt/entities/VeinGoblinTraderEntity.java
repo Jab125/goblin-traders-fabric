@@ -68,10 +68,4 @@ public class VeinGoblinTraderEntity extends AbstractGoblinEntity{
             this.world.addParticle(ParticleTypes.FLAME, this.getX() - 0.5 + this.getRandom().nextDouble(), this.getY() + 0.5 - 0.5 + this.getRandom().nextDouble(), this.getZ() - 0.5 + this.getRandom().nextDouble(), 0, 0, 0);
         }
     }
-
-    @SuppressWarnings("unused")
-    public static boolean canSpawn(EntityType<VeinGoblinTraderEntity> type, WorldAccess world, SpawnReason spawnReason, BlockPos pos, Random random) {
-        return !world.getBlockState(pos.down()).isOf(Blocks.NETHER_WART_BLOCK);
-    }
-
 }

@@ -20,7 +20,7 @@ public abstract class SpawnRestrictionMixin {
         register(ModEntities.GOBLIN_TRADER, SpawnRestriction.Location.ON_GROUND,
                 Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, MobEntity::canMobSpawn);
         register(ModEntities.VEIN_GOBLIN_TRADER, SpawnRestriction.Location.ON_GROUND,
-                Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, VeinGoblinTraderEntity::canSpawn);
+                Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, MobEntity::canMobSpawn);
     }
 }
 
