@@ -15,6 +15,8 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtHelper;
+import net.minecraft.particle.ItemStackParticleEffect;
+import net.minecraft.particle.ParticleTypes;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
@@ -95,34 +97,47 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
     }
 
     @Override
-    protected void spawnConsumptionEffects(ItemStack stack, int count)
-    {
-        if(!stack.isEmpty() && this.isUsingItem())
-        {
-            if(stack.getUseAction() == UseAction.EAT)
-            {
-                this.spawnFoodParticles(stack, count);
-                this.playSound(this.getEatSound(stack), 0.5F + 0.5F * (float) this.getRandom().nextInt(2), (this.getRandom().nextFloat() - this.getRandom().nextFloat()) * 0.2F + 1.0F);
+    protected void consumeItem(){
+        Hand hand = this.getActiveHand();
+        if (!this.activeItemStack.equals(this.getStackInHand(hand))) {
+            this.stopUsingItem();
+        } else {
+            if (!this.activeItemStack.isEmpty() && this.isUsingItem()) {
+                this.spawnConsumptionEffects(getFavouriteFood(), 16);
+                ItemStack itemStack = this.activeItemStack.finishUsing(this.world, this);
+                if (itemStack != this.activeItemStack) {
+                    this.setStackInHand(hand, itemStack);
+                }
+
+                this.clearActiveItem();
             }
+
         }
     }
 
-    protected void spawnFoodParticles(ItemStack stack, int count)
-    {
+    @Override
+    protected void spawnConsumptionEffects(ItemStack stack, int count) {
+        if (!stack.isEmpty() && this.isUsingItem()) {
+            if (stack.getUseAction() == UseAction.DRINK) {
+                this.playSound(this.getDrinkSound(stack), 0.5F, this.world.random.nextFloat() * 0.1F + 0.9F);
+            }
+
+            if (stack.getUseAction() == UseAction.EAT) {
+                this.spawnFoodParticles(stack, count);
+                this.playSound(this.getEatSound(stack), 0.5F + 0.5F * (float)this.random.nextInt(2), (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
+            }
+
+        }
+    }
+
+    protected void spawnFoodParticles(ItemStack stack, int count) {
         for(int i = 0; i < count; ++i)
         {
             Vec3d frontPosition = Vec3d.fromPolar(0F, this.bodyYaw).multiply(0.25);
             frontPosition = frontPosition.add(0, 0.35, 0);
             frontPosition = frontPosition.add(this.getPos());
             Vec3d motion = new Vec3d(this.getRandom().nextDouble() * 0.2 - 0.1, 0.1, this.getRandom().nextDouble() * 0.2 - 0.1);
-            if(this.world instanceof ServerWorld)
-            {
-                //((ServerWorld) this.world).spawnParticles(new ItemStackParticleEffect(ParticleTypes.ITEM, stack) {}, frontPosition.x, frontPosition.y, frontPosition.z, 1, motion.x, motion.y + 0.05D, motion.z, 0.0D);
-            }
-            else
-            {
-                //this.world.addParticle(new ItemStackParticleEffect(ParticleTypes.ITEM, stack), frontPosition.x, frontPosition.y, frontPosition.z, motion.x, motion.y + 0.05D, motion.z);
-            }
+                ((ServerWorld) this.world).spawnParticles(new ItemStackParticleEffect(ParticleTypes.ITEM, stack) {}, frontPosition.x, frontPosition.y, frontPosition.z, 1, motion.x, motion.y + 0.05D, motion.z, 0.0D);
         }
     }
 
