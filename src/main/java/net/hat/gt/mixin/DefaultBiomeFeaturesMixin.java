@@ -14,10 +14,6 @@ public class DefaultBiomeFeaturesMixin{
 
     @Inject(at = @At("TAIL"), method = "addCaveMobs")
     private static void addCaveMobs(SpawnSettings.Builder builder, CallbackInfo callbackInfo){
-        addGoblinTraderMob(builder);
-    }
-
-    private static void addGoblinTraderMob(SpawnSettings.Builder builder) {
         builder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(ModEntities.GOBLIN_TRADER, 1, 1, 1));
     }
 }
