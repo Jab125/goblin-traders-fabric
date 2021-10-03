@@ -6,14 +6,15 @@
   "name": "Goblin Traders",
   "description": "An unofficial port of MrCrayfish's Goblin Traders",
   "authors": [
-    "hat"
+    "hat",
+    "MrCrayfish"
   ],
   "contact": {
     "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "sources": "https://github.com/3e2j/goblin-traders-fabric"
   },
 
-  "license": "CC0-1.0",
+  "license": "GNU General Public License",
   "icon": "assets/goblintraders/icon.png",
 
   "environment": "*",
