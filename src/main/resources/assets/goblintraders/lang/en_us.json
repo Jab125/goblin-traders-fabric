@@ -6,6 +6,13 @@
   "stat.goblintraders.trade_with_goblin": "Traded with Goblins",
   "stat.goblintraders.talk_with_goblin": "Talked with Goblins",
 
+  "text.autoconfig.goblintraders.title": "Goblin Traders Config",
+  "text.autoconfig.goblintraders.option.GOBLINS_CAN_SPAWN": "Goblin Traders Spawn",
+  "text.autoconfig.goblintraders.option.VEIN_GOBLINS_CAN_SPAWN": "Vein Goblin Traders Spawn",
+  "text.autoconfig.goblintraders.option.GOBLIN_HIT_BACK": "Goblin's Hit Back",
+  "text.autoconfig.goblintraders.option.GOBLIN_SPAWN_RATE": "Goblin Trader Spawn Rate",
+  "text.autoconfig.goblintraders.option.VEIN_GOBLIN_SPAWN_RATE": "Vein Goblin Trader Spawn Rate",
+
   "item.minecraft.potion.effect.gtextended_water_breathing": "Potion of Water Breathing",
   "item.minecraft.potion.effect.gtextended_fire_resistance": "Potion of Fire Resistance",
   "item.minecraft.potion.effect.gtextended_night_vision": "Potion of Night Vision",

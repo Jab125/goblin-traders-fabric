@@ -3,11 +3,15 @@ package net.hat.gt.entities;
 import net.hat.gt.entities.ai.*;
 import net.hat.gt.init.ModSounds;
 import net.hat.gt.init.ModStats;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ExperienceOrbEntity;
 import net.minecraft.entity.Npc;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.entity.data.DataTracker;
+import net.minecraft.entity.data.TrackedData;
+import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.passive.MerchantEntity;
 import net.minecraft.entity.passive.PassiveEntity;
@@ -19,6 +23,7 @@ import net.minecraft.particle.ItemStackParticleEffect;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
@@ -35,11 +40,15 @@ import java.util.Set;
 import java.util.UUID;
 
 public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc {
-
     @Nullable
     private BlockPos wanderTarget;
-    private Set<UUID> tradedCustomers = new HashSet<>();
+    private final Set<UUID> tradedCustomers = new HashSet<>();
     private int despawnDelay;
+
+    private int stunDelay;
+    private int fallCounter;
+    private static final TrackedData<? super Float> STUN_ROTATION = DataTracker.registerData(AbstractGoblinEntity.class, TrackedDataHandlerRegistry.FLOAT);
+    private static final TrackedData<? super Boolean> STUNNED = DataTracker.registerData(AbstractGoblinEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
 
     //register Goblin to Exist
     public AbstractGoblinEntity(EntityType<? extends MerchantEntity> entityType, World world) {
@@ -48,6 +57,7 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
 
     @Override
     protected void initGoals() {
+        this.goalSelector.add(0, new StunGoal(this));
         this.goalSelector.add(1, new SwimGoal(this));
         this.goalSelector.add(1, new FirePanicGoal(this, 0.5F));
         this.goalSelector.add(2, new TradeWithPlayerGoal(this));
@@ -59,6 +69,11 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
         this.goalSelector.add(6, new TemptGoal(this, 0.5, Ingredient.ofItems(this.getFavouriteFood().getItem()), false));
         this.goalSelector.add(6, new WanderAroundFarGoal(this, 0.35D));
         this.goalSelector.add(7, new LookAtEntityGoal(this, MobEntity.class, 8.0F));
+    }
+
+    public int getFallCounter()
+    {
+        return this.fallCounter;
     }
 
     @Override
@@ -209,6 +224,74 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
     {
         return this.tradedCustomers.contains(player.getUuid());
     }
+
+    @Override
+    public boolean damage(DamageSource source, float amount)
+    {
+        boolean attacked = super.damage(source, amount);
+        if(attacked && source.getAttacker() instanceof PlayerEntity)
+        {
+            this.getNavigation().stop();
+            this.dataTracker.set(STUNNED, true);
+            this.dataTracker.set(STUN_ROTATION, this.getStunRotation(source.getAttacker()));
+            this.stunDelay = 20;
+        }
+        return attacked;
+    }
+
+    @Override
+    protected void initDataTracker() {
+        super.initDataTracker();
+        this.dataTracker.startTracking(STUNNED, false);
+        this.dataTracker.startTracking(STUN_ROTATION, 0F);
+    }
+
+    private float getStunRotation(@Nullable Entity entity)
+    {
+        return entity != null ? entity.getYaw() : 0F;
+    }
+
+    public int getStunDelay()
+    {
+        return this.stunDelay;
+    }
+
+    public boolean isStunned()
+    {
+        return (boolean) this.dataTracker.get(STUNNED);
+    }
+
+    public float getStunRotation()
+    {
+        return (float) this.dataTracker.get(STUN_ROTATION);
+    }
+
+
+    public void tick() {
+        if(this.stunDelay > 0) {
+            this.stunDelay--;
+            if(this.stunDelay == 0) {
+                this.dataTracker.set(STUNNED, false);
+                this.world.playSound(null, this.getX(), this.getY(), this.getZ(), ModSounds.ANNOYED_GRUNT, SoundCategory.NEUTRAL, 1.0F, 0.9F + this.getRandom().nextFloat() * 0.2F);
+            }
+        }
+        if((boolean) this.dataTracker.get(STUNNED))
+        {
+            if(this.fallCounter < 10)
+            {
+                this.fallCounter++;
+            }
+        }
+        else
+        {
+            this.fallCounter = 0;
+        }
+        if(this.isStunned()) {
+            System.out.println(STUNNED);
+        }
+        super.tick();
+    }
+
 
     public abstract ItemStack getFavouriteFood();
 

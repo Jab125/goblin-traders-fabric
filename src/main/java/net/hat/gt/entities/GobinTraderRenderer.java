@@ -8,6 +8,7 @@ import net.minecraft.client.render.entity.MobEntityRenderer;
 import net.minecraft.client.render.entity.feature.HeldItemFeatureRenderer;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.Vec3f;
 
 public class GobinTraderRenderer extends MobEntityRenderer<AbstractGoblinEntity, GoblinTraderModel<GoblinTraderEntity>> {
         public static final Identifier TEXTURE = GobT.id("textures/entity/goblintrader/goblin_trader.png");
@@ -28,13 +29,13 @@ public class GobinTraderRenderer extends MobEntityRenderer<AbstractGoblinEntity,
         {
             matrixStack.translate(0, -0.15, 0);
         }
-        /*if(mobEntity.isStunned() && mobEntity.isAlive())
+        if(mobEntity.isStunned() && mobEntity.isAlive())
         {
-            float progress = Math.min(10F, entity.getFallCounter() + partialTicks) / 10F;
-            matrixStack.mulPose(Vector3f.YP.rotationDegrees(-entity.getStunRotation()));
-            matrixStack.mulPose(Vector3f.XP.rotationDegrees(90F * progress));
-            matrixStack.mulPose(Vector3f.YP.rotationDegrees(entity.getStunRotation()));
-        }*/
+            float progress = Math.min(10F, mobEntity.getFallCounter() + g) / 10F;
+            matrixStack.multiply(Vec3f.POSITIVE_Y.getDegreesQuaternion(-mobEntity.getStunRotation()));
+            matrixStack.multiply(Vec3f.POSITIVE_X.getDegreesQuaternion(90F * progress));
+            matrixStack.multiply(Vec3f.POSITIVE_Y.getDegreesQuaternion(mobEntity.getStunRotation()));
+        }
         super.render(mobEntity, 0F, g, matrixStack, vertexConsumerProvider, i);
         matrixStack.pop();
     }
