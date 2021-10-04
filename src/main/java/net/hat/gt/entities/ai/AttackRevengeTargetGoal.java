@@ -32,7 +32,7 @@ public class AttackRevengeTargetGoal extends Goal
         if(revengeTarget != null && this.entity.getCurrentCustomer() == null )
         {
             this.entity.getLookControl().lookAt(revengeTarget, 10.0F, this.entity.getHeadRollingTimeLeft());
-            if(this.entity.distanceTo(revengeTarget) >= 1.5D)
+            if(this.entity.distanceTo(revengeTarget) >= 2.0D)
             {
                 this.entity.getNavigation().startMovingTo(revengeTarget, 0.5F);
             }
