@@ -12,6 +12,7 @@
   "text.autoconfig.goblintraders.option.GOBLIN_HIT_BACK": "Goblin's Hit Back",
   "text.autoconfig.goblintraders.option.GOBLIN_SPAWN_RATE": "Goblin Trader Spawn Rate",
   "text.autoconfig.goblintraders.option.VEIN_GOBLIN_SPAWN_RATE": "Vein Goblin Trader Spawn Rate",
+  "text.autoconfig.goblintraders.option.GOBLINS_FALL": "Goblins Fall Over",
 
   "item.minecraft.potion.effect.gtextended_water_breathing": "Potion of Water Breathing",
   "item.minecraft.potion.effect.gtextended_fire_resistance": "Potion of Fire Resistance",

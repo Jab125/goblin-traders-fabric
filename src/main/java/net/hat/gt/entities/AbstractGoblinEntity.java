@@ -1,5 +1,6 @@
 package net.hat.gt.entities;
 
+import net.hat.gt.GobT;
 import net.hat.gt.entities.ai.*;
 import net.hat.gt.init.ModSounds;
 import net.hat.gt.init.ModStats;
@@ -36,6 +37,7 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 import java.util.UUID;
 
@@ -65,10 +67,10 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
         this.goalSelector.add(2, new AttackRevengeTargetGoal(this));
         this.goalSelector.add(3, new EatFavouriteFoodGoal(this));
         this.goalSelector.add(4, new FindFavouriteFoodGoal(this));
-        this.goalSelector.add(5, new FollowPotentialCustomerGoal(this));
-        this.goalSelector.add(6, new TemptGoal(this, 0.5, Ingredient.ofItems(this.getFavouriteFood().getItem()), false));
-        this.goalSelector.add(6, new WanderAroundFarGoal(this, 0.35D));
-        this.goalSelector.add(7, new LookAtEntityGoal(this, MobEntity.class, 8.0F));
+        this.goalSelector.add(5, new TemptGoal(this, 0.5, Ingredient.ofItems(this.getFavouriteFood().getItem()), false));
+        this.goalSelector.add(6, new FollowPotentialCustomerGoal(this));
+        this.goalSelector.add(7, new WanderAroundFarGoal(this, 0.35D));
+        this.goalSelector.add(8, new LookAtEntityGoal(this, MobEntity.class, 8.0F));
     }
 
     public int getFallCounter()
@@ -152,7 +154,14 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
             frontPosition = frontPosition.add(0, 0.35, 0);
             frontPosition = frontPosition.add(this.getPos());
             Vec3d motion = new Vec3d(this.getRandom().nextDouble() * 0.2 - 0.1, 0.1, this.getRandom().nextDouble() * 0.2 - 0.1);
-                ((ServerWorld) this.world).spawnParticles(new ItemStackParticleEffect(ParticleTypes.ITEM, stack) {}, frontPosition.x, frontPosition.y, frontPosition.z, 1, motion.x, motion.y + 0.05D, motion.z, 0.0D);
+            if(this.world instanceof ServerWorld)
+            {
+                ((ServerWorld) this.world).spawnParticles(new ItemStackParticleEffect(ParticleTypes.ITEM, stack), frontPosition.x, frontPosition.y, frontPosition.z, 1, motion.x, motion.y + 0.05D, motion.z, 0.0D);
+            }
+            else
+            {
+                this.world.addParticle(new ItemStackParticleEffect(ParticleTypes.ITEM, stack), frontPosition.x, frontPosition.y, frontPosition.z, motion.x, motion.y + 0.05D, motion.z);
+            }
         }
     }
 
@@ -229,7 +238,7 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
     public boolean damage(DamageSource source, float amount)
     {
         boolean attacked = super.damage(source, amount);
-        if(attacked && source.getAttacker() instanceof PlayerEntity)
+        if(attacked && source.getAttacker() instanceof PlayerEntity && GobT.config.GOBLINS_FALL)
         {
             this.getNavigation().stop();
             this.dataTracker.set(STUNNED, true);
@@ -251,11 +260,6 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
         return entity != null ? entity.getYaw() : 0F;
     }
 
-    public int getStunDelay()
-    {
-        return this.stunDelay;
-    }
-
     public boolean isStunned()
     {
         return (boolean) this.dataTracker.get(STUNNED);
@@ -268,27 +272,24 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
 
 
     public void tick() {
-        if(this.stunDelay > 0) {
+        if (this.stunDelay > 0) {
             this.stunDelay--;
-            if(this.stunDelay == 0) {
+            if (this.stunDelay == 0) {
                 this.dataTracker.set(STUNNED, false);
                 this.world.playSound(null, this.getX(), this.getY(), this.getZ(), ModSounds.ANNOYED_GRUNT, SoundCategory.NEUTRAL, 1.0F, 0.9F + this.getRandom().nextFloat() * 0.2F);
+                if (((PlayerEntity) Objects.requireNonNull(this.getAttacker())).isCreative()){
+                    this.setAttacker(null);
+                }
             }
         }
-        if((boolean) this.dataTracker.get(STUNNED))
-        {
-            if(this.fallCounter < 10)
-            {
+        if ((boolean) this.dataTracker.get(STUNNED)) {
+            if (this.fallCounter < 10) {
                 this.fallCounter++;
             }
-        }
-        else
-        {
+        } else {
             this.fallCounter = 0;
         }
-        if(this.isStunned()) {
-            System.out.println(STUNNED);
-        }
+
         super.tick();
     }
 

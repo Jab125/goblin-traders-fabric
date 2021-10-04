@@ -10,6 +10,7 @@ public class GoblinTradersConfig implements ConfigData{
     public boolean GOBLINS_CAN_SPAWN = true;
     public boolean VEIN_GOBLINS_CAN_SPAWN = true;
     public boolean GOBLIN_HIT_BACK = true;
+    public boolean GOBLINS_FALL = true;
     public int GOBLIN_SPAWN_RATE = 1;
     public int VEIN_GOBLIN_SPAWN_RATE = 1;
 }
