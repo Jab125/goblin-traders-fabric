@@ -89,6 +89,13 @@ public class GoblinTraderModel<G extends AbstractGoblinEntity> extends Composite
         this.head.yaw = headYaw * ((float) Math.PI / 180F);
         this.head.pitch = headroll * ((float) Math.PI / 180F);
         this.hood.copyTransform(this.head);
+        this.bag.pitch = (float) Math.toRadians(0F);
+        this.bag.pivotY = 0;
+        this.bag.pivotZ = 0;
+        this.leftArm.pivotZ = 0;
+        this.leftArm.pivotY = 17;
+        this.rightArm.pivotZ = 0;
+        this.rightArm.pivotY = 17;
 
         if(this.handSwingProgress > 0.0F)
         {
@@ -123,6 +130,20 @@ public class GoblinTraderModel<G extends AbstractGoblinEntity> extends Composite
         {
             this.rightLeg.yaw = (float) Math.toRadians(0);
             this.leftLeg.yaw = (float) Math.toRadians(0);
+        }
+
+        if(entity.isRaining() && !entity.isStunned() && !entity.isUsingItem()){
+            this.rightArm.pitch = (float) Math.toRadians(-140F);
+            this.rightArm.yaw = (float) Math.toRadians(-20F);
+            this.leftArm.pitch = (float) Math.toRadians(-140F);
+            this.leftArm.yaw = (float) Math.toRadians(20F);
+            this.bag.pitch = (float) Math.toRadians(130F);
+            this.bag.pivotY = -3;
+            this.bag.pivotZ = -3;
+            this.leftArm.pivotZ = -3;
+            this.leftArm.pivotY = 15;
+            this.rightArm.pivotZ = -3;
+            this.rightArm.pivotY = 15;
         }
     }
 

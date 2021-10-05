@@ -51,6 +51,7 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
     private int fallCounter;
     private static final TrackedData<? super Float> STUN_ROTATION = DataTracker.registerData(AbstractGoblinEntity.class, TrackedDataHandlerRegistry.FLOAT);
     private static final TrackedData<? super Boolean> STUNNED = DataTracker.registerData(AbstractGoblinEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
+    private static final TrackedData<? super Boolean> RAINING = DataTracker.registerData(AbstractGoblinEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
 
     //register Goblin to Exist
     public AbstractGoblinEntity(EntityType<? extends MerchantEntity> entityType, World world) {
@@ -253,6 +254,7 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
         super.initDataTracker();
         this.dataTracker.startTracking(STUNNED, false);
         this.dataTracker.startTracking(STUN_ROTATION, 0F);
+        this.dataTracker.startTracking(RAINING, false);
     }
 
     private float getStunRotation(@Nullable Entity entity)
@@ -268,6 +270,11 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
     public float getStunRotation()
     {
         return (float) this.dataTracker.get(STUN_ROTATION);
+    }
+
+    public boolean isRaining()
+    {
+        return (boolean) this.dataTracker.get(RAINING);
     }
 
 
@@ -289,6 +296,11 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
         } else {
             this.fallCounter = 0;
         }
+        if (this.world.isRaining()){
+            this.dataTracker.set(RAINING, true);
+        }
+        else
+        {this.dataTracker.set(RAINING, false);}
 
         super.tick();
     }
