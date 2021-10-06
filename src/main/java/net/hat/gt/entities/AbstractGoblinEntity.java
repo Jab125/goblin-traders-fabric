@@ -282,9 +282,6 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
             if (this.stunDelay == 0) {
                 this.dataTracker.set(STUNNED, false);
                 this.world.playSound(null, this.getX(), this.getY(), this.getZ(), ModSounds.ANNOYED_GRUNT, SoundCategory.NEUTRAL, 1.0F, 0.9F + this.getRandom().nextFloat() * 0.2F);
-                if (((PlayerEntity) Objects.requireNonNull(this.getAttacker())).isCreative()){
-                    this.setAttacker(null);
-                }
             }
         }
         if ((boolean) this.dataTracker.get(STUNNED)) {
