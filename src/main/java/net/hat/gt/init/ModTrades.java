@@ -75,14 +75,21 @@ public class ModTrades {
                         new TradeWithoutEmerald(Items.EMERALD, 32, Items.MUSIC_DISC_CHIRP, 1, 50),
                         new TradeWithoutEmerald(Items.EMERALD, 32, Items.MUSIC_DISC_MELLOHI, 1, 50),
                         new TradeWithoutEmerald(Items.EMERALD, 32, Items.MUSIC_DISC_STAL, 1, 50),
-                        new SellEnchantedItem(Items.FISHING_ROD, 1, Items.ENCHANTED_BOOK, 1, Enchantments.LUCK_OF_THE_SEA, 3, Items.FISHING_ROD, Enchantments.LUCK_OF_THE_SEA, 5, 2, 100),
-                        new SellEnchantedItem(Items.FISHING_ROD, 1, Items.ENCHANTED_BOOK, 1, Enchantments.LURE, 3, Items.FISHING_ROD, Enchantments.LURE, 5, 2, 100)
+                        new SellEnchantedItem(Items.FISHING_ROD, 1, Items.ENCHANTED_BOOK, 1, Enchantments.LUCK_OF_THE_SEA, 3, Items.FISHING_ROD, Enchantments.LUCK_OF_THE_SEA, 5, 1, 200),
+                        new SellEnchantedItem(Items.FISHING_ROD, 1, Items.ENCHANTED_BOOK, 1, Enchantments.LURE, 3, Items.FISHING_ROD, Enchantments.LURE, 5, 1, 200),
+                        new SellEnchantedItem(Items.DIAMOND_PICKAXE, 1, Items.ENCHANTED_BOOK, 1, Enchantments.EFFICIENCY, 5, Items.DIAMOND_PICKAXE, Enchantments.EFFICIENCY, 6, 1, 200),
+                        new SellEnchantedItem(Items.DIAMOND_PICKAXE, 1, Items.ENCHANTED_BOOK, 1, Enchantments.UNBREAKING, 3, Items.DIAMOND_PICKAXE, Enchantments.UNBREAKING, 4, 1, 200),
+                        new SellEnchantedItem(Items.DIAMOND_PICKAXE, 1, Items.ENCHANTED_BOOK, 1, Enchantments.FORTUNE, 3, Items.DIAMOND_PICKAXE, Enchantments.FORTUNE, 4, 1, 200),
+                        new SellEnchantedItem(Items.DIAMOND_AXE, 1, Items.ENCHANTED_BOOK, 1, Enchantments.UNBREAKING, 3, Items.DIAMOND_AXE, Enchantments.UNBREAKING, 4, 1, 200),
+                        new SellEnchantedItem(Items.DIAMOND_AXE, 1, Items.ENCHANTED_BOOK, 1, Enchantments.EFFICIENCY, 5, Items.DIAMOND_AXE, Enchantments.EFFICIENCY, 6, 1, 200),
+                        new SellEnchantedItem(Items.DIAMOND_SHOVEL, 1, Items.ENCHANTED_BOOK, 1, Enchantments.UNBREAKING, 3, Items.DIAMOND_SHOVEL, Enchantments.UNBREAKING, 4, 1, 200),
+                        new SellEnchantedItem(Items.DIAMOND_SHOVEL, 1, Items.ENCHANTED_BOOK, 1, Enchantments.EFFICIENCY, 5, Items.DIAMOND_SHOVEL, Enchantments.EFFICIENCY, 6, 1, 200),
                 /* ************************************************************************************** *
                  *                                    LEGENDARY                                           *
                  * ************************************************************************************** */
 
                 }, 4, new TradeOffers.Factory[]{
-                        new SellEnchantedItem(Items.NETHER_STAR, 1, Items.DIAMOND_PICKAXE, 1, null, 0, Items.DIAMOND_PICKAXE, Enchantments.FORTUNE, 5, Enchantments.UNBREAKING, 4, 1, 500)
+                        new SellEnchantedItem(Items.DRAGON_HEAD, 5, Items.DIAMOND_PICKAXE, 1, null, 0, Items.DIAMOND_PICKAXE, Enchantments.FORTUNE, 5, Enchantments.UNBREAKING, 4, 1, 500)
                 }
                 ));
         VEIN_GOBLIN_TRADER_TRADES = copyToFastUtilMap(ImmutableMap.of(
@@ -107,43 +114,35 @@ public class ModTrades {
                          * ************************************************************************************** */
                 }, 3, new TradeOffers.Factory[]{
 
-                        new SellEnchantedItem(Items.DIAMOND_SWORD, 1, Items.ENCHANTED_BOOK, 1, null, 0, Items.DIAMOND_SWORD,
-                                Enchantments.SHARPNESS, 5,
-                                Enchantments.LOOTING, 3,
-                                Enchantments.SWEEPING, 3,
-                                Enchantments.FIRE_ASPECT, 2,
-                                Enchantments.KNOCKBACK, 2,
-                                Enchantments.BANE_OF_ARTHROPODS, 5,
-                                1, 500),
-                        new SellEnchantedItem(Items.DIAMOND_HELMET, 1, Items.ENCHANTED_BOOK, 1, null, 0, Items.DIAMOND_HELMET,
-                                Enchantments.BLAST_PROTECTION, 4,
-                                Enchantments.FIRE_PROTECTION, 4,
-                                Enchantments.PROJECTILE_PROTECTION, 4,
-                                Enchantments.PROTECTION, 4,
-                                Enchantments.UNBREAKING, 3,
-                                1, 100),
-                        new SellEnchantedItem(Items.DIAMOND_CHESTPLATE, 1, Items.ENCHANTED_BOOK, 1, null, 0, Items.DIAMOND_CHESTPLATE,
-                                Enchantments.BLAST_PROTECTION, 4,
-                                Enchantments.FIRE_PROTECTION, 4,
-                                Enchantments.PROJECTILE_PROTECTION, 4,
-                                Enchantments.PROTECTION, 4,
-                                Enchantments.UNBREAKING, 3,
-                                1, 100),
-                        new SellEnchantedItem(Items.DIAMOND_LEGGINGS, 1, Items.ENCHANTED_BOOK, 1, null, 0, Items.DIAMOND_LEGGINGS,
-                                Enchantments.BLAST_PROTECTION, 4,
-                                Enchantments.FIRE_PROTECTION, 4,
-                                Enchantments.PROJECTILE_PROTECTION, 4,
-                                Enchantments.PROTECTION, 4,
-                                Enchantments.UNBREAKING, 3,
-                                1, 100),
-                        new SellEnchantedItem(Items.DIAMOND_BOOTS, 1, Items.ENCHANTED_BOOK, 1, null, 0, Items.DIAMOND_BOOTS,
-                                Enchantments.BLAST_PROTECTION, 4,
-                                Enchantments.FIRE_PROTECTION, 4,
-                                Enchantments.PROJECTILE_PROTECTION, 4,
-                                Enchantments.PROTECTION, 4,
-                                Enchantments.UNBREAKING, 3,
-                                1, 100),
+                        new SellEnchantedItem(Items.DIAMOND_SWORD, 1, Items.ENCHANTED_BOOK, 1, Enchantments.SHARPNESS, 5, Items.DIAMOND_SWORD, Enchantments.SHARPNESS, 6, 1, 100),
+                        new SellEnchantedItem(Items.DIAMOND_SWORD, 1, Items.ENCHANTED_BOOK, 1, Enchantments.BANE_OF_ARTHROPODS, 5, Items.DIAMOND_SWORD, Enchantments.BANE_OF_ARTHROPODS, 6, 1, 100),
+                        new SellEnchantedItem(Items.DIAMOND_SWORD, 1, Items.ENCHANTED_BOOK, 1, Enchantments.FIRE_ASPECT, 2, Items.DIAMOND_SWORD, Enchantments.FIRE_ASPECT, 3, 1, 100),
+                        new SellEnchantedItem(Items.DIAMOND_SWORD, 1, Items.ENCHANTED_BOOK, 1, Enchantments.LOOTING, 3, Items.DIAMOND_SWORD, Enchantments.LOOTING, 4, 1, 100),
+                        new SellEnchantedItem(Items.DIAMOND_SWORD, 1, Items.ENCHANTED_BOOK, 1, Enchantments.SWEEPING, 3, Items.DIAMOND_SWORD, Enchantments.SHARPNESS, 4, 1, 100),
 
+                        new SellEnchantedItem(Items.DIAMOND_HELMET, 1, Items.ENCHANTED_BOOK, 1, Enchantments.BLAST_PROTECTION, 4, Items.DIAMOND_HELMET, Enchantments.BLAST_PROTECTION, 5, 1, 100),
+                        new SellEnchantedItem(Items.DIAMOND_HELMET, 1, Items.ENCHANTED_BOOK, 1, Enchantments.FIRE_PROTECTION, 4, Items.DIAMOND_HELMET, Enchantments.FIRE_PROTECTION, 5, 1, 100),
+                        new SellEnchantedItem(Items.DIAMOND_HELMET, 1, Items.ENCHANTED_BOOK, 1, Enchantments.PROJECTILE_PROTECTION, 4, Items.DIAMOND_HELMET, Enchantments.PROJECTILE_PROTECTION, 5, 1, 100),
+                        new SellEnchantedItem(Items.DIAMOND_HELMET, 1, Items.ENCHANTED_BOOK, 1, Enchantments.PROTECTION, 4, Items.DIAMOND_HELMET, Enchantments.PROTECTION, 5, 1, 100),
+                        new SellEnchantedItem(Items.DIAMOND_HELMET, 1, Items.ENCHANTED_BOOK, 1, Enchantments.UNBREAKING, 3, Items.DIAMOND_HELMET, Enchantments.UNBREAKING, 4, 1, 100),
+
+                        new SellEnchantedItem(Items.DIAMOND_CHESTPLATE, 1, Items.ENCHANTED_BOOK, 1, Enchantments.BLAST_PROTECTION, 4, Items.DIAMOND_CHESTPLATE, Enchantments.BLAST_PROTECTION, 5, 1, 100),
+                        new SellEnchantedItem(Items.DIAMOND_CHESTPLATE, 1, Items.ENCHANTED_BOOK, 1, Enchantments.FIRE_PROTECTION, 4, Items.DIAMOND_CHESTPLATE, Enchantments.FIRE_PROTECTION, 5, 1, 100),
+                        new SellEnchantedItem(Items.DIAMOND_CHESTPLATE, 1, Items.ENCHANTED_BOOK, 1, Enchantments.PROJECTILE_PROTECTION, 4, Items.DIAMOND_CHESTPLATE, Enchantments.PROJECTILE_PROTECTION, 5, 1, 100),
+                        new SellEnchantedItem(Items.DIAMOND_CHESTPLATE, 1, Items.ENCHANTED_BOOK, 1, Enchantments.PROTECTION, 4, Items.DIAMOND_CHESTPLATE, Enchantments.PROTECTION, 5, 1, 100),
+                        new SellEnchantedItem(Items.DIAMOND_CHESTPLATE, 1, Items.ENCHANTED_BOOK, 1, Enchantments.UNBREAKING, 3, Items.DIAMOND_CHESTPLATE, Enchantments.UNBREAKING, 4, 1, 100),
+
+                        new SellEnchantedItem(Items.DIAMOND_LEGGINGS, 1, Items.ENCHANTED_BOOK, 1, Enchantments.BLAST_PROTECTION, 4, Items.DIAMOND_LEGGINGS, Enchantments.BLAST_PROTECTION, 5, 1, 100),
+                        new SellEnchantedItem(Items.DIAMOND_LEGGINGS, 1, Items.ENCHANTED_BOOK, 1, Enchantments.FIRE_PROTECTION, 4, Items.DIAMOND_LEGGINGS, Enchantments.FIRE_PROTECTION, 5, 1, 100),
+                        new SellEnchantedItem(Items.DIAMOND_LEGGINGS, 1, Items.ENCHANTED_BOOK, 1, Enchantments.PROJECTILE_PROTECTION, 4, Items.DIAMOND_LEGGINGS, Enchantments.PROJECTILE_PROTECTION, 5, 1, 100),
+                        new SellEnchantedItem(Items.DIAMOND_LEGGINGS, 1, Items.ENCHANTED_BOOK, 1, Enchantments.PROTECTION, 4, Items.DIAMOND_LEGGINGS, Enchantments.PROTECTION, 5, 1, 100),
+                        new SellEnchantedItem(Items.DIAMOND_LEGGINGS, 1, Items.ENCHANTED_BOOK, 1, Enchantments.UNBREAKING, 3, Items.DIAMOND_LEGGINGS, Enchantments.UNBREAKING, 4, 1, 100),
+
+                        new SellEnchantedItem(Items.DIAMOND_BOOTS, 1, Items.ENCHANTED_BOOK, 1, Enchantments.BLAST_PROTECTION, 4, Items.DIAMOND_BOOTS, Enchantments.BLAST_PROTECTION, 5, 1, 100),
+                        new SellEnchantedItem(Items.DIAMOND_BOOTS, 1, Items.ENCHANTED_BOOK, 1, Enchantments.FIRE_PROTECTION, 4, Items.DIAMOND_BOOTS, Enchantments.FIRE_PROTECTION, 5, 1, 100),
+                        new SellEnchantedItem(Items.DIAMOND_BOOTS, 1, Items.ENCHANTED_BOOK, 1, Enchantments.PROJECTILE_PROTECTION, 4, Items.DIAMOND_BOOTS, Enchantments.PROJECTILE_PROTECTION, 5, 1, 100),
+                        new SellEnchantedItem(Items.DIAMOND_BOOTS, 1, Items.ENCHANTED_BOOK, 1, Enchantments.PROTECTION, 4, Items.DIAMOND_BOOTS, Enchantments.PROTECTION, 5, 1, 100),
+                        new SellEnchantedItem(Items.DIAMOND_BOOTS, 1, Items.ENCHANTED_BOOK, 1, Enchantments.UNBREAKING, 3, Items.DIAMOND_BOOTS, Enchantments.UNBREAKING, 4, 1, 100),
 
                         new TradeWithoutEmeraldPotions(Items.EMERALD, 15, ModPotions.EXTENDED_FIRE_RESISTANCE, 8, 200),
                         new TradeWithoutEmeraldPotions(Items.EMERALD, 15, ModPotions.EXTENDED_SLOW_FALLING, 8, 200),
@@ -170,7 +169,7 @@ public class ModTrades {
                          *                                    LEGENDARY                                           *
                          * ************************************************************************************** */
                 }, 5, new TradeOffers.Factory[]{
-                        new SellEnchantedItem(Items.DRAGON_HEAD, 1, Items.DIAMOND_SWORD, 1, null, 0, Items.DIAMOND_SWORD, Enchantments.SHARPNESS, 7, Enchantments.UNBREAKING, 4, 1, 500)
+                        new SellEnchantedItem(Items.DRAGON_HEAD, 5, Items.DIAMOND_SWORD, 1, null, 0, Items.DIAMOND_SWORD, Enchantments.SHARPNESS, 7, Enchantments.UNBREAKING, 4, 1, 500)
                         // Two and a half-hearts of dmg to a player not wearing armour
                 }
         ));

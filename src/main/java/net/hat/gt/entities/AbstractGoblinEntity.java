@@ -4,10 +4,7 @@ import net.hat.gt.GobT;
 import net.hat.gt.entities.ai.*;
 import net.hat.gt.init.ModSounds;
 import net.hat.gt.init.ModStats;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.ExperienceOrbEntity;
-import net.minecraft.entity.Npc;
+import net.minecraft.entity.*;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.data.DataTracker;
@@ -33,13 +30,14 @@ import net.minecraft.util.UseAction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.village.TradeOffer;
+import net.minecraft.world.LightType;
+import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldAccess;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.HashSet;
-import java.util.Objects;
-import java.util.Set;
-import java.util.UUID;
+import java.util.*;
+import java.util.concurrent.ThreadLocalRandom;
 
 public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc {
     @Nullable
@@ -301,10 +299,31 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
         }
         else
         {this.dataTracker.set(RAINING, false);}
+        if(!this.world.isClient)
+        {
+            this.handleDespawn();
+        }
 
         super.tick();
     }
 
+    public void setDespawnDelay(int despawnDelay)
+    {
+        this.despawnDelay = despawnDelay;
+    }
+
+    public int getDespawnDelay()
+    {
+        return this.despawnDelay;
+    }
+
+    private void handleDespawn()
+    {
+        if(this.despawnDelay > 0 && !this.hasCustomer() && --this.despawnDelay == 0)
+        {
+            this.remove(RemovalReason.KILLED);
+        }
+    }
 
     public abstract ItemStack getFavouriteFood();
 

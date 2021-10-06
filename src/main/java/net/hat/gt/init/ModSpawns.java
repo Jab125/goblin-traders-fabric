@@ -3,6 +3,7 @@ package net.hat.gt.init;
 
 import com.google.common.collect.ImmutableMap;
 import net.fabricmc.fabric.api.event.registry.RegistryEntryAddedCallback;
+import net.hat.gt.GobT;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.util.collection.Pool;
 import net.minecraft.util.registry.BuiltinRegistries;
@@ -23,8 +24,17 @@ public class ModSpawns {
         RegistryEntryAddedCallback.event(BuiltinRegistries.BIOME).register((i, identifier, biome) -> ModSpawns.addSpawnEntries(biome));
     }
     private static void addSpawnEntries(Biome biome) {
-        if (biome.getCategory().equals(Biome.Category.NETHER)) {
-            addMobSpawnToBiome(biome, SpawnGroup.MONSTER, new SpawnSettings.SpawnEntry(ModEntities.VEIN_GOBLIN_TRADER, 1, 1, 1));
+        if (biome.getCategory().equals(Biome.Category.NETHER) && GobT.config.VEIN_GOBLINS_CAN_SPAWN) {
+            addMobSpawnToBiome(biome, SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(ModEntities.VEIN_GOBLIN_TRADER, GobT.config.VEIN_GOBLIN_SPAWN_RATE, 1, GobT.config.VEIN_GOBLIN_GROUP_SIZE));
+        }
+               if (!biome.getCategory().equals(Biome.Category.NETHER)
+                && !biome.getCategory().equals(Biome.Category.THEEND)
+                && !biome.getCategory().equals(Biome.Category.MESA)
+                && !biome.getCategory().equals(Biome.Category.SAVANNA)
+                && !biome.getCategory().equals(Biome.Category.DESERT)
+                       && GobT.config.GOBLINS_CAN_SPAWN
+        ) {
+            addMobSpawnToBiome(biome, SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(ModEntities.GOBLIN_TRADER, GobT.config.GOBLIN_SPAWN_RATE, 1, GobT.config.GOBLIN_GROUP_SIZE));
         }
     }
     private static void addMobSpawnToBiome(Biome biome, SpawnGroup classification, SpawnSettings.SpawnEntry... spawners) {

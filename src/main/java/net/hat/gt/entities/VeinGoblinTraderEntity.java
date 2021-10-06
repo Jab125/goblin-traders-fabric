@@ -1,9 +1,11 @@
 package net.hat.gt.entities;
 
+import net.hat.gt.GobT;
 import net.hat.gt.init.ModTrades;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
+import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.passive.MerchantEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -49,7 +51,7 @@ public class VeinGoblinTraderEntity extends AbstractGoblinEntity{
             this.fillRecipesFromPool(tradeOfferList, factorys2, ThreadLocalRandom.current().nextInt(1, 2 + 1));
             this.fillRecipesFromPool(tradeOfferList, factorys3, ThreadLocalRandom.current().nextInt(1, 2 + 1));
             this.fillRecipesFromPool(tradeOfferList, factorys4, ThreadLocalRandom.current().nextInt(0, 1 + 1));
-            this.fillRecipesFromPool(tradeOfferList, factorys5, ThreadLocalRandom.current().nextInt(-10, 1 + 1));
+            this.fillRecipesFromPool(tradeOfferList, factorys5, ThreadLocalRandom.current().nextInt(-15, 1 + 1));
         }
     }
 
@@ -67,5 +69,9 @@ public class VeinGoblinTraderEntity extends AbstractGoblinEntity{
         if (ThreadLocalRandom.current().nextInt(0, 2 + 1) == 2) {
             this.world.addParticle(ParticleTypes.FLAME, this.getX() - 0.5 + this.getRandom().nextDouble(), this.getY() + 0.5 - 0.5 + this.getRandom().nextDouble(), this.getZ() - 0.5 + this.getRandom().nextDouble(), 0, 0, 0);
         }
+    }
+    public static boolean canVeinGoblinSpawn(EntityType<? extends MobEntity> type, WorldAccess world, SpawnReason spawnReason, BlockPos pos, Random random) {
+        BlockPos blockPos = pos.down();
+        return spawnReason == SpawnReason.SPAWNER || ThreadLocalRandom.current().nextInt(1, GobT.config.VEIN_GOBLIN_SPAWN_RATE_D + 1) == 1;
     }
 }

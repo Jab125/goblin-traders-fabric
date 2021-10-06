@@ -1,5 +1,7 @@
 package net.hat.gt.mixin;
 
+import net.hat.gt.entities.AbstractGoblinEntity;
+import net.hat.gt.entities.GoblinTraderEntity;
 import net.hat.gt.entities.VeinGoblinTraderEntity;
 import net.hat.gt.init.ModEntities;
 import net.minecraft.entity.EntityType;
@@ -18,9 +20,9 @@ public abstract class SpawnRestrictionMixin {
 
     static {
         register(ModEntities.GOBLIN_TRADER, SpawnRestriction.Location.ON_GROUND,
-                Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, MobEntity::canMobSpawn);
+                Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, GoblinTraderEntity::canGoblinSpawn);
         register(ModEntities.VEIN_GOBLIN_TRADER, SpawnRestriction.Location.ON_GROUND,
-                Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, MobEntity::canMobSpawn);
+                Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, VeinGoblinTraderEntity::canVeinGoblinSpawn);
     }
 }
 
