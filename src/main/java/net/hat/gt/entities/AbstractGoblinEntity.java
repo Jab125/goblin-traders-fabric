@@ -291,7 +291,7 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
         } else {
             this.fallCounter = 0;
         }
-        if (this.world.isRaining()){
+        if (this.world.isRaining() && this.isBeingRainedOn()){
             this.dataTracker.set(RAINING, true);
         }
         else
@@ -302,6 +302,11 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
         }
 
         super.tick();
+    }
+
+    private boolean isBeingRainedOn() {
+        BlockPos blockPos = this.getBlockPos();
+        return this.world.hasRain(blockPos) || this.world.hasRain(new BlockPos(blockPos.getX(), this.getBoundingBox().maxY, blockPos.getZ()));
     }
 
     public void setDespawnDelay(int despawnDelay)
