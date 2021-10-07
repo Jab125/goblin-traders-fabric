@@ -35,7 +35,7 @@ public class FollowPotentialCustomerGoal extends Goal
             return false;
         }
         this.findCustomer();
-        return this.potentialCustomer != null && this.potentialCustomer.isAlive() && !this.entity.isPreviousCustomer(this.potentialCustomer) && !this.potentialCustomer.isTouchingWater();
+        return this.potentialCustomer != null && this.potentialCustomer.isAlive() && this.entity.isPreviousCustomer(this.potentialCustomer) && !this.potentialCustomer.isTouchingWater();
     }
 
     @Override
@@ -52,7 +52,7 @@ public class FollowPotentialCustomerGoal extends Goal
     @Override
     public boolean shouldContinue()
     {
-        return this.potentialCustomer != null && this.potentialCustomer.isAlive() && this.entity.getCurrentCustomer() == null && !this.potentialCustomer.isSpectator() && !this.potentialCustomer.isCreative() && !this.potentialCustomer.isTouchingWater() && !this.entity.isPreviousCustomer(this.potentialCustomer) && this.entity.distanceTo(this.potentialCustomer) <= 10.0D && this.timeout > 0;
+        return this.potentialCustomer != null && this.potentialCustomer.isAlive() && this.entity.getCurrentCustomer() == null && !this.potentialCustomer.isSpectator() && !this.potentialCustomer.isCreative() && !this.potentialCustomer.isTouchingWater() && this.entity.isPreviousCustomer(this.potentialCustomer) && this.entity.distanceTo(this.potentialCustomer) <= 10.0D && this.timeout > 0;
     }
 
     @Override

@@ -4,7 +4,10 @@ import net.hat.gt.GobT;
 import net.hat.gt.entities.ai.*;
 import net.hat.gt.init.ModSounds;
 import net.hat.gt.init.ModStats;
-import net.minecraft.entity.*;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ExperienceOrbEntity;
+import net.minecraft.entity.Npc;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.data.DataTracker;
@@ -30,14 +33,12 @@ import net.minecraft.util.UseAction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.village.TradeOffer;
-import net.minecraft.world.LightType;
-import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.World;
-import net.minecraft.world.WorldAccess;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.*;
-import java.util.concurrent.ThreadLocalRandom;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.UUID;
 
 public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc {
     @Nullable
@@ -230,7 +231,7 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
 
     public boolean isPreviousCustomer(PlayerEntity player)
     {
-        return this.tradedCustomers.contains(player.getUuid());
+        return !this.tradedCustomers.contains(player.getUuid());
     }
 
     @Override
@@ -307,16 +308,6 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
     private boolean isBeingRainedOn() {
         BlockPos blockPos = this.getBlockPos();
         return this.world.hasRain(blockPos) || this.world.hasRain(new BlockPos(blockPos.getX(), this.getBoundingBox().maxY, blockPos.getZ()));
-    }
-
-    public void setDespawnDelay(int despawnDelay)
-    {
-        this.despawnDelay = despawnDelay;
-    }
-
-    public int getDespawnDelay()
-    {
-        return this.despawnDelay;
     }
 
     private void handleDespawn()
