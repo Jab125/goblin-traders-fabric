@@ -12,7 +12,6 @@ import net.hat.gt.init.ModEntities;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.util.Identifier;
 
-@SuppressWarnings("deprecation")
 @Environment(EnvType.CLIENT)
 public class GobTClient implements ClientModInitializer {
     public static final EntityModelLayer GOBLIN_MODEL_LAYER = new EntityModelLayer(new Identifier("goblintraders", "cube"), "goblin_render_layer");
