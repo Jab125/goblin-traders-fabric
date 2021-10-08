@@ -4,7 +4,6 @@
   "package": "net.hat.gt.mixin",
   "compatibilityLevel": "JAVA_16",
   "mixins": [
-    "DefaultBiomeFeaturesMixin",
     "SpawnRestrictionMixin",
     "TradeOutputSlotMixin"
   ],

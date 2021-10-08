@@ -7,7 +7,6 @@ import net.minecraft.entity.ai.goal.Goal;
 import net.minecraft.entity.ai.pathing.Path;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.Comparator;
 import java.util.EnumSet;
@@ -51,7 +50,6 @@ public class FindFavouriteFoodGoal extends Goal
         return this.itemEntity.isAlive() && this.entity.isAlive() && this.entity.getNavigation().findPathTo(this.itemEntity, 0) != null;
     }
 
-    @Nullable
     private void findFavouriteFood()
     {
         List<ItemEntity> players = this.entity.world.getEntitiesByClass(ItemEntity.class, this.entity.getBoundingBox().expand(10), itemEntity -> itemEntity.getStack().getItem() == this.entity.getFavouriteFood().getItem());

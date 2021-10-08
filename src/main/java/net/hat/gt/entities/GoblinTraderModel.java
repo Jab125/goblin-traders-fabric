@@ -15,6 +15,7 @@ import net.minecraft.util.math.MathHelper;
 @Environment(EnvType.CLIENT)
                             //DON'T DELETE G!!!
                             //WE NEED THE G - backup - <G extends AbstractGoblinEntity>
+@SuppressWarnings("unused") // Required for the query, IntelliJ marks it though.
 public class GoblinTraderModel<G extends AbstractGoblinEntity> extends CompositeEntityModel<AbstractGoblinEntity> implements ModelWithArms, ModelWithHead {
     private final ModelPart root;
     private final ModelPart head;
@@ -26,7 +27,7 @@ public class GoblinTraderModel<G extends AbstractGoblinEntity> extends Composite
     private final ModelPart leftArm;
     private final ModelPart leftLeg;
     private final ModelPart rightLeg;
-    private final ModelPart nose;
+    private final ModelPart nose; // leaving this non-coverted for future use
     private final ModelPart bag;
 
     public GoblinTraderModel(ModelPart root) {
@@ -119,7 +120,6 @@ public class GoblinTraderModel<G extends AbstractGoblinEntity> extends Composite
         if(entity.isUsingItem())
         {
             double rotateX = Math.toRadians(-90F + 5F * Math.sin(animationProgress));
-            this.rightArm.pitch = (float) rotateX;
             this.leftArm.pitch = (float) rotateX;
             this.rightArm.pitch = (float) Math.toRadians(-90F);
             this.rightLeg.yaw = (float) Math.toRadians(25F);

@@ -43,7 +43,10 @@ import java.util.UUID;
 public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc {
     @Nullable
     private BlockPos wanderTarget;
+
+    @SuppressWarnings("MismatchedQueryAndUpdateOfCollection") // this is popping up as an error incorrectly, this is the fix.
     private final Set<UUID> tradedCustomers = new HashSet<>();
+
     private int despawnDelay;
 
     private int stunDelay;
@@ -67,7 +70,7 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
         this.goalSelector.add(2, new AttackRevengeTargetGoal(this));
         this.goalSelector.add(3, new EatFavouriteFoodGoal(this));
         this.goalSelector.add(4, new FindFavouriteFoodGoal(this));
-        this.goalSelector.add(5, new TemptGoal(this, 0.5, Ingredient.ofItems(this.getFavouriteFood().getItem()), false));
+        this.goalSelector.add(5, new TemptGoal(this, 0.45F, Ingredient.ofItems(this.getFavouriteFood().getItem()), false));
         this.goalSelector.add(6, new FollowPotentialCustomerGoal(this));
         this.goalSelector.add(7, new WanderAroundFarGoal(this, 0.35D));
         this.goalSelector.add(8, new LookAtEntityGoal(this, MobEntity.class, 8.0F));

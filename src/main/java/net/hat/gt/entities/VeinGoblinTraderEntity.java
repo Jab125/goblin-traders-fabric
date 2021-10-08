@@ -2,7 +2,6 @@ package net.hat.gt.entities;
 
 import net.hat.gt.GobT;
 import net.hat.gt.init.ModTrades;
-import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.mob.MobEntity;
@@ -24,8 +23,6 @@ public class VeinGoblinTraderEntity extends AbstractGoblinEntity{
     public VeinGoblinTraderEntity(EntityType<? extends MerchantEntity> entityType, World world) {
         super(entityType, world);
     }
-
-    public static boolean goblinsCanSpawn = true;
 
     @Override
     public ItemStack getFavouriteFood() {
@@ -70,6 +67,7 @@ public class VeinGoblinTraderEntity extends AbstractGoblinEntity{
             this.world.addParticle(ParticleTypes.FLAME, this.getX() - 0.5 + this.getRandom().nextDouble(), this.getY() + 0.5 - 0.5 + this.getRandom().nextDouble(), this.getZ() - 0.5 + this.getRandom().nextDouble(), 0, 0, 0);
         }
     }
+    @SuppressWarnings("unused") // Required for the query, IntelliJ marks it though.
     public static boolean canVeinGoblinSpawn(EntityType<? extends MobEntity> type, WorldAccess world, SpawnReason spawnReason, BlockPos pos, Random random) {
         BlockPos blockPos = pos.down();
         return spawnReason == SpawnReason.SPAWNER || ThreadLocalRandom.current().nextInt(1, GobT.config.VEIN_GOBLIN_SPAWN_RATE_D + 1) == 1;

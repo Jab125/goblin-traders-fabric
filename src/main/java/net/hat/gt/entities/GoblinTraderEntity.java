@@ -23,8 +23,6 @@ public class GoblinTraderEntity extends AbstractGoblinEntity{
         super(entityType, world);
     }
 
-    public static boolean goblinsCanSpawn = true;
-
     @Override
     public ItemStack getFavouriteFood() {
         return new ItemStack(Items.APPLE);
@@ -50,6 +48,8 @@ public class GoblinTraderEntity extends AbstractGoblinEntity{
             this.fillRecipesFromPool(tradeOfferList, factorys4, ThreadLocalRandom.current().nextInt(-15, 1 + 1));
         }
     }
+
+    @SuppressWarnings("unused") // Required for the query, IntelliJ marks it though.
     public static boolean canGoblinSpawn(EntityType<? extends MobEntity> type, WorldAccess world, SpawnReason spawnReason, BlockPos pos, Random random) {
         BlockPos blockPos = pos.down();
         return spawnReason == SpawnReason.SPAWNER || ThreadLocalRandom.current().nextInt(1, GobT.config.GOBLIN_SPAWN_RATE_D + 1) == 1;

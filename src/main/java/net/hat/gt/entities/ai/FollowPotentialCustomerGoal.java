@@ -3,7 +3,6 @@ package net.hat.gt.entities.ai;
 import net.hat.gt.entities.AbstractGoblinEntity;
 import net.minecraft.entity.ai.goal.Goal;
 import net.minecraft.entity.player.PlayerEntity;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.Comparator;
 import java.util.EnumSet;
@@ -12,7 +11,7 @@ import java.util.List;
 public class FollowPotentialCustomerGoal extends Goal
 {
     private PlayerEntity potentialCustomer;
-    private AbstractGoblinEntity entity;
+    private final AbstractGoblinEntity entity;
     private int coolDown = 0;
     private int timeout = 600;
 
@@ -64,7 +63,6 @@ public class FollowPotentialCustomerGoal extends Goal
         this.coolDown = 2400;
     }
 
-    @Nullable
     private void findCustomer()
     {
         List<PlayerEntity> players = this.entity.world.getEntitiesByClass(PlayerEntity.class, this.entity.getBoundingBox().expand(10), playerEntity -> !playerEntity.isCreative() && !playerEntity.isSpectator());
