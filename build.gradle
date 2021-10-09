@@ -41,7 +41,7 @@ processResources {
 }
 
 loom {
-	accessWidenerPath =  file("src/main/resources/modid.accesswidener")
+	accessWidenerPath =  file("src/main/resources/GobTFabric.accesswidener")
 }
 
 tasks.withType(JavaCompile).configureEach {
