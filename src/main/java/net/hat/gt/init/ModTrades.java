@@ -4,12 +4,10 @@ import com.google.common.collect.ImmutableMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.EnchantmentLevelEntry;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.Entity;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemConvertible;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
+import net.minecraft.item.*;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionUtil;
 import net.minecraft.potion.Potions;
@@ -467,7 +465,8 @@ class SellEnchantedItem implements TradeOffers.Factory {
     public TradeOffer create(Entity entity, Random random) {
         ItemStack itemStack = new ItemStack(this.tool.getItem(), 1);
         ItemStack itemStack2 = new ItemStack(this.secondBuy.getItem(), this.secondPrice);
-        if (this.bookEnchant != null) {itemStack2.addEnchantment(this.bookEnchant, this.levelBook);}
+        if (this.bookEnchant != null) {
+            EnchantedBookItem.addEnchantment(itemStack2, new EnchantmentLevelEntry(this.bookEnchant, this.levelBook));}
         itemStack.addEnchantment(this.enchantment1, this.level1);
         if (this.enchantment2 != null) {itemStack.addEnchantment(this.enchantment2, this.level2);}
         if (this.enchantment3 != null) {itemStack.addEnchantment(this.enchantment3, this.level3);}
