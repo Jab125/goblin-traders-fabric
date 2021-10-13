@@ -1,11 +1,9 @@
 package net.hat.gt.entities.ai;
 
-import net.hat.gt.GobT;
 import net.hat.gt.entities.AbstractGoblinEntity;
+import net.hat.gt.util.Util;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
-import net.minecraft.entity.player.PlayerEntity;
-import net.hat.gt.util.Util;
 import net.minecraft.util.Hand;
 
 //TODO: MAKE IT WORK
@@ -17,8 +15,9 @@ public class ExcludeCreativeModeRevengeGoal extends AttackRevengeTargetGoal{
     @Override
     public void tick() {
         LivingEntity revengeTarget = this.entity.getAttacker();
+        assert revengeTarget != null;
         if (Util.isInCreativeMode(revengeTarget)) stop();
-        if(revengeTarget != null && this.entity.getCurrentCustomer() == null)
+        if(this.entity.getCurrentCustomer() == null)
         {
             this.entity.getLookControl().lookAt(revengeTarget, 10.0F, this.entity.getHeadRollingTimeLeft());
             if(this.entity.distanceTo(revengeTarget) >= 2.0D)

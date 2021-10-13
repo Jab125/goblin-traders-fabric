@@ -24,9 +24,7 @@ public class Util {
     public static boolean isInCreativeMode(Entity entity) {
         if (entity.isPlayer()) {
             PlayerEntity playerEntity = (PlayerEntity)entity;
-            if (playerEntity.isCreative()) {
-                return true;
-            }
+            return playerEntity.isCreative();
         }
         return false;
     }
