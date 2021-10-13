@@ -12,7 +12,7 @@ import java.util.EnumSet;
 
 public class AttackRevengeTargetGoal extends Goal
 {
-    private final AbstractGoblinEntity entity;
+    protected final AbstractGoblinEntity entity;
 
     public AttackRevengeTargetGoal(AbstractGoblinEntity entity)
     {
