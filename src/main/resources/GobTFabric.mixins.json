@@ -5,7 +5,9 @@
   "compatibilityLevel": "JAVA_16",
   "mixins": [
     "SpawnRestrictionMixin",
-    "TradeOutputSlotMixin"
+    "TradeOutputSlotMixin",
+    "EnchantmentMixin",
+    "AnvilMenuMixin"
   ],
   "client": [
   ],
