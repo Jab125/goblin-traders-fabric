@@ -1,11 +1,15 @@
 package net.hat.gt.config;
 
+
+import com.jab125.util.Util;
 import me.shedaniel.autoconfig.ConfigData;
 import me.shedaniel.autoconfig.annotation.Config;
 import net.hat.gt.GobT;
 
+
+
 @Config(name = GobT.MODID)
-public class GoblinTradersConfig implements ConfigData{
+public class GoblinTradersConfig implements ConfigData {
     // Settings
     public boolean MAX_ENCHANTMENT_TEXT = true;
     public boolean GOBLIN_HIT_BACK = true;
