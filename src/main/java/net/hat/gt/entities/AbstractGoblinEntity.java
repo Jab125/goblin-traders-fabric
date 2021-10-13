@@ -67,7 +67,7 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
         this.goalSelector.add(1, new FirePanicGoal(this, 0.5F));
         this.goalSelector.add(2, new TradeWithPlayerGoal(this));
         this.goalSelector.add(2, new LookAtCustomerGoal(this));
-        this.goalSelector.add(2, new AttackRevengeTargetGoal(this));
+        this.goalSelector.add(2, new ExcludeCreativeModeRevengeGoal(this));
         this.goalSelector.add(3, new EatFavouriteFoodGoal(this));
         this.goalSelector.add(4, new FindFavouriteFoodGoal(this));
         this.goalSelector.add(5, new TemptGoal(this, 0.45F, Ingredient.ofItems(this.getFavouriteFood().getItem()), false));
