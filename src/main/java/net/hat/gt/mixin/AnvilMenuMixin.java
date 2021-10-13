@@ -1,5 +1,6 @@
 package net.hat.gt.mixin;
 
+
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.item.ItemStack;
 import net.minecraft.screen.AnvilScreenHandler;
@@ -13,6 +14,8 @@ import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 import java.util.Iterator;
 import java.util.Map;
 
+import static com.jab125.util.Util.isOverflowInstalled;
+
 /**
  * Fixes combining tools in an anvil reducing enchantment level to it's max level when the
  * level of the enchantment is higher than it's max level. For example, combining level five
@@ -24,17 +27,18 @@ import java.util.Map;
 @Mixin(AnvilScreenHandler.class)
 public class AnvilMenuMixin
 {
+
     private int maxLevel;
 
     @SuppressWarnings("unchecked")
-    @Inject(method = "updateResult", at = @At(value = "INVOKE", target = "Lnet/minecraft/enchantment/Enchantment;isAcceptableItem(Lnet/minecraft/item/ItemStack;)Z", ordinal = 0), locals = LocalCapture.CAPTURE_FAILHARD)
+    @Inject(method = "updateResult", at = @At(value = "INVOKE", target = "Lnet/minecraft/enchantment/Enchantment;isAcceptableItem(Lnet/minecraft/item/ItemStack;)Z", ordinal = 0), locals = LocalCapture.CAPTURE_FAILSOFT)
     private void beforeCanApply(CallbackInfo ci, ItemStack leftOriginal, int enchantCost, int repairCost, int renameCost, ItemStack leftCopy, ItemStack rightOriginal, Map leftEnchantments, boolean enchantingItem, Map rightEnchantments, boolean combinedEnchants, boolean invalidRepair, Iterator var12, Enchantment enchantment, int leftEnchantmentLevel)//, int combinedEnchantmentLevel)
     {
         int maxLevel = this.getEnchantmentLevel(enchantment);
         int leftLevel = (int) leftEnchantments.getOrDefault(enchantment, 0);
         int rightLevel = (int) rightEnchantments.get(enchantment);
         this.maxLevel = Math.max(rightLevel, leftLevel);
-        if(leftLevel == rightLevel && leftLevel < maxLevel)
+        if(leftLevel == rightLevel && leftLevel < maxLevel && !isOverflowInstalled())
         {
             this.maxLevel = rightLevel + 1;
         }

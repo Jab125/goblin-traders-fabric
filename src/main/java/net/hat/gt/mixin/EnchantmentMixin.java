@@ -1,5 +1,6 @@
 package net.hat.gt.mixin;
 
+import com.jab125.util.Util;
 import net.hat.gt.GobT;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.text.MutableText;
@@ -11,6 +12,8 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
+
+import static com.jab125.util.Util.maxEnchantTextConfig;
 
 // Remapped to yarn by Jab125
 @Mixin(Enchantment.class)
@@ -24,7 +27,7 @@ public class EnchantmentMixin {
     }
     @ModifyVariable(method = "getName", at = @At(value = "RETURN"), index = 2, ordinal = 0)
     private MutableText append(MutableText mutabletext) {
-        if (this.level > this.enchantment.getMaxLevel() && !this.enchantment.isCursed() && GobT.config.MAX_ENCHANTMENT_TEXT) {
+        if (this.level > this.enchantment.getMaxLevel() && !this.enchantment.isCursed() && !maxEnchantTextConfig()) {
             mutabletext.formatted(Formatting.LIGHT_PURPLE);
         }
         return mutabletext;
