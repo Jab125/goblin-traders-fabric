@@ -1,4 +1,4 @@
-package com.jab125.util;
+package net.hat.gt.util;
 
 import net.fabricmc.loader.api.FabricLoader;
 import net.hat.gt.GobT;

@@ -1,5 +1,9 @@
 package net.hat.gt.config;
 
+
+
+import net.hat.gt.util.Util;
+
 import me.shedaniel.autoconfig.ConfigData;
 import me.shedaniel.autoconfig.annotation.Config;
 import net.hat.gt.GobT;
