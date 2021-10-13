@@ -2,6 +2,7 @@ package net.hat.gt.util;
 
 import net.fabricmc.loader.api.FabricLoader;
 import net.hat.gt.GobT;
+import net.hat.gt.entities.ai.ExcludeCreativeModeRevengeGoal;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 
@@ -28,5 +29,11 @@ public class Util {
             }
         }
         return false;
+    }
+    public static boolean isInCreativeModeStop(Entity entity, ExcludeCreativeModeRevengeGoal goal) {
+        if (isInCreativeMode(entity)) {
+            goal.stop();
+        }
+        return isInCreativeMode(entity);
     }
 }
