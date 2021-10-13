@@ -17,6 +17,7 @@
   "text.autoconfig.goblintraders.option.GOBLINS_FALL": "Goblins Fall Over",
   "text.autoconfig.goblintraders.option.GOBLIN_GROUP_SIZE": "Goblin Spawn Max Group Size (RR)",
   "text.autoconfig.goblintraders.option.VEIN_GOBLIN_GROUP_SIZE": "Vein Goblin Max Spawn Group Size (RR)",
+  "text.autoconfig.goblintraders.option.MAX_ENCHANTMENT_TEXT": "Over Max Enchants have purple text",
 
   "item.minecraft.potion.effect.gtextended_water_breathing": "Potion of Water Breathing",
   "item.minecraft.potion.effect.gtextended_fire_resistance": "Potion of Fire Resistance",

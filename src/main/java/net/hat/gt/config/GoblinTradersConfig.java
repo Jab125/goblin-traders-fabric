@@ -7,6 +7,7 @@ import net.hat.gt.GobT;
 @Config(name = GobT.MODID)
 public class GoblinTradersConfig implements ConfigData{
     // Settings
+    public boolean MAX_ENCHANTMENT_TEXT = true;
     public boolean GOBLIN_HIT_BACK = true;
     public boolean GOBLINS_FALL = true;
     public boolean GOBLINS_CAN_SPAWN = true;
