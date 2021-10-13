@@ -1,10 +1,7 @@
 package com.jab125.util;
 
-import com.terraformersmc.modmenu.gui.widget.entries.ModListEntry;
 import net.fabricmc.loader.api.FabricLoader;
 import net.hat.gt.GobT;
-
-import java.util.Collection;
 
 public class Util {
     public static boolean isModInstalled(String modid) {
