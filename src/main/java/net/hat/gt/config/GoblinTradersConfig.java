@@ -1,7 +1,5 @@
 package net.hat.gt.config;
 
-
-import com.jab125.util.Util;
 import me.shedaniel.autoconfig.ConfigData;
 import me.shedaniel.autoconfig.annotation.Config;
 import net.hat.gt.GobT;

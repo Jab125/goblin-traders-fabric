@@ -1,7 +1,5 @@
 package net.hat.gt.mixin;
 
-import com.jab125.util.Util;
-import net.hat.gt.GobT;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
