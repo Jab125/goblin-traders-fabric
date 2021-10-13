@@ -25,7 +25,7 @@ public class EnchantmentMixin {
     }
     @ModifyVariable(method = "getName", at = @At(value = "RETURN"), index = 2, ordinal = 0)
     private MutableText append(MutableText mutabletext) {
-        if (this.level > this.enchantment.getMaxLevel() && !this.enchantment.isCursed() && !maxEnchantTextConfig()) {
+        if (this.level > this.enchantment.getMaxLevel() && !this.enchantment.isCursed() && maxEnchantTextConfig()) {
             mutabletext.formatted(Formatting.LIGHT_PURPLE);
         }
         return mutabletext;
