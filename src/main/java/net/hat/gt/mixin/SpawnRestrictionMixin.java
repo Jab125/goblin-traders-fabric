@@ -1,6 +1,5 @@
 package net.hat.gt.mixin;
 
-import net.hat.gt.entities.AbstractGoblinEntity;
 import net.hat.gt.entities.GoblinTraderEntity;
 import net.hat.gt.entities.VeinGoblinTraderEntity;
 import net.hat.gt.init.ModEntities;
