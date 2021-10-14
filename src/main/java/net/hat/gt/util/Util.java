@@ -47,13 +47,14 @@ public class Util {
         }
         return false;
     }
-<<<<<<< Updated upstream
+
     public static boolean isInCreativeModeStop(Entity entity, ExcludeCreativeModeRevengeGoal goal) {
         if (isInCreativeMode(entity)) {
             goal.stop();
         }
         return isInCreativeMode(entity);
-=======
+
+    }
 
     public static int secondsToTick(double seconds) {
         //System.out.println((int)seconds/60 + ", " + seconds%60);
