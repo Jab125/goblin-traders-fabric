@@ -20,7 +20,9 @@ public class ModPotions extends Potions {
     public static final Potion POWERFUL_SPEED;
     public static final Potion EXTENDED_WATER_BREATHING;
     public static final Potion POWERFUL_INSTANT_HEALTH;
-    public static final Potion POWERFUL_REGENERATION ;
+    public static final Potion POWERFUL_INSTANT_DAMAGE;
+    public static final Potion POWERFUL_SLOWNESS;
+    public static final Potion POWERFUL_REGENERATION;
     public static final Potion EXTENDED_SLOW_FALLING;
     public static final Potion POWERFUL_STRENGTH;
     public static final Potion HASTE;
@@ -52,7 +54,9 @@ public class ModPotions extends Potions {
         EXTENDED_INVISIBILITY  = register("gtextended_invisibility", new Potion(new StatusEffectInstance(StatusEffects.INVISIBILITY, minutesToTick(6, 0))));
         EXTENDED_SLOW_FALLING = register("gtextended_slow_falling", new Potion(new StatusEffectInstance(StatusEffects.SLOW_FALLING, minutesToTick(6, 0))));
         POWERFUL_INSTANT_HEALTH = register("gtpowerful_instant_health", new Potion(new StatusEffectInstance(StatusEffects.INSTANT_HEALTH, 1, 2)));
+        POWERFUL_INSTANT_DAMAGE = register("gtpowerful_instant_damage", new Potion(new StatusEffectInstance(StatusEffects.INSTANT_DAMAGE, 1, 2)));
         POWERFUL_REGENERATION  = register("gtpowerful_regeneration", new Potion(new StatusEffectInstance(StatusEffects.REGENERATION, secondsToTick(22.5), 2)));
+        POWERFUL_SLOWNESS  = register("gtpowerful_slowness", new Potion(new StatusEffectInstance(StatusEffects.SLOWNESS, secondsToTick(10), 4)));
         POWERFUL_JUMP_BOOST  = register("gtpowerful_jump_boost", new Potion(new StatusEffectInstance(StatusEffects.JUMP_BOOST, minutesToTick(1, 30), 2)));
         POWERFUL_STRENGTH = register("gtpowerful_strength", new Potion(new StatusEffectInstance(StatusEffects.STRENGTH, secondsToTick(45), 2)));
         POWERFUL_SPEED = register("gtpowerful_speed", new Potion(new StatusEffectInstance(StatusEffects.SPEED, minutesToTick(1, 30), 2)));
@@ -81,6 +85,10 @@ public class ModPotions extends Potions {
         
     }
     public static void registerPotionRecipes() {
+        registerPotionRecipe(ModPotions.NIGHT_VISION, Items.FERMENTED_SPIDER_EYE, ModPotions.INVISIBILITY);
+        registerPotionRecipe(ModPotions.POWERFUL_JUMP_BOOST, Items.FERMENTED_SPIDER_EYE, ModPotions.POWERFUL_SLOWNESS);
+        registerPotionRecipe(ModPotions.POWERFUL_SPEED, Items.FERMENTED_SPIDER_EYE, ModPotions.POWERFUL_SLOWNESS);
+        registerPotionRecipe(ModPotions.POWERFUL_INSTANT_HEALTH, Items.FERMENTED_SPIDER_EYE, ModPotions.POWERFUL_INSTANT_DAMAGE);
         registerPotionRecipe(ModPotions.ABSORPTION, Items.REDSTONE, ModPotions.ABSORPTION_EXTENDED);
         registerPotionRecipe(ModPotions.LEVITATION, Items.REDSTONE, ModPotions.LEVITATION_EXTENDED);
         registerPotionRecipe(ModPotions.HASTE, Items.REDSTONE, ModPotions.HASTE_EXTENDED);
