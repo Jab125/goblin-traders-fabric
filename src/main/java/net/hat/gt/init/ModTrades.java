@@ -145,6 +145,7 @@ public class ModTrades {
                         new TradeWithoutEmeraldPotions(Items.EMERALD, 15, ModPotions.EXTENDED_FIRE_RESISTANCE, 8, 200),
                         new TradeWithoutEmeraldPotions(Items.EMERALD, 15, ModPotions.EXTENDED_SLOW_FALLING, 8, 200),
                         new TradeWithoutEmeraldPotions(Items.EMERALD, 15, ModPotions.EXTENDED_NIGHT_VISION, 8, 200),
+                        new TradeWithoutEmeraldPotions(Items.EMERALD, 15, ModPotions.BLINDNESS, 8, 200),
                         new TradeWithoutEmeraldPotions(Items.EMERALD, 15, ModPotions.EXTENDED_WATER_BREATHING, 8, 200),
                         new TradeWithoutEmeraldPotions(Items.EMERALD, 15, ModPotions.EXTENDED_INVISIBILITY, 8, 200),
                         new TradeWithoutEmeraldPotions(Items.EMERALD, 15, ModPotions.POWERFUL_REGENERATION, 8, 200),

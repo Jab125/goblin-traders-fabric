@@ -20,11 +20,13 @@ public class GobT implements ModInitializer {
         AutoConfig.register(GoblinTradersConfig.class, Toml4jConfigSerializer::new);
         config = AutoConfig.getConfigHolder(GoblinTradersConfig.class).getConfig();
 
+
         ModSounds.registerSounds();
         ModEntities.registerEntities();
         ModItems.registerItems();
         ModStats.registerStats();
         ModPotions.registerPotions();
+        ModPotions.registerPotionRecipes();
         ModSpawns.init();
     }
     public static Identifier id(String path) {
