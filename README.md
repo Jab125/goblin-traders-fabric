@@ -14,4 +14,4 @@ For an ease-of-access viewing back to the mod-download pages, see here:
 <br/>[Curseforge](https://www.curseforge.com/minecraft/mc-mods/goblin-traders-fabric) <br/>[Modrinth](https://modrinth.com/mod/goblin-traders-fabric)
 ### Screenshots:
 ![Screenshot #1](https://i.imgur.com/XLaQqNj.png)
-![Screenshot #2](https://i.imgur.com/mcTzYzH.png)
+![Screenshot #2](https://i.imgur.com/LwgXSAD.png)
