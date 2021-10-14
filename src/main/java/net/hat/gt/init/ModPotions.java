@@ -7,8 +7,9 @@ import net.minecraft.potion.Potion;
 import net.minecraft.potion.Potions;
 import net.minecraft.util.registry.Registry;
 
-import static net.hat.gt.util.Util.minutesToTick;
-import static net.hat.gt.util.Util.secondsToTick;
+import static com.jab125.thonkutil.util.Util.minutesToTick;
+import static com.jab125.thonkutil.util.Util.secondsToTick;
+
 
 public class ModPotions extends Potions {
     public static final Potion EXTENDED_NIGHT_VISION;

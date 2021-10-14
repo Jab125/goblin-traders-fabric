@@ -14,7 +14,8 @@ import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 import java.util.Iterator;
 import java.util.Map;
 
-import static net.hat.gt.util.Util.isOverflowInstalled;
+import static com.jab125.thonkutil.util.Util.isOverflowInstalled;
+
 
 /**
  * Fixes combining tools in an anvil reducing enchantment level to it's max level when the
