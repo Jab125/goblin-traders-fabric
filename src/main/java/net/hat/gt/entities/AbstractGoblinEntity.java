@@ -37,6 +37,7 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 import java.util.UUID;
 
@@ -286,6 +287,11 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
             if (this.stunDelay == 0) {
                 this.dataTracker.set(STUNNED, false);
                 this.world.playSound(null, this.getX(), this.getY(), this.getZ(), ModSounds.ANNOYED_GRUNT, SoundCategory.NEUTRAL, 1.0F, 0.9F + this.getRandom().nextFloat() * 0.2F);
+                if (GobT.config.GOBLIN_NO_ATTACK_CREATIVE) {
+                    if (((PlayerEntity) Objects.requireNonNull(this.getAttacker())).isCreative()) {
+                        this.setAttacker(null);
+                    }
+                }
             }
         }
         if ((boolean) this.dataTracker.get(STUNNED)) {

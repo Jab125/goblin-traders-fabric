@@ -6,7 +6,7 @@
   "stat.goblintraders.trade_with_goblin": "Traded with Goblins",
   "stat.goblintraders.talk_with_goblin": "Talked with Goblins",
 
-  "text.autoconfig.goblintraders.title": "Goblin Traders Config (RR = Requires Game Restart)",
+  "text.autoconfig.goblintraders.title": "Goblin Traders Config ((RR) = Requires Game Restart) (<!> = Unstable)",
   "text.autoconfig.goblintraders.option.GOBLINS_CAN_SPAWN": "Goblins Spawn (RR)",
   "text.autoconfig.goblintraders.option.VEIN_GOBLINS_CAN_SPAWN": "Vein Goblins Spawn (RR)",
   "text.autoconfig.goblintraders.option.GOBLIN_HIT_BACK": "Goblin's Hit Back",
@@ -18,6 +18,7 @@
   "text.autoconfig.goblintraders.option.GOBLIN_GROUP_SIZE": "Goblin Spawn Max Group Size (RR)",
   "text.autoconfig.goblintraders.option.VEIN_GOBLIN_GROUP_SIZE": "Vein Goblin Max Spawn Group Size (RR)",
   "text.autoconfig.goblintraders.option.MAX_ENCHANTMENT_TEXT": "Over Max Enchants have purple text",
+  "text.autoconfig.goblintraders.option.GOBLIN_NO_ATTACK_CREATIVE": "Fix Creative Change attack <!>",
 
   "item.minecraft.potion.effect.gtextended_water_breathing": "Potion of Water Breathing",
   "item.minecraft.potion.effect.gtextended_fire_resistance": "Potion of Fire Resistance",
