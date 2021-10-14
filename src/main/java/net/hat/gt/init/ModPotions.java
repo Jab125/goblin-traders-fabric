@@ -58,4 +58,7 @@ public class ModPotions extends Potions {
         LEVITATION_EXTENDED = register("gtlevitation_extended", new Potion(new StatusEffectInstance(StatusEffects.LEVITATION, minutesToTick(1, 30))));
         HASTE_EXTENDED = register("gtdig_speed_extended", new Potion(new StatusEffectInstance(StatusEffects.HASTE, minutesToTick(1, 0))));
     }
+    public static void registerPotions() {
+        
+    }
 }

@@ -24,6 +24,7 @@ public class GobT implements ModInitializer {
         ModEntities.registerEntities();
         ModItems.registerItems();
         ModStats.registerStats();
+        ModPotions.registerPotions();
         ModSpawns.init();
     }
     public static Identifier id(String path) {
