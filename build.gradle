@@ -30,7 +30,7 @@ dependencies {
 	modImplementation "com.terraformersmc:modmenu:2.0.2", {
 		exclude module: "fabric-api"
 	}
-	modApi include("com.jab125:thonkutil-1.1")
+	modApi include("com.jab125:thonkutil-${project.thonkutil_version}")
 
 }
 
