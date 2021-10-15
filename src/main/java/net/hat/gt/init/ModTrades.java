@@ -129,7 +129,7 @@ public class ModTrades {
                             new TradeWithoutEmerald(Items.EMERALD, 8, Items.SPONGE, 8, 4, 30),
                             new TradeWithoutEmerald(Items.DAMAGED_ANVIL, 1, Items.IRON_INGOT, 4 ,Items.CHIPPED_ANVIL, 1, 32, 20),
                             new TradeWithoutEmerald(Items.CLAY_BALL, 1, Items.TERRACOTTA, 2, 64, 20),
-                            new TradeWithoutEmerald(Items.LEATHER, 1, Items.PAPER, 3, Items.BOOK, 2, 32, 20)
+                            new TradeWithoutEmerald(Items.LEATHER, 1, Items.PAPER, 3, Items.BOOK, 2, 32, 20),
                             /* ************************************************************************************** *
                              *                                      RARE                                              *
                              * ************************************************************************************** */
@@ -156,7 +156,7 @@ public class ModTrades {
                              * ************************************************************************************** */
 
                     }, 4, new TradeOffers.Factory[]{
-                            new SellEnchantedItem(Items.DRAGON_HEAD, 5, Items.DIAMOND_PICKAXE, 1, null, 0, Items.DIAMOND_PICKAXE, Enchantments.FORTUNE, 5, Enchantments.UNBREAKING, 4, 1, 500)
+                            new SellEnchantedItem(Items.DRAGON_HEAD, 5, Items.DIAMOND_PICKAXE, 1, null, 0, Items.DIAMOND_PICKAXE, Enchantments.FORTUNE, 5, Enchantments.UNBREAKING, 4, 1, 500),
                     }
             ));
         }
@@ -169,7 +169,7 @@ public class ModTrades {
                         new TradeWithoutEmerald(Items.CARROT, 1, Items.EMERALD, 1, 24, 10),
                         new TradeWithoutEmerald(Items.GLOWSTONE, 1, Items.GLOWSTONE_DUST, 4, 32, 20),
                         new TradeWithoutEmerald(Items.NETHERRACK, 64, Items.EMERALD, 1, 64, 30),
-                        new TradeWithoutEmerald(Items.EMERALD, 1, Items.NETHER_WART, 2, 15)
+                        new TradeWithoutEmerald(Items.EMERALD, 1, Items.NETHER_WART, 2, 15),
                         /* ************************************************************************************** *
                          *                                     UNCOMMON                                           *
                          * ************************************************************************************** */
@@ -177,7 +177,7 @@ public class ModTrades {
                         new TradeWithoutEmerald(Items.NETHERITE_INGOT, 2, Items.TOTEM_OF_UNDYING, 1, 20),
                         new TradeWithoutEmerald(Items.ANCIENT_DEBRIS, 4, Items.NETHERITE_SCRAP, 5, 2, 50),
                         new TradeWithoutEmerald(Items.NETHER_WART, 1, Items.RED_NETHER_BRICKS, 1, 128, 20),
-                        new TradeWithoutEmerald(Items.EMERALD, 8, Items.SPONGE, 8, 4, 30)
+                        new TradeWithoutEmerald(Items.EMERALD, 8, Items.SPONGE, 8, 4, 30),
                         /* ************************************************************************************** *
                          *                                      RARE                                              *
                          * ************************************************************************************** */
@@ -216,7 +216,6 @@ public class ModTrades {
                         new TradeWithoutEmeraldPotions(Items.EMERALD, 15, ModPotions.EXTENDED_FIRE_RESISTANCE, 8, 200),
                         new TradeWithoutEmeraldPotions(Items.EMERALD, 15, ModPotions.EXTENDED_SLOW_FALLING, 8, 200),
                         new TradeWithoutEmeraldPotions(Items.EMERALD, 15, ModPotions.EXTENDED_NIGHT_VISION, 8, 200),
-                        new TradeWithoutEmeraldPotions(Items.EMERALD, 15, ModPotions.BLINDNESS, 8, 200),
                         new TradeWithoutEmeraldPotions(Items.EMERALD, 15, ModPotions.EXTENDED_WATER_BREATHING, 8, 200),
                         new TradeWithoutEmeraldPotions(Items.EMERALD, 15, ModPotions.EXTENDED_INVISIBILITY, 8, 200),
                         new TradeWithoutEmeraldPotions(Items.EMERALD, 15, ModPotions.POWERFUL_REGENERATION, 8, 200),
@@ -233,13 +232,14 @@ public class ModTrades {
                         new TradeWithoutEmeraldPotions(Items.EMERALD, 15, ModPotions.LUCK, 8, 200),
                         new TradeWithoutEmeraldPotions(Items.EMERALD, 15, ModPotions.DOLPHINS_GRACE, 8, 200),
                         new TradeWithoutEmeraldPotions(Items.EMERALD, 15, ModPotions.LEVITATION, 8, 200),
-                        new TradeWithoutEmeraldPotions(Items.EMERALD, 15, ModPotions.POWERFUL_STRENGTH, 8, 200)
+                        new TradeWithoutEmeraldPotions(Items.EMERALD, 15, ModPotions.POWERFUL_STRENGTH, 8, 200),
+                        new TradeWithoutEmeraldPotions(Items.EMERALD, 15, ModPotions.BLINDNESS, 8, 200),
 
                         /* ************************************************************************************** *
                          *                                    LEGENDARY                                           *
                          * ************************************************************************************** */
                 }, 5, new TradeOffers.Factory[]{
-                        new SellEnchantedItem(Items.DRAGON_HEAD, 5, Items.DIAMOND_SWORD, 1, null, 0, Items.DIAMOND_SWORD, Enchantments.SHARPNESS, 7, Enchantments.UNBREAKING, 4, 1, 500)
+                        new SellEnchantedItem(Items.DRAGON_HEAD, 5, Items.DIAMOND_SWORD, 1, null, 0, Items.DIAMOND_SWORD, Enchantments.SHARPNESS, 7, Enchantments.UNBREAKING, 4, 1, 500),
                         // Two and a half-hearts of dmg to a player not wearing armour
                 }
         ));

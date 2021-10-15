@@ -1,9 +1,5 @@
 package net.hat.gt.config;
 
-
-
-import net.hat.gt.util.Util;
-
 import me.shedaniel.autoconfig.ConfigData;
 import me.shedaniel.autoconfig.annotation.Config;
 import net.hat.gt.GobT;
@@ -25,5 +21,5 @@ public class GoblinTradersConfig implements ConfigData {
     public int VEIN_GOBLIN_SPAWN_RATE_D = 1;
     public int GOBLIN_GROUP_SIZE = 2;
     public int VEIN_GOBLIN_GROUP_SIZE = 2;
-    public boolean EASTER_EGGS = true;
+    public boolean EASTER_EGGS = false;
 }

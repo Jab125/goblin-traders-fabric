@@ -4,10 +4,7 @@ import net.hat.gt.GobT;
 import net.hat.gt.entities.ai.*;
 import net.hat.gt.init.ModSounds;
 import net.hat.gt.init.ModStats;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.ExperienceOrbEntity;
-import net.minecraft.entity.Npc;
+import net.minecraft.entity.*;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.data.DataTracker;
@@ -33,6 +30,7 @@ import net.minecraft.util.UseAction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.village.TradeOffer;
+import net.minecraft.world.Difficulty;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
@@ -289,7 +287,7 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
                 this.world.playSound(null, this.getX(), this.getY(), this.getZ(), ModSounds.ANNOYED_GRUNT, SoundCategory.NEUTRAL, 1.0F, 0.9F + this.getRandom().nextFloat() * 0.2F);
                 if (GobT.config.GOBLIN_NO_ATTACK_CREATIVE) {
                     try {
-                        if (((PlayerEntity) this.getAttacker()).isCreative()) {
+                        if (((PlayerEntity) Objects.requireNonNull(this.getAttacker())).isCreative()) {
                             this.setAttacker(null);
                         }
                     } catch(NullPointerException ignored) {}
