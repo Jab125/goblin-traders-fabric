@@ -1,6 +1,7 @@
 package net.hat.gt.util;
 
 
+import com.google.common.collect.ImmutableMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectArrayMap;
 
 import net.hat.gt.GobT;

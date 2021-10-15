@@ -7,7 +7,8 @@
     "SpawnRestrictionMixin",
     "TradeOutputSlotMixin",
     "EnchantmentMixin",
-    "AnvilMenuMixin"
+    "AnvilMenuMixin",
+    "ItemMixin"
   ],
   "client": [
   ],

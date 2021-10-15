@@ -1,4 +1,7 @@
 {
+  "item.minecraft.acacia_boat.desc": "Hmm yes, boat.",
+  "text.autoconfig.goblintraders.option.EASTER_EGGS": "Enable Easter Eggs",
+
   "entity.goblintraders.goblin_trader": "Goblin Trader",
   "item.goblintraders.goblin_trader_spawn_egg": "Goblin Trader Spawn Egg",
   "entity.goblintraders.vein_goblin_trader": "Vein Goblin Trader",
