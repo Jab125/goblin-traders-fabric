@@ -330,4 +330,6 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
     public abstract ItemStack getFavouriteFood();
 
     public abstract boolean canAttackBack();
+
+    public abstract boolean canSwimToFood();
 }

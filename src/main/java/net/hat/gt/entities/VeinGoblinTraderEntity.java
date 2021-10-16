@@ -74,6 +74,12 @@ public class VeinGoblinTraderEntity extends AbstractGoblinEntity{
     }
 
     @Override
+    public boolean canSwimToFood()
+    {
+        return false;
+    }
+
+    @Override
     public void tick(){
         super.tick();
         if (!this.world.isClient) {

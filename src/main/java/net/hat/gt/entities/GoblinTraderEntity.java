@@ -35,6 +35,12 @@ public class GoblinTraderEntity extends AbstractGoblinEntity{
     }
 
     @Override
+    public boolean canSwimToFood()
+    {
+        return true;
+    }
+
+    @Override
     protected void fillRecipes() {
         if (GobT.config.GOBLIN_VANILLA_TRADES) {
             TradeOffers.Factory[] factorys = ModTrades.GOBLIN_TRADER_TRADES_VANILLA.get(1);
