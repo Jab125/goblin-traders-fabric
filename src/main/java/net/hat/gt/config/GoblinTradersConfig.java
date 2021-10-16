@@ -22,5 +22,6 @@ public class GoblinTradersConfig implements ConfigData {
     public int VEIN_GOBLIN_SPAWN_RATE_D = 1;
     public int GOBLIN_GROUP_SIZE = 2;
     public int VEIN_GOBLIN_GROUP_SIZE = 2;
+    public boolean VEIN_GOBLINS_DIE_IN_WATER = false;
     public boolean EASTER_EGGS = false;
 }

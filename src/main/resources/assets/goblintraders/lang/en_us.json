@@ -18,6 +18,7 @@
   "text.autoconfig.goblintraders.option.GOBLIN_SPAWN_RATE_D": "Goblin Spawn Rate 1/x <RR>",
   "text.autoconfig.goblintraders.option.VEIN_GOBLIN_SPAWN_RATE_D": "Vein Goblin Spawn Rate 1/x <RR>",
   "text.autoconfig.goblintraders.option.GOBLINS_FALL": "Goblins Fall Over",
+  "text.autoconfig.goblintraders.option.VEIN_GOBLINS_DIE_IN_WATER": "Vein Goblins Die due to water",
   "text.autoconfig.goblintraders.option.GOBLIN_GROUP_SIZE": "Goblin Spawn Max Group Size <RR>",
   "text.autoconfig.goblintraders.option.VEIN_GOBLIN_GROUP_SIZE": "Vein Goblin Max Spawn Group Size <RR>",
   "text.autoconfig.goblintraders.option.MAX_ENCHANTMENT_TEXT": "Over Max Enchants have purple text",
