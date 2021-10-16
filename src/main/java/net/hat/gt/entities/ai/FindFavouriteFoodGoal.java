@@ -27,7 +27,7 @@ public class FindFavouriteFoodGoal extends Goal
     public boolean canStart()
     {
         this.findFavouriteFood();
-        return this.itemEntity != null && this.itemEntity.isAlive() && this.entity.getNavigation().findPathTo(this.itemEntity, 0) != null;
+        return this.itemEntity != null && this.itemEntity.isAlive() && this.entity.getNavigation().findPathTo(this.itemEntity, 0) != null && (!this.itemEntity.isTouchingWater() || (this.itemEntity.isTouchingWater() && this.entity.canSwimToFood()));
     }
 
     @Override
@@ -47,7 +47,7 @@ public class FindFavouriteFoodGoal extends Goal
     @Override
     public boolean shouldContinue()
     {
-        return this.itemEntity.isAlive() && this.entity.isAlive() && this.entity.getNavigation().findPathTo(this.itemEntity, 0) != null;
+        return this.itemEntity.isAlive() && this.entity.isAlive() && this.entity.getNavigation().findPathTo(this.itemEntity, 0) != null && (!this.itemEntity.isTouchingWater() || (this.itemEntity.isTouchingWater() && this.entity.canSwimToFood()));
     }
 
     private void findFavouriteFood()

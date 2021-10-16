@@ -74,6 +74,12 @@ public class VeinGoblinTraderEntity extends AbstractGoblinEntity{
     }
 
     @Override
+    public boolean canSwimToFood()
+    {
+        return false;
+    }
+
+    @Override
     public void tick(){
         super.tick();
         if (!this.world.isClient) {
@@ -83,6 +89,16 @@ public class VeinGoblinTraderEntity extends AbstractGoblinEntity{
             this.world.addParticle(ParticleTypes.FLAME, this.getX() - 0.5 + this.getRandom().nextDouble(), this.getY() + 0.5 - 0.5 + this.getRandom().nextDouble(), this.getZ() - 0.5 + this.getRandom().nextDouble(), 0, 0, 0);
         }
     }
+
+    public boolean hurtByWater() {
+        return true;
+    }
+
+    @Override
+    public boolean isWet() {
+        return this.isTouchingWater();
+    }
+
     @SuppressWarnings("unused") // Required for the query, IntelliJ marks it though.
     public static boolean canVeinGoblinSpawn(EntityType<? extends MobEntity> type, WorldAccess world, SpawnReason spawnReason, BlockPos pos, Random random) {
         BlockPos blockPos = pos.down();
