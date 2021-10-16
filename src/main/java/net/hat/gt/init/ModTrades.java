@@ -50,7 +50,7 @@ public class ModTrades {
                      * ************************************************************************************** */
                     1, new TradeOffers.Factory[]{
                             new TradeWithoutEmerald(Items.APPLE, 1, Items.EMERALD, 1, 24, 10),
-                            new TradeWithoutEmerald(Items.NETHERITE_BLOCK, 64, Items.ACACIA_BOAT, 1, 0, Integer.MAX_VALUE),
+                            new TradeWithoutEmerald(Items.DEBUG_STICK, 1, Items.ACACIA_BOAT, 1, 1, Integer.MAX_VALUE),
                             new TradeWithoutEmerald(Items.RAW_IRON, 1, Items.IRON_INGOT, 2, 30, 20),
                             new TradeWithoutEmerald(Items.RAW_GOLD, 2, Items.GOLD_INGOT, 3, 30, 30),
                             new TradeWithoutEmerald(Items.ROTTEN_FLESH, 4, Items.COAL, 1, 24, 15),

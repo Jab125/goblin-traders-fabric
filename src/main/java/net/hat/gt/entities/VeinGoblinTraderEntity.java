@@ -91,11 +91,7 @@ public class VeinGoblinTraderEntity extends AbstractGoblinEntity{
     }
 
     public boolean hurtByWater() {
-        if (GobT.config.VEIN_GOBLINS_DIE_IN_WATER) {
-            return this.getHealth() > 2;
-        } else {
-            return false;
-        }
+        return GobT.config.VEIN_GOBLINS_DIE_IN_WATER;
     }
 
     @Override
