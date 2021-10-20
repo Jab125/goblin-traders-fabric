@@ -1,5 +1,6 @@
 package net.hat.gt.entities;
 
+import com.jab125.thonkutil.util.Util;
 import net.hat.gt.GobT;
 import net.hat.gt.init.ModTrades;
 import net.minecraft.entity.EntityType;
@@ -15,6 +16,8 @@ import net.minecraft.village.TradeOffers;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -22,6 +25,14 @@ import java.util.concurrent.ThreadLocalRandom;
 public class VeinGoblinTraderEntity extends AbstractGoblinEntity{
     public VeinGoblinTraderEntity(EntityType<? extends MerchantEntity> entityType, World world) {
         super(entityType, world);
+    }
+
+    @Override
+    public Collection<ItemStack> getPreferredFoods() {
+        Collection<ItemStack> preferredFoods = new ArrayList<>();
+        preferredFoods.add(Util.toItemStack(Items.CARROT));
+        preferredFoods.add(Util.toItemStack(Items.GOLDEN_CARROT));
+        return preferredFoods;
     }
 
     @Override

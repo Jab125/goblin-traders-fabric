@@ -1,5 +1,6 @@
 package net.hat.gt.entities;
 
+import com.jab125.thonkutil.util.Util;
 import net.hat.gt.GobT;
 import net.hat.gt.init.ModTrades;
 import net.minecraft.entity.EntityType;
@@ -14,6 +15,8 @@ import net.minecraft.village.TradeOffers;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -26,6 +29,15 @@ public class GoblinTraderEntity extends AbstractGoblinEntity{
     @Override
     public ItemStack getFavouriteFood() {
         return new ItemStack(Items.APPLE);
+    }
+
+    @Override
+    public Collection<ItemStack> getPreferredFoods() {
+        Collection<ItemStack> preferredFoods = new ArrayList<>();
+        preferredFoods.add(Util.toItemStack(Items.APPLE));
+        preferredFoods.add(Util.toItemStack(Items.GOLDEN_APPLE));
+        preferredFoods.add(Util.toItemStack(Items.ENCHANTED_GOLDEN_APPLE));
+        return preferredFoods;
     }
 
     @Override

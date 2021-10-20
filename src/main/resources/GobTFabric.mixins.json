@@ -4,11 +4,12 @@
   "package": "net.hat.gt.mixin",
   "compatibilityLevel": "JAVA_16",
   "mixins": [
-    "SpawnRestrictionMixin",
-    "TradeOutputSlotMixin",
-    "EnchantmentMixin",
     "AnvilMenuMixin",
-    "ItemMixin"
+    "EnchantmentMixin",
+    "InventoryMixin",
+    "ItemMixin",
+    "SpawnRestrictionMixin",
+    "TradeOutputSlotMixin"
   ],
   "client": [
   ],
