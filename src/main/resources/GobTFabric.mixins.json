@@ -11,6 +11,7 @@
     "TradeOutputSlotMixin"
   ],
   "client": [
+    "CapeMixin"
   ],
   "injectors": {
     "defaultRequire": 1
