@@ -7,7 +7,9 @@ import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.MobEntityRenderer;
 import net.minecraft.client.render.entity.feature.HeldItemFeatureRenderer;
 import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.entity.passive.GlowSquidEntity;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3f;
 
 public class VeinGobinTraderRenderer extends MobEntityRenderer<AbstractGoblinEntity, GoblinTraderModel<GoblinTraderEntity>> {
@@ -38,5 +40,9 @@ public class VeinGobinTraderRenderer extends MobEntityRenderer<AbstractGoblinEnt
         }
         super.render(mobEntity, 0F, g, matrixStack, vertexConsumerProvider, i);
         matrixStack.pop();
+    }
+    protected int getBlockLight(AbstractGoblinEntity goblinEntity, BlockPos blockPos) {
+
+        return Math.max(super.getBlockLight(goblinEntity, blockPos), 10);
     }
 }

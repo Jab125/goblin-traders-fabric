@@ -4,20 +4,22 @@ import net.hat.gt.GobT;
 import net.hat.gt.entities.ai.*;
 import net.hat.gt.init.ModSounds;
 import net.hat.gt.init.ModStats;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.ExperienceOrbEntity;
-import net.minecraft.entity.Npc;
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.*;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.data.TrackedDataHandlerRegistry;
+import net.minecraft.entity.mob.EndermanEntity;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.passive.MerchantEntity;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.inventory.SimpleInventory;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtHelper;
 import net.minecraft.particle.ItemStackParticleEffect;
@@ -36,10 +38,7 @@ import net.minecraft.village.TradeOffer;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.HashSet;
-import java.util.Objects;
-import java.util.Set;
-import java.util.UUID;
+import java.util.*;
 
 public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc {
     @Nullable
@@ -55,6 +54,7 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
     private static final TrackedData<? super Float> STUN_ROTATION = DataTracker.registerData(AbstractGoblinEntity.class, TrackedDataHandlerRegistry.FLOAT);
     private static final TrackedData<? super Boolean> STUNNED = DataTracker.registerData(AbstractGoblinEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
     private static final TrackedData<? super Boolean> RAINING = DataTracker.registerData(AbstractGoblinEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
+    private static final TrackedData<? super ItemStack> FOODS = DataTracker.registerData(AbstractGoblinEntity.class, TrackedDataHandlerRegistry.ITEM_STACK);
 
     //register Goblin to Exist
     public AbstractGoblinEntity(EntityType<? extends MerchantEntity> entityType, World world) {
@@ -70,8 +70,9 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
         this.goalSelector.add(2, new LookAtCustomerGoal(this));
         this.goalSelector.add(2, new AttackRevengeTargetGoal(this));
         this.goalSelector.add(3, new EatFavouriteFoodGoal(this));
-        this.goalSelector.add(4, new FindFavouriteFoodGoal(this));
-        this.goalSelector.add(5, new TemptGoal(this, 0.45F, Ingredient.ofItems(this.getFavouriteFood().getItem()), false));
+        this.goalSelector.add(4, new FindPreferredFoodsGoal(this));
+        for (ItemStack food : this.getPreferredFoods())
+        this.goalSelector.add(5, new TemptGoal(this, 0.45F, Ingredient.ofItems(food.getItem()), false));
         this.goalSelector.add(6, new FollowPotentialCustomerGoal(this));
         this.goalSelector.add(7, new WanderAroundFarGoal(this, 0.35D));
         this.goalSelector.add(8, new LookAtEntityGoal(this, MobEntity.class, 8.0F));
@@ -176,7 +177,6 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
         if (this.wanderTarget != null) {
             nbt.put("WanderTarget", NbtHelper.fromBlockPos(this.wanderTarget));
         }
-
     }
 
     @Override
@@ -256,6 +256,7 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
     protected void initDataTracker() {
         super.initDataTracker();
         this.dataTracker.startTracking(STUNNED, false);
+        this.dataTracker.startTracking(FOODS, ItemStack.EMPTY);
         this.dataTracker.startTracking(STUN_ROTATION, 0F);
         this.dataTracker.startTracking(RAINING, false);
     }
@@ -289,7 +290,7 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
                 this.world.playSound(null, this.getX(), this.getY(), this.getZ(), ModSounds.ANNOYED_GRUNT, SoundCategory.NEUTRAL, 1.0F, 0.9F + this.getRandom().nextFloat() * 0.2F);
                 if (GobT.config.GOBLIN_NO_ATTACK_CREATIVE) {
                     try {
-                        if (((PlayerEntity) this.getAttacker()).isCreative()) {
+                        if (((PlayerEntity) Objects.requireNonNull(this.getAttacker())).isCreative()) {
                             this.setAttacker(null);
                         }
                     } catch(NullPointerException ignored) {}
@@ -331,5 +332,48 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
 
     public abstract ItemStack getFavouriteFood();
 
+    public Collection<ItemStack> getPreferredFoods() {
+        Collection<ItemStack> preferredFoods = new ArrayList<>();
+        preferredFoods.add(getFavouriteFood());
+        return preferredFoods;
+    }
+    private Collection<Item> getPreferredFoodsItem() {
+        Collection<Item> preferredFoods = new ArrayList<>();
+        for (ItemStack itemstack : getPreferredFoods()) {
+            preferredFoods.add(itemstack.getItem());
+        }
+        return preferredFoods;
+    }
+
+
+
+    public ItemStack takeFromInventory() {
+
+        if (containsInInventory(getFavouriteFood(), this.getInventory()) >= 0) {
+
+
+
+        }
+        return getFavouriteFood();
+    }
+
+    public int containsInInventory(ItemStack itemStack, SimpleInventory inventory) {
+        for (int i = 0; i < inventory.size()-1; i++) {
+            ItemStack stack1 = inventory.getStack(i).copy();
+            stack1.setCount(1);
+            ItemStack stack2 = itemStack.copy();
+            stack2.setCount(1);
+            if (stack1.equals(stack2)) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
     public abstract boolean canAttackBack();
+
+    public abstract boolean canSwimToFood();
+    public void addFoodToStorage(ItemStack food) {
+        this.getInventory().addStack(food);
+    }
 }

@@ -1,5 +1,6 @@
 package net.hat.gt.entities;
 
+import com.jab125.thonkutil.util.Util;
 import net.hat.gt.GobT;
 import net.hat.gt.init.ModTrades;
 import net.minecraft.entity.EntityType;
@@ -15,6 +16,8 @@ import net.minecraft.village.TradeOffers;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -22,6 +25,14 @@ import java.util.concurrent.ThreadLocalRandom;
 public class VeinGoblinTraderEntity extends AbstractGoblinEntity{
     public VeinGoblinTraderEntity(EntityType<? extends MerchantEntity> entityType, World world) {
         super(entityType, world);
+    }
+
+    @Override
+    public Collection<ItemStack> getPreferredFoods() {
+        Collection<ItemStack> preferredFoods = new ArrayList<>();
+        preferredFoods.add(Util.toItemStack(Items.CARROT));
+        preferredFoods.add(Util.toItemStack(Items.GOLDEN_CARROT));
+        return preferredFoods;
     }
 
     @Override
@@ -37,24 +48,46 @@ public class VeinGoblinTraderEntity extends AbstractGoblinEntity{
 
     @Override
     protected void fillRecipes() {
-        TradeOffers.Factory[] factorys = ModTrades.VEIN_GOBLIN_TRADER_TRADES.get(1);
-        TradeOffers.Factory[] factorys2 = ModTrades.VEIN_GOBLIN_TRADER_TRADES.get(2);
-        TradeOffers.Factory[] factorys3 = ModTrades.VEIN_GOBLIN_TRADER_TRADES.get(3);
-        TradeOffers.Factory[] factorys4 = ModTrades.VEIN_GOBLIN_TRADER_TRADES.get(4);
-        TradeOffers.Factory[] factorys5 = ModTrades.VEIN_GOBLIN_TRADER_TRADES.get(5);
-        if (factorys != null && factorys2 != null && factorys3 != null) {
-            TradeOfferList tradeOfferList = this.getOffers();
-            this.fillRecipesFromPool(tradeOfferList, factorys, ThreadLocalRandom.current().nextInt(3, 4 + 1));
-            this.fillRecipesFromPool(tradeOfferList, factorys2, ThreadLocalRandom.current().nextInt(1, 2 + 1));
-            this.fillRecipesFromPool(tradeOfferList, factorys3, ThreadLocalRandom.current().nextInt(1, 2 + 1));
-            this.fillRecipesFromPool(tradeOfferList, factorys4, ThreadLocalRandom.current().nextInt(0, 2 + 1));
-            this.fillRecipesFromPool(tradeOfferList, factorys5, ThreadLocalRandom.current().nextInt(-25, 1 + 1));
+        if (GobT.config.GOBLIN_VANILLA_TRADES) {
+            TradeOffers.Factory[] factorys = ModTrades.VEIN_GOBLIN_TRADER_TRADES_VANILLA.get(1);
+            TradeOffers.Factory[] factorys2 = ModTrades.VEIN_GOBLIN_TRADER_TRADES_VANILLA.get(2);
+            TradeOffers.Factory[] factorys3 = ModTrades.VEIN_GOBLIN_TRADER_TRADES_VANILLA.get(3);
+            TradeOffers.Factory[] factorys4 = ModTrades.VEIN_GOBLIN_TRADER_TRADES_VANILLA.get(4);
+            TradeOffers.Factory[] factorys5 = ModTrades.VEIN_GOBLIN_TRADER_TRADES_VANILLA.get(5);
+            if (factorys != null && factorys2 != null && factorys3 != null) {
+                TradeOfferList tradeOfferList = this.getOffers();
+                this.fillRecipesFromPool(tradeOfferList, factorys, ThreadLocalRandom.current().nextInt(3, 4 + 1));
+                this.fillRecipesFromPool(tradeOfferList, factorys2, ThreadLocalRandom.current().nextInt(1, 2 + 1));
+                this.fillRecipesFromPool(tradeOfferList, factorys3, ThreadLocalRandom.current().nextInt(1, 2 + 1));
+                this.fillRecipesFromPool(tradeOfferList, factorys4, ThreadLocalRandom.current().nextInt(0, 2 + 1));
+                this.fillRecipesFromPool(tradeOfferList, factorys5, ThreadLocalRandom.current().nextInt(-25, 1 + 1));
+            }
+        } else {
+            TradeOffers.Factory[] factorys = ModTrades.VEIN_GOBLIN_TRADER_TRADES.get(1);
+            TradeOffers.Factory[] factorys2 = ModTrades.VEIN_GOBLIN_TRADER_TRADES.get(2);
+            TradeOffers.Factory[] factorys3 = ModTrades.VEIN_GOBLIN_TRADER_TRADES.get(3);
+            TradeOffers.Factory[] factorys4 = ModTrades.VEIN_GOBLIN_TRADER_TRADES.get(4);
+            TradeOffers.Factory[] factorys5 = ModTrades.VEIN_GOBLIN_TRADER_TRADES.get(5);
+            if (factorys != null && factorys2 != null && factorys3 != null) {
+                TradeOfferList tradeOfferList = this.getOffers();
+                this.fillRecipesFromPool(tradeOfferList, factorys, ThreadLocalRandom.current().nextInt(3, 4 + 1));
+                this.fillRecipesFromPool(tradeOfferList, factorys2, ThreadLocalRandom.current().nextInt(1, 2 + 1));
+                this.fillRecipesFromPool(tradeOfferList, factorys3, ThreadLocalRandom.current().nextInt(1, 2 + 1));
+                this.fillRecipesFromPool(tradeOfferList, factorys4, ThreadLocalRandom.current().nextInt(0, 2 + 1));
+                this.fillRecipesFromPool(tradeOfferList, factorys5, ThreadLocalRandom.current().nextInt(-25, 1 + 1));
+            }
         }
     }
 
     @Override
     public boolean isFireImmune() {
         return true;
+    }
+
+    @Override
+    public boolean canSwimToFood()
+    {
+        return false;
     }
 
     @Override
@@ -67,6 +100,16 @@ public class VeinGoblinTraderEntity extends AbstractGoblinEntity{
             this.world.addParticle(ParticleTypes.FLAME, this.getX() - 0.5 + this.getRandom().nextDouble(), this.getY() + 0.5 - 0.5 + this.getRandom().nextDouble(), this.getZ() - 0.5 + this.getRandom().nextDouble(), 0, 0, 0);
         }
     }
+
+    public boolean hurtByWater() {
+        return GobT.config.VEIN_GOBLINS_DIE_IN_WATER;
+    }
+
+    @Override
+    public boolean isWet() {
+        return this.isTouchingWater();
+    }
+
     @SuppressWarnings("unused") // Required for the query, IntelliJ marks it though.
     public static boolean canVeinGoblinSpawn(EntityType<? extends MobEntity> type, WorldAccess world, SpawnReason spawnReason, BlockPos pos, Random random) {
         BlockPos blockPos = pos.down();

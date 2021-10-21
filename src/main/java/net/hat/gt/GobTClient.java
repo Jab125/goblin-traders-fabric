@@ -25,5 +25,6 @@ public class GobTClient implements ClientModInitializer {
         //EntityLayer
         EntityModelLayerRegistry.registerModelLayer(GOBLIN_MODEL_LAYER, GoblinTraderModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(VEIN_GOBLIN_MODEL_LAYER, GoblinTraderModel::getTexturedModelData);
+
     }
 }

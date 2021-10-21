@@ -88,7 +88,7 @@ public class ModPotions extends Potions {
         registerPotionRecipe(ModPotions.NIGHT_VISION, Items.FERMENTED_SPIDER_EYE, ModPotions.INVISIBILITY);
         registerPotionRecipe(ModPotions.POWERFUL_JUMP_BOOST, Items.FERMENTED_SPIDER_EYE, ModPotions.POWERFUL_SLOWNESS);
         registerPotionRecipe(ModPotions.POWERFUL_SPEED, Items.FERMENTED_SPIDER_EYE, ModPotions.POWERFUL_SLOWNESS);
-        registerPotionRecipe(ModPotions.POWERFUL_INSTANT_HEALTH, Items.FERMENTED_SPIDER_EYE, ModPotions.POWERFUL_INSTANT_DAMAGE);
+        registerPotionRecipe(ModPotions.POWERFUL_INSTANT_HEALTH, Items.FERMENTED_SPIDER_EYE, Potions.STRONG_HARMING);
         registerPotionRecipe(ModPotions.ABSORPTION, Items.REDSTONE, ModPotions.ABSORPTION_EXTENDED);
         registerPotionRecipe(ModPotions.LEVITATION, Items.REDSTONE, ModPotions.LEVITATION_EXTENDED);
         registerPotionRecipe(ModPotions.HASTE, Items.REDSTONE, ModPotions.HASTE_EXTENDED);
