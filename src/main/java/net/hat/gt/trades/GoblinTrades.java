@@ -1,19 +1,33 @@
 package net.hat.gt.trades;
 
+import net.hat.gt.GobT;
 import net.hat.gt.init.ModPotions;
 import net.minecraft.enchantment.Enchantments;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.potion.Potions;
+import net.minecraft.text.LiteralText;
+import net.minecraft.text.TranslatableText;
 import net.minecraft.village.TradeOffers;
 
 public class GoblinTrades {
+    private static final ItemStack KNOCKBACK_STICK = new ItemStack(Items.STICK);
+    private static final ItemStack BEG_PAPER = new ItemStack(Items.PAPER);
+    static {
+        KNOCKBACK_STICK.addEnchantment(Enchantments.KNOCKBACK, 2);
+        KNOCKBACK_STICK.setCustomName(new TranslatableText("item." + GobT.MODID + ".knockback_stick"));
+        BEG_PAPER.setCustomName(new TranslatableText("item." + GobT.MODID + ".beg_paper"));
+    }
     /* ************************************************************************************** *
      *                                     COMMON                                             *
      * ************************************************************************************** */
     public static TradeOffers.Factory[] goblinCommonTrades() {
         return new TradeOffers.Factory[]{
                 new TradeWithoutEmerald(Items.APPLE, 1, Items.EMERALD, 1, 24, 10),
-                new TradeWithoutEmerald(Items.DEBUG_STICK, 1, Items.ACACIA_BOAT, 1, 1, Integer.MAX_VALUE),
+                (GobT.config.EASTER_EGGS) ? new TradeWithoutEmerald(Items.DEBUG_STICK, 1, Items.ACACIA_BOAT, 1, 1, Integer.MAX_VALUE) : null,
+                (GobT.config.EASTER_EGGS) ? new TradeWithoutEmeraldItemStack(new ItemStack(Items.STICK), 1, KNOCKBACK_STICK, 1, 0, Integer.MAX_VALUE) : null,
+                (GobT.config.EASTER_EGGS) ? new TradeWithoutEmeraldItemStack(new ItemStack(Items.PAPER), 1, BEG_PAPER, 1, 1, 5) : null,
                 new TradeWithoutEmerald(Items.RAW_IRON, 1, Items.IRON_INGOT, 2, 30, 20),
                 new TradeWithoutEmerald(Items.RAW_GOLD, 2, Items.GOLD_INGOT, 3, 30, 30),
                 new TradeWithoutEmerald(Items.ROTTEN_FLESH, 4, Items.COAL, 1, 24, 15),
@@ -50,6 +64,7 @@ public class GoblinTrades {
                 new TradeWithoutEmerald(Items.EMERALD, 32, Items.MUSIC_DISC_CHIRP, 1, 50),
                 new TradeWithoutEmerald(Items.EMERALD, 32, Items.MUSIC_DISC_MELLOHI, 1, 50),
                 new TradeWithoutEmerald(Items.EMERALD, 32, Items.MUSIC_DISC_STAL, 1, 50),
+                (GobT.config.EASTER_EGGS) ? new TradeWithoutEmeraldItemStack(BEG_PAPER, 1, new ItemStack(Items.APPLE), 1, 1, 5) : null,
                 new SellEnchantedItem(Items.FISHING_ROD, 1, Items.ENCHANTED_BOOK, 1, Enchantments.LUCK_OF_THE_SEA, 3, Items.FISHING_ROD, Enchantments.LUCK_OF_THE_SEA, 5, 1, 200),
                 new SellEnchantedItem(Items.FISHING_ROD, 1, Items.ENCHANTED_BOOK, 1, Enchantments.LURE, 3, Items.FISHING_ROD, Enchantments.LURE, 5, 1, 200),
                 new SellEnchantedItem(Items.DIAMOND_PICKAXE, 1, Items.ENCHANTED_BOOK, 1, Enchantments.EFFICIENCY, 5, Items.DIAMOND_PICKAXE, Enchantments.EFFICIENCY, 6, 1, 200),
@@ -239,6 +254,7 @@ public class GoblinTrades {
         return new TradeOffers.Factory[]{
                 new TradeWithoutEmerald(Items.CARROT, 1, Items.EMERALD, 1, 24, 10),
                 new TradeWithoutEmerald(Items.GLOWSTONE, 1, Items.GLOWSTONE_DUST, 4, 32, 20),
+                (GobT.config.EASTER_EGGS) ? new TradeWithoutEmerald(Items.DEBUG_STICK, 1, Items.ACACIA_BOAT, 1, 1, Integer.MAX_VALUE) : null,
                 new TradeWithoutEmerald(Items.NETHERRACK, 64, Items.EMERALD, 1, 64, 30),
                 new TradeWithoutEmerald(Items.EMERALD, 1, Items.NETHER_WART, 2, 15),
                 new TradeWithoutEmerald(Items.EMERALD, 1, Items.WARPED_FUNGUS, 5, 15),
