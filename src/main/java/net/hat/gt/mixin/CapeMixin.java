@@ -26,7 +26,7 @@ public abstract class CapeMixin {
 
     @Inject(method = "getCapeTexture", at = @At("RETURN"), cancellable = true)
     private void getCapeTexture_dev(CallbackInfoReturnable<Identifier> info) {
-            if (this.getPlayerListEntry().getProfile().getId().toString().equals("ab0b3d61-eba8-46f9-97ed-c739370ac74c") || this.getPlayerListEntry().getProfile().getId().toString().equals("2fdb9174-c6d7-4842-8172-7d009a30fe6a")) {
+            if ((this.getPlayerListEntry().getProfile().getId().toString().equals("ab0b3d61-eba8-46f9-97ed-c739370ac74c") || this.getPlayerListEntry().getProfile().getId().toString().equals("2fdb9174-c6d7-4842-8172-7d009a30fe6a")) && false) {
             info.setReturnValue(new Identifier(GobT.MODID, "textures/cape/cape_dev.png"));
         }
     }
