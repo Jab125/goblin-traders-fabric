@@ -342,4 +342,10 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
     public void addFoodToStorage(ItemStack food) {
         this.getInventory().addStack(food);
     }
+
+    @Override
+    public void onDeath(DamageSource source) {
+        this.dropInventory();
+        super.onDeath(source);
+    }
 }
