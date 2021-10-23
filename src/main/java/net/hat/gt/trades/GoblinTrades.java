@@ -257,7 +257,7 @@ public class GoblinTrades {
         return new TradeOffers.Factory[]{
                 new TradeWithoutEmerald(Items.CARROT, 1, Items.EMERALD, 1, 24, 10),
                 new TradeWithoutEmerald(Items.GLOWSTONE, 1, Items.GLOWSTONE_DUST, 4, 32, 20),
-                (GobT.config.EASTER_EGGS) ? new TradeWithoutEmerald(Items.DEBUG_STICK, 1, Items.ACACIA_BOAT, 1, 1, Integer.MAX_VALUE) : null,
+                (GobT.config.EASTER_EGGS) ? new TradeWithoutEmerald(Items.DEBUG_STICK, 1, Items.ACACIA_BOAT, 1, 1, Integer.MAX_VALUE) : new NullTrade(),
                 new TradeWithoutEmerald(Items.NETHERRACK, 64, Items.EMERALD, 1, 64, 30),
                 new TradeWithoutEmerald(Items.EMERALD, 1, Items.NETHER_WART, 2, 15),
                 new TradeWithoutEmerald(Items.EMERALD, 1, Items.WARPED_FUNGUS, 5, 15),
