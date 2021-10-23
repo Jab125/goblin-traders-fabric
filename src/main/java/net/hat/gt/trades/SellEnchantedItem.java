@@ -1,16 +1,13 @@
 package net.hat.gt.trades;
 
-import net.hat.gt.init.ModPotions;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentLevelEntry;
 import net.minecraft.entity.Entity;
-import net.minecraft.item.*;
-import net.minecraft.potion.Potion;
-import net.minecraft.potion.PotionUtil;
-import net.minecraft.potion.Potions;
+import net.minecraft.item.EnchantedBookItem;
+import net.minecraft.item.ItemConvertible;
+import net.minecraft.item.ItemStack;
 import net.minecraft.village.TradeOffer;
 import net.minecraft.village.TradeOffers;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.Random;
 

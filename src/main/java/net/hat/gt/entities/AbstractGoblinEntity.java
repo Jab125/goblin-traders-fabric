@@ -4,22 +4,20 @@ import net.hat.gt.GobT;
 import net.hat.gt.entities.ai.*;
 import net.hat.gt.init.ModSounds;
 import net.hat.gt.init.ModStats;
-import net.minecraft.block.BlockState;
-import net.minecraft.entity.*;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ExperienceOrbEntity;
+import net.minecraft.entity.Npc;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.data.TrackedDataHandlerRegistry;
-import net.minecraft.entity.mob.EndermanEntity;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.passive.MerchantEntity;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.inventory.SimpleInventory;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtHelper;
 import net.minecraft.particle.ItemStackParticleEffect;
@@ -336,38 +334,6 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
         Collection<ItemStack> preferredFoods = new ArrayList<>();
         preferredFoods.add(getFavouriteFood());
         return preferredFoods;
-    }
-    private Collection<Item> getPreferredFoodsItem() {
-        Collection<Item> preferredFoods = new ArrayList<>();
-        for (ItemStack itemstack : getPreferredFoods()) {
-            preferredFoods.add(itemstack.getItem());
-        }
-        return preferredFoods;
-    }
-
-
-
-    public ItemStack takeFromInventory() {
-
-        if (containsInInventory(getFavouriteFood(), this.getInventory()) >= 0) {
-
-
-
-        }
-        return getFavouriteFood();
-    }
-
-    public int containsInInventory(ItemStack itemStack, SimpleInventory inventory) {
-        for (int i = 0; i < inventory.size()-1; i++) {
-            ItemStack stack1 = inventory.getStack(i).copy();
-            stack1.setCount(1);
-            ItemStack stack2 = itemStack.copy();
-            stack2.setCount(1);
-            if (stack1.equals(stack2)) {
-                return i;
-            }
-        }
-        return -1;
     }
 
     public abstract boolean canAttackBack();

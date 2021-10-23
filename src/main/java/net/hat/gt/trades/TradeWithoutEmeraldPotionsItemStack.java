@@ -3,7 +3,6 @@ package net.hat.gt.trades;
 import net.hat.gt.init.ModPotions;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionUtil;

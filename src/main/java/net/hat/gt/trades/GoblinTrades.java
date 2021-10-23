@@ -3,15 +3,11 @@ package net.hat.gt.trades;
 import net.hat.gt.GobT;
 import net.hat.gt.init.ModPotions;
 import net.minecraft.enchantment.Enchantments;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
-import net.minecraft.item.map.MapIcon;
 import net.minecraft.potion.Potions;
-import net.minecraft.text.LiteralText;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.village.TradeOffers;
-import net.minecraft.world.gen.feature.StructureFeature;
 
 public class GoblinTrades {
     private static final ItemStack KNOCKBACK_STICK = new ItemStack(Items.STICK);
