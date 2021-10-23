@@ -23,9 +23,6 @@ public class GoblinTrades {
     public static TradeOffers.Factory[] goblinCommonTrades() {
         return new TradeOffers.Factory[]{
                 new TradeWithoutEmerald(Items.APPLE, 1, Items.EMERALD, 1, 24, 10),
-                (GobT.config.EASTER_EGGS) ? new TradeWithoutEmerald(Items.DEBUG_STICK, 1, Items.ACACIA_BOAT, 1, 1, Integer.MAX_VALUE) : new NullTrade(),
-                (GobT.config.EASTER_EGGS) ? new TradeWithoutEmeraldItemStack(new ItemStack(Items.STICK), 1, KNOCKBACK_STICK, 1, 0, Integer.MAX_VALUE) : new NullTrade(),
-                (GobT.config.EASTER_EGGS) ? new TradeWithoutEmeraldItemStack(new ItemStack(Items.PAPER), 1, BEG_PAPER, 1, 1, 5) : new NullTrade(),
                 new TradeWithoutEmerald(Items.RAW_IRON, 1, Items.IRON_INGOT, 2, 30, 20),
                 new TradeWithoutEmerald(Items.RAW_GOLD, 2, Items.GOLD_INGOT, 3, 30, 30),
                 new TradeWithoutEmerald(Items.ROTTEN_FLESH, 4, Items.COAL, 1, 24, 15),
@@ -340,6 +337,15 @@ public class GoblinTrades {
     public static TradeOffers.Factory[] vanillaLegendaryVeinGoblinTrades() {
         return new TradeOffers.Factory[]{
                 new SellEnchantedItem(Items.DRAGON_HEAD, 5, Items.DIAMOND_SWORD, 1, null, 0, Items.DIAMOND_SWORD, Enchantments.SHARPNESS, 5, Enchantments.UNBREAKING, 3, Enchantments.MENDING, 1, 1, 500),
+        };
+    }
+
+
+    public static TradeOffers.Factory[] easterEggTrades() {
+        return new TradeOffers.Factory[]{
+                new TradeWithoutEmerald(Items.DEBUG_STICK, 1, Items.ACACIA_BOAT, 1, 1, Integer.MAX_VALUE),
+                new TradeWithoutEmeraldItemStack(new ItemStack(Items.STICK), 1, KNOCKBACK_STICK, 1, 0, Integer.MAX_VALUE),
+                new TradeWithoutEmeraldItemStack(new ItemStack(Items.PAPER), 1, BEG_PAPER, 1, 1, 5),
         };
     }
 }

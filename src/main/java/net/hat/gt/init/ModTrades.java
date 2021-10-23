@@ -12,6 +12,8 @@ public class ModTrades {
     public static Int2ObjectMap<TradeOffers.Factory[]> GOBLIN_TRADER_TRADES_VANILLA;
     public static Int2ObjectMap<TradeOffers.Factory[]> VEIN_GOBLIN_TRADER_TRADES_VANILLA;
 
+    public static Int2ObjectMap<TradeOffers.Factory[]> EASTER_EGG_TRADES;
+
     public static Int2ObjectMap<TradeOffers.Factory[]> copyToFastUtilMap(ImmutableMap<Integer, TradeOffers.Factory[]> trades) {
         return new Int2ObjectOpenHashMap<>(trades);
     }
@@ -30,6 +32,7 @@ public class ModTrades {
      * I've also went ahead and made everything public in here, so feel free to access it without an accesswidener :)
      */
     static {
+
         //copy all trades
         GOBLIN_TRADER_TRADES = copyToFastUtilMap(ImmutableMap.of(
                 1, GoblinTrades.goblinCommonTrades(), 2, GoblinTrades.goblinUncommonTrades(), 3, GoblinTrades.goblinRareTrades(), 4, GoblinTrades.legendaryGoblinTrades()));
@@ -43,6 +46,8 @@ public class ModTrades {
 
         VEIN_GOBLIN_TRADER_TRADES_VANILLA = copyToFastUtilMap(ImmutableMap.of(
                 1, GoblinTrades.vanillaCommonVeinGoblinTrades(), 2, GoblinTrades.vanillaUncommonVeinGoblinTrades(), 3, GoblinTrades.vanillaRareVeinGoblinTrades(), 4, GoblinTrades.vanillaEpicVeinGoblinTrades(), 5, GoblinTrades.vanillaLegendaryVeinGoblinTrades()));
+
+        EASTER_EGG_TRADES = copyToFastUtilMap(ImmutableMap.of(1, GoblinTrades.easterEggTrades()));
     }
 }
 

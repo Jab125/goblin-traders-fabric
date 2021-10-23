@@ -1,23 +1,25 @@
 package net.hat.gt.entities;
 
+import com.google.common.collect.Sets;
 import com.jab125.thonkutil.util.Util;
 import net.hat.gt.GobT;
 import net.hat.gt.init.ModTrades;
+import net.hat.gt.trades.GoblinTrades;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.passive.MerchantEntity;
+import net.minecraft.entity.passive.VillagerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.village.TradeOffer;
 import net.minecraft.village.TradeOfferList;
 import net.minecraft.village.TradeOffers;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Random;
+import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
 
@@ -67,6 +69,7 @@ public class GoblinTraderEntity extends AbstractGoblinEntity{
             }
         }
         else {
+            TradeOffers.Factory[] easterEggFactory = ModTrades.EASTER_EGG_TRADES.get(1);
             TradeOffers.Factory[] factorys = ModTrades.GOBLIN_TRADER_TRADES.get(1);
             TradeOffers.Factory[] factorys2 = ModTrades.GOBLIN_TRADER_TRADES.get(2);
             TradeOffers.Factory[] factorys3 = ModTrades.GOBLIN_TRADER_TRADES.get(3);
@@ -85,5 +88,34 @@ public class GoblinTraderEntity extends AbstractGoblinEntity{
     public static boolean canGoblinSpawn(EntityType<? extends MobEntity> type, WorldAccess world, SpawnReason spawnReason, BlockPos pos, Random random) {
         BlockPos blockPos = pos.down();
         return spawnReason == SpawnReason.SPAWNER || ThreadLocalRandom.current().nextInt(1, GobT.config.GOBLIN_SPAWN_RATE_D + 1) == 1;
+    }
+
+    @Override
+    protected void fillRecipesFromPool(TradeOfferList recipeList, TradeOffers.Factory[] pool, int count) {
+        Set<Integer> set = Sets.newHashSet();
+        if (pool.length > count) {
+            while(set.size() < count) {
+                set.add(this.random.nextInt(pool.length));
+            }
+        } else {
+            for(int i = 0; i < pool.length; ++i) {
+                set.add(i);
+            }
+        }
+
+        Iterator var9 = set.iterator();
+
+        while(var9.hasNext()) {
+            Integer integer = (Integer)var9.next();
+            TradeOffers.Factory factory = pool[integer];
+            TradeOffer tradeOffer = factory.create(this, this.random);
+            if (tradeOffer != null) {
+                if ((int) (Math.random() * 20) == 1) {
+                    recipeList.add(GoblinTrades.easterEggTrades()[(int)(Math.random() * GoblinTrades.easterEggTrades().length)].create(this, this.random));
+                }
+                recipeList.add(tradeOffer);
+            }
+        }
+
     }
 }
