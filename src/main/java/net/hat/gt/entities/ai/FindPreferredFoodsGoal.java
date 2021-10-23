@@ -40,11 +40,9 @@ public class FindPreferredFoodsGoal extends Goal
         if(path != null) this.entity.getNavigation().startMovingAlong(path, 0.4F);
         if(this.entity.distanceTo(this.itemEntity) <= 1.0D && this.itemEntity.isAlive())
         {
-            int i = this.itemEntity.getStack().getCount();
-            while (i > 0) {
-                this.entity.addFoodToStorage(this.itemEntity.getStack());
-                i--;
-            }
+
+            this.entity.addFoodToStorage(this.itemEntity.getStack());
+
             this.itemEntity.remove(Entity.RemovalReason.KILLED);
             this.entity.world.playSound(null, this.itemEntity.getX(), this.itemEntity.getY(), this.itemEntity.getZ(), SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.NEUTRAL, 1.0F, 0.75F);
         }

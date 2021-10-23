@@ -33,6 +33,7 @@ import net.minecraft.util.UseAction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.village.TradeOffer;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
@@ -348,4 +349,15 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
         this.dropInventory();
         super.onDeath(source);
     }
+
+    @Override
+    protected void dropInventory() {
+        super.dropInventory();
+        List<ItemStack> inventory = this.getInventory().clearToList();
+        for (ItemStack currentItem : inventory) {
+            this.dropStack(currentItem);
+        }
+
+    }
+
 }
