@@ -36,7 +36,6 @@ public class GoblinTraderEntity extends AbstractGoblinEntity{
         Collection<ItemStack> preferredFoods = new ArrayList<>();
         preferredFoods.add(Util.toItemStack(Items.APPLE));
         preferredFoods.add(Util.toItemStack(Items.GOLDEN_APPLE));
-        preferredFoods.add(Util.toItemStack(Items.ENCHANTED_GOLDEN_APPLE));
         return preferredFoods;
     }
 
