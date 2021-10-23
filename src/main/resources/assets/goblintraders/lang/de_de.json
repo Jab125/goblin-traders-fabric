@@ -1,5 +1,7 @@
 {
   "item.minecraft.acacia_boat.desc": "Aah ja, ein Boot.",
+  "item.goblintraders.knockback_stick": "Rückschlagstock",
+  "item.goblintraders.beg_paper": "Bitte töte mich nicht, nachdem du mit dem Handel fertig bist",
   "text.autoconfig.goblintraders.option.EASTER_EGGS": "Easter-Eggs aktivieren",
 
   "entity.goblintraders.goblin_trader": "Kobold-Händler",

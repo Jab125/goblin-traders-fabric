@@ -3,24 +3,8 @@ package net.hat.gt.init;
 import com.google.common.collect.ImmutableMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
-import net.hat.gt.GobT;
 import net.hat.gt.trades.GoblinTrades;
-import net.hat.gt.trades.SellEnchantedItem;
-import net.hat.gt.trades.TradeWithoutEmerald;
-import net.hat.gt.trades.TradeWithoutEmeraldPotions;
-import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.EnchantmentLevelEntry;
-import net.minecraft.enchantment.Enchantments;
-import net.minecraft.entity.Entity;
-import net.minecraft.item.*;
-import net.minecraft.potion.Potion;
-import net.minecraft.potion.PotionUtil;
-import net.minecraft.potion.Potions;
-import net.minecraft.village.TradeOffer;
 import net.minecraft.village.TradeOffers;
-import org.jetbrains.annotations.Nullable;
-
-import java.util.Random;
 
 public class ModTrades {
     public static Int2ObjectMap<TradeOffers.Factory[]> GOBLIN_TRADER_TRADES;
