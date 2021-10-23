@@ -16,6 +16,7 @@ import java.util.List;
 public class FindPreferredFoodsGoal extends Goal
 {
     private ItemEntity itemEntity;
+    private ItemStack fakeItem;
     private final AbstractGoblinEntity entity;
 
     public FindPreferredFoodsGoal(AbstractGoblinEntity entity)
@@ -28,7 +29,7 @@ public class FindPreferredFoodsGoal extends Goal
     public boolean canStart()
     {
         this.findPreferredFoods();
-        return this.itemEntity != null && this.itemEntity.isAlive() && this.entity.getNavigation().findPathTo(this.itemEntity, 0) != null && (!this.itemEntity.isTouchingWater() || (this.itemEntity.isTouchingWater() && this.entity.canSwimToFood()));
+        return this.itemEntity != null && this.itemEntity.isAlive() && this.entity.getNavigation().findPathTo(this.itemEntity, 0) != null && (!this.itemEntity.isTouchingWater() || (this.itemEntity.isTouchingWater() && this.entity.canSwimToFood())) && this.entity.getInventory().canInsert(fakeItem);
     }
 
     @Override
@@ -41,17 +42,19 @@ public class FindPreferredFoodsGoal extends Goal
         if(this.entity.distanceTo(this.itemEntity) <= 1.0D && this.itemEntity.isAlive())
         {
 
-            this.entity.addFoodToStorage(this.itemEntity.getStack());
+            if (this.entity.getInventory().canInsert(fakeItem)) {
+                this.entity.addFoodToStorage(this.itemEntity.getStack());
 
-            this.itemEntity.remove(Entity.RemovalReason.KILLED);
-            this.entity.world.playSound(null, this.itemEntity.getX(), this.itemEntity.getY(), this.itemEntity.getZ(), SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.NEUTRAL, 1.0F, 0.75F);
+                this.itemEntity.remove(Entity.RemovalReason.KILLED);
+                this.entity.world.playSound(null, this.itemEntity.getX(), this.itemEntity.getY(), this.itemEntity.getZ(), SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.NEUTRAL, 1.0F, 0.75F);
+            }
         }
     }
 
     @Override
     public boolean shouldContinue()
     {
-        return this.itemEntity.isAlive() && this.entity.isAlive() && this.entity.getNavigation().findPathTo(this.itemEntity, 0) != null && (!this.itemEntity.isTouchingWater() || (this.itemEntity.isTouchingWater() && this.entity.canSwimToFood()));
+        return this.itemEntity.isAlive() && this.entity.isAlive() && this.entity.getNavigation().findPathTo(this.itemEntity, 0) != null && (!this.itemEntity.isTouchingWater() || (this.itemEntity.isTouchingWater() && this.entity.canSwimToFood())) && this.entity.getInventory().canInsert(fakeItem);
     }
 
     private void findPreferredFoods()
@@ -61,6 +64,8 @@ public class FindPreferredFoodsGoal extends Goal
             if(players.size() > 0)
             {
                 this.itemEntity = players.stream().min(Comparator.comparing(this.entity::distanceTo)).get();
+                fakeItem = this.itemEntity.getStack();
+                fakeItem.setCount(64);
             }
         }
 
