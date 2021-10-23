@@ -11,7 +11,7 @@
   "stat.goblintraders.trade_with_goblin": "Mit Kobold gehandelt",
   "stat.goblintraders.talk_with_goblin": "Mit Kobold gesprochen",
 
-  "text.autoconfig.goblintraders.title": "Kobold-Händler Konfiguration (<RR> = Erfordert einen Neustart des Spiels) (<!> = Instabil)",
+  "text.autoconfig.goblintraders.title": "Kobold-Händler Konfiguration (<RR> = Erfordert einen Neustart des Spiels, <!> = Instabil)",
   "text.autoconfig.goblintraders.option.GOBLINS_CAN_SPAWN": "Kobolde spawnen <RR>",
   "text.autoconfig.goblintraders.option.VEIN_GOBLINS_CAN_SPAWN": "Ader-Kobolde spawnen <RR>",
   "text.autoconfig.goblintraders.option.GOBLIN_HIT_BACK": "Kobolde schlagen zurück",

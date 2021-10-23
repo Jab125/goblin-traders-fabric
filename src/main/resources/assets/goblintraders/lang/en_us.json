@@ -11,7 +11,7 @@
   "stat.goblintraders.trade_with_goblin": "Traded with Goblins",
   "stat.goblintraders.talk_with_goblin": "Talked with Goblins",
 
-  "text.autoconfig.goblintraders.title": "Goblin Traders Config (<RR> = Requires Game Restart) (<!> = Unstable)",
+  "text.autoconfig.goblintraders.title": "Goblin Traders Config (<RR> = Requires Game Restart, <!> = Unstable)",
   "text.autoconfig.goblintraders.option.GOBLINS_CAN_SPAWN": "Goblins Spawn <RR>",
   "text.autoconfig.goblintraders.option.VEIN_GOBLINS_CAN_SPAWN": "Vein Goblins Spawn <RR>",
   "text.autoconfig.goblintraders.option.GOBLIN_HIT_BACK": "Goblin's Hit Back",
