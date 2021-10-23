@@ -6,10 +6,12 @@ import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.item.map.MapIcon;
 import net.minecraft.potion.Potions;
 import net.minecraft.text.LiteralText;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.village.TradeOffers;
+import net.minecraft.world.gen.feature.StructureFeature;
 
 public class GoblinTrades {
     private static final ItemStack KNOCKBACK_STICK = new ItemStack(Items.STICK);
@@ -170,6 +172,7 @@ public class GoblinTrades {
                 new TradeWithoutEmeraldPotions(Items.EMERALD, 15, ModPotions.LEVITATION, 8, 200),
                 new TradeWithoutEmeraldPotions(Items.EMERALD, 15, ModPotions.POWERFUL_STRENGTH, 8, 200),
                 new TradeWithoutEmeraldPotions(Items.EMERALD, 15, ModPotions.BLINDNESS, 8, 200),
+                /** this is gonna be revised soon */ //new TradeOffers.SellMapFactory(5, StructureFeature.RUINED_PORTAL, MapIcon.Type.RED_X, 1, 15)
 
                 /* ************************************************************************************** *
                  *                                    LEGENDARY                                           *
