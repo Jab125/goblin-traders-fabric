@@ -111,7 +111,7 @@ public class GoblinTraderEntity extends AbstractGoblinEntity{
             TradeOffers.Factory factory = pool[integer];
             TradeOffer tradeOffer = factory.create(this, this.random);
             if (tradeOffer != null) {
-                if ((int) (Math.random() * 20) == 1) {
+                if ((int) (Math.random() * 20) == 1 && GobT.config.EASTER_EGGS) {
                     recipeList.add(GoblinTrades.easterEggTrades()[(int)(Math.random() * GoblinTrades.easterEggTrades().length)].create(this, this.random));
                 }
                 recipeList.add(tradeOffer);
