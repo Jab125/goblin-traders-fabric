@@ -14,8 +14,8 @@ public class GobT implements ModInitializer {
 
     public static final String MODID = "goblintraders";
     public static GoblinTradersConfig config;
-    public static final GameRules.Key<GameRules.BooleanRule> GOBLIN_TRADERS_PICK_UP_APPLES =
-            GameRuleRegistry.register("goblinTradersPickUpApples", GameRules.Category.MOBS, GameRuleFactory.createBooleanRule(true));
+    public static final GameRules.Key<GameRules.BooleanRule> GOBLIN_TRADERS_PICK_UP_FOODS =
+            GameRuleRegistry.register("goblinTradersPickUpFoods", GameRules.Category.MOBS, GameRuleFactory.createBooleanRule(true));
 
     @Override
     public void onInitialize() {

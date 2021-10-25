@@ -32,7 +32,7 @@ public class FindPreferredFoodsGoal extends Goal
     public boolean canStart()
     {
         this.findPreferredFoods();
-        return this.itemEntity != null && this.itemEntity.isAlive() && this.entity.getNavigation().findPathTo(this.itemEntity, 0) != null && (!this.itemEntity.isTouchingWater() || (this.itemEntity.isTouchingWater() && this.entity.canSwimToFood())) && this.entity.getInventory().canInsert(fakeItem) && this.entity.world.getGameRules().getBoolean(GobT.GOBLIN_TRADERS_PICK_UP_APPLES);
+        return this.itemEntity != null && this.itemEntity.isAlive() && this.entity.getNavigation().findPathTo(this.itemEntity, 0) != null && (!this.itemEntity.isTouchingWater() || (this.itemEntity.isTouchingWater() && this.entity.canSwimToFood())) && this.entity.getInventory().canInsert(fakeItem) && this.entity.world.getGameRules().getBoolean(GobT.GOBLIN_TRADERS_PICK_UP_FOODS);
     }
 
     @Override
@@ -58,7 +58,7 @@ public class FindPreferredFoodsGoal extends Goal
     @Override
     public boolean shouldContinue()
     {
-        return this.itemEntity.isAlive() && this.entity.isAlive() && this.entity.getNavigation().findPathTo(this.itemEntity, 0) != null && (!this.itemEntity.isTouchingWater() || (this.itemEntity.isTouchingWater() && this.entity.canSwimToFood())) && this.entity.getInventory().canInsert(fakeItem) && this.entity.world.getGameRules().getBoolean(GobT.GOBLIN_TRADERS_PICK_UP_APPLES);
+        return this.itemEntity.isAlive() && this.entity.isAlive() && this.entity.getNavigation().findPathTo(this.itemEntity, 0) != null && (!this.itemEntity.isTouchingWater() || (this.itemEntity.isTouchingWater() && this.entity.canSwimToFood())) && this.entity.getInventory().canInsert(fakeItem) && this.entity.world.getGameRules().getBoolean(GobT.GOBLIN_TRADERS_PICK_UP_FOODS);
     }
 
     private void findPreferredFoods()
