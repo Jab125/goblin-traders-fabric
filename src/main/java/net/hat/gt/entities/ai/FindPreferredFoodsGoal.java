@@ -6,8 +6,10 @@ import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.ai.goal.Goal;
 import net.minecraft.entity.ai.pathing.Path;
 import net.minecraft.item.ItemStack;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.world.GameRules;
 
 import java.util.Comparator;
 import java.util.EnumSet;
@@ -29,7 +31,7 @@ public class FindPreferredFoodsGoal extends Goal
     public boolean canStart()
     {
         this.findPreferredFoods();
-        return this.itemEntity != null && this.itemEntity.isAlive() && this.entity.getNavigation().findPathTo(this.itemEntity, 0) != null && (!this.itemEntity.isTouchingWater() || (this.itemEntity.isTouchingWater() && this.entity.canSwimToFood())) && this.entity.getInventory().canInsert(fakeItem);
+        return this.itemEntity != null && this.itemEntity.isAlive() && this.entity.getNavigation().findPathTo(this.itemEntity, 0) != null && (!this.itemEntity.isTouchingWater() || (this.itemEntity.isTouchingWater() && this.entity.canSwimToFood())) && this.entity.getInventory().canInsert(fakeItem) && this.entity.world.getGameRules().getBoolean(GameRules.DO_MOB_GRIEFING);
     }
 
     @Override
@@ -41,12 +43,13 @@ public class FindPreferredFoodsGoal extends Goal
         if(path != null) this.entity.getNavigation().startMovingAlong(path, 0.4F);
         if(this.entity.distanceTo(this.itemEntity) <= 1.0D && this.itemEntity.isAlive())
         {
-
             if (this.entity.getInventory().canInsert(fakeItem)) {
                 this.entity.addFoodToStorage(this.itemEntity.getStack());
-
+                this.itemEntity.getStack().removeCustomName();
                 this.itemEntity.remove(Entity.RemovalReason.KILLED);
                 this.entity.world.playSound(null, this.itemEntity.getX(), this.itemEntity.getY(), this.itemEntity.getZ(), SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.NEUTRAL, 1.0F, 0.75F);
+            } else {
+
             }
         }
     }
@@ -54,7 +57,7 @@ public class FindPreferredFoodsGoal extends Goal
     @Override
     public boolean shouldContinue()
     {
-        return this.itemEntity.isAlive() && this.entity.isAlive() && this.entity.getNavigation().findPathTo(this.itemEntity, 0) != null && (!this.itemEntity.isTouchingWater() || (this.itemEntity.isTouchingWater() && this.entity.canSwimToFood())) && this.entity.getInventory().canInsert(fakeItem);
+        return this.itemEntity.isAlive() && this.entity.isAlive() && this.entity.getNavigation().findPathTo(this.itemEntity, 0) != null && (!this.itemEntity.isTouchingWater() || (this.itemEntity.isTouchingWater() && this.entity.canSwimToFood())) && this.entity.getInventory().canInsert(fakeItem) && this.entity.world.getGameRules().getBoolean(GameRules.DO_MOB_GRIEFING);
     }
 
     private void findPreferredFoods()

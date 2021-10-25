@@ -42,6 +42,6 @@
     "java": ">=16"
   },
   "suggests": {
-    "another-mod": "*"
+    "endgoblintraders": ">=1.2.1"
   }
 }
