@@ -1,5 +1,6 @@
 package net.hat.gt.entities.ai;
 
+import net.hat.gt.GobT;
 import net.hat.gt.entities.AbstractGoblinEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.ItemEntity;
@@ -31,7 +32,7 @@ public class FindPreferredFoodsGoal extends Goal
     public boolean canStart()
     {
         this.findPreferredFoods();
-        return this.itemEntity != null && this.itemEntity.isAlive() && this.entity.getNavigation().findPathTo(this.itemEntity, 0) != null && (!this.itemEntity.isTouchingWater() || (this.itemEntity.isTouchingWater() && this.entity.canSwimToFood())) && this.entity.getInventory().canInsert(fakeItem) && this.entity.world.getGameRules().getBoolean(GameRules.DO_MOB_GRIEFING);
+        return this.itemEntity != null && this.itemEntity.isAlive() && this.entity.getNavigation().findPathTo(this.itemEntity, 0) != null && (!this.itemEntity.isTouchingWater() || (this.itemEntity.isTouchingWater() && this.entity.canSwimToFood())) && this.entity.getInventory().canInsert(fakeItem) && this.entity.world.getGameRules().getBoolean(GobT.GOBLIN_TRADERS_PICK_UP_APPLES);
     }
 
     @Override
@@ -57,7 +58,7 @@ public class FindPreferredFoodsGoal extends Goal
     @Override
     public boolean shouldContinue()
     {
-        return this.itemEntity.isAlive() && this.entity.isAlive() && this.entity.getNavigation().findPathTo(this.itemEntity, 0) != null && (!this.itemEntity.isTouchingWater() || (this.itemEntity.isTouchingWater() && this.entity.canSwimToFood())) && this.entity.getInventory().canInsert(fakeItem) && this.entity.world.getGameRules().getBoolean(GameRules.DO_MOB_GRIEFING);
+        return this.itemEntity.isAlive() && this.entity.isAlive() && this.entity.getNavigation().findPathTo(this.itemEntity, 0) != null && (!this.itemEntity.isTouchingWater() || (this.itemEntity.isTouchingWater() && this.entity.canSwimToFood())) && this.entity.getInventory().canInsert(fakeItem) && this.entity.world.getGameRules().getBoolean(GobT.GOBLIN_TRADERS_PICK_UP_APPLES);
     }
 
     private void findPreferredFoods()
