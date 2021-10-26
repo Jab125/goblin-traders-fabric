@@ -29,8 +29,8 @@ body:
       - 1.1.0
       - 1.1.1
       - 1.2.1
-  validations:
-    required: true
+    validations:
+      required: true
 - type: textarea
   attributes:
     label: What did you expect?
