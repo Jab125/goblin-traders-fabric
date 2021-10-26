@@ -10,7 +10,7 @@ body:
   attributes:
     label: Minecraft Username
     description: What is your Minecraft Username?
-    placeholder: Example: Steve
+    placeholder: Ex. Steve
     value: Steve
   validations:
     required: true
