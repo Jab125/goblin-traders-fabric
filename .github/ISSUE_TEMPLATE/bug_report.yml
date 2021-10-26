@@ -34,20 +34,20 @@ body:
 - type: textarea
   attributes:
     label: The Bug
-    description: Describe what went wrong.
+    description: "Describe what went wrong."
 - type: checkboxes
   attributes:
     label: Do you have the mod installed?
-    description: Just making sure!
+    description: "Just making sure!"
     options:
-      - label: I have the mod installed
+      - label: "I have the mod installed"
       - required: true
 - type: checkboxes
   attributes:
     label: Do you have Fabric API installed?
-    description: Also making sure!
+    description: "Also making sure!"
     options:
-      - label: I have Fabric API installed
+      - label: "I have Fabric API installed"
       - required: true
 - type: markdown
   attributes:
