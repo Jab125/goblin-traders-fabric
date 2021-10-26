@@ -33,8 +33,16 @@ body:
     required: true
 - type: textarea
   attributes:
-    label: The Bug
-    description: "Describe what went wrong."
+    label: What did you expect?
+    description: "What was meant to happen?"
+    validations:
+      required: true
+- type: textarea
+  attributes:
+    label: What did you get?
+    description: "What actually happened?"
+    validations:
+      required: true
 - type: checkboxes
   attributes:
     label: "Do you have the mod installed?"
