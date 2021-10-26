@@ -46,12 +46,10 @@ public class FindPreferredFoodsGoal extends Goal
         if(this.entity.distanceTo(this.itemEntity) <= 1.0D && this.itemEntity.isAlive())
         {
             if (this.entity.getInventory().canInsert(fakeItem)) {
-                this.entity.addFoodToStorage(this.itemEntity.getStack());
-                this.itemEntity.getStack().removeCustomName();
+                ItemStack item = this.itemEntity.getStack();
                 this.itemEntity.remove(Entity.RemovalReason.KILLED);
+                this.entity.addFoodToStorage(item);
                 this.entity.world.playSound(null, this.itemEntity.getX(), this.itemEntity.getY(), this.itemEntity.getZ(), SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.NEUTRAL, 1.0F, 0.75F);
-            } else {
-
             }
         }
     }
@@ -69,7 +67,7 @@ public class FindPreferredFoodsGoal extends Goal
             if(players.size() > 0)
             {
                 this.itemEntity = players.stream().min(Comparator.comparing(this.entity::distanceTo)).get();
-                fakeItem = this.itemEntity.getStack();
+                fakeItem = this.itemEntity.getStack().copy();
                 fakeItem.setCount(64);
             }
         }

@@ -354,7 +354,6 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
 
     @Override
     protected void dropInventory() {
-        super.dropInventory();
         List<ItemStack> inventory = this.getInventory().clearToList();
         for (ItemStack currentItem : inventory) {
             this.dropStack(currentItem);
