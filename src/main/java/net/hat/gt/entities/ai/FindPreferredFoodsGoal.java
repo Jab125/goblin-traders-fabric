@@ -68,7 +68,7 @@ public class FindPreferredFoodsGoal extends Goal
             {
                 this.itemEntity = players.stream().min(Comparator.comparing(this.entity::distanceTo)).get();
                 fakeItem = this.itemEntity.getStack().copy();
-                fakeItem.setCount(64);
+                fakeItem.setCount(itemEntity.getStack().getCount());
             }
         }
 
