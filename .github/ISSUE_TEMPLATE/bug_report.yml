@@ -48,7 +48,7 @@ body:
     description: Also making sure!
     options:
       - label: I have Fabric API installed
-      -required: true
+      - required: true
 - type: markdown
   attributes:
     value: "Thanks for helping make this mod better"
