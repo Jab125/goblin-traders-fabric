@@ -28,21 +28,21 @@ body:
       - 1.0.5
       - 1.1.0
       - 1.1.1
-      - 1.2.1
-    validations:
-      required: true
+      - 1.2.0
+  validations:
+    required: true
 - type: textarea
   attributes:
     label: What did you expect?
     description: "What was meant to happen?"
-    validations:
-      required: true
+  validations:
+    required: true
 - type: textarea
   attributes:
     label: What did you get?
     description: "What actually happened?"
-    validations:
-      required: true
+  validations:
+    required: true
 - type: checkboxes
   attributes:
     label: "Do you have the mod installed?"
