@@ -11,7 +11,6 @@ body:
     label: Minecraft Username
     description: What is your Minecraft Username?
     placeholder: Ex. Steve
-    value: Steve
   validations:
     required: true
 - type: dropdown
