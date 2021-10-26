@@ -14,7 +14,11 @@ public class SplashScreenMixin {
     @Inject(method = "get", at = @At(value = "RETURN"), cancellable = true)
     private void append(CallbackInfoReturnable<String> cir) {
         if ((int) (Math.random() * 70) == 0) {
-        cir.setReturnValue("Try End Goblin Traders!");
+            if ((int) (Math.random() * 2) == 0) {
+                cir.setReturnValue("Try End Goblin Traders for only $0.99!");
+            } else {
+                cir.setReturnValue("Try End Goblin Traders on CurseForge!");
+            }
         }
 
     }
