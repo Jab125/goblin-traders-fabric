@@ -20,7 +20,7 @@ public class CapesLoader {
             try {
                 PLAYERS = gson.fromJson(
                         IOUtils.toString(
-                                new URL("https://raw.githubusercontent.com/3e2j/goblin-traders-fabric/main/capes.json"),
+                                new URL("https://raw.githubusercontent.com/3e2j/goblin-traders-fabric/1.17/capes.json"),
                                 StandardCharsets.UTF_8
                         ),
                         Map.class
