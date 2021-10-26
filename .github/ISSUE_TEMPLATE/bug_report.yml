@@ -37,14 +37,14 @@ body:
     description: "Describe what went wrong."
 - type: checkboxes
   attributes:
-    label: Do you have the mod installed?
+    label: "Do you have the mod installed?"
     description: "Just making sure!"
     options:
       - label: "I have the mod installed"
       - required: true
 - type: checkboxes
   attributes:
-    label: Do you have Fabric API installed?
+    label: "Do you have Fabric API installed?"
     description: "Also making sure!"
     options:
       - label: "I have Fabric API installed"
