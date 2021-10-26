@@ -1,0 +1,54 @@
+---
+name: Bug report
+about: Report a bug
+title: "[Bug] "
+labels: ['bug']
+assignees: 
+ - Jab125
+ - 3e2j
+
+---
+- type: input
+  attributes:
+    label: Minecraft Username
+    description: What is your Minecraft Username?
+    placeholder: Example: Steve
+    value: Steve
+  validations:
+    required: true
+- type: dropdown
+  attributes:
+    label: Version
+    description: What version of Goblin Traders are you using?
+    multiple: false
+    options:
+      - label: 1.0.0
+      - label: 1.0.1
+      - label: 1.0.2
+      - label: 1.0.3
+      - label: 1.0.4
+      - label: 1.0.5
+      - label: 1.0.6
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: The Bug
+    description: Describe what went wrong.
+- type: checkboxes
+  attributes:
+    label: Do you have the mod installed?
+    description: Just making sure!
+    options:
+      -label: I have the mod installed
+      -required: true
+- type: checkboxes
+  attributes:
+    label: Do you have Fabric API installed?
+    description: Also making sure!
+    options:
+      -label: I have Fabric API installed
+      -required: true
+- type: markdown
+  attributes:
+    value: "Thanks for reporting!"
