@@ -35,8 +35,8 @@ body:
   attributes:
     label: What did you expect?
     description: "What was meant to happen?"
-  validations:
-    required: true
+    validations:
+      required: true
 - type: textarea
   attributes:
     label: What did you get?
