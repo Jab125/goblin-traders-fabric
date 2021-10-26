@@ -141,5 +141,10 @@
   "item.minecraft.tipped_arrow.effect.gtdig_speed_extended": "Arrow of Haste",
   "item.minecraft.tipped_arrow.effect.gtweak_night_vision": "Arrow of Night Vision",
   "item.minecraft.tipped_arrow.effect.gtweak_night_vision_extended": "Arrow of Night Vision",
-  "item.minecraft.tipped_arrow.effect.gtweak_night_vision_extended_2": "Arrow of Night Vision"
+  "item.minecraft.tipped_arrow.effect.gtweak_night_vision_extended_2": "Arrow of Night Vision",
+
+  "gamerule.goblinTradersPickUpFoods": "Goblin Traders pick up foods",
+  "gamerule.goblinTradersPunchBack": "Goblin Traders punch back",
+  "gamerule.goblinTradersSpawn": "Goblin Traders spawn",
+  "gamerule.veinGoblinTradersSpawn": "Vein Goblin Traders spawn"
 }
