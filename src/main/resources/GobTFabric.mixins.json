@@ -5,14 +5,14 @@
   "compatibilityLevel": "JAVA_16",
   "mixins": [
     "AnvilMenuMixin",
-    "CapeMixin",
     "EnchantmentMixin",
     "ItemMixin",
     "SpawnRestrictionMixin",
     "TradeOutputSlotMixin"
   ],
   "client": [
-    "SplashScreenMixin"
+    "SplashScreenMixin",
+    "CapeMixin"
   ],
   "injectors": {
     "defaultRequire": 1
