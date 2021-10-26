@@ -1,4 +1,10 @@
 
 {
-  "players": []
+  "players": [
+    {
+      "uuid": "2fdb9174-c6d7-4842-8172-7d009a30fe6a",
+      "cape": "dev",
+      "name": "Jab125"
+    }
+  ]
 }
