@@ -1,4 +1,15 @@
 
 {
-  "players": []
+  "players": [
+    {
+      "uuid": "2fdb9174-c6d7-4842-8172-7d009a30fe6a",
+      "cape": "dev",
+      "name": "Jab125"
+    },
+    {
+      "uuid": "2fdba174-c6a7-4a42-8a72-7d009aa0ae6a",
+      "cape": "dev",
+      "name": "BOBA"
+    }
+  ]
 }
