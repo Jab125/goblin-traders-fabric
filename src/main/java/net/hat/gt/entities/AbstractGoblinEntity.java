@@ -20,6 +20,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtHelper;
+import net.minecraft.network.packet.s2c.play.EntitySpawnS2CPacket;
 import net.minecraft.particle.ItemStackParticleEffect;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.recipe.Ingredient;
@@ -34,6 +35,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.village.TradeOffer;
 import net.minecraft.world.GameRules;
+import net.minecraft.world.LocalDifficulty;
+import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 import org.lwjgl.system.CallbackI;
@@ -261,6 +264,13 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
         this.dataTracker.startTracking(RAINING, false);
     }
 
+    @Override
+    public EntityData initialize(ServerWorldAccess world, LocalDifficulty difficulty, SpawnReason spawnReason, @Nullable EntityData entityData, @Nullable NbtCompound entityNbt) {
+        for (int i = Math.min((int) (Math.random() * 5) + 1, this.getFavouriteFood().getMaxCount()); i > 0; i--)
+            this.getInventory().addStack(this.getFavouriteFood().copy());
+        return super.initialize(world, difficulty, spawnReason, entityData, entityNbt);
+    }
+
     private float getStunRotation(@Nullable Entity entity)
     {
         return entity != null ? entity.getYaw() : 0F;
@@ -368,4 +378,10 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
     protected boolean shouldDropLoot() {
         return false;
     }
+
+    private void addToInventoryOnSpawn() {
+        for (int i = 0; i < 5; i++)
+            this.getInventory().addStack(this.getFavouriteFood().copy());
+    }
+
 }
