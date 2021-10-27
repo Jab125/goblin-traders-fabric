@@ -28,9 +28,7 @@ public class CapesLoader {
 
     public static void load() {
         Util.getMainWorkerExecutor().execute(() -> {
-            long startLoad = System.currentTimeMillis();
             Gson gson = new GsonBuilder().create();
-            GobT.LOGGER.info("Loading capes data...");
             try {
                 List<PlayerCapeData> players = gson.fromJson(
                         IOUtils.toString(
@@ -42,10 +40,8 @@ public class CapesLoader {
                 for (var player : players) {
                     UUID_CAPE_MAP.put(player.uuid, player.cape);
                 }
-            } catch (IOException e) {
-                GobT.LOGGER.warn("Failed to load capes.", e);
+            } catch (IOException ignored) {
             }
-            GobT.LOGGER.info("Loaded capes for {} players. (Took {}ms)", UUID_CAPE_MAP.size(), System.currentTimeMillis() - startLoad);
         });
     }
 }
