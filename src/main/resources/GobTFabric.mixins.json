@@ -11,8 +11,8 @@
     "TradeOutputSlotMixin"
   ],
   "client": [
-    "SplashScreenMixin",
-    "CapeMixin"
+    "CapeMixin",
+    "SplashScreenMixin"
   ],
   "injectors": {
     "defaultRequire": 1
