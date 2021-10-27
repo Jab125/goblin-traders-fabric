@@ -5,10 +5,8 @@ import net.hat.gt.entities.ai.*;
 import net.hat.gt.init.ModSounds;
 import net.hat.gt.init.ModStats;
 import net.minecraft.block.NetherPortalBlock;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.ExperienceOrbEntity;
-import net.minecraft.entity.Npc;
+import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.entity.*;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.data.DataTracker;
@@ -38,6 +36,7 @@ import net.minecraft.village.TradeOffer;
 import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
+import org.lwjgl.system.CallbackI;
 
 import java.util.*;
 
@@ -346,19 +345,27 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
         this.getInventory().addStack(food);
     }
 
-    @Override
-    public void onDeath(DamageSource source) {
-        this.dropInventory();
-        super.onDeath(source);
-    }
+    //@Override
+    //public void onDeath(DamageSource source) {
+    //    if (this.world.getGameRules().getBoolean(GameRules.DO_MOB_LOOT)) {
+    //        this.dropInventory();
+    //    }
+    //    super.onDeath(source);
+    //}
 
     @Override
     protected void dropInventory() {
-        List<ItemStack> inventory = this.getInventory().clearToList();
-        for (ItemStack currentItem : inventory) {
-            this.dropStack(currentItem);
-        }
+        if (this.world.getGameRules().getBoolean(GameRules.DO_MOB_LOOT)) {
+            List<ItemStack> inventory = this.getInventory().clearToList();
+            for (ItemStack currentItem : inventory) {
+                this.dropStack(currentItem);
+            }
 
+        }
     }
 
+    @Override
+    protected boolean shouldDropLoot() {
+        return false;
+    }
 }
