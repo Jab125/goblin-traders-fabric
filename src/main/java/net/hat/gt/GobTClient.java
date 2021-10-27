@@ -10,6 +10,7 @@ import net.hat.gt.entities.GobinTraderRenderer;
 import net.hat.gt.entities.GoblinTraderModel;
 import net.hat.gt.entities.VeinGobinTraderRenderer;
 import net.hat.gt.init.ModEntities;
+import net.hat.gt.misc.CapesLoader;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.util.Identifier;
 
@@ -19,6 +20,7 @@ public class GobTClient implements ClientModInitializer {
     public static final EntityModelLayer VEIN_GOBLIN_MODEL_LAYER = new EntityModelLayer(new Identifier("goblintraders", "vgoblin"), "vein_goblin_render_layer");
     @Override
     public void onInitializeClient() {
+        CapesLoader.load();
         //EntityRenderer
         EntityRendererRegistry.register(ModEntities.GOBLIN_TRADER, GobinTraderRenderer::new);
         EntityRendererRegistry.register(ModEntities.VEIN_GOBLIN_TRADER, VeinGobinTraderRenderer::new);

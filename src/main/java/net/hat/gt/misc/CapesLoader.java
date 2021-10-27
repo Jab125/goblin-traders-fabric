@@ -2,6 +2,7 @@ package net.hat.gt.misc;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import net.hat.gt.GobT;
 import net.minecraft.util.Util;
 import org.apache.commons.io.IOUtils;
 
@@ -17,6 +18,7 @@ public class CapesLoader {
         Util.getMainWorkerExecutor().execute(() -> {
             long startLoad = System.currentTimeMillis();
             Gson gson = new GsonBuilder().create();
+            GobT.LOGGER.info("Loading capes data...");
             try {
                 PLAYERS = gson.fromJson(
                         IOUtils.toString(
@@ -25,8 +27,10 @@ public class CapesLoader {
                         ),
                         Map.class
                 );
-            } catch (IOException ignored) {/**doNothing()*/}
-
+            } catch (IOException e) {
+                GobT.LOGGER.warn("Failed to load capes.", e);
+            }
+            GobT.LOGGER.info("Loaded capes for {} players. (Took {}ms)", PLAYERS.size(), System.currentTimeMillis()-startLoad);
         });
     }
 }
