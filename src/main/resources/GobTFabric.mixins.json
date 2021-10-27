@@ -5,9 +5,11 @@
   "compatibilityLevel": "JAVA_16",
   "mixins": [
     "AnvilMenuMixin",
+    "DirtPathMixin",
     "EnchantmentMixin",
     "ItemMixin",
     "SpawnRestrictionMixin",
+    "SpreadableBlockMixin",
     "TradeOutputSlotMixin"
   ],
   "client": [
