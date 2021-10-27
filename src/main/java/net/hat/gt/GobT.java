@@ -6,6 +6,7 @@ import net.fabricmc.api.ModInitializer;
 import net.hat.gt.config.GoblinTradersConfig;
 import net.hat.gt.init.*;
 import net.hat.gt.misc.CapesLoader;
+import net.hat.gt.structures.test.TestFeature;
 import net.minecraft.util.Identifier;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -21,6 +22,7 @@ public class GobT implements ModInitializer {
         AutoConfig.register(GoblinTradersConfig.class, Toml4jConfigSerializer::new);
         config = AutoConfig.getConfigHolder(GoblinTradersConfig.class).getConfig();
 
+        ModStructures.registerStructures();
         ModGameRules.registerGameRules();
         ModSounds.registerSounds();
         ModEntities.registerEntities();
