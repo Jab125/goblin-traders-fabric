@@ -42,13 +42,6 @@ body:
     description: "What actually happened?"
   validations:
     required: true
-- type: checkboxes
-  attributes:
-    label: "Do you have Fabric API installed?"
-    description: "Just making sure!"
-    options:
-    - label: "I have Fabric API installed"
-      required: true
 - type: markdown
   attributes:
     value: "Thanks for helping make this mod better"
