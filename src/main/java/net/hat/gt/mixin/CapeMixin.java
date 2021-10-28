@@ -3,7 +3,7 @@ package net.hat.gt.mixin;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.hat.gt.GobT;
-import net.hat.gt.misc.CapesLoader;
+import net.hat.gt.util.CapesLoader;
 import net.minecraft.client.network.AbstractClientPlayerEntity;
 import net.minecraft.client.network.PlayerListEntry;
 import net.minecraft.util.Identifier;

@@ -1,4 +1,4 @@
-package net.hat.gt.misc;
+package net.hat.gt.util;
 
 import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;

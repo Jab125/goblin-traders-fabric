@@ -10,7 +10,7 @@ import net.hat.gt.entities.GobinTraderRenderer;
 import net.hat.gt.entities.GoblinTraderModel;
 import net.hat.gt.entities.VeinGobinTraderRenderer;
 import net.hat.gt.init.ModEntities;
-import net.hat.gt.misc.CapesLoader;
+import net.hat.gt.util.CapesLoader;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.util.Identifier;
 
