@@ -266,8 +266,7 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
 
     @Override
     public EntityData initialize(ServerWorldAccess world, LocalDifficulty difficulty, SpawnReason spawnReason, @Nullable EntityData entityData, @Nullable NbtCompound entityNbt) {
-        for (int i = Math.min((int) (Math.random() * 5) + 1, this.getFavouriteFood().getMaxCount()); i > 0; i--)
-            this.getInventory().addStack(this.getFavouriteFood().copy());
+        addToInventoryOnSpawn();
         return super.initialize(world, difficulty, spawnReason, entityData, entityNbt);
     }
 
@@ -379,8 +378,8 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
         return false;
     }
 
-    private void addToInventoryOnSpawn() {
-        for (int i = 0; i < 5; i++)
+    protected void addToInventoryOnSpawn() {
+        for (int i = Math.min((int) (Math.random() * 5) + 1, this.getFavouriteFood().getMaxCount()); i > 0; i--)
             this.getInventory().addStack(this.getFavouriteFood().copy());
     }
 
