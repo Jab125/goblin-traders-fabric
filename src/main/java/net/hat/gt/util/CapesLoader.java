@@ -4,6 +4,7 @@ import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import net.hat.gt.GobT;
+import net.minecraft.client.texture.NativeImage;
 import net.minecraft.util.Util;
 import org.apache.commons.io.IOUtils;
 
@@ -43,5 +44,32 @@ public class CapesLoader {
             } catch (IOException ignored) {
             }
         });
+    }
+    public static NativeImage parseCape(final NativeImage nativeImageIn)
+    {
+        int imageWidth = 64;
+        int imageHeight = 32;
+        int imageSrcWidth = nativeImageIn.getWidth();
+        int imageSrcHeight = nativeImageIn.getHeight();
+
+        while (imageWidth < imageSrcWidth || imageHeight < imageSrcHeight)
+        {
+            imageWidth *= 2;
+            imageHeight *= 2;
+        }
+
+        NativeImage nativeImage = new NativeImage(imageWidth, imageHeight, true);
+
+        for (int x = 0; x < imageSrcWidth; x++)
+        {
+            for (int y = 0; y < imageSrcHeight; y++)
+            {
+                nativeImage.setPixelColor(x, y, nativeImageIn.getPixelColor(x, y));
+            }
+        }
+
+        nativeImageIn.close();
+
+        return nativeImage;
     }
 }
