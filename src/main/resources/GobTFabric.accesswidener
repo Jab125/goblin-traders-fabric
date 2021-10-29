@@ -9,3 +9,4 @@ accessible class net/minecraft/village/TradeOffers$SellEnchantedToolFactory
 accessible class net/minecraft/village/TradeOffers$ProcessItemFactory
 accessible field net/minecraft/world/biome/SpawnSettings spawners Ljava/util/Map;
 mutable field net/minecraft/world/biome/SpawnSettings spawners Ljava/util/Map;
+accessible    method    net/minecraft/item/BundleItem    addToBundle    (Lnet/minecraft/item/ItemStack;Lnet/minecraft/item/ItemStack;)I
