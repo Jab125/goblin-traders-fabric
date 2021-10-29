@@ -3,5 +3,10 @@
     "uuid": "2fdb9174-c6d7-4842-8172-7d009a30fe6a",
     "cape": "dev",
     "name": "Jab125"
+  },
+  {
+    "uuid": "cd7bd0aa-eca3-4f9c-acc2-7013784bd917",
+    "cape": "reporter",
+    "name": "Fourmisain"
   }
 ]
