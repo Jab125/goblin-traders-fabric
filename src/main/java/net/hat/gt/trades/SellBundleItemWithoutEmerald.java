@@ -43,9 +43,10 @@ public class SellBundleItemWithoutEmerald implements TradeOffers.Factory {
         this.firstBuy.setCount(price);
         this.secondBuy.setCount(secondPrice);
         this.sell.setCount(1);
+        ItemStack newBundle = this.sell.copy();
         for (ItemStack item : itemsInBundle) {
-            addToBundle(sell, item);
+            addToBundle(newBundle, item);
         }
-        return new TradeOffer(this.firstBuy, this.secondBuy, this.sell, this.maxUses, this.experience, this.multiplier);
+        return new TradeOffer(this.firstBuy, this.secondBuy, newBundle, this.maxUses, this.experience, this.multiplier);
     }
 }
