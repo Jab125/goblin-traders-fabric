@@ -43,6 +43,8 @@ import org.lwjgl.system.CallbackI;
 
 import java.util.*;
 
+import static com.jab125.thonkutil.util.Util.secondsToTick;
+
 public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc {
     @Nullable
     private BlockPos wanderTarget;
@@ -67,7 +69,7 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
     @Override
     protected void initGoals() {
         this.goalSelector.add(0, new StunGoal(this));
-        this.goalSelector.add(1, new SwimGoal(this));
+        this.goalSelector.add(1, new GoblinSwimGoal(this));
         this.goalSelector.add(1, new FirePanicGoal(this, 0.5F));
         this.goalSelector.add(2, new TradeWithPlayerGoal(this));
         this.goalSelector.add(2, new LookAtCustomerGoal(this));
@@ -96,8 +98,7 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
 
     @Override
     public ActionResult interactMob(PlayerEntity player, Hand hand) {
-        if (this.isAlive() && !this.hasCustomer() && (this.isFireImmune() || !this.isOnFire())) {
-            if (hand == Hand.MAIN_HAND) {
+        if (this.isAlive() && !this.hasCustomer() && (this.isFireImmune() || !this.isOnFire()) && !isStunned()) {
             if (hand.equals(Hand.MAIN_HAND)) {
                 player.incrementStat(ModStats.TRADE_WITH_GOBLIN);
             }
@@ -178,10 +179,14 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
     public void writeCustomDataToNbt(NbtCompound nbt) {
         super.writeCustomDataToNbt(nbt);
         nbt.putInt("DespawnDelay", this.despawnDelay);
+        nbt.putBoolean("IsStunned", this.isStunned());
+        nbt.putInt("StunDuration", this.stunDelay);
+        nbt.putFloat("StunRotation", this.getStunRotation());
         if (this.wanderTarget != null) {
             nbt.put("WanderTarget", NbtHelper.fromBlockPos(this.wanderTarget));
         }
     }
+
 
     @Override
     public void readCustomDataFromNbt(NbtCompound nbt) {
@@ -191,6 +196,15 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
         }
         if (nbt.contains("WanderTarget")) {
             this.wanderTarget = NbtHelper.toBlockPos(nbt.getCompound("WanderTarget"));
+        }
+        if (nbt.contains("IsStunned")) {
+            this.dataTracker.set(STUNNED, nbt.getBoolean("IsStunned"));
+        }
+        if (nbt.contains("StunDuration")) {
+           this.stunDelay = nbt.getInt("StunDuration");
+        }
+        if (nbt.contains("StunRotation")) {
+            this.dataTracker.set(STUN_ROTATION, nbt.getFloat("StunRotation"));
         }
 
         this.setBreedingAge(Math.max(0, this.getBreedingAge()));
@@ -251,7 +265,11 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
             this.getNavigation().stop();
             this.dataTracker.set(STUNNED, true);
             this.dataTracker.set(STUN_ROTATION, this.getStunRotation(source.getAttacker()));
-            this.stunDelay = 20;
+            this.stunDelay = GobT.config.CAN_GET_KNOCKED_OUT ?
+                    amount > this.getMaxHealth() - 5 ?
+                            secondsToTick(60)
+                            : Math.min(secondsToTick(30), 20 + (int) (amount * 2))
+                    : Math.min(secondsToTick(30), 20 + (int) (amount * 2));
         }
         return attacked;
     }
@@ -293,6 +311,7 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
 
 
     public void tick() {
+        if (this.isStunned()) this.resetCustomer();
         if (this.stunDelay > 0) {
             this.stunDelay--;
             if (this.stunDelay == 0) {
