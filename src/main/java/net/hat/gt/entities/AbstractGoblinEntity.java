@@ -98,6 +98,7 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
     public ActionResult interactMob(PlayerEntity player, Hand hand) {
         if (this.isAlive() && !this.hasCustomer() && (this.isFireImmune() || !this.isOnFire())) {
             if (hand == Hand.MAIN_HAND) {
+            if (hand.equals(Hand.MAIN_HAND)) {
                 player.incrementStat(ModStats.TRADE_WITH_GOBLIN);
             }
             if (!this.getOffers().isEmpty()) {
