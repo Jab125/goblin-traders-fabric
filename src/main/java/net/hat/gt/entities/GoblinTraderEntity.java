@@ -7,6 +7,9 @@ import net.hat.gt.init.ModTrades;
 import net.hat.gt.trades.GoblinTrades;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
+import net.minecraft.entity.data.DataTracker;
+import net.minecraft.entity.data.TrackedData;
+import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.passive.MerchantEntity;
 import net.minecraft.entity.passive.VillagerEntity;
@@ -23,7 +26,8 @@ import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
 
-public class GoblinTraderEntity extends AbstractGoblinEntity{
+public class GoblinTraderEntity extends AbstractGoblinEntity {
+
     public GoblinTraderEntity(EntityType<? extends MerchantEntity> entityType, World world) {
         super(entityType, world);
     }
@@ -112,7 +116,7 @@ public class GoblinTraderEntity extends AbstractGoblinEntity{
             TradeOffer tradeOffer = factory.create(this, this.random);
             if (tradeOffer != null) {
                 if ((int) (Math.random() * 20) == 1 && GobT.config.EASTER_EGGS) {
-                    recipeList.add(GoblinTrades.easterEggTrades()[(int)(Math.random() * GoblinTrades.easterEggTrades().length)].create(this, this.random));
+                    recipeList.add(GoblinTrades.easterEggTrades()[this.random.nextInt(GoblinTrades.easterEggTrades().length)].create(this, this.random));
                 }
                 recipeList.add(tradeOffer);
             }
