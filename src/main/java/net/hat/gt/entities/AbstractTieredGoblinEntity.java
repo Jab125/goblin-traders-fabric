@@ -11,30 +11,24 @@ import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.passive.MerchantEntity;
-import net.minecraft.entity.passive.VillagerEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
-import net.minecraft.stat.Stats;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.MathHelper;
-import net.minecraft.village.*;
+import net.minecraft.village.TradeOffer;
+import net.minecraft.village.TradeOfferList;
+import net.minecraft.village.TradeOffers;
+import net.minecraft.village.VillagerData;
 import net.minecraft.world.World;
-
-import java.util.Iterator;
 
 import static net.hat.gt.init.ModTrades.copyToFastUtilMap;
 
 public abstract class AbstractTieredGoblinEntity extends AbstractGoblinEntity {
     private static final TrackedData<? super Integer> XP = DataTracker.registerData(AbstractGoblinEntity.class, TrackedDataHandlerRegistry.INTEGER);
     private static final TrackedData<? super Integer> LVL = DataTracker.registerData(AbstractGoblinEntity.class, TrackedDataHandlerRegistry.INTEGER);
-    int lvl = 1;
-    int experience;
     boolean levelingUp;
     int levelUpTimer;
-    //VillagerEntity
     public AbstractTieredGoblinEntity(EntityType<? extends MerchantEntity> entityType, World world) {
         super(entityType, world);
     }
@@ -65,13 +59,12 @@ public abstract class AbstractTieredGoblinEntity extends AbstractGoblinEntity {
         }
     }
 
-    @SuppressWarnings("unchecked")
     protected void fillRecipes() {
         Int2ObjectMap<TradeOffers.Factory[]> int2ObjectMap = copyToFastUtilMap(ImmutableMap.of(
                 1, noviceTrades(), 2, apprenticeTrades(), 3, journeymanTrades(), 4, expertTrades(), 5, masterTrades()));
         //Int2ObjectMap<TradeOffers.Factory[]> int2ObjectMap = TradeOffers.PROFESSION_TO_LEVELED_TRADE.get(VillagerProfession.BUTCHER);
-        if (int2ObjectMap != null && !int2ObjectMap.isEmpty()) {
-            TradeOffers.Factory[] factorys = (TradeOffers.Factory[])int2ObjectMap.get(this.getLvl());
+        if (!int2ObjectMap.isEmpty()) {
+            TradeOffers.Factory[] factorys = int2ObjectMap.get(this.getLvl());
             if (factorys != null) {
                 TradeOfferList tradeOfferList = this.getOffers();
                 this.fillRecipesFromPool(tradeOfferList, factorys, 2);
