@@ -18,7 +18,7 @@ public class GobinTraderRenderer extends MobEntityRenderer<AbstractGoblinEntity,
         this.addFeature(new HeldItemFeatureRenderer<>(this));
     }
 
-    /** if someones wants to add texture to the test goblin make a resource pack (and optionally sumbit a pull request)
+    /** if someone wants to add a texture to the test goblin trader make a resource pack (and optionally sumbit a pull request)
      *
      * @param entity is the entity
      * @return the texture
