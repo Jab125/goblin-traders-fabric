@@ -140,7 +140,7 @@ public abstract class AbstractTieredGoblinEntity extends AbstractGoblinEntity {
 
     @Override
     protected void afterUsing(TradeOffer offer) {
-        int i = 3 + this.random.nextInt(4);
+        int i = offer.getMerchantExperience() * 10;
         //this.experience += offer.getMerchantExperience();
         this.dataTracker.set(XP, (int)this.dataTracker.get(XP) + offer.getMerchantExperience());
         if (this.canLevelUp()) {
