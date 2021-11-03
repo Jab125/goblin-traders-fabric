@@ -212,6 +212,7 @@ public abstract class AbstractTieredGoblinEntity extends AbstractGoblinEntity {
         super.writeCustomDataToNbt(nbt);
         nbt.putInt("Xp", this.getXP());
         nbt.putInt("Lvl", this.getLvl());
+        nbt.putInt("LevelUpTimer", this.levelUpTimer);
     }
 
     @Override
@@ -222,6 +223,9 @@ public abstract class AbstractTieredGoblinEntity extends AbstractGoblinEntity {
         }
         if (nbt.contains("Lvl", 3)) {
             this.setLevel(nbt.getInt("Lvl"));
+        }
+        if (nbt.contains("LevelUpTimer", 3)) {
+            this.levelUpTimer = nbt.getInt("LevelUpTimer");
         }
     }
 }
