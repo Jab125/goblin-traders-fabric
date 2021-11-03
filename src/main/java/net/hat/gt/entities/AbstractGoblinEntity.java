@@ -347,7 +347,7 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
         }
         else
         {this.dataTracker.set(RAINING, false);}
-        if(!this.world.isClient)
+        if(!this.world.isClient && !this.isPersistent())
         {
             this.handleDespawn();
         }
