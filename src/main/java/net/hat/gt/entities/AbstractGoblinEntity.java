@@ -266,6 +266,7 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
         {
             this.getNavigation().stop();
             this.dataTracker.set(STUNNED, true);
+            if (!isStunned())
             this.dataTracker.set(STUN_ROTATION, this.getStunRotation(source.getAttacker()));
             this.stunDelay = Math.max(GobT.config.CAN_GET_KNOCKED_OUT ?
                     amount > this.getMaxHealth() - 5 ?
