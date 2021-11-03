@@ -1,7 +1,9 @@
 package net.hat.gt.entities;
 
+import net.hat.gt.Constants;
 import net.hat.gt.GobT;
 import net.hat.gt.entities.ai.*;
+import net.hat.gt.init.ModDamageSource;
 import net.hat.gt.init.ModSounds;
 import net.hat.gt.init.ModStats;
 import net.minecraft.block.NetherPortalBlock;
@@ -311,6 +313,12 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
 
 
     public void tick() {
+        if (this.isLeveledMerchant() && !(this instanceof AbstractTieredGoblinEntity)) {
+            this.setInvulnerable(false);
+            this.damage(ModDamageSource.INVALIDATED, Float.MAX_VALUE);
+            this.remove(RemovalReason.DISCARDED);
+            GobT.LOGGER.fatal("{} should extend {}", this.getClass().toString(), AbstractTieredGoblinEntity.class.getName());
+        }
         if (this.isStunned()) this.resetCustomer();
         if (this.stunDelay > 0) {
             this.stunDelay--;
