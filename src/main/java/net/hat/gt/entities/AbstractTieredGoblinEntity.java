@@ -3,6 +3,7 @@ package net.hat.gt.entities;
 import com.google.common.collect.ImmutableMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import net.hat.gt.init.ModStats;
+import net.hat.gt.trades.UpgradedTradeOffer;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ExperienceOrbEntity;
 import net.minecraft.entity.data.DataTracker;
@@ -133,7 +134,7 @@ public abstract class AbstractTieredGoblinEntity extends AbstractGoblinEntity {
 
     @Override
     protected void afterUsing(TradeOffer offer) {
-        int i = offer.getMerchantExperience() * 10;
+        int i = offer instanceof UpgradedTradeOffer ? ((UpgradedTradeOffer) offer).getPlayerExperience() : offer.getMerchantExperience() * 10;
         //this.experience += offer.getMerchantExperience();
         this.dataTracker.set(XP, (int)this.dataTracker.get(XP) + offer.getMerchantExperience());
         if (this.canLevelUp()) {
