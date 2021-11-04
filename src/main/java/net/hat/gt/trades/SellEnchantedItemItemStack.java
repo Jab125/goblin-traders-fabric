@@ -12,7 +12,7 @@ import java.util.Random;
 
 
 @SuppressWarnings("unused")
-public class SellEnchantedItemItemStack implements TradeOffers.Factory {
+public class SellEnchantedItemItemStack implements UpgradedTradeOfferFactory {
     private final ItemStack firstBuy;
     private final ItemStack secondBuy;
     private final int secondPrice;
@@ -20,6 +20,7 @@ public class SellEnchantedItemItemStack implements TradeOffers.Factory {
     private final ItemStack tool;
     private final int maxUses;
     private final int experience;
+    private final int playerExperience;
     private final Enchantment bookEnchant;
     private final Enchantment enchantment1;
     private final Enchantment enchantment2;
@@ -37,7 +38,7 @@ public class SellEnchantedItemItemStack implements TradeOffers.Factory {
 
     public SellEnchantedItemItemStack(ItemStack item, int $, ItemStack item2, int sC, Enchantment bookEnchant, int levelBook, ItemStack itemSell,
                                       Enchantment enchantment,
-                                      int enchLevel, int maxUses, int experience) {
+                                      int enchLevel, int maxUses, int experience, int playerExperience) {
         this.firstBuy = item;
         this.price = $;
         this.secondBuy = item2;
@@ -52,6 +53,7 @@ public class SellEnchantedItemItemStack implements TradeOffers.Factory {
         this.tool = itemSell;
         this.maxUses = maxUses;
         this.experience = experience;
+        this.playerExperience = playerExperience;
         this.levelBook = levelBook;
         this.level1 = enchLevel;
         this.level2 = 0;
@@ -64,7 +66,7 @@ public class SellEnchantedItemItemStack implements TradeOffers.Factory {
     public SellEnchantedItemItemStack(ItemStack item, int $, ItemStack item2, int sC, Enchantment bookEnchant, int levelBook, ItemStack itemSell,
                                       Enchantment enchantment1, int enchLevel1,
                                       Enchantment enchantment2, int enchLevel2,
-                                      int maxUses, int experience) {
+                                      int maxUses, int experience, int playerExperience) {
         this.firstBuy = item;
         this.price = $;
         this.secondBuy = item2;
@@ -79,6 +81,7 @@ public class SellEnchantedItemItemStack implements TradeOffers.Factory {
         this.tool = itemSell;
         this.maxUses = maxUses;
         this.experience = experience;
+        this.playerExperience = playerExperience;
         this.levelBook = 0;
         this.level1 = enchLevel1;
         this.level2 = enchLevel2;
@@ -92,7 +95,7 @@ public class SellEnchantedItemItemStack implements TradeOffers.Factory {
                                       Enchantment enchantment1, int enchLevel1,
                                       Enchantment enchantment2, int enchLevel2,
                                       Enchantment enchantment3, int enchLevel3,
-                                      int maxUses, int experience) {
+                                      int maxUses, int experience, int playerExperience) {
         this.firstBuy = item;
         this.price = $;
         this.secondBuy = item2;
@@ -107,6 +110,7 @@ public class SellEnchantedItemItemStack implements TradeOffers.Factory {
         this.tool = itemSell;
         this.maxUses = maxUses;
         this.experience = experience;
+        this.playerExperience = playerExperience;
         this.levelBook = 0;
         this.level1 = enchLevel1;
         this.level2 = enchLevel2;
@@ -121,7 +125,7 @@ public class SellEnchantedItemItemStack implements TradeOffers.Factory {
                                       Enchantment enchantment2, int enchLevel2,
                                       Enchantment enchantment3, int enchLevel3,
                                       Enchantment enchantment4, int enchLevel4,
-                                      int maxUses, int experience) {
+                                      int maxUses, int experience, int playerExperience) {
         this.firstBuy = item;
         this.price = $;
         this.secondBuy = item2;
@@ -136,6 +140,7 @@ public class SellEnchantedItemItemStack implements TradeOffers.Factory {
         this.tool = itemSell;
         this.maxUses = maxUses;
         this.experience = experience;
+        this.playerExperience = playerExperience;
         this.levelBook = 0;
         this.level1 = enchLevel1;
         this.level2 = enchLevel2;
@@ -151,7 +156,7 @@ public class SellEnchantedItemItemStack implements TradeOffers.Factory {
                                       Enchantment enchantment3, int enchLevel3,
                                       Enchantment enchantment4, int enchLevel4,
                                       Enchantment enchantment5, int enchLevel5,
-                                      int maxUses, int experience) {
+                                      int maxUses, int experience, int playerExperience) {
         this.firstBuy = item;
         this.price = $;
         this.secondBuy = item2;
@@ -166,6 +171,7 @@ public class SellEnchantedItemItemStack implements TradeOffers.Factory {
         this.tool = itemSell;
         this.maxUses = maxUses;
         this.experience = experience;
+        this.playerExperience = playerExperience;
         this.levelBook = 0;
         this.level1 = enchLevel1;
         this.level2 = enchLevel2;
@@ -181,7 +187,7 @@ public class SellEnchantedItemItemStack implements TradeOffers.Factory {
                                       Enchantment enchantment4, int enchLevel4,
                                       Enchantment enchantment5, int enchLevel5,
                                       Enchantment enchantment6, int enchLevel6,
-                                      int maxUses, int experience) {
+                                      int maxUses, int experience, int playerExperience) {
         this.firstBuy = item;
         this.price = $;
         this.secondBuy = item2;
@@ -196,6 +202,7 @@ public class SellEnchantedItemItemStack implements TradeOffers.Factory {
         this.tool = itemSell;
         this.maxUses = maxUses;
         this.experience = experience;
+        this.playerExperience = playerExperience;
         this.levelBook = 0;
         this.level1 = enchLevel1;
         this.level2 = enchLevel2;
@@ -205,7 +212,7 @@ public class SellEnchantedItemItemStack implements TradeOffers.Factory {
         this.level6 = enchLevel6;
     }
 
-    public TradeOffer create(Entity entity, Random random) {
+    public UpgradedTradeOffer create(Entity entity, Random random) {
         ItemStack itemStack = this.tool;
         itemStack.setCount(price);
         ItemStack itemStack2 = this.secondBuy;
@@ -218,6 +225,6 @@ public class SellEnchantedItemItemStack implements TradeOffers.Factory {
         if (this.enchantment4 != null) {itemStack.addEnchantment(this.enchantment4, this.level4);}
         if (this.enchantment5 != null) {itemStack.addEnchantment(this.enchantment5, this.level5);}
         if (this.enchantment6 != null) {itemStack.addEnchantment(this.enchantment6, this.level6);}
-        return new TradeOffer(this.firstBuy, itemStack2, itemStack, this.maxUses, this.experience, 0F);
+        return new UpgradedTradeOffer(this.firstBuy, itemStack2, itemStack, this.maxUses, this.experience, 0F, this.playerExperience);
     }
 }
