@@ -19,7 +19,7 @@ import java.util.Random;
  * <p>Add Potions and duration into ModPotions.
  * Use accordingly, also change {@code LANG} file
  */
-public class TradeWithoutEmeraldPotions implements TradeOffers.Factory {
+public class TradeWithoutEmeraldPotions implements UpgradedTradeOfferFactory {
     private final ItemStack firstBuy;
     private final ItemStack secondBuy;
     private final int secondPrice;
@@ -28,10 +28,11 @@ public class TradeWithoutEmeraldPotions implements TradeOffers.Factory {
     private final int sellCount;
     private final int maxUses;
     private final int experience;
+    private final int playerExperience;
     private final float multiplier;
     private final Potion potionType;
 
-    public TradeWithoutEmeraldPotions(ItemConvertible item, int $, Potion potionType, int maxUses, int experience) {
+    public TradeWithoutEmeraldPotions(ItemConvertible item, int $, Potion potionType, int maxUses, int experience, int playerExperience) {
         this.firstBuy = new ItemStack(item);
         this.price = $;
         this.potionType = potionType;
@@ -41,13 +42,14 @@ public class TradeWithoutEmeraldPotions implements TradeOffers.Factory {
         this.sellCount = 1;
         this.maxUses = maxUses;
         this.experience = experience;
+        this.playerExperience = playerExperience;
         this.multiplier = 0.05F;
     }
 
     @Nullable
-    public TradeOffer create(Entity entity, Random random) {
+    public UpgradedTradeOffer create(Entity entity, Random random) {
         ItemStack itemStack2 = PotionUtil.setPotion(new ItemStack(this.sell.getItem(), this.sellCount), this.potionType);
         ItemStack awkwardPotion = PotionUtil.setPotion(new ItemStack(this.secondBuy.getItem(), this.secondPrice), Potions.AWKWARD);
-        return new TradeOffer(new ItemStack(this.firstBuy.getItem(), this.price), awkwardPotion, itemStack2, this.maxUses, this.experience, this.multiplier);
+        return new UpgradedTradeOffer(new ItemStack(this.firstBuy.getItem(), this.price), awkwardPotion, itemStack2, this.maxUses, this.experience, this.multiplier, this.playerExperience);
     }
 }
