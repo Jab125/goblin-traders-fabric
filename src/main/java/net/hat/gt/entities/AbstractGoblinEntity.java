@@ -6,6 +6,7 @@ import net.hat.gt.entities.ai.*;
 import net.hat.gt.init.ModDamageSource;
 import net.hat.gt.init.ModSounds;
 import net.hat.gt.init.ModStats;
+import net.hat.gt.trades.UpgradedTradeOffer;
 import net.minecraft.block.NetherPortalBlock;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.*;
@@ -93,7 +94,7 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
     @Override
     protected void afterUsing(TradeOffer offer) {
         if (offer.shouldRewardPlayerExperience()) {
-            int i = offer.getMerchantExperience() * 10;
+            int i = offer instanceof UpgradedTradeOffer ? ((UpgradedTradeOffer) offer).getPlayerExperience() : offer.getMerchantExperience() * 10;
             this.world.spawnEntity(new ExperienceOrbEntity(this.world, this.getX(), this.getY() + 0.5D, this.getZ(), i));
         }
     }
