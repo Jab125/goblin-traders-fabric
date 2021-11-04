@@ -7,11 +7,11 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Random;
 
-public class NullTrade implements TradeOffers.Factory {
+public class NullTrade implements UpgradedTradeOfferFactory {
     public NullTrade() {}
     @Nullable
     @Override
-    public TradeOffer create(Entity entity, Random random) {
+    public UpgradedTradeOffer create(Entity entity, Random random) {
         return null;
     }
 }
