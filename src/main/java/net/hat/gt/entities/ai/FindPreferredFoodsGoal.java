@@ -1,6 +1,5 @@
 package net.hat.gt.entities.ai;
 
-import net.hat.gt.GobT;
 import net.hat.gt.entities.AbstractGoblinEntity;
 import net.hat.gt.init.ModGameRules;
 import net.minecraft.entity.Entity;
@@ -8,10 +7,8 @@ import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.ai.goal.Goal;
 import net.minecraft.entity.ai.pathing.Path;
 import net.minecraft.item.ItemStack;
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
-import net.minecraft.world.GameRules;
 
 import java.util.Comparator;
 import java.util.EnumSet;
@@ -45,6 +42,7 @@ public class FindPreferredFoodsGoal extends Goal
         if(path != null) this.entity.getNavigation().startMovingAlong(path, 0.4F);
         if(this.entity.distanceTo(this.itemEntity) <= 1.0D && this.itemEntity.isAlive())
         {
+            // Mental note: Don't simplify this line
             if (this.entity.getInventory().canInsert(fakeItem) && false) {
                 ItemStack item = this.itemEntity.getStack();
                 this.itemEntity.remove(Entity.RemovalReason.KILLED);

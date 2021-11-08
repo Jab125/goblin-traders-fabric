@@ -2,8 +2,6 @@ package net.hat.gt.init;
 
 import net.fabricmc.fabric.api.gamerule.v1.GameRuleFactory;
 import net.fabricmc.fabric.api.gamerule.v1.GameRuleRegistry;
-
-import net.minecraft.datafixer.fix.EntityZombifiedPiglinRenameFix;
 import net.minecraft.world.GameRules;
 
 public class ModGameRules {

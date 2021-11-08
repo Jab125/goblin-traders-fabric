@@ -5,7 +5,7 @@ import net.minecraft.nbt.NbtCompound;
 import net.minecraft.village.TradeOffer;
 
 public class UpgradedTradeOffer extends TradeOffer {
-    private int playerExperience;
+    private final int playerExperience;
 
     public UpgradedTradeOffer(NbtCompound nbt) {
         super(nbt);

@@ -3,7 +3,6 @@ package net.hat.gt.util;
 import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import net.hat.gt.GobT;
 import net.minecraft.client.texture.NativeImage;
 import net.minecraft.util.Util;
 import org.apache.commons.io.IOUtils;

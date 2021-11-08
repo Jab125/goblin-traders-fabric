@@ -12,6 +12,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.EnumSet;
 
+@SuppressWarnings("SameParameterValue") //Simplification reasons
 public class FirePanicGoal extends Goal
 {
     private final AbstractGoblinEntity goblin;

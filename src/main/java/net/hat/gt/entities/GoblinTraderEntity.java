@@ -7,12 +7,8 @@ import net.hat.gt.init.ModTrades;
 import net.hat.gt.trades.GoblinTrades;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
-import net.minecraft.entity.data.DataTracker;
-import net.minecraft.entity.data.TrackedData;
-import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.passive.MerchantEntity;
-import net.minecraft.entity.passive.VillagerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.util.math.BlockPos;
@@ -108,10 +104,7 @@ public class GoblinTraderEntity extends AbstractGoblinEntity {
             }
         }
 
-        Iterator var9 = set.iterator();
-
-        while(var9.hasNext()) {
-            Integer integer = (Integer)var9.next();
+        for (Integer integer : set) {
             TradeOffers.Factory factory = pool[integer];
             TradeOffer tradeOffer = factory.create(this, this.random);
             if (tradeOffer != null) {

@@ -1,29 +1,27 @@
 package net.hat.gt.entities;
 
-import net.hat.gt.Constants;
 import net.hat.gt.GobT;
 import net.hat.gt.entities.ai.*;
 import net.hat.gt.init.ModDamageSource;
 import net.hat.gt.init.ModSounds;
 import net.hat.gt.init.ModStats;
 import net.hat.gt.trades.UpgradedTradeOffer;
-import net.minecraft.block.NetherPortalBlock;
-import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.*;
-import net.minecraft.entity.ai.goal.*;
+import net.minecraft.entity.ai.goal.LookAtCustomerGoal;
+import net.minecraft.entity.ai.goal.LookAtEntityGoal;
+import net.minecraft.entity.ai.goal.TemptGoal;
+import net.minecraft.entity.ai.goal.WanderAroundFarGoal;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.mob.MobEntity;
-import net.minecraft.entity.passive.IronGolemEntity;
 import net.minecraft.entity.passive.MerchantEntity;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtHelper;
-import net.minecraft.network.packet.s2c.play.EntitySpawnS2CPacket;
 import net.minecraft.particle.ItemStackParticleEffect;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.recipe.Ingredient;
@@ -42,7 +40,6 @@ import net.minecraft.world.LocalDifficulty;
 import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
-import org.lwjgl.system.CallbackI;
 
 import java.util.*;
 
@@ -383,14 +380,6 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
     public void addFoodToStorage(ItemStack food) {
         this.getInventory().addStack(food);
     }
-
-    //@Override
-    //public void onDeath(DamageSource source) {
-    //    if (this.world.getGameRules().getBoolean(GameRules.DO_MOB_LOOT)) {
-    //        this.dropInventory();
-    //    }
-    //    super.onDeath(source);
-    //}
 
     @Override
     protected void dropInventory() {

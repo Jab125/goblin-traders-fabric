@@ -2,7 +2,6 @@ package net.hat.gt.mixin;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.hat.gt.GobT;
 import net.hat.gt.util.CapesLoader;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.AbstractClientPlayerEntity;
@@ -18,8 +17,11 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URL;
+
+// Just putting this in here, Jab.
+// Thanks for all the work that you did on the cape system. Half of this stuff I don't fully understand how it works.
+// Your help is greatly appreciated throughout the project, and I couldn't thank you more for it.
 
 @Environment(EnvType.CLIENT)
 @Mixin(AbstractClientPlayerEntity.class)

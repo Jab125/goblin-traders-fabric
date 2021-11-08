@@ -5,8 +5,6 @@ import net.minecraft.enchantment.EnchantmentLevelEntry;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.EnchantedBookItem;
 import net.minecraft.item.ItemStack;
-import net.minecraft.village.TradeOffer;
-import net.minecraft.village.TradeOffers;
 
 import java.util.Random;
 

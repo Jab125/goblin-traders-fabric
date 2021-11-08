@@ -1,7 +1,6 @@
 package net.hat.gt.trades;
 
 import net.minecraft.entity.Entity;
-import net.minecraft.village.TradeOffer;
 import net.minecraft.village.TradeOffers;
 import org.jetbrains.annotations.Nullable;
 

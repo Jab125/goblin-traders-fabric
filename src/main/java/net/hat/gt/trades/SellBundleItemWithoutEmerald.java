@@ -1,8 +1,6 @@
 package net.hat.gt.trades;
 
 import net.minecraft.entity.Entity;
-import net.minecraft.item.BundleItem;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.village.TradeOffer;
@@ -11,7 +9,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Random;
 
-import static net.minecraft.item.BundleItem.*;
+import static net.minecraft.item.BundleItem.addToBundle;
 
 public class SellBundleItemWithoutEmerald implements TradeOffers.Factory {
     private final ItemStack firstBuy;

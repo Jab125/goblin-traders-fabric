@@ -37,6 +37,8 @@ public class ModSpawns {
             addMobSpawnToBiome(biome, SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(ModEntities.GOBLIN_TRADER, GobT.config.GOBLIN_SPAWN_RATE, 1, GobT.config.GOBLIN_GROUP_SIZE));
         }
     }
+
+    // This can be changed to be just a Creature type, however for further support in the future i've kept it as 'classification' for now.
     private static void addMobSpawnToBiome(Biome biome, SpawnGroup classification, SpawnSettings.SpawnEntry... spawners) {
         convertImmutableSpawners(biome);
         List<SpawnSettings.SpawnEntry> spawnersList = new ArrayList<>(biome.getSpawnSettings().spawners.get(classification).getEntries());

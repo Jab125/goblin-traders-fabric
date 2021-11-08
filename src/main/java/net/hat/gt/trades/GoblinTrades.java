@@ -7,7 +7,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.potion.Potions;
 import net.minecraft.text.TranslatableText;
-import net.minecraft.village.TradeOffers;
 
 public class GoblinTrades {
     private static final ItemStack KNOCKBACK_STICK = new ItemStack(Items.STICK);
