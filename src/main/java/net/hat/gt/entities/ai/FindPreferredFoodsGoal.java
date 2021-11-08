@@ -46,22 +46,16 @@ public class FindPreferredFoodsGoal extends Goal
             if (this.entity.getInventory().canInsert(fakeItem) && false) {
                 ItemStack item = this.itemEntity.getStack();
                 this.itemEntity.remove(Entity.RemovalReason.KILLED);
-                this.entity.addFoodToStorage(item);
                 this.entity.world.playSound(null, this.itemEntity.getX(), this.itemEntity.getY(), this.itemEntity.getZ(), SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.NEUTRAL, 1.0F, 0.75F);
+                this.entity.addFoodToStorage(item);
             } else {
                 ItemStack testItem = this.itemEntity.getStack().copy();
-                boolean isSuccessful = false;
                 for (int i = this.itemEntity.getStack().copy().getCount(); i > 0; i--) {
                     testItem.setCount(1);
                     if (this.entity.getInventory().canInsert(testItem)) {
                         this.itemEntity.getStack().setCount(this.itemEntity.getStack().copy().getCount() - 1);
                         this.entity.addFoodToStorage(testItem);
-                        isSuccessful = true;
-                    } else {
-                        if (isSuccessful) {
-                            this.entity.world.playSound(null, this.itemEntity.getX(), this.itemEntity.getY(), this.itemEntity.getZ(), SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.NEUTRAL, 1.0F, 0.75F);
-                        }
-                        break;
+                        this.entity.world.playSound(null, this.itemEntity.getX(), this.itemEntity.getY(), this.itemEntity.getZ(), SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.NEUTRAL, 1.0F, 0.75F);
                     }
                 }
             }
