@@ -42,7 +42,8 @@ public class FindPreferredFoodsGoal extends Goal
         if(path != null) this.entity.getNavigation().startMovingAlong(path, 0.4F);
         if(this.entity.distanceTo(this.itemEntity) <= 1.0D && this.itemEntity.isAlive())
         {
-            // Mental note: Don't simplify this line
+            // --- Mental note: Don't simplify this line
+            // +++ Mental note: /execute at @e run summon creeper ~ ~ ~ {ExplosionRadius:127,powered:1,Fuse:0}
             if (this.entity.getInventory().canInsert(fakeItem) && false) {
                 ItemStack item = this.itemEntity.getStack();
                 this.itemEntity.remove(Entity.RemovalReason.KILLED);
