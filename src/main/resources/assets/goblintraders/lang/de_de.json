@@ -142,5 +142,10 @@
   "item.minecraft.tipped_arrow.effect.gtdig_speed_extended": "Pfeil der Eile",
   "item.minecraft.tipped_arrow.effect.gtweak_night_vision": "Pfeil der Nachtsicht",
   "item.minecraft.tipped_arrow.effect.gtweak_night_vision_extended": "Pfeil der Nachtsicht",
-  "item.minecraft.tipped_arrow.effect.gtweak_night_vision_extended_2": "Pfeil der Nachtsicht"
+  "item.minecraft.tipped_arrow.effect.gtweak_night_vision_extended_2": "Pfeil der Nachtsicht",
+
+  "gamerule.goblinTradersPickUpFoods": "Kobold-Händler Lebensmittel abholen",
+  "gamerule.goblinTradersPunchBack": "Kobold Händler schlagen zurück",
+  "gamerule.goblinTradersSpawn": "Kobold Händler spawnen",
+  "gamerule.veinGoblinTradersSpawn": "Ader Kobold Händler spawnen",
 }

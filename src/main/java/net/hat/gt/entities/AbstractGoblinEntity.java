@@ -310,7 +310,6 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
         return (boolean) this.dataTracker.get(RAINING);
     }
 
-
     public void tick() {
         if (this.isLeveledMerchant() && !(this instanceof AbstractTieredGoblinEntity)) {
             this.setInvulnerable(false);
