@@ -26,6 +26,7 @@
   "text.autoconfig.goblintraders.option.MAX_ENCHANTMENT_TEXT": "Höher als Max. Verzauberungen mit violettem Text darstellen",
   "text.autoconfig.goblintraders.option.GOBLIN_NO_ATTACK_CREATIVE": "Attackierende Kobolde im Kreativmodus beheben",
   "text.autoconfig.goblintraders.option.GOBLIN_VANILLA_TRADES": "Vanillamäßige Handelsangebote",
+  "text.autoconfig.goblintraders.option.CAN_GET_KNOCKED_OUT": "Kann ausgeknockt werden",
 
   "item.minecraft.potion.effect.gtextended_water_breathing": "Trank der Unterwasseratmung",
   "item.minecraft.potion.effect.gtextended_fire_resistance": "Trank der Feuerresistenz",
