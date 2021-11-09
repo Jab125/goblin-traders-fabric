@@ -20,7 +20,6 @@ public class GobTClient implements ClientModInitializer {
     //public static final EntityModelLayer TEST_GOBLIN_MODEL_LAYER = new EntityModelLayer(new Identifier("goblintraders", "tgoblin"), "test_goblin_render_layer");
     @Override
     public void onInitializeClient() {
-        CapesLoader.load();
         //EntityRenderer
         EntityRendererRegistry.register(ModEntities.GOBLIN_TRADER, GobinTraderRenderer::new);
         EntityRendererRegistry.register(ModEntities.VEIN_GOBLIN_TRADER, VeinGobinTraderRenderer::new);
