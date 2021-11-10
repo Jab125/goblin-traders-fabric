@@ -1,5 +1,6 @@
 package net.hat.gt;
 
+import com.jab125.util.TradeLib;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer;
 import net.fabricmc.api.ModInitializer;
@@ -28,6 +29,7 @@ public class GobT implements ModInitializer {
         ModPotions.registerPotions();
         ModPotions.registerPotionRecipes();
         ModSpawns.init();
+        TradeLib.register();
     }
     public static Identifier id(String path) {
         return new Identifier(MODID, path);
