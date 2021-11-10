@@ -3,7 +3,7 @@ package com.jab125.util.type;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import com.jab125.util.FabricHelper;
+import com.jab125.util.ForgeHelper;
 import com.jab125.util.GoblinTrade;
 import com.jab125.util.TradeSerializer;
 import net.hat.gt.GobT;
@@ -97,11 +97,11 @@ public class BasicTrade implements ITradeType<GoblinTrade>
         public BasicTrade deserialize(JsonObject object)
         {
             Builder builder = Builder.create();
-            builder.setOfferStack(FabricHelper.getItemStack(JsonHelper.getObject(object, "offer_item"), true));
-            builder.setPaymentStack(FabricHelper.getItemStack(JsonHelper.getObject(object, "payment_item"), true));
+            builder.setOfferStack(ForgeHelper.getItemStack(JsonHelper.getObject(object, "offer_item"), true));
+            builder.setPaymentStack(ForgeHelper.getItemStack(JsonHelper.getObject(object, "payment_item"), true));
             if(JsonHelper.hasElement(object, "secondary_payment_item"))
             {
-                builder.setSecondaryPaymentStack(FabricHelper.getItemStack(JsonHelper.getObject(object, "secondary_payment_item"), true));
+                builder.setSecondaryPaymentStack(ForgeHelper.getItemStack(JsonHelper.getObject(object, "secondary_payment_item"), true));
             }
             builder.setPriceMultiplier(JsonHelper.getFloat(object, "price_multiplier", 0.05F));
             builder.setMaxTrades(JsonHelper.getInt(object, "max_trades", 12));
