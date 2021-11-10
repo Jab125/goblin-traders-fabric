@@ -6,6 +6,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
 import net.fabricmc.fabric.api.resource.IdentifiableResourceReloadListener;
 import net.hat.gt.GobT;
+import net.hat.gt.entities.AbstractGoblinEntity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.resource.ResourceManager;
 import net.minecraft.util.Identifier;

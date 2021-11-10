@@ -1,6 +1,8 @@
 package net.hat.gt;
 
-import com.jab125.util.TradeLib;
+
+import com.jab125.util.TradeManager;
+import com.jab125.util.type.BasicTrade;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer;
 import net.fabricmc.api.ModInitializer;
@@ -21,6 +23,10 @@ public class GobT implements ModInitializer {
         AutoConfig.register(GoblinTradersConfig.class, Toml4jConfigSerializer::new);
         config = AutoConfig.getConfigHolder(GoblinTradersConfig.class).getConfig();
 
+        TradeManager manager = TradeManager.instance();
+        manager.registerTrader(ModEntities.GOBLIN_TRADER);
+        manager.registerTrader(ModEntities.VEIN_GOBLIN_TRADER);
+        manager.registerTypeSerializer(BasicTrade.SERIALIZER);
         ModGameRules.registerGameRules();
         ModSounds.registerSounds();
         ModEntities.registerEntities();
@@ -29,7 +35,7 @@ public class GobT implements ModInitializer {
         ModPotions.registerPotions();
         ModPotions.registerPotionRecipes();
         ModSpawns.init();
-        TradeLib.register();
+
     }
     public static Identifier id(String path) {
         return new Identifier(MODID, path);
