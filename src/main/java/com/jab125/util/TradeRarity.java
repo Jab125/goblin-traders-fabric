@@ -7,7 +7,7 @@ import java.util.Random;
 import java.util.function.BiFunction;
 
 /**
- * Remapped
+ * Remapped by Jab125
  */
 public enum TradeRarity
 {

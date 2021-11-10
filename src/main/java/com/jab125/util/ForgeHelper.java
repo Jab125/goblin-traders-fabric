@@ -10,6 +10,11 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.JsonHelper;
 import net.minecraft.util.registry.Registry;
 
+/**
+ * Author: Jab125
+ * Got it from forge's sources
+ * Remapped by Jab125
+ */
 public class ForgeHelper {
     private static Gson GSON = new GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create();
     public static ItemStack getItemStack(JsonObject json, boolean readNBT)

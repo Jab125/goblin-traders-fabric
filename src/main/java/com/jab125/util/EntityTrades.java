@@ -13,7 +13,7 @@ import net.minecraft.village.TradeOffers;
 import java.util.*;
 
 /**
- * Author: MrCrayfish
+ * Remapped by Jab125
  */
 public class EntityTrades
 {
