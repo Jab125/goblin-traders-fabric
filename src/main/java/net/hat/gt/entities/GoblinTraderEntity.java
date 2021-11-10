@@ -91,5 +91,29 @@ public class GoblinTraderEntity extends AbstractGoblinEntity {
         return spawnReason == SpawnReason.SPAWNER || ThreadLocalRandom.current().nextInt(1, GobT.config.GOBLIN_SPAWN_RATE_D + 1) == 1;
     }
 
+    @Override
+    protected void fillRecipesFromPool(TradeOfferList recipeList, TradeOffers.Factory[] pool, int count) {
+        Set<Integer> set = Sets.newHashSet();
+        if (pool.length > count) {
+            while(set.size() < count) {
+                set.add(this.random.nextInt(pool.length));
+            }
+        } else {
+            for(int i = 0; i < pool.length; ++i) {
+                set.add(i);
+            }
+        }
 
+        for (Integer integer : set) {
+            TradeOffers.Factory factory = pool[integer];
+            TradeOffer tradeOffer = factory.create(this, this.random);
+            if (tradeOffer != null) {
+                if ((int) (Math.random() * 20) == 1 && GobT.config.EASTER_EGGS) {
+                    recipeList.add(GoblinTrades.easterEggTrades()[this.random.nextInt(GoblinTrades.easterEggTrades().length)].create(this, this.random));
+                }
+                recipeList.add(tradeOffer);
+            }
+        }
+
+    }
 }
