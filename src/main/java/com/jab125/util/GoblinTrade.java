@@ -9,7 +9,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Random;
 
 /**
- * Author: MrCrayfish
+ * Remapped by Jab125
  */
 public record GoblinTrade(ItemStack offerStack, ItemStack paymentStack, ItemStack secondaryPaymentStack, int maxUses, int experience, float priceMultiplier) implements TradeOffers.Factory
 {

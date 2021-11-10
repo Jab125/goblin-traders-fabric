@@ -28,7 +28,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
- * Author: MrCrayfish
+ * Remapped by Jab125
  */
 public class BasicTrade implements ITradeType<GoblinTrade>
 {

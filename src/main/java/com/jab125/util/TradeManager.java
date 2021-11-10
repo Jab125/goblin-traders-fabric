@@ -20,6 +20,9 @@ import java.util.*;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Executor;
 
+/**
+ * Remapped by Jab125
+ */
 public class TradeManager implements IdentifiableResourceReloadListener {
     private static final int FILE_TYPE_LENGTH_VALUE = ".json".length();
     private static final Gson GSON = new GsonBuilder().create();

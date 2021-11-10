@@ -7,7 +7,7 @@ import net.minecraft.village.TradeOffers;
 
 
 /**
- * Author: MrCrayfish
+ * Remapped by Jab125
  */
 public abstract class TradeSerializer<T extends ITradeType<? extends TradeOffers.Factory>>
 {

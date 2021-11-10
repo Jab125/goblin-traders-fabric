@@ -4,7 +4,7 @@ import com.google.gson.JsonObject;
 import net.minecraft.village.TradeOffers;
 
 /**
- * Author: MrCrayfish
+ * Remapped by Jab125
  */
 public interface ITradeType<T extends TradeOffers.Factory>
 {
