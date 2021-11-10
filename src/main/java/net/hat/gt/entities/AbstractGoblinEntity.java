@@ -1,5 +1,8 @@
 package net.hat.gt.entities;
 
+import com.jab125.util.EntityTrades;
+import com.jab125.util.TradeManager;
+import com.jab125.util.TradeRarity;
 import net.hat.gt.GobT;
 import net.hat.gt.entities.ai.*;
 import net.hat.gt.init.ModDamageSource;
@@ -35,6 +38,8 @@ import net.minecraft.util.UseAction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.village.TradeOffer;
+import net.minecraft.village.TradeOfferList;
+import net.minecraft.village.TradeOffers;
 import net.minecraft.world.GameRules;
 import net.minecraft.world.LocalDifficulty;
 import net.minecraft.world.ServerWorldAccess;
@@ -42,6 +47,8 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 import static com.jab125.thonkutil.util.Util.secondsToTick;
 
@@ -399,6 +406,49 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
     protected void addToInventoryOnSpawn() {
         for (int i = Math.min((int) (Math.random() * 5) + 1, this.getFavouriteFood().getMaxCount()); i > 0; i--)
             this.getInventory().addStack(this.getFavouriteFood().copy());
+    }
+    @Override
+    public TradeOfferList getOffers()
+    {
+        if(this.offers == null)
+        {
+            this.offers = new TradeOfferList();
+            this.populateTradeData();
+        }
+        return this.offers;
+    }
+
+    public void populateTradeData() {
+        TradeOfferList offers = this.getOffers();
+        EntityTrades entityTrades = TradeManager.instance().getTrades((EntityType<? extends AbstractGoblinEntity>) this.getType());
+        if(entityTrades != null)
+        {
+            Map<TradeRarity, List<TradeOffers.Factory>> tradeMap = entityTrades.getTradeMap();
+            for(TradeRarity rarity : TradeRarity.values())
+            {
+                List<TradeOffers.Factory> trades = tradeMap.get(rarity);
+                int min = rarity.getMaximum().apply(trades, this.getRandom());
+                int max = rarity.getMaximum().apply(trades, this.getRandom());
+                this.addTrades(offers, trades, Math.max(min, max), rarity.shouldShuffle());
+            }
+        }
+    }
+    protected void addTrades(TradeOfferList offers, @Nullable List<TradeOffers.Factory> trades, int max, boolean shuffle)
+    {
+        if(trades == null)
+            return;
+        List<Integer> randomIndexes = IntStream.range(0, trades.size()).boxed().collect(Collectors.toList());
+        if(shuffle) Collections.shuffle(randomIndexes);
+        randomIndexes = randomIndexes.subList(0, Math.min(trades.size(), max));
+        for(Integer index : randomIndexes)
+        {
+            TradeOffers.Factory trade = trades.get(index);
+            TradeOffer offer = trade.create(this, this.getRandom());
+            if(offer != null)
+            {
+                offers.add(offer);
+            }
+        }
     }
 
 }
