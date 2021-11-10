@@ -6,7 +6,7 @@
       "offer_item": {
         "item": "minecraft:potion",
         "count": 1,
-        "nbt": "{Potion:\"goblintraders:haste\"}"
+        "nbt": "{Potion:\"goblintraders:gthaste\"}"
       },
       "payment_item": {
         "item": "minecraft:emerald",
@@ -26,7 +26,7 @@
       "offer_item": {
         "item": "minecraft:potion",
         "count": 1,
-        "nbt": "{Potion:\"goblintraders:absorption\"}"
+        "nbt": "{Potion:\"goblintraders:gtabsorption\"}"
       },
       "payment_item": {
         "item": "minecraft:emerald",
@@ -46,7 +46,7 @@
       "offer_item": {
         "item": "minecraft:potion",
         "count": 1,
-        "nbt": "{Potion:\"goblintraders:levitation\"}"
+        "nbt": "{Potion:\"goblintraders:gtlevitation\"}"
       },
       "payment_item": {
         "item": "minecraft:emerald",
@@ -66,7 +66,7 @@
       "offer_item": {
         "item": "minecraft:potion",
         "count": 1,
-        "nbt": "{Potion:\"goblintraders:luck\"}"
+        "nbt": "{Potion:\"goblintraders:gtluck\"}"
       },
       "payment_item": {
         "item": "minecraft:emerald",
@@ -86,7 +86,7 @@
       "offer_item": {
         "item": "minecraft:potion",
         "count": 1,
-        "nbt": "{Potion:\"goblintraders:dolphins_grace\"}"
+        "nbt": "{Potion:\"goblintraders:gtdolphins_grace\"}"
       },
       "payment_item": {
         "item": "minecraft:emerald",
@@ -106,7 +106,7 @@
       "offer_item": {
         "item": "minecraft:potion",
         "count": 1,
-        "nbt": "{Potion:\"goblintraders:powerful_strength\"}"
+        "nbt": "{Potion:\"goblintraders:gtpowerful_strength\"}"
       },
       "payment_item": {
         "item": "minecraft:emerald",
