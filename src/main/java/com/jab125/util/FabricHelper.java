@@ -10,7 +10,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.JsonHelper;
 import net.minecraft.util.registry.Registry;
 
-public class ForgeHelper {
+public class FabricHelper {
     private static Gson GSON = new GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create();
     public static ItemStack getItemStack(JsonObject json, boolean readNBT)
     {
@@ -34,10 +34,10 @@ public class ForgeHelper {
                     nbt = StringNbtReader.parse(JsonHelper.asString(element, "nbt"));
 
                 NbtCompound tmp = new NbtCompound();
-                if (nbt.contains("ForgeCaps"))
+                if (nbt.contains("FabricCaps"))
                 {
-                    tmp.put("ForgeCaps", nbt.get("ForgeCaps"));
-                    nbt.remove("ForgeCaps");
+                    tmp.put("FabricCaps", nbt.get("FabricCaps"));
+                    nbt.remove("FabricCaps");
                 }
 
                 tmp.put("tag", nbt);
