@@ -1,11 +1,11 @@
-package com.jab125.util.type;
+package com.jab125.util.tradehelper.type;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import com.jab125.util.ForgeHelper;
-import com.jab125.util.GoblinTrade;
-import com.jab125.util.TradeSerializer;
+import com.jab125.util.forgehelper.CraftingHelper;
+import com.jab125.util.tradehelper.GoblinTrade;
+import com.jab125.util.tradehelper.TradeSerializer;
 import net.hat.gt.GobT;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -97,11 +97,11 @@ public class BasicTrade implements ITradeType<GoblinTrade>
         public BasicTrade deserialize(JsonObject object)
         {
             Builder builder = Builder.create();
-            builder.setOfferStack(ForgeHelper.getItemStack(JsonHelper.getObject(object, "offer_item"), true));
-            builder.setPaymentStack(ForgeHelper.getItemStack(JsonHelper.getObject(object, "payment_item"), true));
+            builder.setOfferStack(CraftingHelper.getItemStack(JsonHelper.getObject(object, "offer_item"), true));
+            builder.setPaymentStack(CraftingHelper.getItemStack(JsonHelper.getObject(object, "payment_item"), true));
             if(JsonHelper.hasElement(object, "secondary_payment_item"))
             {
-                builder.setSecondaryPaymentStack(ForgeHelper.getItemStack(JsonHelper.getObject(object, "secondary_payment_item"), true));
+                builder.setSecondaryPaymentStack(CraftingHelper.getItemStack(JsonHelper.getObject(object, "secondary_payment_item"), true));
             }
             builder.setPriceMultiplier(JsonHelper.getFloat(object, "price_multiplier", 0.05F));
             builder.setMaxTrades(JsonHelper.getInt(object, "max_trades", 12));
@@ -288,7 +288,20 @@ public class BasicTrade implements ITradeType<GoblinTrade>
             return this;
         }
 
+        @Deprecated
         public Builder setExperience(int experience)
+        {
+            this.setMerchantExperience(experience);
+            return this;
+        }
+
+        public Builder setMerchantExperience(int merchantExperience)
+        {
+            this.experience = experience;
+            return this;
+        }
+
+        public Builder setPlayerExperience(int playerExperience)
         {
             this.experience = experience;
             return this;

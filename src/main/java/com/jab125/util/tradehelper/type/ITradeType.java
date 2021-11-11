@@ -1,4 +1,4 @@
-package com.jab125.util.type;
+package com.jab125.util.tradehelper.type;
 
 import com.google.gson.JsonObject;
 import net.minecraft.village.TradeOffers;

@@ -6,7 +6,7 @@
       "offer_item": {
         "item": "minecraft:diamond_sword",
         "count": 1,
-        "nbt": "{Damage:0}"
+        "nbt": "true"
       },
       "payment_item": {
         "item": "minecraft:dragon_head",
@@ -15,11 +15,11 @@
       "secondary_payment_item": {
         "item": "minecraft:diamond_sword",
         "count": 1,
-        "nbt": "{Damage:0}"
+        "nbt": "true"
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 500,
+      "experience": 10,
       "enchantments": [
         {
           "id": "minecraft:sharpness",

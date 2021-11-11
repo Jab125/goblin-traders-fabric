@@ -1,4 +1,4 @@
-package com.jab125.util;
+package com.jab125.util.tradehelper;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;

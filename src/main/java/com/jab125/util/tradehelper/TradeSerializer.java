@@ -1,7 +1,7 @@
-package com.jab125.util;
+package com.jab125.util.tradehelper;
 
 import com.google.gson.JsonObject;
-import com.jab125.util.type.ITradeType;
+import com.jab125.util.tradehelper.type.ITradeType;
 import net.minecraft.util.Identifier;
 import net.minecraft.village.TradeOffers;
 

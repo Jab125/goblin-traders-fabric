@@ -13,7 +13,7 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 24,
-      "experience": 20
+      "experience": 10
     },
     {
       "type": "goblintraders:basic",
@@ -22,12 +22,12 @@
         "count": 2
       },
       "payment_item": {
-        "item": "minecraft:iron_ore",
+        "item": "minecraft:raw_iron",
         "count": 1
       },
       "price_multiplier": 0.0,
       "max_trades": 30,
-      "experience": 20
+      "experience": 10
     },
     {
       "type": "goblintraders:basic",
@@ -36,12 +36,12 @@
         "count": 3
       },
       "payment_item": {
-        "item": "minecraft:gold_ore",
+        "item": "minecraft:raw_gold",
         "count": 2
       },
       "price_multiplier": 0.0,
       "max_trades": 30,
-      "experience": 30
+      "experience": 10
     },
     {
       "type": "goblintraders:basic",
@@ -55,7 +55,7 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 24,
-      "experience": 15
+      "experience": 10
     },
     {
       "type": "goblintraders:basic",
@@ -69,7 +69,21 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 32,
-      "experience": 15
+      "experience": 10
+    },
+    {
+      "type": "goblintraders:basic",
+      "offer_item": {
+        "item": "minecraft:flint",
+        "count": 2
+      },
+      "payment_item": {
+        "item": "minecraft:gravel",
+        "count": 1
+      },
+      "price_multiplier": 0.0,
+      "max_trades": 32,
+      "experience": 10
     },
     {
       "type": "goblintraders:basic",
@@ -83,7 +97,21 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 128,
-      "experience": 15
+      "experience": 10
+    },
+    {
+      "type": "goblintraders:basic",
+      "offer_item": {
+        "item": "minecraft:bread",
+        "count": 3
+      },
+      "payment_item": {
+        "item": "minecraft:emerald",
+        "count": 1
+      },
+      "price_multiplier": 0.0,
+      "max_trades": 15,
+      "experience": 10
     }
   ]
 }

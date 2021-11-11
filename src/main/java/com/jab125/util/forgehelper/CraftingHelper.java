@@ -1,4 +1,4 @@
-package com.jab125.util;
+package com.jab125.util.forgehelper;
 
 import com.google.gson.*;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
@@ -15,7 +15,7 @@ import net.minecraft.util.registry.Registry;
  * Got it from forge's sources
  * Remapped by Jab125
  */
-public class ForgeHelper {
+public class CraftingHelper {
     private static Gson GSON = new GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create();
     public static ItemStack getItemStack(JsonObject json, boolean readNBT)
     {

@@ -6,21 +6,21 @@
       "offer_item": {
         "item": "minecraft:diamond_sword",
         "count": 1,
-        "nbt": "{Damage:0}"
+        "nbt": "true"
       },
       "payment_item": {
         "item": "minecraft:diamond_sword",
         "count": 1,
-        "nbt": "{Damage:0}"
+        "nbt": "true"
       },
       "secondary_payment_item": {
         "item": "minecraft:enchanted_book",
         "count": 1,
-        "nbt": "{StoredEnchantments:[{lvl:5s,id:\"minecraft:sharpness\"}]}"
+        "nbt": "true"
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 100,
+      "experience": 10,
       "enchantments": [
         {
           "id": "minecraft:sharpness",
@@ -33,21 +33,21 @@
       "offer_item": {
         "item": "minecraft:diamond_sword",
         "count": 1,
-        "nbt": "{Damage:0}"
+        "nbt": "true"
       },
       "payment_item": {
         "item": "minecraft:diamond_sword",
         "count": 1,
-        "nbt": "{Damage:0}"
+        "nbt": "true"
       },
       "secondary_payment_item": {
         "item": "minecraft:enchanted_book",
         "count": 1,
-        "nbt": "{StoredEnchantments:[{lvl:3s,id:\"minecraft:looting\"}]}"
+        "nbt": "true"
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 100,
+      "experience": 10,
       "enchantments": [
         {
           "id": "minecraft:looting",
@@ -60,21 +60,21 @@
       "offer_item": {
         "item": "minecraft:diamond_sword",
         "count": 1,
-        "nbt": "{Damage:0}"
+        "nbt": "true"
       },
       "payment_item": {
         "item": "minecraft:diamond_sword",
         "count": 1,
-        "nbt": "{Damage:0}"
+        "nbt": "true"
       },
       "secondary_payment_item": {
         "item": "minecraft:enchanted_book",
         "count": 1,
-        "nbt": "{StoredEnchantments:[{lvl:3s,id:\"minecraft:sweeping\"}]}"
+        "nbt": "true"
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 100,
+      "experience": 10,
       "enchantments": [
         {
           "id": "minecraft:sweeping",
@@ -87,21 +87,21 @@
       "offer_item": {
         "item": "minecraft:diamond_sword",
         "count": 1,
-        "nbt": "{Damage:0}"
+        "nbt": "true"
       },
       "payment_item": {
         "item": "minecraft:diamond_sword",
         "count": 1,
-        "nbt": "{Damage:0}"
+        "nbt": "true"
       },
       "secondary_payment_item": {
         "item": "minecraft:enchanted_book",
         "count": 1,
-        "nbt": "{StoredEnchantments:[{lvl:2s,id:\"minecraft:fire_aspect\"}]}"
+        "nbt": "true"
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 100,
+      "experience": 10,
       "enchantments": [
         {
           "id": "minecraft:fire_aspect",
@@ -114,21 +114,21 @@
       "offer_item": {
         "item": "minecraft:diamond_sword",
         "count": 1,
-        "nbt": "{Damage:0}"
+        "nbt": "true"
       },
       "payment_item": {
         "item": "minecraft:diamond_sword",
         "count": 1,
-        "nbt": "{Damage:0}"
+        "nbt": "true"
       },
       "secondary_payment_item": {
         "item": "minecraft:enchanted_book",
         "count": 1,
-        "nbt": "{StoredEnchantments:[{lvl:2s,id:\"minecraft:knockback\"}]}"
+        "nbt": "true"
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 100,
+      "experience": 10,
       "enchantments": [
         {
           "id": "minecraft:knockback",
@@ -141,21 +141,21 @@
       "offer_item": {
         "item": "minecraft:diamond_sword",
         "count": 1,
-        "nbt": "{Damage:0}"
+        "nbt": "true"
       },
       "payment_item": {
         "item": "minecraft:diamond_sword",
         "count": 1,
-        "nbt": "{Damage:0}"
+        "nbt": "true"
       },
       "secondary_payment_item": {
         "item": "minecraft:enchanted_book",
         "count": 1,
-        "nbt": "{StoredEnchantments:[{lvl:5s,id:\"minecraft:bane_of_arthropods\"}]}"
+        "nbt": "true"
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 100,
+      "experience": 10,
       "enchantments": [
         {
           "id": "minecraft:bane_of_arthropods",
@@ -168,21 +168,21 @@
       "offer_item": {
         "item": "minecraft:diamond_sword",
         "count": 1,
-        "nbt": "{Damage:0}"
+        "nbt": "true"
       },
       "payment_item": {
         "item": "minecraft:diamond_sword",
         "count": 1,
-        "nbt": "{Damage:0}"
+        "nbt": "true"
       },
       "secondary_payment_item": {
         "item": "minecraft:enchanted_book",
         "count": 1,
-        "nbt": "{StoredEnchantments:[{lvl:5s,id:\"minecraft:smite\"}]}"
+        "nbt": "true"
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 100,
+      "experience": 10,
       "enchantments": [
         {
           "id": "minecraft:smite",
@@ -195,21 +195,21 @@
       "offer_item": {
         "item": "minecraft:diamond_helmet",
         "count": 1,
-        "nbt": "{Damage:0}"
+        "nbt": "true"
       },
       "payment_item": {
         "item": "minecraft:diamond_helmet",
         "count": 1,
-        "nbt": "{Damage:0}"
+        "nbt": "true"
       },
       "secondary_payment_item": {
         "item": "minecraft:enchanted_book",
         "count": 1,
-        "nbt": "{StoredEnchantments:[{lvl:4s,id:\"minecraft:blast_protection\"}]}"
+        "nbt": "true"
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 100,
+      "experience": 10,
       "enchantments": [
         {
           "id": "minecraft:blast_protection",
@@ -222,21 +222,21 @@
       "offer_item": {
         "item": "minecraft:diamond_helmet",
         "count": 1,
-        "nbt": "{Damage:0}"
+        "nbt": "true"
       },
       "payment_item": {
         "item": "minecraft:diamond_helmet",
         "count": 1,
-        "nbt": "{Damage:0}"
+        "nbt": "true"
       },
       "secondary_payment_item": {
         "item": "minecraft:enchanted_book",
         "count": 1,
-        "nbt": "{StoredEnchantments:[{lvl:4s,id:\"minecraft:fire_protection\"}]}"
+        "nbt": "true"
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 100,
+      "experience": 10,
       "enchantments": [
         {
           "id": "minecraft:fire_protection",
@@ -249,21 +249,21 @@
       "offer_item": {
         "item": "minecraft:diamond_helmet",
         "count": 1,
-        "nbt": "{Damage:0}"
+        "nbt": "true"
       },
       "payment_item": {
         "item": "minecraft:diamond_helmet",
         "count": 1,
-        "nbt": "{Damage:0}"
+        "nbt": "true"
       },
       "secondary_payment_item": {
         "item": "minecraft:enchanted_book",
         "count": 1,
-        "nbt": "{StoredEnchantments:[{lvl:4s,id:\"minecraft:projectile_protection\"}]}"
+        "nbt": "true"
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 100,
+      "experience": 10,
       "enchantments": [
         {
           "id": "minecraft:projectile_protection",
@@ -276,21 +276,21 @@
       "offer_item": {
         "item": "minecraft:diamond_helmet",
         "count": 1,
-        "nbt": "{Damage:0}"
+        "nbt": "true"
       },
       "payment_item": {
         "item": "minecraft:diamond_helmet",
         "count": 1,
-        "nbt": "{Damage:0}"
+        "nbt": "true"
       },
       "secondary_payment_item": {
         "item": "minecraft:enchanted_book",
         "count": 1,
-        "nbt": "{StoredEnchantments:[{lvl:4s,id:\"minecraft:protection\"}]}"
+        "nbt": "true"
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 100,
+      "experience": 10,
       "enchantments": [
         {
           "id": "minecraft:protection",
@@ -303,21 +303,21 @@
       "offer_item": {
         "item": "minecraft:diamond_helmet",
         "count": 1,
-        "nbt": "{Damage:0}"
+        "nbt": "true"
       },
       "payment_item": {
         "item": "minecraft:diamond_helmet",
         "count": 1,
-        "nbt": "{Damage:0}"
+        "nbt": "true"
       },
       "secondary_payment_item": {
         "item": "minecraft:enchanted_book",
         "count": 1,
-        "nbt": "{StoredEnchantments:[{lvl:3s,id:\"minecraft:unbreaking\"}]}"
+        "nbt": "true"
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 100,
+      "experience": 10,
       "enchantments": [
         {
           "id": "minecraft:unbreaking",
@@ -330,21 +330,21 @@
       "offer_item": {
         "item": "minecraft:diamond_chestplate",
         "count": 1,
-        "nbt": "{Damage:0}"
+        "nbt": "true"
       },
       "payment_item": {
         "item": "minecraft:diamond_chestplate",
         "count": 1,
-        "nbt": "{Damage:0}"
+        "nbt": "true"
       },
       "secondary_payment_item": {
         "item": "minecraft:enchanted_book",
         "count": 1,
-        "nbt": "{StoredEnchantments:[{lvl:4s,id:\"minecraft:blast_protection\"}]}"
+        "nbt": "true"
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 100,
+      "experience": 10,
       "enchantments": [
         {
           "id": "minecraft:blast_protection",
@@ -357,21 +357,21 @@
       "offer_item": {
         "item": "minecraft:diamond_chestplate",
         "count": 1,
-        "nbt": "{Damage:0}"
+        "nbt": "true"
       },
       "payment_item": {
         "item": "minecraft:diamond_chestplate",
         "count": 1,
-        "nbt": "{Damage:0}"
+        "nbt": "true"
       },
       "secondary_payment_item": {
         "item": "minecraft:enchanted_book",
         "count": 1,
-        "nbt": "{StoredEnchantments:[{lvl:4s,id:\"minecraft:fire_protection\"}]}"
+        "nbt": "true"
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 100,
+      "experience": 10,
       "enchantments": [
         {
           "id": "minecraft:fire_protection",
@@ -384,21 +384,21 @@
       "offer_item": {
         "item": "minecraft:diamond_chestplate",
         "count": 1,
-        "nbt": "{Damage:0}"
+        "nbt": "true"
       },
       "payment_item": {
         "item": "minecraft:diamond_chestplate",
         "count": 1,
-        "nbt": "{Damage:0}"
+        "nbt": "true"
       },
       "secondary_payment_item": {
         "item": "minecraft:enchanted_book",
         "count": 1,
-        "nbt": "{StoredEnchantments:[{lvl:4s,id:\"minecraft:projectile_protection\"}]}"
+        "nbt": "true"
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 100,
+      "experience": 10,
       "enchantments": [
         {
           "id": "minecraft:projectile_protection",
@@ -411,21 +411,21 @@
       "offer_item": {
         "item": "minecraft:diamond_chestplate",
         "count": 1,
-        "nbt": "{Damage:0}"
+        "nbt": "true"
       },
       "payment_item": {
         "item": "minecraft:diamond_chestplate",
         "count": 1,
-        "nbt": "{Damage:0}"
+        "nbt": "true"
       },
       "secondary_payment_item": {
         "item": "minecraft:enchanted_book",
         "count": 1,
-        "nbt": "{StoredEnchantments:[{lvl:4s,id:\"minecraft:protection\"}]}"
+        "nbt": "true"
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 100,
+      "experience": 10,
       "enchantments": [
         {
           "id": "minecraft:protection",
@@ -438,21 +438,21 @@
       "offer_item": {
         "item": "minecraft:diamond_chestplate",
         "count": 1,
-        "nbt": "{Damage:0}"
+        "nbt": "true"
       },
       "payment_item": {
         "item": "minecraft:diamond_chestplate",
         "count": 1,
-        "nbt": "{Damage:0}"
+        "nbt": "true"
       },
       "secondary_payment_item": {
         "item": "minecraft:enchanted_book",
         "count": 1,
-        "nbt": "{StoredEnchantments:[{lvl:3s,id:\"minecraft:unbreaking\"}]}"
+        "nbt": "true"
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 100,
+      "experience": 10,
       "enchantments": [
         {
           "id": "minecraft:unbreaking",
@@ -465,21 +465,21 @@
       "offer_item": {
         "item": "minecraft:diamond_leggings",
         "count": 1,
-        "nbt": "{Damage:0}"
+        "nbt": "true"
       },
       "payment_item": {
         "item": "minecraft:diamond_leggings",
         "count": 1,
-        "nbt": "{Damage:0}"
+        "nbt": "true"
       },
       "secondary_payment_item": {
         "item": "minecraft:enchanted_book",
         "count": 1,
-        "nbt": "{StoredEnchantments:[{lvl:4s,id:\"minecraft:blast_protection\"}]}"
+        "nbt": "true"
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 100,
+      "experience": 10,
       "enchantments": [
         {
           "id": "minecraft:blast_protection",
@@ -492,21 +492,21 @@
       "offer_item": {
         "item": "minecraft:diamond_leggings",
         "count": 1,
-        "nbt": "{Damage:0}"
+        "nbt": "true"
       },
       "payment_item": {
         "item": "minecraft:diamond_leggings",
         "count": 1,
-        "nbt": "{Damage:0}"
+        "nbt": "true"
       },
       "secondary_payment_item": {
         "item": "minecraft:enchanted_book",
         "count": 1,
-        "nbt": "{StoredEnchantments:[{lvl:4s,id:\"minecraft:fire_protection\"}]}"
+        "nbt": "true"
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 100,
+      "experience": 10,
       "enchantments": [
         {
           "id": "minecraft:fire_protection",
@@ -519,21 +519,21 @@
       "offer_item": {
         "item": "minecraft:diamond_leggings",
         "count": 1,
-        "nbt": "{Damage:0}"
+        "nbt": "true"
       },
       "payment_item": {
         "item": "minecraft:diamond_leggings",
         "count": 1,
-        "nbt": "{Damage:0}"
+        "nbt": "true"
       },
       "secondary_payment_item": {
         "item": "minecraft:enchanted_book",
         "count": 1,
-        "nbt": "{StoredEnchantments:[{lvl:4s,id:\"minecraft:projectile_protection\"}]}"
+        "nbt": "true"
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 100,
+      "experience": 10,
       "enchantments": [
         {
           "id": "minecraft:projectile_protection",
@@ -546,21 +546,21 @@
       "offer_item": {
         "item": "minecraft:diamond_leggings",
         "count": 1,
-        "nbt": "{Damage:0}"
+        "nbt": "true"
       },
       "payment_item": {
         "item": "minecraft:diamond_leggings",
         "count": 1,
-        "nbt": "{Damage:0}"
+        "nbt": "true"
       },
       "secondary_payment_item": {
         "item": "minecraft:enchanted_book",
         "count": 1,
-        "nbt": "{StoredEnchantments:[{lvl:4s,id:\"minecraft:protection\"}]}"
+        "nbt": "true"
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 100,
+      "experience": 10,
       "enchantments": [
         {
           "id": "minecraft:protection",
@@ -573,21 +573,21 @@
       "offer_item": {
         "item": "minecraft:diamond_leggings",
         "count": 1,
-        "nbt": "{Damage:0}"
+        "nbt": "true"
       },
       "payment_item": {
         "item": "minecraft:diamond_leggings",
         "count": 1,
-        "nbt": "{Damage:0}"
+        "nbt": "true"
       },
       "secondary_payment_item": {
         "item": "minecraft:enchanted_book",
         "count": 1,
-        "nbt": "{StoredEnchantments:[{lvl:3s,id:\"minecraft:unbreaking\"}]}"
+        "nbt": "true"
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 100,
+      "experience": 10,
       "enchantments": [
         {
           "id": "minecraft:unbreaking",
@@ -600,21 +600,21 @@
       "offer_item": {
         "item": "minecraft:diamond_boots",
         "count": 1,
-        "nbt": "{Damage:0}"
+        "nbt": "true"
       },
       "payment_item": {
         "item": "minecraft:diamond_boots",
         "count": 1,
-        "nbt": "{Damage:0}"
+        "nbt": "true"
       },
       "secondary_payment_item": {
         "item": "minecraft:enchanted_book",
         "count": 1,
-        "nbt": "{StoredEnchantments:[{lvl:4s,id:\"minecraft:blast_protection\"}]}"
+        "nbt": "true"
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 100,
+      "experience": 10,
       "enchantments": [
         {
           "id": "minecraft:blast_protection",
@@ -627,21 +627,21 @@
       "offer_item": {
         "item": "minecraft:diamond_boots",
         "count": 1,
-        "nbt": "{Damage:0}"
+        "nbt": "true"
       },
       "payment_item": {
         "item": "minecraft:diamond_boots",
         "count": 1,
-        "nbt": "{Damage:0}"
+        "nbt": "true"
       },
       "secondary_payment_item": {
         "item": "minecraft:enchanted_book",
         "count": 1,
-        "nbt": "{StoredEnchantments:[{lvl:4s,id:\"minecraft:fire_protection\"}]}"
+        "nbt": "true"
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 100,
+      "experience": 10,
       "enchantments": [
         {
           "id": "minecraft:fire_protection",
@@ -654,21 +654,21 @@
       "offer_item": {
         "item": "minecraft:diamond_boots",
         "count": 1,
-        "nbt": "{Damage:0}"
+        "nbt": "true"
       },
       "payment_item": {
         "item": "minecraft:diamond_boots",
         "count": 1,
-        "nbt": "{Damage:0}"
+        "nbt": "true"
       },
       "secondary_payment_item": {
         "item": "minecraft:enchanted_book",
         "count": 1,
-        "nbt": "{StoredEnchantments:[{lvl:4s,id:\"minecraft:projectile_protection\"}]}"
+        "nbt": "true"
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 100,
+      "experience": 10,
       "enchantments": [
         {
           "id": "minecraft:projectile_protection",
@@ -681,21 +681,21 @@
       "offer_item": {
         "item": "minecraft:diamond_boots",
         "count": 1,
-        "nbt": "{Damage:0}"
+        "nbt": "true"
       },
       "payment_item": {
         "item": "minecraft:diamond_boots",
         "count": 1,
-        "nbt": "{Damage:0}"
+        "nbt": "true"
       },
       "secondary_payment_item": {
         "item": "minecraft:enchanted_book",
         "count": 1,
-        "nbt": "{StoredEnchantments:[{lvl:4s,id:\"minecraft:protection\"}]}"
+        "nbt": "true"
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 100,
+      "experience": 10,
       "enchantments": [
         {
           "id": "minecraft:protection",
@@ -708,21 +708,21 @@
       "offer_item": {
         "item": "minecraft:diamond_boots",
         "count": 1,
-        "nbt": "{Damage:0}"
+        "nbt": "true"
       },
       "payment_item": {
         "item": "minecraft:diamond_boots",
         "count": 1,
-        "nbt": "{Damage:0}"
+        "nbt": "true"
       },
       "secondary_payment_item": {
         "item": "minecraft:enchanted_book",
         "count": 1,
-        "nbt": "{StoredEnchantments:[{lvl:3s,id:\"minecraft:unbreaking\"}]}"
+        "nbt": "true"
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 100,
+      "experience": 10,
       "enchantments": [
         {
           "id": "minecraft:unbreaking",
@@ -735,7 +735,7 @@
       "offer_item": {
         "item": "minecraft:potion",
         "count": 1,
-        "nbt": "{Potion:\"goblintraders:gt_extended_night_vision\"}"
+        "nbt": "true"
       },
       "payment_item": {
         "item": "minecraft:emerald",
@@ -744,18 +744,18 @@
       "secondary_payment_item": {
         "item": "minecraft:potion",
         "count": 1,
-        "nbt": "{Potion:\"minecraft:awkward\"}"
+        "nbt": "true"
       },
       "price_multiplier": 0.5,
       "max_trades": 8,
-      "experience": 1000
+      "experience": 10
     },
     {
       "type": "goblintraders:basic",
       "offer_item": {
         "item": "minecraft:potion",
         "count": 1,
-        "nbt": "{Potion:\"goblintraders:gt_extended_invisibility\"}"
+        "nbt": "true"
       },
       "payment_item": {
         "item": "minecraft:emerald",
@@ -764,18 +764,18 @@
       "secondary_payment_item": {
         "item": "minecraft:potion",
         "count": 1,
-        "nbt": "{Potion:\"minecraft:awkward\"}"
+        "nbt": "true"
       },
       "price_multiplier": 0.5,
       "max_trades": 8,
-      "experience": 1000
+      "experience": 10
     },
     {
       "type": "goblintraders:basic",
       "offer_item": {
         "item": "minecraft:potion",
         "count": 1,
-        "nbt": "{Potion:\"goblintraders:gt_powerful_jump_boost\"}"
+        "nbt": "true"
       },
       "payment_item": {
         "item": "minecraft:emerald",
@@ -784,18 +784,18 @@
       "secondary_payment_item": {
         "item": "minecraft:potion",
         "count": 1,
-        "nbt": "{Potion:\"minecraft:awkward\"}"
+        "nbt": "true"
       },
       "price_multiplier": 0.5,
       "max_trades": 8,
-      "experience": 1000
+      "experience": 10
     },
     {
       "type": "goblintraders:basic",
       "offer_item": {
         "item": "minecraft:potion",
         "count": 1,
-        "nbt": "{Potion:\"goblintraders:gt_extended_fire_resistance\"}"
+        "nbt": "true"
       },
       "payment_item": {
         "item": "minecraft:emerald",
@@ -804,18 +804,18 @@
       "secondary_payment_item": {
         "item": "minecraft:potion",
         "count": 1,
-        "nbt": "{Potion:\"minecraft:awkward\"}"
+        "nbt": "true"
       },
       "price_multiplier": 0.5,
       "max_trades": 8,
-      "experience": 1000
+      "experience": 10
     },
     {
       "type": "goblintraders:basic",
       "offer_item": {
         "item": "minecraft:potion",
         "count": 1,
-        "nbt": "{Potion:\"goblintraders:gt_powerful_speed\"}"
+        "nbt": "true"
       },
       "payment_item": {
         "item": "minecraft:emerald",
@@ -824,18 +824,18 @@
       "secondary_payment_item": {
         "item": "minecraft:potion",
         "count": 1,
-        "nbt": "{Potion:\"minecraft:awkward\"}"
+        "nbt": "true"
       },
       "price_multiplier": 0.5,
       "max_trades": 8,
-      "experience": 1000
+      "experience": 10
     },
     {
       "type": "goblintraders:basic",
       "offer_item": {
         "item": "minecraft:potion",
         "count": 1,
-        "nbt": "{Potion:\"goblintraders:gt_extended_water_breathing\"}"
+        "nbt": "true"
       },
       "payment_item": {
         "item": "minecraft:emerald",
@@ -844,18 +844,18 @@
       "secondary_payment_item": {
         "item": "minecraft:potion",
         "count": 1,
-        "nbt": "{Potion:\"minecraft:awkward\"}"
+        "nbt": "true"
       },
       "price_multiplier": 0.5,
       "max_trades": 8,
-      "experience": 1000
+      "experience": 10
     },
     {
       "type": "goblintraders:basic",
       "offer_item": {
         "item": "minecraft:potion",
         "count": 1,
-        "nbt": "{Potion:\"goblintraders:gt_powerful_instant_health\"}"
+        "nbt": "true"
       },
       "payment_item": {
         "item": "minecraft:emerald",
@@ -864,18 +864,18 @@
       "secondary_payment_item": {
         "item": "minecraft:potion",
         "count": 1,
-        "nbt": "{Potion:\"minecraft:awkward\"}"
+        "nbt": "true"
       },
       "price_multiplier": 0.5,
       "max_trades": 8,
-      "experience": 1000
+      "experience": 10
     },
     {
       "type": "goblintraders:basic",
       "offer_item": {
         "item": "minecraft:potion",
         "count": 1,
-        "nbt": "{Potion:\"goblintraders:gt_powerful_regeneration\"}"
+        "nbt": "true"
       },
       "payment_item": {
         "item": "minecraft:emerald",
@@ -884,18 +884,18 @@
       "secondary_payment_item": {
         "item": "minecraft:potion",
         "count": 1,
-        "nbt": "{Potion:\"minecraft:awkward\"}"
+        "nbt": "true"
       },
       "price_multiplier": 0.5,
       "max_trades": 8,
-      "experience": 1000
+      "experience": 10
     },
     {
       "type": "goblintraders:basic",
       "offer_item": {
         "item": "minecraft:potion",
         "count": 1,
-        "nbt": "{Potion:\"goblintraders:gt_extended_slow_falling\"}"
+        "nbt": "true"
       },
       "payment_item": {
         "item": "minecraft:emerald",
@@ -904,11 +904,11 @@
       "secondary_payment_item": {
         "item": "minecraft:potion",
         "count": 1,
-        "nbt": "{Potion:\"minecraft:awkward\"}"
+        "nbt": "true"
       },
       "price_multiplier": 0.5,
       "max_trades": 8,
-      "experience": 1000
+      "experience": 10
     }
   ]
 }

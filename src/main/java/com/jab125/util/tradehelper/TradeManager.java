@@ -1,4 +1,4 @@
-package com.jab125.util;
+package com.jab125.util.tradehelper;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.gson.Gson;
