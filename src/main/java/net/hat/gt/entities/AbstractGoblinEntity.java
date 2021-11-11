@@ -1,8 +1,8 @@
 package net.hat.gt.entities;
 
-import com.jab125.util.EntityTrades;
-import com.jab125.util.TradeManager;
-import com.jab125.util.TradeRarity;
+import com.jab125.util.tradehelper.EntityTrades;
+import com.jab125.util.tradehelper.TradeManager;
+import com.jab125.util.tradehelper.TradeRarity;
 import net.hat.gt.GobT;
 import net.hat.gt.entities.ai.*;
 import net.hat.gt.init.ModDamageSource;

@@ -1,18 +1,22 @@
 package net.hat.gt;
 
 
-import com.jab125.util.TradeManager;
-import com.jab125.util.type.BasicTrade;
+import com.jab125.util.datagen.DataGeneraton;
+import com.jab125.util.tradehelper.TradeManager;
+import com.jab125.util.tradehelper.type.BasicTrade;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.hat.gt.config.GoblinTradersConfig;
 import net.hat.gt.init.*;
+import net.minecraft.data.DataGenerator;
 import net.minecraft.resource.ResourceType;
 import net.minecraft.util.Identifier;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import java.io.File;
 
 public class GobT implements ModInitializer {
 
@@ -22,6 +26,7 @@ public class GobT implements ModInitializer {
 
     @Override
     public void onInitialize() {
+        DataGenerator dataGenerator = new DataGenerator(new File("../src/main/generated/resources").toPath(), null);
         AutoConfig.register(GoblinTradersConfig.class, Toml4jConfigSerializer::new);
         config = AutoConfig.getConfigHolder(GoblinTradersConfig.class).getConfig();
 
@@ -38,6 +43,7 @@ public class GobT implements ModInitializer {
         ModPotions.registerPotions();
         ModPotions.registerPotionRecipes();
         ModSpawns.init();
+        DataGeneraton.registerCommonProviders(dataGenerator);
 
     }
     public static Identifier id(String path) {
