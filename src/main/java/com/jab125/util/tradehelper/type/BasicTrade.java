@@ -175,7 +175,7 @@ public class BasicTrade implements ITradeType<GoblinTrade>
             object.addProperty("count", stack.getCount());
             if(stack.hasNbt())
             {
-                object.addProperty("nbt", Objects.requireNonNull(stack.hasNbt()).toString());
+                object.addProperty("nbt", Objects.requireNonNull(stack.getNbt()).toString());
             }
             return object;
         }

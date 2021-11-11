@@ -26,6 +26,7 @@
         "count": 1
       },
       "price_multiplier": 0.0,
+      "max_trades": 2,
       "experience": 10
     },
     {
@@ -46,13 +47,14 @@
       "type": "goblintraders:basic",
       "offer_item": {
         "item": "minecraft:sponge",
-        "count": 1
+        "count": 8
       },
       "payment_item": {
         "item": "minecraft:emerald",
-        "count": 8
+        "count": 1
       },
       "price_multiplier": 0.0,
+      "max_trades": 8,
       "experience": 10
     },
     {
@@ -70,57 +72,21 @@
         "count": 4
       },
       "price_multiplier": 0.0,
-      "max_trades": 2,
-      "experience": 10
-    },
-    {
-      "type": "goblintraders:basic",
-      "offer_item": {
-        "item": "minecraft:anvil",
-        "count": 1
-      },
-      "payment_item": {
-        "item": "minecraft:chipped_anvil",
-        "count": 1
-      },
-      "secondary_payment_item": {
-        "item": "minecraft:iron_ingot",
-        "count": 4
-      },
-      "price_multiplier": 0.0,
-      "max_trades": 2,
-      "experience": 10
-    },
-    {
-      "type": "goblintraders:basic",
-      "offer_item": {
-        "item": "minecraft:terracotta",
-        "count": 2
-      },
-      "payment_item": {
-        "item": "minecraft:clay",
-        "count": 1
-      },
-      "price_multiplier": 0.0,
-      "max_trades": 64,
-      "experience": 10
-    },
-    {
-      "type": "goblintraders:basic",
-      "offer_item": {
-        "item": "minecraft:book",
-        "count": 2
-      },
-      "payment_item": {
-        "item": "minecraft:leather",
-        "count": 1
-      },
-      "secondary_payment_item": {
-        "item": "minecraft:paper",
-        "count": 3
-      },
-      "price_multiplier": 0.0,
       "max_trades": 32,
+      "experience": 10
+    },
+    {
+      "type": "goblintraders:basic",
+      "offer_item": {
+        "item": "minecraft:hay_block",
+        "count": 1
+      },
+      "payment_item": {
+        "item": "minecraft:emerald",
+        "count": 2
+      },
+      "price_multiplier": 0.0,
+      "max_trades": 1,
       "experience": 10
     }
   ]

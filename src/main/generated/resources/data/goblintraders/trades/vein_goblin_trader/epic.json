@@ -6,7 +6,7 @@
       "offer_item": {
         "item": "minecraft:potion",
         "count": 1,
-        "nbt": "true"
+        "nbt": "{Potion:\"minecraft:gtdig_speed\"}"
       },
       "payment_item": {
         "item": "minecraft:emerald",
@@ -15,7 +15,7 @@
       "secondary_payment_item": {
         "item": "minecraft:potion",
         "count": 1,
-        "nbt": "true"
+        "nbt": "{Potion:\"minecraft:awkward\"}"
       },
       "price_multiplier": 0.5,
       "max_trades": 4,
@@ -26,7 +26,7 @@
       "offer_item": {
         "item": "minecraft:potion",
         "count": 1,
-        "nbt": "true"
+        "nbt": "{Potion:\"minecraft:gtabsorption\"}"
       },
       "payment_item": {
         "item": "minecraft:emerald",
@@ -35,7 +35,7 @@
       "secondary_payment_item": {
         "item": "minecraft:potion",
         "count": 1,
-        "nbt": "true"
+        "nbt": "{Potion:\"minecraft:awkward\"}"
       },
       "price_multiplier": 0.5,
       "max_trades": 4,
@@ -46,7 +46,7 @@
       "offer_item": {
         "item": "minecraft:potion",
         "count": 1,
-        "nbt": "true"
+        "nbt": "{Potion:\"minecraft:gtlevitation\"}"
       },
       "payment_item": {
         "item": "minecraft:emerald",
@@ -55,7 +55,7 @@
       "secondary_payment_item": {
         "item": "minecraft:potion",
         "count": 1,
-        "nbt": "true"
+        "nbt": "{Potion:\"minecraft:awkward\"}"
       },
       "price_multiplier": 0.5,
       "max_trades": 4,
@@ -66,7 +66,7 @@
       "offer_item": {
         "item": "minecraft:potion",
         "count": 1,
-        "nbt": "true"
+        "nbt": "{Potion:\"minecraft:gtluck\"}"
       },
       "payment_item": {
         "item": "minecraft:emerald",
@@ -75,7 +75,7 @@
       "secondary_payment_item": {
         "item": "minecraft:potion",
         "count": 1,
-        "nbt": "true"
+        "nbt": "{Potion:\"minecraft:awkward\"}"
       },
       "price_multiplier": 0.5,
       "max_trades": 4,
@@ -86,7 +86,7 @@
       "offer_item": {
         "item": "minecraft:potion",
         "count": 1,
-        "nbt": "true"
+        "nbt": "{Potion:\"minecraft:gtdolphins_grace\"}"
       },
       "payment_item": {
         "item": "minecraft:emerald",
@@ -95,7 +95,7 @@
       "secondary_payment_item": {
         "item": "minecraft:potion",
         "count": 1,
-        "nbt": "true"
+        "nbt": "{Potion:\"minecraft:awkward\"}"
       },
       "price_multiplier": 0.5,
       "max_trades": 4,
@@ -106,7 +106,7 @@
       "offer_item": {
         "item": "minecraft:potion",
         "count": 1,
-        "nbt": "true"
+        "nbt": "{Potion:\"minecraft:gtpowerful_strength\"}"
       },
       "payment_item": {
         "item": "minecraft:emerald",
@@ -115,7 +115,7 @@
       "secondary_payment_item": {
         "item": "minecraft:potion",
         "count": 1,
-        "nbt": "true"
+        "nbt": "{Potion:\"minecraft:awkward\"}"
       },
       "price_multiplier": 0.5,
       "max_trades": 4,

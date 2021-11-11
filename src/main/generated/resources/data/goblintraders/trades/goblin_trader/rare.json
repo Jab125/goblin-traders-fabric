@@ -50,60 +50,6 @@
     {
       "type": "goblintraders:basic",
       "offer_item": {
-        "item": "minecraft:fishing_rod",
-        "count": 1,
-        "nbt": "true"
-      },
-      "payment_item": {
-        "item": "minecraft:fishing_rod",
-        "count": 1,
-        "nbt": "true"
-      },
-      "secondary_payment_item": {
-        "item": "minecraft:enchanted_book",
-        "count": 1,
-        "nbt": "true"
-      },
-      "price_multiplier": 0.5,
-      "max_trades": 2,
-      "experience": 10,
-      "enchantments": [
-        {
-          "id": "minecraft:luck_of_the_sea",
-          "level": 5
-        }
-      ]
-    },
-    {
-      "type": "goblintraders:basic",
-      "offer_item": {
-        "item": "minecraft:fishing_rod",
-        "count": 1,
-        "nbt": "true"
-      },
-      "payment_item": {
-        "item": "minecraft:fishing_rod",
-        "count": 1,
-        "nbt": "true"
-      },
-      "secondary_payment_item": {
-        "item": "minecraft:enchanted_book",
-        "count": 1,
-        "nbt": "true"
-      },
-      "price_multiplier": 0.5,
-      "max_trades": 2,
-      "experience": 10,
-      "enchantments": [
-        {
-          "id": "minecraft:lure",
-          "level": 5
-        }
-      ]
-    },
-    {
-      "type": "goblintraders:basic",
-      "offer_item": {
         "item": "minecraft:music_disc_cat",
         "count": 1
       },
@@ -174,191 +120,191 @@
     {
       "type": "goblintraders:basic",
       "offer_item": {
-        "item": "minecraft:diamond_pickaxe",
+        "item": "minecraft:fishing_rod",
         "count": 1,
-        "nbt": "true"
+        "nbt": "{Damage:0,Enchantments:[{id:\"minecraft:luck_of_the_sea\",lvl:5s}]}"
       },
       "payment_item": {
-        "item": "minecraft:diamond_pickaxe",
+        "item": "minecraft:fishing_rod",
         "count": 1,
-        "nbt": "true"
+        "nbt": "{Damage:0}"
       },
       "secondary_payment_item": {
         "item": "minecraft:enchanted_book",
         "count": 1,
-        "nbt": "true"
+        "nbt": "{StoredEnchantments:[{id:\"minecraft:luck_of_the_sea\",lvl:3s}]}"
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 10,
-      "enchantments": [
-        {
-          "id": "minecraft:efficiency",
-          "level": 6
-        }
-      ]
+      "experience": 10
+    },
+    {
+      "type": "goblintraders:basic",
+      "offer_item": {
+        "item": "minecraft:fishing_rod",
+        "count": 1,
+        "nbt": "{Damage:0,Enchantments:[{id:\"minecraft:lure\",lvl:5s}]}"
+      },
+      "payment_item": {
+        "item": "minecraft:fishing_rod",
+        "count": 1,
+        "nbt": "{Damage:0}"
+      },
+      "secondary_payment_item": {
+        "item": "minecraft:enchanted_book",
+        "count": 1,
+        "nbt": "{StoredEnchantments:[{id:\"minecraft:lure\",lvl:3s}]}"
+      },
+      "price_multiplier": 0.0,
+      "max_trades": 1,
+      "experience": 10
     },
     {
       "type": "goblintraders:basic",
       "offer_item": {
         "item": "minecraft:diamond_pickaxe",
         "count": 1,
-        "nbt": "true"
+        "nbt": "{Damage:0,Enchantments:[{id:\"minecraft:efficiency\",lvl:6s}]}"
       },
       "payment_item": {
         "item": "minecraft:diamond_pickaxe",
         "count": 1,
-        "nbt": "true"
+        "nbt": "{Damage:0}"
       },
       "secondary_payment_item": {
         "item": "minecraft:enchanted_book",
         "count": 1,
-        "nbt": "true"
+        "nbt": "{StoredEnchantments:[{id:\"minecraft:efficiency\",lvl:5s}]}"
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 10,
-      "enchantments": [
-        {
-          "id": "minecraft:unbreaking",
-          "level": 4
-        }
-      ]
+      "experience": 10
     },
     {
       "type": "goblintraders:basic",
       "offer_item": {
         "item": "minecraft:diamond_pickaxe",
         "count": 1,
-        "nbt": "true"
+        "nbt": "{Damage:0,Enchantments:[{id:\"minecraft:unbreaking\",lvl:4s}]}"
       },
       "payment_item": {
         "item": "minecraft:diamond_pickaxe",
         "count": 1,
-        "nbt": "true"
+        "nbt": "{Damage:0}"
       },
       "secondary_payment_item": {
         "item": "minecraft:enchanted_book",
         "count": 1,
-        "nbt": "true"
+        "nbt": "{StoredEnchantments:[{id:\"minecraft:unbreaking\",lvl:3s}]}"
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 10,
-      "enchantments": [
-        {
-          "id": "minecraft:fortune",
-          "level": 4
-        }
-      ]
+      "experience": 10
+    },
+    {
+      "type": "goblintraders:basic",
+      "offer_item": {
+        "item": "minecraft:diamond_pickaxe",
+        "count": 1,
+        "nbt": "{Damage:0,Enchantments:[{id:\"minecraft:fortune\",lvl:4s}]}"
+      },
+      "payment_item": {
+        "item": "minecraft:diamond_pickaxe",
+        "count": 1,
+        "nbt": "{Damage:0}"
+      },
+      "secondary_payment_item": {
+        "item": "minecraft:enchanted_book",
+        "count": 1,
+        "nbt": "{StoredEnchantments:[{id:\"minecraft:fortune\",lvl:3s}]}"
+      },
+      "price_multiplier": 0.0,
+      "max_trades": 1,
+      "experience": 10
     },
     {
       "type": "goblintraders:basic",
       "offer_item": {
         "item": "minecraft:diamond_axe",
         "count": 1,
-        "nbt": "true"
+        "nbt": "{Damage:0,Enchantments:[{id:\"minecraft:efficiency\",lvl:6s}]}"
       },
       "payment_item": {
         "item": "minecraft:diamond_axe",
         "count": 1,
-        "nbt": "true"
+        "nbt": "{Damage:0}"
       },
       "secondary_payment_item": {
         "item": "minecraft:enchanted_book",
         "count": 1,
-        "nbt": "true"
+        "nbt": "{StoredEnchantments:[{id:\"minecraft:efficiency\",lvl:5s}]}"
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 10,
-      "enchantments": [
-        {
-          "id": "minecraft:efficiency",
-          "level": 6
-        }
-      ]
+      "experience": 10
     },
     {
       "type": "goblintraders:basic",
       "offer_item": {
         "item": "minecraft:diamond_axe",
         "count": 1,
-        "nbt": "true"
+        "nbt": "{Damage:0,Enchantments:[{id:\"minecraft:unbreaking\",lvl:4s}]}"
       },
       "payment_item": {
         "item": "minecraft:diamond_axe",
         "count": 1,
-        "nbt": "true"
+        "nbt": "{Damage:0}"
       },
       "secondary_payment_item": {
         "item": "minecraft:enchanted_book",
         "count": 1,
-        "nbt": "true"
+        "nbt": "{StoredEnchantments:[{id:\"minecraft:unbreaking\",lvl:3s}]}"
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 10,
-      "enchantments": [
-        {
-          "id": "minecraft:unbreaking",
-          "level": 4
-        }
-      ]
+      "experience": 10
     },
     {
       "type": "goblintraders:basic",
       "offer_item": {
         "item": "minecraft:diamond_shovel",
         "count": 1,
-        "nbt": "true"
+        "nbt": "{Damage:0,Enchantments:[{id:\"minecraft:efficiency\",lvl:6s}]}"
       },
       "payment_item": {
         "item": "minecraft:diamond_shovel",
         "count": 1,
-        "nbt": "true"
+        "nbt": "{Damage:0}"
       },
       "secondary_payment_item": {
         "item": "minecraft:enchanted_book",
         "count": 1,
-        "nbt": "true"
+        "nbt": "{StoredEnchantments:[{id:\"minecraft:efficiency\",lvl:5s}]}"
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 10,
-      "enchantments": [
-        {
-          "id": "minecraft:efficiency",
-          "level": 6
-        }
-      ]
+      "experience": 10
     },
     {
       "type": "goblintraders:basic",
       "offer_item": {
         "item": "minecraft:diamond_shovel",
         "count": 1,
-        "nbt": "true"
+        "nbt": "{Damage:0,Enchantments:[{id:\"minecraft:unbreaking\",lvl:4s}]}"
       },
       "payment_item": {
         "item": "minecraft:diamond_shovel",
         "count": 1,
-        "nbt": "true"
+        "nbt": "{Damage:0}"
       },
       "secondary_payment_item": {
         "item": "minecraft:enchanted_book",
         "count": 1,
-        "nbt": "true"
+        "nbt": "{StoredEnchantments:[{id:\"minecraft:unbreaking\",lvl:3s}]}"
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 10,
-      "enchantments": [
-        {
-          "id": "minecraft:unbreaking",
-          "level": 4
-        }
-      ]
+      "experience": 10
     }
   ]
 }

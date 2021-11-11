@@ -6,7 +6,7 @@
       "offer_item": {
         "item": "minecraft:diamond_pickaxe",
         "count": 1,
-        "nbt": "true"
+        "nbt": "{Damage:0}"
       },
       "payment_item": {
         "item": "minecraft:dragon_head",
@@ -15,7 +15,7 @@
       "secondary_payment_item": {
         "item": "minecraft:diamond_pickaxe",
         "count": 1,
-        "nbt": "true"
+        "nbt": "{Damage:0}"
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
@@ -27,7 +27,7 @@
         },
         {
           "id": "minecraft:unbreaking",
-          "level": 5
+          "level": 4
         }
       ]
     }
