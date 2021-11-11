@@ -55,6 +55,32 @@
       },
       "price_multiplier": 0.0,
       "experience": 10
+    },
+    {
+      "type": "goblintraders:basic",
+      "offer_item": {
+        "item": "minecraft:warped_fungus",
+        "count": 5
+      },
+      "payment_item": {
+        "item": "minecraft:emerald",
+        "count": 1
+      },
+      "price_multiplier": 0.0,
+      "experience": 10
+    },
+    {
+      "type": "goblintraders:basic",
+      "offer_item": {
+        "item": "minecraft:golden_apple",
+        "count": 1
+      },
+      "payment_item": {
+        "item": "minecraft:emerald",
+        "count": 6
+      },
+      "price_multiplier": 0.0,
+      "experience": 10
     }
   ]
 }

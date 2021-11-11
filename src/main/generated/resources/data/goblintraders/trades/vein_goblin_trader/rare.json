@@ -124,33 +124,6 @@
       "secondary_payment_item": {
         "item": "minecraft:enchanted_book",
         "count": 1,
-        "nbt": "{StoredEnchantments:[{id:\"minecraft:knockback\",lvl:2s}]}"
-      },
-      "price_multiplier": 0.0,
-      "max_trades": 1,
-      "experience": 10,
-      "enchantments": [
-        {
-          "id": "minecraft:knockback",
-          "level": 3
-        }
-      ]
-    },
-    {
-      "type": "goblintraders:basic",
-      "offer_item": {
-        "item": "minecraft:diamond_sword",
-        "count": 1,
-        "nbt": "{Damage:0}"
-      },
-      "payment_item": {
-        "item": "minecraft:diamond_sword",
-        "count": 1,
-        "nbt": "{Damage:0}"
-      },
-      "secondary_payment_item": {
-        "item": "minecraft:enchanted_book",
-        "count": 1,
         "nbt": "{StoredEnchantments:[{id:\"minecraft:bane_of_arthropods\",lvl:5s}]}"
       },
       "price_multiplier": 0.0,
@@ -159,33 +132,6 @@
       "enchantments": [
         {
           "id": "minecraft:bane_of_arthropods",
-          "level": 6
-        }
-      ]
-    },
-    {
-      "type": "goblintraders:basic",
-      "offer_item": {
-        "item": "minecraft:diamond_sword",
-        "count": 1,
-        "nbt": "{Damage:0}"
-      },
-      "payment_item": {
-        "item": "minecraft:diamond_sword",
-        "count": 1,
-        "nbt": "{Damage:0}"
-      },
-      "secondary_payment_item": {
-        "item": "minecraft:enchanted_book",
-        "count": 1,
-        "nbt": "{StoredEnchantments:[{id:\"minecraft:smite\",lvl:5s}]}"
-      },
-      "price_multiplier": 0.0,
-      "max_trades": 1,
-      "experience": 10,
-      "enchantments": [
-        {
-          "id": "minecraft:smite",
           "level": 6
         }
       ]

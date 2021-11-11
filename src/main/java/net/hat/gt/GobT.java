@@ -21,12 +21,13 @@ import java.io.File;
 public class GobT implements ModInitializer {
 
     public static final String MODID = "goblintraders";
+    // Mental Note: don't remove this
+    private static final boolean doDataGen = false;
     public static GoblinTradersConfig config;
     public static final Logger LOGGER = LogManager.getLogger("goblintraders");
 
     @Override
     public void onInitialize() {
-        DataGenerator dataGenerator = new DataGenerator(new File("../src/main/generated/resources").toPath(), null);
         AutoConfig.register(GoblinTradersConfig.class, Toml4jConfigSerializer::new);
         config = AutoConfig.getConfigHolder(GoblinTradersConfig.class).getConfig();
 
@@ -43,7 +44,11 @@ public class GobT implements ModInitializer {
         ModPotions.registerPotions();
         ModPotions.registerPotionRecipes();
         ModSpawns.init();
-        DataGeneraton.registerCommonProviders(dataGenerator);
+        // Mental Note: don't remove this
+        if (doDataGen) {
+            DataGenerator dataGenerator = new DataGenerator(new File("../src/main/generated/resources").toPath(), null);
+            DataGeneraton.registerCommonProviders(dataGenerator);
+        }
 
     }
     public static Identifier id(String path) {

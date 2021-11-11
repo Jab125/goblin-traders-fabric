@@ -18,7 +18,7 @@
         "nbt": "{Potion:\"minecraft:awkward\"}"
       },
       "price_multiplier": 0.5,
-      "max_trades": 4,
+      "max_trades": 8,
       "experience": 10
     },
     {
@@ -38,27 +38,7 @@
         "nbt": "{Potion:\"minecraft:awkward\"}"
       },
       "price_multiplier": 0.5,
-      "max_trades": 4,
-      "experience": 10
-    },
-    {
-      "type": "goblintraders:basic",
-      "offer_item": {
-        "item": "minecraft:potion",
-        "count": 1,
-        "nbt": "{Potion:\"minecraft:gtlevitation\"}"
-      },
-      "payment_item": {
-        "item": "minecraft:emerald",
-        "count": 25
-      },
-      "secondary_payment_item": {
-        "item": "minecraft:potion",
-        "count": 1,
-        "nbt": "{Potion:\"minecraft:awkward\"}"
-      },
-      "price_multiplier": 0.5,
-      "max_trades": 4,
+      "max_trades": 8,
       "experience": 10
     },
     {
@@ -78,7 +58,7 @@
         "nbt": "{Potion:\"minecraft:awkward\"}"
       },
       "price_multiplier": 0.5,
-      "max_trades": 4,
+      "max_trades": 8,
       "experience": 10
     },
     {
@@ -98,7 +78,27 @@
         "nbt": "{Potion:\"minecraft:awkward\"}"
       },
       "price_multiplier": 0.5,
-      "max_trades": 4,
+      "max_trades": 8,
+      "experience": 10
+    },
+    {
+      "type": "goblintraders:basic",
+      "offer_item": {
+        "item": "minecraft:potion",
+        "count": 1,
+        "nbt": "{Potion:\"minecraft:gtlevitation\"}"
+      },
+      "payment_item": {
+        "item": "minecraft:emerald",
+        "count": 25
+      },
+      "secondary_payment_item": {
+        "item": "minecraft:potion",
+        "count": 1,
+        "nbt": "{Potion:\"minecraft:awkward\"}"
+      },
+      "price_multiplier": 0.5,
+      "max_trades": 8,
       "experience": 10
     },
     {
@@ -118,7 +118,27 @@
         "nbt": "{Potion:\"minecraft:awkward\"}"
       },
       "price_multiplier": 0.5,
-      "max_trades": 4,
+      "max_trades": 8,
+      "experience": 10
+    },
+    {
+      "type": "goblintraders:basic",
+      "offer_item": {
+        "item": "minecraft:potion",
+        "count": 1,
+        "nbt": "{Potion:\"minecraft:gtblindness\"}"
+      },
+      "payment_item": {
+        "item": "minecraft:emerald",
+        "count": 25
+      },
+      "secondary_payment_item": {
+        "item": "minecraft:potion",
+        "count": 1,
+        "nbt": "{Potion:\"minecraft:awkward\"}"
+      },
+      "price_multiplier": 0.5,
+      "max_trades": 8,
       "experience": 10
     }
   ]

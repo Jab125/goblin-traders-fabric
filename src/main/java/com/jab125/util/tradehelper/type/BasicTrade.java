@@ -291,8 +291,7 @@ public class BasicTrade implements ITradeType<GoblinTrade>
         @Deprecated
         public Builder setExperience(int experience)
         {
-            this.setMerchantExperience(experience);
-            return this;
+            return this.setMerchantExperience(experience);
         }
 
         public Builder setMerchantExperience(int merchantExperience)

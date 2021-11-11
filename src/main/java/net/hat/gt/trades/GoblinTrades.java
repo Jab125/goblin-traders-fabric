@@ -164,7 +164,7 @@ public class GoblinTrades {
                 new TradeWithoutEmeraldPotions(Items.EMERALD, 15, ModPotions.LEVITATION, 8, 9, 200),
                 new TradeWithoutEmeraldPotions(Items.EMERALD, 15, ModPotions.POWERFUL_STRENGTH, 8, 9, 200),
                 new TradeWithoutEmeraldPotions(Items.EMERALD, 15, ModPotions.BLINDNESS, 8, 9, 200),
-                /* this is gonna be revised soon */ //new TradeOffers.SellMapFactory(5, StructureFeature.RUINED_PORTAL, MapIcon.Type.RED_X, 1, 15)
+                /* this is gonna be revised soon(tm) */ //new TradeOffers.SellMapFactory(5, StructureFeature.RUINED_PORTAL, MapIcon.Type.RED_X, 1, 15)
 
                 /* ************************************************************************************** *
                  *                                    LEGENDARY                                           *
