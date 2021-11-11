@@ -1,6 +1,7 @@
 package net.hat.gt.init;
 
 
+import net.hat.gt.GobT;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.Items;
@@ -45,7 +46,7 @@ public class ModPotions extends Potions {
 
 
     private static Potion register(String name, Potion potion) {
-        return Registry.register(Registry.POTION, name, potion);
+        return Registry.register(Registry.POTION, GobT.id(name), potion);
     }
     static{
         EXTENDED_WATER_BREATHING = register("gtextended_water_breathing", new Potion(new StatusEffectInstance(StatusEffects.WATER_BREATHING, minutesToTick(15, 0))));

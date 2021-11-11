@@ -681,7 +681,7 @@
       "offer_item": {
         "item": "minecraft:potion",
         "count": 1,
-        "nbt": "{Potion:\"minecraft:gtextended_night_vision\"}"
+        "nbt": "{Potion:\"goblintraders:gtextended_night_vision\"}"
       },
       "payment_item": {
         "item": "minecraft:emerald",
@@ -701,7 +701,7 @@
       "offer_item": {
         "item": "minecraft:potion",
         "count": 1,
-        "nbt": "{Potion:\"minecraft:gtextended_invisibility\"}"
+        "nbt": "{Potion:\"goblintraders:gtextended_invisibility\"}"
       },
       "payment_item": {
         "item": "minecraft:emerald",
@@ -721,7 +721,7 @@
       "offer_item": {
         "item": "minecraft:potion",
         "count": 1,
-        "nbt": "{Potion:\"minecraft:gtpowerful_jump_boost\"}"
+        "nbt": "{Potion:\"goblintraders:gtpowerful_jump_boost\"}"
       },
       "payment_item": {
         "item": "minecraft:emerald",
@@ -741,7 +741,7 @@
       "offer_item": {
         "item": "minecraft:potion",
         "count": 1,
-        "nbt": "{Potion:\"minecraft:gtextended_fire_resistance\"}"
+        "nbt": "{Potion:\"goblintraders:gtextended_fire_resistance\"}"
       },
       "payment_item": {
         "item": "minecraft:emerald",
@@ -761,7 +761,7 @@
       "offer_item": {
         "item": "minecraft:potion",
         "count": 1,
-        "nbt": "{Potion:\"minecraft:gtpowerful_speed\"}"
+        "nbt": "{Potion:\"goblintraders:gtpowerful_speed\"}"
       },
       "payment_item": {
         "item": "minecraft:emerald",
@@ -781,7 +781,7 @@
       "offer_item": {
         "item": "minecraft:potion",
         "count": 1,
-        "nbt": "{Potion:\"minecraft:gtextended_water_breathing\"}"
+        "nbt": "{Potion:\"goblintraders:gtextended_water_breathing\"}"
       },
       "payment_item": {
         "item": "minecraft:emerald",
@@ -801,7 +801,7 @@
       "offer_item": {
         "item": "minecraft:potion",
         "count": 1,
-        "nbt": "{Potion:\"minecraft:gtpowerful_instant_health\"}"
+        "nbt": "{Potion:\"goblintraders:gtpowerful_instant_health\"}"
       },
       "payment_item": {
         "item": "minecraft:emerald",
@@ -821,7 +821,7 @@
       "offer_item": {
         "item": "minecraft:potion",
         "count": 1,
-        "nbt": "{Potion:\"minecraft:gtpowerful_regeneration\"}"
+        "nbt": "{Potion:\"goblintraders:gtpowerful_regeneration\"}"
       },
       "payment_item": {
         "item": "minecraft:emerald",
@@ -841,7 +841,7 @@
       "offer_item": {
         "item": "minecraft:potion",
         "count": 1,
-        "nbt": "{Potion:\"minecraft:gtextended_slow_falling\"}"
+        "nbt": "{Potion:\"goblintraders:gtextended_slow_falling\"}"
       },
       "payment_item": {
         "item": "minecraft:emerald",
