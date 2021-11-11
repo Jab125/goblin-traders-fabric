@@ -1,5 +1,6 @@
 package net.hat.gt.entities;
 
+import com.google.common.annotations.Beta;
 import com.google.common.collect.ImmutableMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import net.hat.gt.init.ModStats;
@@ -25,6 +26,7 @@ import net.minecraft.world.World;
 
 import static net.hat.gt.init.ModTrades.copyToFastUtilMap;
 
+@Beta
 public abstract class AbstractTieredGoblinEntity extends AbstractGoblinEntity {
     private static final TrackedData<? super Integer> XP = DataTracker.registerData(AbstractGoblinEntity.class, TrackedDataHandlerRegistry.INTEGER);
     private static final TrackedData<? super Integer> LVL = DataTracker.registerData(AbstractGoblinEntity.class, TrackedDataHandlerRegistry.INTEGER);

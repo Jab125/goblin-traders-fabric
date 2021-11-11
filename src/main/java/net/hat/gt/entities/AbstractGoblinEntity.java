@@ -402,11 +402,6 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
         }
     }
 
-    @Override
-    protected boolean shouldDropLoot() {
-        return false;
-    }
-
     protected void addToInventoryOnSpawn() {
         for (int i = Math.min((int) (Math.random() * 5) + 1, this.getFavouriteFood().getMaxCount()); i > 0; i--)
             this.getInventory().addStack(this.getFavouriteFood().copy());
@@ -453,6 +448,10 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
                 offers.add(offer);
             }
         }
+    }
+    @Override
+    protected void fillRecipes() {
+
     }
 
 }

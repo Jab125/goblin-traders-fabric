@@ -1,5 +1,6 @@
 package net.hat.gt.entities;
 
+import com.google.common.annotations.Beta;
 import net.hat.gt.trades.GoblinTrades;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.passive.MerchantEntity;
@@ -8,7 +9,8 @@ import net.minecraft.item.Items;
 import net.minecraft.village.TradeOffers;
 import net.minecraft.world.World;
 
-public class TestGoblinTraderEntity extends AbstractTieredGoblinEntity{
+@Beta
+public class TestGoblinTraderEntity extends AbstractTieredGoblinEntity {
     public TestGoblinTraderEntity(EntityType<? extends MerchantEntity> entityType, World world) {
         super(entityType, world);
     }

@@ -28,6 +28,7 @@ public class GoblinTraderEntity extends AbstractGoblinEntity {
         super(entityType, world);
     }
 
+
     @Override
     public ItemStack getFavouriteFood() {
         return new ItemStack(Items.APPLE);
@@ -54,36 +55,6 @@ public class GoblinTraderEntity extends AbstractGoblinEntity {
         return true;
     }
 
-    @Override
-    protected void fillRecipes() {
-        if (GobT.config.GOBLIN_VANILLA_TRADES) {
-            TradeOffers.Factory[] factorys = ModTrades.GOBLIN_TRADER_TRADES_VANILLA.get(1);
-            TradeOffers.Factory[] factorys2 = ModTrades.GOBLIN_TRADER_TRADES_VANILLA.get(2);
-            TradeOffers.Factory[] factorys3 = ModTrades.GOBLIN_TRADER_TRADES_VANILLA.get(3);
-            TradeOffers.Factory[] factorys4 = ModTrades.GOBLIN_TRADER_TRADES_VANILLA.get(4);
-            if (factorys != null && factorys2 != null && factorys3 != null) {
-                TradeOfferList tradeOfferList = this.getOffers();
-                this.fillRecipesFromPool(tradeOfferList, factorys, ThreadLocalRandom.current().nextInt(4, 6 + 1));
-                this.fillRecipesFromPool(tradeOfferList, factorys2, ThreadLocalRandom.current().nextInt(3, 5 + 1));
-                this.fillRecipesFromPool(tradeOfferList, factorys3, ThreadLocalRandom.current().nextInt(1, 3 + 1));
-                this.fillRecipesFromPool(tradeOfferList, factorys4, ThreadLocalRandom.current().nextInt(-25, 1 + 1));
-            }
-        }
-        else {
-            TradeOffers.Factory[] easterEggFactory = ModTrades.EASTER_EGG_TRADES.get(1);
-            TradeOffers.Factory[] factorys = ModTrades.GOBLIN_TRADER_TRADES.get(1);
-            TradeOffers.Factory[] factorys2 = ModTrades.GOBLIN_TRADER_TRADES.get(2);
-            TradeOffers.Factory[] factorys3 = ModTrades.GOBLIN_TRADER_TRADES.get(3);
-            TradeOffers.Factory[] factorys4 = ModTrades.GOBLIN_TRADER_TRADES.get(4);
-            if (factorys != null && factorys2 != null && factorys3 != null) {
-                TradeOfferList tradeOfferList = this.getOffers();
-                this.fillRecipesFromPool(tradeOfferList, factorys, ThreadLocalRandom.current().nextInt(4, 6 + 1));
-                this.fillRecipesFromPool(tradeOfferList, factorys2, ThreadLocalRandom.current().nextInt(3, 5 + 1));
-                this.fillRecipesFromPool(tradeOfferList, factorys3, ThreadLocalRandom.current().nextInt(1, 3 + 1));
-                this.fillRecipesFromPool(tradeOfferList, factorys4, ThreadLocalRandom.current().nextInt(-25, 1 + 1));
-            }
-        }
-    }
 
     @SuppressWarnings("unused") // Required for the query, IntelliJ marks it though.
     public static boolean canGoblinSpawn(EntityType<? extends MobEntity> type, WorldAccess world, SpawnReason spawnReason, BlockPos pos, Random random) {
@@ -91,29 +62,4 @@ public class GoblinTraderEntity extends AbstractGoblinEntity {
         return spawnReason == SpawnReason.SPAWNER || ThreadLocalRandom.current().nextInt(1, GobT.config.GOBLIN_SPAWN_RATE_D + 1) == 1;
     }
 
-    @Override
-    protected void fillRecipesFromPool(TradeOfferList recipeList, TradeOffers.Factory[] pool, int count) {
-        Set<Integer> set = Sets.newHashSet();
-        if (pool.length > count) {
-            while(set.size() < count) {
-                set.add(this.random.nextInt(pool.length));
-            }
-        } else {
-            for(int i = 0; i < pool.length; ++i) {
-                set.add(i);
-            }
-        }
-
-        for (Integer integer : set) {
-            TradeOffers.Factory factory = pool[integer];
-            TradeOffer tradeOffer = factory.create(this, this.random);
-            if (tradeOffer != null) {
-                if ((int) (Math.random() * 20) == 1 && GobT.config.EASTER_EGGS) {
-                    recipeList.add(GoblinTrades.easterEggTrades()[this.random.nextInt(GoblinTrades.easterEggTrades().length)].create(this, this.random));
-                }
-                recipeList.add(tradeOffer);
-            }
-        }
-
-    }
 }
