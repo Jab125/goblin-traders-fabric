@@ -332,8 +332,10 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
                 this.world.playSound(null, this.getX(), this.getY(), this.getZ(), ModSounds.ANNOYED_GRUNT, SoundCategory.NEUTRAL, 1.0F, 0.9F + this.getRandom().nextFloat() * 0.2F);
                 if (GobT.config.GOBLIN_NO_ATTACK_CREATIVE) {
                     try {
-                        if (((PlayerEntity) Objects.requireNonNull(this.getAttacker())).isCreative()) {
-                            this.setAttacker(null);
+                        if (this.getAttacker().isPlayer()) {
+                            if (((PlayerEntity) Objects.requireNonNull(this.getAttacker())).isCreative()) {
+                                this.setAttacker(null);
+                            }
                         }
                     } catch(NullPointerException ignored) {}
                 }
