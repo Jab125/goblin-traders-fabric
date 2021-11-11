@@ -40,6 +40,7 @@ public abstract class TradeProvider implements DataProvider
 
     protected abstract void registerTrades();
 
+    // Use an access-widener to access this
     protected final void addTrade(EntityType<?> type, TradeRarity rarity, ITradeType<?> trade)
     {
         this.trades.putIfAbsent(type, new EnumMap<>(TradeRarity.class));

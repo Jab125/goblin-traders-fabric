@@ -117,70 +117,67 @@ public class GoblinTradeProvider extends TradeProvider
                 .build());
 
 
-        //Below me are mrcrayfish trades
         
         /* ************************************************************************************** *
          *                                     UNCOMMON                                           *
          * ************************************************************************************** */
 
         this.addTrade(ModEntities.GOBLIN_TRADER, TradeRarity.UNCOMMON, BasicTrade.Builder.create()
-                .setOfferStack(new ItemStack(Items.GUNPOWDER, 2))
                 .setPaymentStack(new ItemStack(Items.EMERALD))
+                .setOfferStack(new ItemStack(Items.GUNPOWDER, 2))
                 .setPriceMultiplier(0F)
                 .setMaxTrades(32)
-                .setExperience(20)
-                .build());
-        this.addTrade(ModEntities.GOBLIN_TRADER, TradeRarity.UNCOMMON, BasicTrade.Builder.create()
-                .setOfferStack(new ItemStack(Items.EMERALD, 6))
-                .setPaymentStack(new ItemStack(Items.TURTLE_EGG))
-                .setPriceMultiplier(0F)
-                .setExperience(200)
-                .build());
-        this.addTrade(ModEntities.GOBLIN_TRADER, TradeRarity.UNCOMMON, BasicTrade.Builder.create()
-                .setOfferStack(new ItemStack(Items.EMERALD, 8))
-                .setPaymentStack(new ItemStack(Items.PUFFERFISH_BUCKET))
-                .setPriceMultiplier(0F)
-                .setMaxTrades(4)
-                .setExperience(200)
-                .build());
-        this.addTrade(ModEntities.GOBLIN_TRADER, TradeRarity.UNCOMMON, BasicTrade.Builder.create()
-                .setOfferStack(new ItemStack(Items.SPONGE))
-                .setPaymentStack(new ItemStack(Items.EMERALD, 8))
-                .setPriceMultiplier(0F)
-                .setExperience(50)
-                .build());
-        this.addTrade(ModEntities.GOBLIN_TRADER, TradeRarity.UNCOMMON, BasicTrade.Builder.create()
-                .setOfferStack(new ItemStack(Items.CHIPPED_ANVIL))
-                .setPaymentStack(new ItemStack(Items.DAMAGED_ANVIL))
-                .setSecondaryPaymentStack(new ItemStack(Items.IRON_INGOT, 4))
-                .setPriceMultiplier(0F)
-                .setMaxTrades(2)
-                .setExperience(50)
-                .build());
-        this.addTrade(ModEntities.GOBLIN_TRADER, TradeRarity.UNCOMMON, BasicTrade.Builder.create()
-                .setOfferStack(new ItemStack(Items.ANVIL))
-                .setPaymentStack(new ItemStack(Items.CHIPPED_ANVIL))
-                .setSecondaryPaymentStack(new ItemStack(Items.IRON_INGOT, 4))
-                .setPriceMultiplier(0F)
-                .setMaxTrades(2)
-                .setExperience(50)
-                .build());
-        this.addTrade(ModEntities.GOBLIN_TRADER, TradeRarity.UNCOMMON, BasicTrade.Builder.create()
-                .setOfferStack(new ItemStack(Items.TERRACOTTA, 2))
-                .setPaymentStack(new ItemStack(Items.CLAY))
-                .setPriceMultiplier(0F)
-                .setMaxTrades(64)
-                .setExperience(20)
-                .build());
-        this.addTrade(ModEntities.GOBLIN_TRADER, TradeRarity.UNCOMMON, BasicTrade.Builder.create()
-                .setOfferStack(new ItemStack(Items.BOOK, 2))
-                .setPaymentStack(new ItemStack(Items.LEATHER))
-                .setSecondaryPaymentStack(new ItemStack(Items.PAPER, 3))
-                .setPriceMultiplier(0F)
-                .setMaxTrades(32)
-                .setExperience(20)
+                .setMerchantExperience(2)
+                .setPlayerExperience(20)
                 .build());
 
+        this.addTrade(ModEntities.GOBLIN_TRADER, TradeRarity.UNCOMMON, BasicTrade.Builder.create()
+                .setPaymentStack(new ItemStack(Items.TURTLE_EGG))
+                .setOfferStack(new ItemStack(Items.EMERALD, 6))
+                .setPriceMultiplier(0F)
+                .setMaxTrades(2)
+                .setMerchantExperience(5)
+                .setPlayerExperience(50)
+                .build());
+
+        this.addTrade(ModEntities.GOBLIN_TRADER, TradeRarity.UNCOMMON, BasicTrade.Builder.create()
+                .setPaymentStack(new ItemStack(Items.PUFFERFISH_BUCKET))
+                .setOfferStack(new ItemStack(Items.EMERALD, 8))
+                .setPriceMultiplier(0F)
+                .setMaxTrades(4)
+                .setMerchantExperience(3)
+                .setPlayerExperience(30)
+                .build());
+
+        this.addTrade(ModEntities.GOBLIN_TRADER, TradeRarity.UNCOMMON, BasicTrade.Builder.create()
+                .setPaymentStack(new ItemStack(Items.EMERALD))
+                .setOfferStack(new ItemStack(Items.SPONGE, 8))
+                .setPriceMultiplier(0F)
+                .setMaxTrades(8)
+                .setMerchantExperience(3)
+                .setPlayerExperience(30)
+                .build());
+
+        this.addTrade(ModEntities.GOBLIN_TRADER, TradeRarity.UNCOMMON, BasicTrade.Builder.create()
+                .setPaymentStack(new ItemStack(Items.DAMAGED_ANVIL))
+                .setSecondaryPaymentStack(new ItemStack(Items.IRON_INGOT, 4))
+                .setOfferStack(new ItemStack(Items.CHIPPED_ANVIL))
+                .setPriceMultiplier(0F)
+                .setMaxTrades(32)
+                .setMerchantExperience(2)
+                .setPlayerExperience(20)
+                .build());
+
+        this.addTrade(ModEntities.GOBLIN_TRADER, TradeRarity.UNCOMMON, BasicTrade.Builder.create()
+                .setPaymentStack(new ItemStack(Items.EMERALD, 2))
+                .setOfferStack(new ItemStack(Items.HAY_BLOCK))
+                .setPriceMultiplier(0F)
+                .setMaxTrades(1)
+                .setMerchantExperience(1)
+                .setPlayerExperience(10)
+                .build());
+
+        //below is mrcrayfish
         /* ************************************************************************************** *
          *                                      RARE                                              *
          * ************************************************************************************** */
