@@ -532,15 +532,6 @@ public class GoblinTradeProvider extends TradeProvider
 
 
 
-    private void registerVanillaGoblinTraderTrades()
-    {
-
-    }
-
-
-
-
-
 
 
 
