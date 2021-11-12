@@ -2,6 +2,7 @@ package net.hat.gt.entities;
 
 import net.hat.gt.GobT;
 import net.hat.gt.GobTClient;
+import net.hat.gt.*;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.MobEntityRenderer;
@@ -27,7 +28,7 @@ public class GobinTraderRenderer extends MobEntityRenderer<AbstractGoblinEntity,
      */
     @Override
     public Identifier getTexture(AbstractGoblinEntity entity) {
-        return entity instanceof VeinGoblinTraderEntity ? TEXTUREVEIN : TEXTURE;
+        return entity instanceof VeinGoblinTraderEntity ? TEXTUREVEIN : entity instanceof TestGoblinTraderEntity ? GobT.id("textures/entity/testgoblintrader/test_goblin_trader.png") : TEXTURE;
     }
 
     public void render(AbstractGoblinEntity mobEntity, float f, float g, MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int i) {
