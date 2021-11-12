@@ -22,7 +22,7 @@ public class GobT implements ModInitializer {
 
     public static final String MODID = "goblintraders";
     // Mental Note: don't remove this
-    private static final boolean doDataGen = false;
+    private static final boolean doDataGen = true;
     public static GoblinTradersConfig config;
     public static final Logger LOGGER = LogManager.getLogger("goblintraders");
 

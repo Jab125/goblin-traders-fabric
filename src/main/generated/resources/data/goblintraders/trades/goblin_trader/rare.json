@@ -122,7 +122,7 @@
       "offer_item": {
         "item": "minecraft:fishing_rod",
         "count": 1,
-        "nbt": "{Damage:0,Enchantments:[{id:\"minecraft:luck_of_the_sea\",lvl:5s}]}"
+        "nbt": "{Damage:0,Enchantments:[{id:\"minecraft:luck_of_the_sea\",lvl:3s}]}"
       },
       "payment_item": {
         "item": "minecraft:fishing_rod",
@@ -132,7 +132,7 @@
       "secondary_payment_item": {
         "item": "minecraft:enchanted_book",
         "count": 1,
-        "nbt": "{StoredEnchantments:[{id:\"minecraft:luck_of_the_sea\",lvl:3s}]}"
+        "nbt": "{StoredEnchantments:[{id:\"minecraft:luck_of_the_sea\",lvl:2s}]}"
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
@@ -143,7 +143,7 @@
       "offer_item": {
         "item": "minecraft:fishing_rod",
         "count": 1,
-        "nbt": "{Damage:0,Enchantments:[{id:\"minecraft:lure\",lvl:5s}]}"
+        "nbt": "{Damage:0,Enchantments:[{id:\"minecraft:lure\",lvl:3s}]}"
       },
       "payment_item": {
         "item": "minecraft:fishing_rod",
@@ -153,7 +153,7 @@
       "secondary_payment_item": {
         "item": "minecraft:enchanted_book",
         "count": 1,
-        "nbt": "{StoredEnchantments:[{id:\"minecraft:lure\",lvl:3s}]}"
+        "nbt": "{StoredEnchantments:[{id:\"minecraft:lure\",lvl:2s}]}"
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
