@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableMap;
 import com.jab125.util.datagen.TradeProvider;
 import com.jab125.util.tradehelper.TradeRarity;
 import com.jab125.util.tradehelper.type.BasicTrade;
+import net.hat.gt.GobT;
 import net.hat.gt.init.ModEntities;
 import net.hat.gt.init.ModPotions;
 import net.minecraft.data.DataGenerator;
@@ -19,7 +20,6 @@ import net.minecraft.potion.PotionUtil;
 import net.minecraft.potion.Potions;
 
 import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Reworked for fabric by Jab125
@@ -38,8 +38,13 @@ public class GoblinTradeProvider extends TradeProvider
     public void registerTrades()
     {
         System.out.println("TRADES REGISTERED");
-        this.registerGoblinTraderTrades();
-        this.registerVeinGoblinTraderTrades();
+        if (!GobT.config.GOBLIN_VANILLA_TRADES) {
+            this.registerGoblinTraderTrades();
+            this.registerVeinGoblinTraderTrades();
+        }
+        else {
+            this.registerVanillaGoblinTraderTrades();
+        }
     }
 
     private void registerGoblinTraderTrades()
@@ -522,6 +527,23 @@ public class GoblinTradeProvider extends TradeProvider
                 .addEnchantment(new EnchantmentLevelEntry(Enchantments.UNBREAKING, 4))
                 .build());
     }
+
+
+
+
+
+    private void registerVanillaGoblinTraderTrades()
+    {
+
+    }
+
+
+
+
+
+
+
+
 
 
     public static HashMap<Enchantment, Integer> toHashMap(EnchantmentLevelEntry enchantmentLevelEntry) {

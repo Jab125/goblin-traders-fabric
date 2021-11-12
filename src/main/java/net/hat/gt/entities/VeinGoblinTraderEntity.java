@@ -2,7 +2,6 @@ package net.hat.gt.entities;
 
 import com.jab125.thonkutil.util.Util;
 import net.hat.gt.GobT;
-import net.hat.gt.init.ModTrades;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.mob.MobEntity;
@@ -11,8 +10,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.village.TradeOfferList;
-import net.minecraft.village.TradeOffers;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 

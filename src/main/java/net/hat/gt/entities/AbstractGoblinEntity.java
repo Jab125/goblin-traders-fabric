@@ -453,5 +453,4 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
     protected void fillRecipes() {
 
     }
-
 }
