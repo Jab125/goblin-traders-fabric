@@ -419,6 +419,7 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
 
     public void populateTradeData() {
         TradeOfferList offers = this.getOffers();
+        @SuppressWarnings("unchecked")
         EntityTrades entityTrades = TradeManager.instance().getTrades((EntityType<? extends AbstractGoblinEntity>) this.getType());
         if(entityTrades != null)
         {
