@@ -231,13 +231,8 @@ public class GoblinTradeProvider extends TradeProvider
         for (EnchantmentLevelEntry fishing_enchant : FISHING_ROD_ENCHANTS) {
             ItemStack enchantedBook = new ItemStack(Items.ENCHANTED_BOOK);
             ItemStack fishingRod = new ItemStack(Items.FISHING_ROD);
-            if (!GobT.config.GOBLIN_VANILLA_TRADES) {
-                EnchantmentHelper.set(toHashMap(fishing_enchant), enchantedBook);
-                EnchantmentHelper.set(toHashMap(fishing_enchant, 5), fishingRod);
-            }else{
-                EnchantmentHelper.set(toHashMap(fishing_enchant, 2), enchantedBook);
-                EnchantmentHelper.set(toHashMap(fishing_enchant, 3), fishingRod);
-            }
+            EnchantmentHelper.set(toHashMap(fishing_enchant), enchantedBook);
+            EnchantmentHelper.set(toHashMap(fishing_enchant, 5), fishingRod);
             this.addTrade(ModEntities.GOBLIN_TRADER, TradeRarity.RARE, BasicTrade.Builder.create()
                     .setPaymentStack(new ItemStack(Items.FISHING_ROD))
                     .setSecondaryPaymentStack(enchantedBook)
