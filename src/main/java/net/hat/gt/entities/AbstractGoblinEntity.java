@@ -426,7 +426,7 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
             for(TradeRarity rarity : TradeRarity.values())
             {
                 List<TradeOffers.Factory> trades = tradeMap.get(rarity);
-                int min = rarity.getMaximum().apply(trades, this.getRandom());
+                int min = rarity.getMinimum().apply(trades, this.getRandom());
                 int max = rarity.getMaximum().apply(trades, this.getRandom());
                 this.addTrades(offers, trades, Math.max(min, max), rarity.shouldShuffle());
             }

@@ -94,15 +94,6 @@ public class GoblinTradeProvider extends TradeProvider
                 .build());
 
         this.addTrade(ModEntities.GOBLIN_TRADER, TradeRarity.COMMON, BasicTrade.Builder.create()
-                .setPaymentStack(new ItemStack(Items.GRAVEL))
-                .setOfferStack(new ItemStack(Items.FLINT, 2))
-                .setPriceMultiplier(0F)
-                .setMaxTrades(32)
-                .setMerchantExperience(1)
-                .setPlayerExperience(10)
-                .build());
-
-        this.addTrade(ModEntities.GOBLIN_TRADER, TradeRarity.COMMON, BasicTrade.Builder.create()
                 .setPaymentStack(new ItemStack(Items.COBBLESTONE, 32))
                 .setOfferStack(new ItemStack(Items.EMERALD))
                 .setPriceMultiplier(0F)
