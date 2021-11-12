@@ -78,7 +78,7 @@ public class TradeManager implements IdentifiableResourceReloadListener {
         {
             this.traders.forEach(entityType ->
             {
-                String folder = String.format("trades/%s", Objects.requireNonNull(EntityType.getId(entityType)).getPath());
+                String folder = String.format(GobT.config.GOBLIN_VANILLA_TRADES ? "trade/vanilla/%s" : "trades/%s", Objects.requireNonNull(EntityType.getId(entityType)).getPath());
                 List<Identifier> resources = new ArrayList<>(manager.findResources(folder, (fileName) -> fileName.endsWith(".json")));
                 resources.forEach((identifier) -> System.out.println(identifier.toString()));
                 resources.sort((r1, r2) -> {
