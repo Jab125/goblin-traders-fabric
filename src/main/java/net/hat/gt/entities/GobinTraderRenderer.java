@@ -28,7 +28,7 @@ public class GobinTraderRenderer extends MobEntityRenderer<AbstractGoblinEntity,
      */
     @Override
     public Identifier getTexture(AbstractGoblinEntity entity) {
-        return entity instanceof VeinGoblinTraderEntity ? TEXTUREVEIN : entity instanceof TestGoblinTraderEntity ? GobT.id("textures/entity/testgoblintrader/test_goblin_trader.png") : TEXTURE;
+        return entity instanceof VeinGoblinTraderEntity ? TEXTUREVEIN : TEXTURE;
     }
 
     public void render(AbstractGoblinEntity mobEntity, float f, float g, MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int i) {

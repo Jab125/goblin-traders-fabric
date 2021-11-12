@@ -27,14 +27,14 @@ public class GoblinTraderModel<G extends AbstractGoblinEntity> extends Composite
     private final ModelPart leftArm;
     private final ModelPart leftLeg;
     private final ModelPart rightLeg;
-    private final ModelPart nose; // leaving this non-coverted for future use
     private final ModelPart bag;
 
     public GoblinTraderModel(ModelPart root) {
         this.root = root;
         this.head = root.getChild(EntityModelPartNames.HEAD);
         this.hood = root.getChild("hood");
-        this.nose = this.head.getChild("nose");
+        // leaving this non-coverted for future use
+        ModelPart nose = this.head.getChild("nose");
         this.rightEar = this.head.getChild("rightEar");
         this.leftEar = this.head.getChild("leftEar");
         this.body = root.getChild(EntityModelPartNames.BODY);
