@@ -8,15 +8,19 @@ import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
+import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
+import net.fabricmc.loader.api.FabricLoader;
 import net.hat.gt.config.GoblinTradersConfig;
 import net.hat.gt.init.*;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resource.ResourceType;
+import net.minecraft.resource.VanillaDataPackProvider;
 import net.minecraft.util.Identifier;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.File;
+import java.util.Objects;
 
 public class GobT implements ModInitializer {
 
@@ -49,7 +53,11 @@ public class GobT implements ModInitializer {
             DataGenerator dataGenerator = new DataGenerator(new File("../src/main/generated/resources").toPath(), null);
             DataGeneraton.registerCommonProviders(dataGenerator);
         }
+        boolean a;
+            a = ResourceManagerHelper.registerBuiltinResourcePack(id("gobtvanillaish"), Objects.requireNonNull(FabricLoader.getInstance().getModContainer(MODID)).get(), ResourcePackActivationType.NORMAL);
+            System.out.println(a + " NO");
 
+        System.out.println(id("gobtvanillaish").getPath());
     }
     public static Identifier id(String path) {
         return new Identifier(MODID, path);
