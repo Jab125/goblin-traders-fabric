@@ -25,7 +25,7 @@
   "text.autoconfig.goblintraders.option.VEIN_GOBLIN_GROUP_SIZE": "Vein Goblin Max Spawn Group Size <RR>",
   "text.autoconfig.goblintraders.option.MAX_ENCHANTMENT_TEXT": "Over Max Enchants have purple text",
   "text.autoconfig.goblintraders.option.GOBLIN_NO_ATTACK_CREATIVE": "Fix Creative Change attack",
-  "text.autoconfig.goblintraders.option.GOBLIN_VANILLA_TRADES": "Vanilla-esc Trades",
+  "text.autoconfig.goblintraders.option.GOBLIN_VANILLA_TRADES": "Vanilla-esc Trades <RR>",
   "text.autoconfig.goblintraders.option.CAN_GET_KNOCKED_OUT": "Can be Knocked Out",
 
   "item.minecraft.potion.effect.gtextended_water_breathing": "Potion of Water Breathing",
