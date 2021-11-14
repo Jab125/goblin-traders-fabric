@@ -32,6 +32,7 @@ public abstract class TradeProvider implements DataProvider
 
     private final DataGenerator generator;
     private Map<EntityType<?>, EnumMap<TradeRarity, List<ITradeType<?>>>> trades = new HashMap<>();
+    private Map<EntityType<?>, EnumMap<TradeRarity, List<ITradeType<?>>>> vanillaTrades = new HashMap<>();
 
     protected TradeProvider(DataGenerator generator)
     {
@@ -40,13 +41,27 @@ public abstract class TradeProvider implements DataProvider
 
     protected abstract void registerTrades();
 
+    protected void registerVanillaTrades() {};
+
     // Use an access-widener to access this
+    protected final void addTrade(EntityType<?> type, TradeRarity rarity, boolean isVanilla, ITradeType<?> trade)
+    {
+        if (isVanilla) {
+            this.vanillaTrades.putIfAbsent(type, new EnumMap<>(TradeRarity.class));
+            this.vanillaTrades.get(type).putIfAbsent(rarity, new ArrayList<>());
+            this.vanillaTrades.get(type).get(rarity).add(trade);
+        } else {
+            this.trades.putIfAbsent(type, new EnumMap<>(TradeRarity.class));
+            this.trades.get(type).putIfAbsent(rarity, new ArrayList<>());
+            this.trades.get(type).get(rarity).add(trade);
+        }
+    }
+
     protected final void addTrade(EntityType<?> type, TradeRarity rarity, ITradeType<?> trade)
     {
-        this.trades.putIfAbsent(type, new EnumMap<>(TradeRarity.class));
-        this.trades.get(type).putIfAbsent(rarity, new ArrayList<>());
-        this.trades.get(type).get(rarity).add(trade);
+        addTrade(type, rarity, false, trade);
     }
+
 
     @Override
     public void run(DataCache cache)
@@ -67,6 +82,40 @@ public abstract class TradeProvider implements DataProvider
                 try
                 {
                     String rawJson = GSON.toJson(object);
+                    String hash = SHA1.hashUnencodedChars(rawJson).toString();
+                    if(!Objects.equals(cache.getOldSha1(path), hash) || !Files.exists(path))
+                    {
+                        Files.createDirectories(path.getParent());
+                        try(BufferedWriter writer = Files.newBufferedWriter(path))
+                        {
+                            writer.write(rawJson);
+                        }
+                    }
+                    cache.updateSha1(path, hash);
+                }
+                catch(IOException e)
+                {
+                    LOGGER.error("Couldn't save trades to {}", path, e);
+                }
+            });
+        });
+        this.vanillaTrades.clear();
+        this.registerVanillaTrades();
+        this.vanillaTrades.forEach((entityType, tradeRarityListEnumMap) ->
+        {
+            tradeRarityListEnumMap.forEach((tradeRarity, tradeList) ->
+            {
+                JsonObject object = new JsonObject();
+                object.addProperty("replace", true);
+                JsonArray tradeArray = new JsonArray();
+                tradeList.forEach(trade -> tradeArray.add(trade.serialize()));
+                object.add("trades", tradeArray);
+                Identifier id = Objects.requireNonNull(Registry.ENTITY_TYPE.getId(entityType));
+                Path path = this.generator.getOutput().resolve("resourcepacks/gobtvanillaish/data/" + "gobtvanillaish" + "/trades/" + id.getPath() + "/" + tradeRarity.getKey() + ".json");
+                try
+                {
+                    String rawJson = GSON.toJson(object);
+                    System.out.println(rawJson);
                     String hash = SHA1.hashUnencodedChars(rawJson).toString();
                     if(!Objects.equals(cache.getOldSha1(path), hash) || !Files.exists(path))
                     {
