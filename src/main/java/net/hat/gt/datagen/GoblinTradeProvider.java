@@ -337,8 +337,9 @@ public class GoblinTradeProvider extends TradeProvider
                 .setPriceMultiplier(0F)
                 .setMaxTrades(1)
                 .setMerchantExperience(500)
-                .addEnchantment(new EnchantmentLevelEntry(Enchantments.FORTUNE,  isVanilla ? 4 : 5))
+                .addEnchantment(new EnchantmentLevelEntry(Enchantments.FORTUNE,  isVanilla ? 3 : 5))
                 .addEnchantment(new EnchantmentLevelEntry(Enchantments.UNBREAKING, isVanilla ? 3 : 4))
+                .addEnchantment(new EnchantmentLevelEntry(Enchantments.MENDING, 1), isVanilla)
                 .build());
     }
     public void registerCommonVeinGoblinTrades(boolean isVanilla) {
@@ -555,8 +556,9 @@ public class GoblinTradeProvider extends TradeProvider
                 .setMaxTrades(1)
                 .setMerchantExperience(12)
                 .setPlayerExperience(500)
-                .addEnchantment(new EnchantmentLevelEntry(Enchantments.SHARPNESS, isVanilla ? 6 : 7))
-                .addEnchantment(new EnchantmentLevelEntry(Enchantments.UNBREAKING, 4))
+                .addEnchantment(new EnchantmentLevelEntry(Enchantments.SHARPNESS, isVanilla ? 5 : 7))
+                .addEnchantment(new EnchantmentLevelEntry(Enchantments.UNBREAKING, isVanilla ? 3 : 4))
+                .addEnchantment(new EnchantmentLevelEntry(Enchantments.MENDING, 1), isVanilla)
                 .build());
     }
 

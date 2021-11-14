@@ -312,6 +312,14 @@ public class BasicTrade implements ITradeType<GoblinTrade>
             return this;
         }
 
+        public Builder addEnchantment(EnchantmentLevelEntry enchantment, boolean doIt)
+        {
+            if (doIt) {
+                this.enchantments.add(enchantment);
+            }
+            return this;
+        }
+
         public Builder addPotionEffect(StatusEffectInstance effect)
         {
             this.modEffects.add(effect);

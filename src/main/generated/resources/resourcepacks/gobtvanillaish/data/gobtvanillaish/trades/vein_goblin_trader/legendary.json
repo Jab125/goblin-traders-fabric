@@ -23,11 +23,15 @@
       "enchantments": [
         {
           "id": "minecraft:sharpness",
-          "level": 6
+          "level": 5
         },
         {
           "id": "minecraft:unbreaking",
-          "level": 4
+          "level": 3
+        },
+        {
+          "id": "minecraft:mending",
+          "level": 1
         }
       ]
     }
