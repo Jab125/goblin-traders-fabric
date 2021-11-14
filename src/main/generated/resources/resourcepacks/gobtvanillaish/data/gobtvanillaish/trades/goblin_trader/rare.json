@@ -1,0 +1,310 @@
+{
+  "replace": true,
+  "trades": [
+    {
+      "type": "goblintraders:basic",
+      "offer_item": {
+        "item": "minecraft:experience_bottle",
+        "count": 1
+      },
+      "payment_item": {
+        "item": "minecraft:emerald",
+        "count": 3
+      },
+      "price_multiplier": 0.0,
+      "max_trades": 64,
+      "experience": 10
+    },
+    {
+      "type": "goblintraders:basic",
+      "offer_item": {
+        "item": "minecraft:name_tag",
+        "count": 1
+      },
+      "payment_item": {
+        "item": "minecraft:emerald",
+        "count": 32
+      },
+      "secondary_payment_item": {
+        "item": "minecraft:paper",
+        "count": 8
+      },
+      "price_multiplier": 0.0,
+      "max_trades": 2,
+      "experience": 10
+    },
+    {
+      "type": "goblintraders:basic",
+      "offer_item": {
+        "item": "minecraft:blue_ice",
+        "count": 1
+      },
+      "payment_item": {
+        "item": "minecraft:packed_ice",
+        "count": 4
+      },
+      "price_multiplier": 0.0,
+      "max_trades": 64,
+      "experience": 10
+    },
+    {
+      "type": "goblintraders:basic",
+      "offer_item": {
+        "item": "minecraft:music_disc_cat",
+        "count": 1
+      },
+      "payment_item": {
+        "item": "minecraft:emerald",
+        "count": 48
+      },
+      "price_multiplier": 0.0,
+      "max_trades": 1,
+      "experience": 10
+    },
+    {
+      "type": "goblintraders:basic",
+      "offer_item": {
+        "item": "minecraft:music_disc_blocks",
+        "count": 1
+      },
+      "payment_item": {
+        "item": "minecraft:emerald",
+        "count": 48
+      },
+      "price_multiplier": 0.0,
+      "max_trades": 1,
+      "experience": 10
+    },
+    {
+      "type": "goblintraders:basic",
+      "offer_item": {
+        "item": "minecraft:music_disc_chirp",
+        "count": 1
+      },
+      "payment_item": {
+        "item": "minecraft:emerald",
+        "count": 48
+      },
+      "price_multiplier": 0.0,
+      "max_trades": 1,
+      "experience": 10
+    },
+    {
+      "type": "goblintraders:basic",
+      "offer_item": {
+        "item": "minecraft:music_disc_mellohi",
+        "count": 1
+      },
+      "payment_item": {
+        "item": "minecraft:emerald",
+        "count": 48
+      },
+      "price_multiplier": 0.0,
+      "max_trades": 1,
+      "experience": 10
+    },
+    {
+      "type": "goblintraders:basic",
+      "offer_item": {
+        "item": "minecraft:music_disc_stal",
+        "count": 1
+      },
+      "payment_item": {
+        "item": "minecraft:emerald",
+        "count": 48
+      },
+      "price_multiplier": 0.0,
+      "max_trades": 1,
+      "experience": 10
+    },
+    {
+      "type": "goblintraders:basic",
+      "offer_item": {
+        "item": "minecraft:fishing_rod",
+        "count": 1,
+        "nbt": "{Damage:0,Enchantments:[{id:\"minecraft:luck_of_the_sea\",lvl:3s}]}"
+      },
+      "payment_item": {
+        "item": "minecraft:fishing_rod",
+        "count": 1,
+        "nbt": "{Damage:0}"
+      },
+      "secondary_payment_item": {
+        "item": "minecraft:enchanted_book",
+        "count": 1,
+        "nbt": "{StoredEnchantments:[{id:\"minecraft:luck_of_the_sea\",lvl:2s}]}"
+      },
+      "price_multiplier": 0.0,
+      "max_trades": 1,
+      "experience": 10
+    },
+    {
+      "type": "goblintraders:basic",
+      "offer_item": {
+        "item": "minecraft:fishing_rod",
+        "count": 1,
+        "nbt": "{Damage:0,Enchantments:[{id:\"minecraft:lure\",lvl:3s}]}"
+      },
+      "payment_item": {
+        "item": "minecraft:fishing_rod",
+        "count": 1,
+        "nbt": "{Damage:0}"
+      },
+      "secondary_payment_item": {
+        "item": "minecraft:enchanted_book",
+        "count": 1,
+        "nbt": "{StoredEnchantments:[{id:\"minecraft:lure\",lvl:2s}]}"
+      },
+      "price_multiplier": 0.0,
+      "max_trades": 1,
+      "experience": 10
+    },
+    {
+      "type": "goblintraders:basic",
+      "offer_item": {
+        "item": "minecraft:diamond_pickaxe",
+        "count": 1,
+        "nbt": "{Damage:0,Enchantments:[{id:\"minecraft:efficiency\",lvl:5s}]}"
+      },
+      "payment_item": {
+        "item": "minecraft:diamond_pickaxe",
+        "count": 1,
+        "nbt": "{Damage:0}"
+      },
+      "secondary_payment_item": {
+        "item": "minecraft:enchanted_book",
+        "count": 1,
+        "nbt": "{StoredEnchantments:[{id:\"minecraft:efficiency\",lvl:4s}]}"
+      },
+      "price_multiplier": 0.0,
+      "max_trades": 1,
+      "experience": 10
+    },
+    {
+      "type": "goblintraders:basic",
+      "offer_item": {
+        "item": "minecraft:diamond_pickaxe",
+        "count": 1,
+        "nbt": "{Damage:0,Enchantments:[{id:\"minecraft:unbreaking\",lvl:3s}]}"
+      },
+      "payment_item": {
+        "item": "minecraft:diamond_pickaxe",
+        "count": 1,
+        "nbt": "{Damage:0}"
+      },
+      "secondary_payment_item": {
+        "item": "minecraft:enchanted_book",
+        "count": 1,
+        "nbt": "{StoredEnchantments:[{id:\"minecraft:unbreaking\",lvl:2s}]}"
+      },
+      "price_multiplier": 0.0,
+      "max_trades": 1,
+      "experience": 10
+    },
+    {
+      "type": "goblintraders:basic",
+      "offer_item": {
+        "item": "minecraft:diamond_pickaxe",
+        "count": 1,
+        "nbt": "{Damage:0,Enchantments:[{id:\"minecraft:fortune\",lvl:3s}]}"
+      },
+      "payment_item": {
+        "item": "minecraft:diamond_pickaxe",
+        "count": 1,
+        "nbt": "{Damage:0}"
+      },
+      "secondary_payment_item": {
+        "item": "minecraft:enchanted_book",
+        "count": 1,
+        "nbt": "{StoredEnchantments:[{id:\"minecraft:fortune\",lvl:2s}]}"
+      },
+      "price_multiplier": 0.0,
+      "max_trades": 1,
+      "experience": 10
+    },
+    {
+      "type": "goblintraders:basic",
+      "offer_item": {
+        "item": "minecraft:diamond_axe",
+        "count": 1,
+        "nbt": "{Damage:0,Enchantments:[{id:\"minecraft:efficiency\",lvl:5s}]}"
+      },
+      "payment_item": {
+        "item": "minecraft:diamond_axe",
+        "count": 1,
+        "nbt": "{Damage:0}"
+      },
+      "secondary_payment_item": {
+        "item": "minecraft:enchanted_book",
+        "count": 1,
+        "nbt": "{StoredEnchantments:[{id:\"minecraft:efficiency\",lvl:4s}]}"
+      },
+      "price_multiplier": 0.0,
+      "max_trades": 1,
+      "experience": 10
+    },
+    {
+      "type": "goblintraders:basic",
+      "offer_item": {
+        "item": "minecraft:diamond_axe",
+        "count": 1,
+        "nbt": "{Damage:0,Enchantments:[{id:\"minecraft:unbreaking\",lvl:3s}]}"
+      },
+      "payment_item": {
+        "item": "minecraft:diamond_axe",
+        "count": 1,
+        "nbt": "{Damage:0}"
+      },
+      "secondary_payment_item": {
+        "item": "minecraft:enchanted_book",
+        "count": 1,
+        "nbt": "{StoredEnchantments:[{id:\"minecraft:unbreaking\",lvl:2s}]}"
+      },
+      "price_multiplier": 0.0,
+      "max_trades": 1,
+      "experience": 10
+    },
+    {
+      "type": "goblintraders:basic",
+      "offer_item": {
+        "item": "minecraft:diamond_shovel",
+        "count": 1,
+        "nbt": "{Damage:0,Enchantments:[{id:\"minecraft:efficiency\",lvl:5s}]}"
+      },
+      "payment_item": {
+        "item": "minecraft:diamond_shovel",
+        "count": 1,
+        "nbt": "{Damage:0}"
+      },
+      "secondary_payment_item": {
+        "item": "minecraft:enchanted_book",
+        "count": 1,
+        "nbt": "{StoredEnchantments:[{id:\"minecraft:efficiency\",lvl:4s}]}"
+      },
+      "price_multiplier": 0.0,
+      "max_trades": 1,
+      "experience": 10
+    },
+    {
+      "type": "goblintraders:basic",
+      "offer_item": {
+        "item": "minecraft:diamond_shovel",
+        "count": 1,
+        "nbt": "{Damage:0,Enchantments:[{id:\"minecraft:unbreaking\",lvl:3s}]}"
+      },
+      "payment_item": {
+        "item": "minecraft:diamond_shovel",
+        "count": 1,
+        "nbt": "{Damage:0}"
+      },
+      "secondary_payment_item": {
+        "item": "minecraft:enchanted_book",
+        "count": 1,
+        "nbt": "{StoredEnchantments:[{id:\"minecraft:unbreaking\",lvl:2s}]}"
+      },
+      "price_multiplier": 0.0,
+      "max_trades": 1,
+      "experience": 10
+    }
+  ]
+}

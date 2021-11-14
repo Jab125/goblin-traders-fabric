@@ -1,0 +1,68 @@
+{
+  "replace": true,
+  "trades": [
+    {
+      "type": "goblintraders:basic",
+      "offer_item": {
+        "item": "minecraft:lodestone",
+        "count": 2
+      },
+      "payment_item": {
+        "item": "minecraft:netherite_ingot",
+        "count": 1
+      },
+      "price_multiplier": 0.0,
+      "experience": 10
+    },
+    {
+      "type": "goblintraders:basic",
+      "offer_item": {
+        "item": "minecraft:netherite_scrap",
+        "count": 5
+      },
+      "payment_item": {
+        "item": "minecraft:ancient_debris",
+        "count": 4
+      },
+      "price_multiplier": 0.0,
+      "max_trades": 2,
+      "experience": 10
+    },
+    {
+      "type": "goblintraders:basic",
+      "offer_item": {
+        "item": "minecraft:red_nether_bricks",
+        "count": 1
+      },
+      "payment_item": {
+        "item": "minecraft:nether_wart",
+        "count": 1
+      },
+      "secondary_payment_item": {
+        "item": "minecraft:nether_brick",
+        "count": 1
+      },
+      "price_multiplier": 0.0,
+      "max_trades": 128,
+      "experience": 10
+    },
+    {
+      "type": "goblintraders:basic",
+      "offer_item": {
+        "item": "minecraft:sponge",
+        "count": 8
+      },
+      "payment_item": {
+        "item": "minecraft:emerald",
+        "count": 8
+      },
+      "secondary_payment_item": {
+        "item": "minecraft:sponge",
+        "count": 1
+      },
+      "price_multiplier": 0.0,
+      "max_trades": 4,
+      "experience": 10
+    }
+  ]
+}
