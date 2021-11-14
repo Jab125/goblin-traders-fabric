@@ -11,10 +11,7 @@ public class FabricPackMixinTemp {
     private static String changeName(String name) {
         System.out.println("name: " + name);
         if (name.equals("goblintraders/gobtvanillaish")) {
-            System.out.println("YES");
             return "Vanilla-ish Trades";
-        } else {
-            System.out.println(name + " does not equal goblintraders/gobtvanillaish");
         }
         return name;
     }

@@ -55,9 +55,6 @@ public class GobT implements ModInitializer {
         }
         boolean a;
             a = ResourceManagerHelper.registerBuiltinResourcePack(id("gobtvanillaish"), Objects.requireNonNull(FabricLoader.getInstance().getModContainer(MODID)).get(), ResourcePackActivationType.NORMAL);
-            System.out.println(a + " NO");
-
-        System.out.println(id("gobtvanillaish").getPath());
     }
     public static Identifier id(String path) {
         return new Identifier(MODID, path);
