@@ -11,7 +11,10 @@
   "stat.goblintraders.trade_with_goblin": "Traded with Goblins",
   "stat.goblintraders.talk_with_goblin": "Talked with Goblins",
 
-  "text.autoconfig.goblintraders.title": "Goblin Traders Config (<RR> = Requires Game Restart, <!> = Unstable)",
+  "category.goblintraders.goblin_trader": "Goblin Trader",
+  "category.goblintraders.vein_goblin_trader": "Vein Goblin Trader",
+
+  "text.autoconfig.goblintraders.title": "Goblin Traders Config (<RR> = Requires Game Restart, <!> = Unstable, <?> Unsure)",
   "text.autoconfig.goblintraders.option.GOBLINS_CAN_SPAWN": "Goblins Spawn <RR>",
   "text.autoconfig.goblintraders.option.VEIN_GOBLINS_CAN_SPAWN": "Vein Goblins Spawn <RR>",
   "text.autoconfig.goblintraders.option.GOBLIN_HIT_BACK": "Goblin's Hit Back",
@@ -27,6 +30,16 @@
   "text.autoconfig.goblintraders.option.GOBLIN_NO_ATTACK_CREATIVE": "Fix Creative Change attack",
   "text.autoconfig.goblintraders.option.GOBLIN_VANILLA_TRADES": "Vanilla-esc Trades <RR>",
   "text.autoconfig.goblintraders.option.CAN_GET_KNOCKED_OUT": "Can be Knocked Out",
+  "text.autoconfig.goblintraders.option.GOBLIN_TRADER_SPAWN_DELAY": "Goblin Trader Spawn Delay <RR?>",
+  "text.autoconfig.goblintraders.option.GOBLIN_TRADER_MAX_SPAWN_HEIGHT": "Goblin Trader Max Spawn Height <RR?>",
+  "text.autoconfig.goblintraders.option.GOBLIN_TRADER_MIN_SPAWN_HEIGHT_1_17": "Goblin Trader Min Spawn Height  <1.18 <RR?>",
+  "text.autoconfig.goblintraders.option.GOBLIN_TRADER_MIN_SPAWN_HEIGHT": "Goblin Trader Min Spawn Height  >=1.18 <RR?>",
+  "text.autoconfig.goblintraders.option.GOBLIN_TRADER_SPAWN_CHANCE": "Goblin Trader Spawn Chance <RR?>",
+  "text.autoconfig.goblintraders.option.VEIN_GOBLIN_TRADER_SPAWN_DELAY": "Vein Goblin Trader Spawn Delay <RR?>",
+  "text.autoconfig.goblintraders.option.VEIN_GOBLIN_TRADER_MAX_SPAWN_HEIGHT": "Vein Goblin Trader Max Spawn Height <RR?>",
+  "text.autoconfig.goblintraders.option.VEIN_GOBLIN_TRADER_MIN_SPAWN_HEIGHT": "Vein Goblin Trader Min Spawn Height <RR?>",
+  "text.autoconfig.goblintraders.option.VEIN_GOBLIN_TRADER_SPAWN_CHANCE": "Vein Goblin Trader Spawn Chance <RR?>",
+
 
   "item.minecraft.potion.effect.gtextended_water_breathing": "Potion of Water Breathing",
   "item.minecraft.potion.effect.gtextended_fire_resistance": "Potion of Fire Resistance",
@@ -80,7 +93,7 @@
   "item.minecraft.splash_potion.effect.gtlevitation_extended": "Splash Potion of Levitation",
   "item.minecraft.splash_potion.effect.gtluck_extended": "Splash Potion of Luck",
   "item.minecraft.splash_potion.effect.gthaste_extended": "Splash Potion of Haste",
-  "item.minecraft.splash_potion.effect.gtblindness_extended": "Splash Potion of Blindness",
+    "item.minecraft.splash_potion.effect.gtblindness_extended": "Splash Potion of Blindness",
   "item.minecraft.splash_potion.effect.gtblindness_extended_2": "Splash Potion of Blindness",
   "item.minecraft.splash_potion.effect.gtdig_speed_extended": "Splash Potion of Haste",
   "item.minecraft.splash_potion.effect.gtweak_night_vision": "Splash Potion of Night Vision",

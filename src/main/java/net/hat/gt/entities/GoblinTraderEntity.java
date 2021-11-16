@@ -55,7 +55,7 @@ public class GoblinTraderEntity extends AbstractGoblinEntity {
 
     @Override
     public int minSpawnHeight() {
-        return SharedConstants.getGameVersion().getPackVersion(PackType.DATA) > 7 ? GobT.config.GOBLIN_TRADER_MIN_SPAWN_HEIGHT_1_18 : GobT.config.GOBLIN_TRADER_MIN_SPAWN_HEIGHT_1_17;
+        return SharedConstants.getGameVersion().getPackVersion(PackType.DATA) > 7 ? GobT.config.GOBLIN_TRADER_MIN_SPAWN_HEIGHT : GobT.config.GOBLIN_TRADER_MIN_SPAWN_HEIGHT_1_17;
     }
 
     @Override

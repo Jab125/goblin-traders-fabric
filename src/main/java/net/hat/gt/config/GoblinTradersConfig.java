@@ -28,7 +28,7 @@ public class GoblinTradersConfig implements ConfigData {
     public int GOBLIN_TRADER_SPAWN_DELAY = 24000;
     public int GOBLIN_TRADER_MAX_SPAWN_HEIGHT = 63;
     public int GOBLIN_TRADER_MIN_SPAWN_HEIGHT_1_17 = 0;
-    public int GOBLIN_TRADER_MIN_SPAWN_HEIGHT_1_18 = -64;
+    public int GOBLIN_TRADER_MIN_SPAWN_HEIGHT = -64;
     public int VEIN_GOBLIN_TRADER_SPAWN_CHANCE = 25;
     public int VEIN_GOBLIN_TRADER_SPAWN_DELAY = 24000;
     public int VEIN_GOBLIN_TRADER_MAX_SPAWN_HEIGHT = 127;
