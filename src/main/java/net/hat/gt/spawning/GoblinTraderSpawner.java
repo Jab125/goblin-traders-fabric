@@ -54,7 +54,7 @@ public class GoblinTraderSpawner
 
     public int tick(World level)
     {
-        if(GobT.config.GOBLINS_CAN_SPAWN)
+        if(true)
         {
             if(--this.delayBeforeSpawnLogic <= 0)
             {

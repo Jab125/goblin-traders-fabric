@@ -13,7 +13,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Author: MrCrayfish
+ * Reworked for fabric
  */
 public class GoblinTraderData extends PersistentState
 {

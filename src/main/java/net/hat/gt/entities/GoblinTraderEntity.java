@@ -44,7 +44,7 @@ public class GoblinTraderEntity extends AbstractGoblinEntity {
     @Override
     public boolean canAttackBack()
     {
-        return true;
+        return GobT.config.GOBLIN_TRADER_CONFIG.GOBLIN_HIT_BACK;
     }
 
     @Override
@@ -55,22 +55,22 @@ public class GoblinTraderEntity extends AbstractGoblinEntity {
 
     @Override
     public int minSpawnHeight() {
-        return SharedConstants.getGameVersion().getPackVersion(PackType.DATA) > 7 ? GobT.config.GOBLIN_TRADER_MIN_SPAWN_HEIGHT : GobT.config.GOBLIN_TRADER_MIN_SPAWN_HEIGHT_1_17;
+        return SharedConstants.getGameVersion().getPackVersion(PackType.DATA) > 7 ? GobT.config.GOBLIN_TRADER_CONFIG.GOBLIN_TRADER_MIN_SPAWN_HEIGHT : GobT.config.GOBLIN_TRADER_CONFIG.GOBLIN_TRADER_MIN_SPAWN_HEIGHT_1_17;
     }
 
     @Override
     public int maxSpawnHeight() {
-        return GobT.config.GOBLIN_TRADER_MAX_SPAWN_HEIGHT;
+        return GobT.config.GOBLIN_TRADER_CONFIG.GOBLIN_TRADER_MAX_SPAWN_HEIGHT;
     }
 
     @Override
     public int spawnDelay() {
-        return GobT.config.GOBLIN_TRADER_SPAWN_DELAY;
+        return GobT.config.GOBLIN_TRADER_CONFIG.GOBLIN_TRADER_SPAWN_DELAY;
     }
 
     @Override
     public int spawnChance() {
-        return GobT.config.GOBLIN_TRADER_SPAWN_CHANCE;
+        return GobT.config.GOBLIN_TRADER_CONFIG.GOBLIN_TRADER_SPAWN_CHANCE;
     }
 
 

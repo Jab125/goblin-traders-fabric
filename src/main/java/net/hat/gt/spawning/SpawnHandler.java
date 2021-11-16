@@ -16,7 +16,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * Author: MrCrayfish
+ * Reworked for fabric
  */
 public class SpawnHandler {
     private static Map<Identifier, GoblinTraderSpawner> spawners = new HashMap<>();
@@ -37,7 +37,6 @@ public class SpawnHandler {
         @Override
         public void onServerStopped(MinecraftServer server)
         {
-            System.out.println("SERVER STARTED");
             spawners.clear();
         }
     }
@@ -47,16 +46,12 @@ public class SpawnHandler {
         @Override
         public void onEndTick(ServerWorld world) {
             if (world.isClient()) {
-                System.out.println("CLIENT END TICK");
                 return;
             }
-            System.out.println("SERVER END TICK");
             GoblinTraderSpawner spawner = spawners.get(world.getRegistryKey().getValue());
             if(spawner != null)
             {
                 spawner.tick(world);
-            } else {
-                System.out.println("ITS NULL");
             }
         }
     }

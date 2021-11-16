@@ -42,7 +42,7 @@ public class VeinGoblinTraderEntity extends AbstractGoblinEntity{
     @Override
     public boolean canAttackBack()
     {
-        return true;
+        return GobT.config.VEIN_GOBLIN_TRADER_CONFIG.VEIN_GOBLIN_HIT_BACK;
     }
 
 
@@ -69,7 +69,7 @@ public class VeinGoblinTraderEntity extends AbstractGoblinEntity{
     }
 
     public boolean hurtByWater() {
-        return GobT.config.VEIN_GOBLINS_DIE_IN_WATER;
+        return GobT.config.VEIN_GOBLIN_TRADER_CONFIG.VEIN_GOBLINS_DIE_IN_WATER;
     }
 
     @Override
@@ -85,21 +85,21 @@ public class VeinGoblinTraderEntity extends AbstractGoblinEntity{
 
     @Override
     public int minSpawnHeight() {
-        return GobT.config.VEIN_GOBLIN_TRADER_MIN_SPAWN_HEIGHT;
+        return GobT.config.VEIN_GOBLIN_TRADER_CONFIG.VEIN_GOBLIN_TRADER_MIN_SPAWN_HEIGHT;
     }
 
     @Override
     public int maxSpawnHeight() {
-        return GobT.config.VEIN_GOBLIN_TRADER_MAX_SPAWN_HEIGHT;
+        return GobT.config.VEIN_GOBLIN_TRADER_CONFIG.VEIN_GOBLIN_TRADER_MAX_SPAWN_HEIGHT;
     }
 
     @Override
     public int spawnDelay() {
-        return GobT.config.VEIN_GOBLIN_TRADER_SPAWN_DELAY;
+        return GobT.config.VEIN_GOBLIN_TRADER_CONFIG.VEIN_GOBLIN_TRADER_SPAWN_DELAY;
     }
 
     @Override
     public int spawnChance() {
-        return GobT.config.VEIN_GOBLIN_TRADER_SPAWN_CHANCE;
+        return GobT.config.VEIN_GOBLIN_TRADER_CONFIG.VEIN_GOBLIN_TRADER_SPAWN_CHANCE;
     }
 }

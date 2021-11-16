@@ -266,13 +266,13 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
     public boolean damage(DamageSource source, float amount)
     {
         boolean attacked = super.damage(source, amount);
-        if(attacked && source.getAttacker() instanceof PlayerEntity && GobT.config.GOBLINS_FALL)
+        if(attacked && source.getAttacker() instanceof PlayerEntity && GobT.config.ALL_GOBLIN_TRADERS_CONFIG.GOBLINS_FALL)
         {
             this.getNavigation().stop();
             this.dataTracker.set(STUNNED, true);
             if (!isStunned())
             this.dataTracker.set(STUN_ROTATION, this.getStunRotation(source.getAttacker()));
-            this.stunDelay = Math.max(GobT.config.CAN_GET_KNOCKED_OUT ?
+            this.stunDelay = Math.max(GobT.config.ALL_GOBLIN_TRADERS_CONFIG.CAN_GET_KNOCKED_OUT ?
                     amount > this.getMaxHealth() - 5 ?
                             secondsToTick(60)
                             : Math.min(secondsToTick(30), 20 + (int) (amount * 2))
@@ -323,7 +323,7 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
             if (this.stunDelay == 0) {
                 this.dataTracker.set(STUNNED, false);
                 this.world.playSound(null, this.getX(), this.getY(), this.getZ(), ModSounds.ANNOYED_GRUNT, SoundCategory.NEUTRAL, 1.0F, 0.9F + this.getRandom().nextFloat() * 0.2F);
-                if (GobT.config.GOBLIN_NO_ATTACK_CREATIVE) {
+                if (GobT.config.ALL_GOBLIN_TRADERS_CONFIG.GOBLIN_NO_ATTACK_CREATIVE) {
                     try {
                         if (this.getAttacker() != null) {
                             if (this.getAttacker().isPlayer()) {

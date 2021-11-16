@@ -5,6 +5,9 @@ import net.minecraft.nbt.NbtCompound;
 import net.hat.gt.spawning.GoblinTraderSpawner;
 import net.hat.gt.spawning.GoblinTraderData;
 
+/**
+ * Reworked for fabric
+ */
 public class GoblinData
 {
     protected GoblinTraderData data;

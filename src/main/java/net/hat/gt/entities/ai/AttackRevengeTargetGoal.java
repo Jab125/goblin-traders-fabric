@@ -23,7 +23,7 @@ public class AttackRevengeTargetGoal extends Goal
     @Override
     public boolean canStart()
     {
-        return this.entity.canAttackBack() && this.entity.getAttacker() != null && this.entity.getAttacker().isAlive() && this.entity.distanceTo(this.entity.getAttacker()) <= 10.0F && (!(this.entity.getAttacker() instanceof PlayerEntity) || !((PlayerEntity)this.entity.getAttacker()).isCreative()) && GobT.config.GOBLIN_HIT_BACK;
+        return this.entity.canAttackBack() && this.entity.getAttacker() != null && this.entity.getAttacker().isAlive() && this.entity.distanceTo(this.entity.getAttacker()) <= 10.0F && (!(this.entity.getAttacker() instanceof PlayerEntity) || !((PlayerEntity)this.entity.getAttacker()).isCreative());
     }
 
     @Override
