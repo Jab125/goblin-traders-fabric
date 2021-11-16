@@ -43,8 +43,8 @@ public class GobT implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        AutoConfig.register(GoblinTradersConfig.class, Toml4jConfigSerializer::new);
-        config = AutoConfig.getConfigHolder(GoblinTradersConfig.class).getConfig();
+        //AutoConfig.register(GoblinTradersConfig.class, Toml4jConfigSerializer::new);
+        config = new GoblinTradersConfig();
 
         TradeManager manager = TradeManager.instance();
         manager.registerTrader(ModEntities.GOBLIN_TRADER);

@@ -10,6 +10,9 @@ import net.fabricmc.api.Environment;
 public class ModMenuIntegration implements ModMenuApi {
     @Override
     public ConfigScreenFactory<?> getModConfigScreenFactory() {
-        return parent -> AutoConfig.getConfigScreen(GoblinTradersConfig.class, parent).get();
+        //return parent -> AutoConfig.getConfigScreen(GoblinTradersConfig.class, parent).get();
+        return (screen) -> {
+            return GoblinTradersConfigScreen.getConfigBuilder().setParentScreen(screen).build();
+        };
     }
 }
