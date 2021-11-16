@@ -3,7 +3,7 @@ package net.hat.gt.config;
 import me.shedaniel.autoconfig.ConfigData;
 import me.shedaniel.autoconfig.annotation.Config;
 import net.hat.gt.GobT;
-
+import net.minecraft.util.Pair;
 
 
 @Config(name = GobT.MODID)
@@ -24,4 +24,13 @@ public class GoblinTradersConfig implements ConfigData {
     public int VEIN_GOBLIN_GROUP_SIZE = 2;
     public boolean VEIN_GOBLINS_DIE_IN_WATER = false;
     public boolean EASTER_EGGS = false;
+    public int GOBLIN_TRADER_SPAWN_CHANCE = 25;
+    public int GOBLIN_TRADER_SPAWN_DELAY = 24000;
+    public int GOBLIN_TRADER_MAX_SPAWN_HEIGHT = 63;
+    public int GOBLIN_TRADER_MIN_SPAWN_HEIGHT_1_17 = 0;
+    public int GOBLIN_TRADER_MIN_SPAWN_HEIGHT_1_18 = -64;
+    public int VEIN_GOBLIN_TRADER_SPAWN_CHANCE = 25;
+    public int VEIN_GOBLIN_TRADER_SPAWN_DELAY = 24000;
+    public int VEIN_GOBLIN_TRADER_MAX_SPAWN_HEIGHT = 127;
+    public int VEIN_GOBLIN_TRADER_MIN_SPAWN_HEIGHT = 0;
 }

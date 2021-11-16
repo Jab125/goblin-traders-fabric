@@ -447,4 +447,12 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
     protected void fillRecipes() {
 
     }
+
+    public abstract int minSpawnHeight();
+
+    public abstract int maxSpawnHeight();
+
+    public abstract int spawnDelay();
+
+    public abstract int spawnChance();
 }

@@ -1,7 +1,9 @@
 package net.hat.gt.entities;
 
 import com.jab125.thonkutil.util.Util;
+import com.mojang.bridge.game.PackType;
 import net.hat.gt.GobT;
+import net.minecraft.SharedConstants;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.mob.MobEntity;
@@ -79,5 +81,25 @@ public class VeinGoblinTraderEntity extends AbstractGoblinEntity{
     public static boolean canVeinGoblinSpawn(EntityType<? extends MobEntity> type, WorldAccess world, SpawnReason spawnReason, BlockPos pos, Random random) {
         BlockPos blockPos = pos.down();
         return spawnReason == SpawnReason.SPAWNER || ThreadLocalRandom.current().nextInt(1, GobT.config.VEIN_GOBLIN_SPAWN_RATE_D + 1) == 1;
+    }
+
+    @Override
+    public int minSpawnHeight() {
+        return GobT.config.VEIN_GOBLIN_TRADER_MIN_SPAWN_HEIGHT;
+    }
+
+    @Override
+    public int maxSpawnHeight() {
+        return GobT.config.VEIN_GOBLIN_TRADER_MAX_SPAWN_HEIGHT;
+    }
+
+    @Override
+    public int spawnDelay() {
+        return GobT.config.VEIN_GOBLIN_TRADER_SPAWN_DELAY;
+    }
+
+    @Override
+    public int spawnChance() {
+        return GobT.config.VEIN_GOBLIN_TRADER_SPAWN_CHANCE;
     }
 }

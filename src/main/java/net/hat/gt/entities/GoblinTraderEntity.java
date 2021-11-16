@@ -1,7 +1,9 @@
 package net.hat.gt.entities;
 
 import com.jab125.thonkutil.util.Util;
+import com.mojang.bridge.game.PackType;
 import net.hat.gt.GobT;
+import net.minecraft.SharedConstants;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.mob.MobEntity;
@@ -49,6 +51,26 @@ public class GoblinTraderEntity extends AbstractGoblinEntity {
     public boolean canSwimToFood()
     {
         return true;
+    }
+
+    @Override
+    public int minSpawnHeight() {
+        return SharedConstants.getGameVersion().getPackVersion(PackType.DATA) > 7 ? GobT.config.GOBLIN_TRADER_MIN_SPAWN_HEIGHT_1_18 : GobT.config.GOBLIN_TRADER_MIN_SPAWN_HEIGHT_1_17;
+    }
+
+    @Override
+    public int maxSpawnHeight() {
+        return GobT.config.GOBLIN_TRADER_MAX_SPAWN_HEIGHT;
+    }
+
+    @Override
+    public int spawnDelay() {
+        return GobT.config.GOBLIN_TRADER_SPAWN_DELAY;
+    }
+
+    @Override
+    public int spawnChance() {
+        return GobT.config.GOBLIN_TRADER_SPAWN_CHANCE;
     }
 
 

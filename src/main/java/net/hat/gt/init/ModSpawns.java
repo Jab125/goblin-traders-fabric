@@ -9,12 +9,14 @@ import net.minecraft.util.collection.Pool;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.SpawnSettings;
+import org.jetbrains.annotations.ApiStatus;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
-
+@ApiStatus.ScheduledForRemoval(inVersion = "1.5.0")
+@Deprecated(forRemoval = true, since = "1.4.0")
 // Special thanks to Globox1997 for his spawn code in the Nether, it's fantastic!
 public class ModSpawns {
     public static void init() {
