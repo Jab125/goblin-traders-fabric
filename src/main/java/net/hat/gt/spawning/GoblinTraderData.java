@@ -70,6 +70,7 @@ public class GoblinTraderData extends PersistentState
     public static GoblinTraderData get(MinecraftServer server)
     {
         ServerWorld level = server.getWorld(World.OVERWORLD);
+        assert level != null;
         return level.getPersistentStateManager().getOrCreate(tag -> new GoblinTraderData().read(tag), GoblinTraderData::new, DATA_NAME);
     }
 }

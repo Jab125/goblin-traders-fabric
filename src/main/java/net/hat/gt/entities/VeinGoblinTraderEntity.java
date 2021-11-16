@@ -1,9 +1,7 @@
 package net.hat.gt.entities;
 
 import com.jab125.thonkutil.util.Util;
-import com.mojang.bridge.game.PackType;
 import net.hat.gt.GobT;
-import net.minecraft.SharedConstants;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.mob.MobEntity;

@@ -1,6 +1,5 @@
 package net.hat.gt.spawning;
 
-import net.hat.gt.GobT;
 import net.hat.gt.entities.AbstractGoblinEntity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;

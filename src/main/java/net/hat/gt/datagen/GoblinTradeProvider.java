@@ -4,7 +4,6 @@ import com.google.common.collect.ImmutableMap;
 import com.jab125.util.datagen.TradeProvider;
 import com.jab125.util.tradehelper.TradeRarity;
 import com.jab125.util.tradehelper.type.BasicTrade;
-import net.hat.gt.GobT;
 import net.hat.gt.init.ModEntities;
 import net.hat.gt.init.ModPotions;
 import net.minecraft.data.DataGenerator;
