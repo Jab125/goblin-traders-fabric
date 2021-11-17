@@ -10,13 +10,14 @@
   "stat.goblintraders.trade_with_goblin": "Mit Kobold gehandelt",
   "stat.goblintraders.talk_with_goblin": "Mit Kobold gesprochen",
 
-  "text.autoconfig.goblintraders.title": "Kobold-Händler Konfiguration (<RR> = Erfordert einen Neustart des Spiels, <!> = Instabil, <?> Unsicher)",
+  "text.autoconfig.goblintraders.title": "Kobold-Händler Konfiguration",
 
   "text.autoconfig.goblintraders.category.default": "Misc",
   "text.autoconfig.goblintraders.category.all_goblin_traders_config": "Alle Kobold-Händler",
   "text.autoconfig.goblintraders.category.goblin_trader_config": "Kobold-Händler",
   "text.autoconfig.goblintraders.category.vein_goblin_trader_config": "Ader-Kobold-Händler",
 
+  "text.autoconfig.goblintraders.option.MAX_ENCHANTMENT_TEXT.@PrefixText": "<RR> = Erfordert einen Neustart des Spiels, <!> = Instabil, <?> Unsicher",
   "text.autoconfig.goblintraders.option.MAX_ENCHANTMENT_TEXT": "Höher als Max. Verzauberungen mit violettem Text darstellen",
   "text.autoconfig.goblintraders.option.EASTER_EGGS": "Easter-Eggs aktivieren",
 

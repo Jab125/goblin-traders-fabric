@@ -14,8 +14,8 @@ import net.minecraft.block.Blocks;
 @Config.Gui.CategoryBackground(category = "vein_goblin_trader_config", background = "textures/block/netherrack.png")
 public class GoblinTradersConfig implements ConfigData {
     // Settings
+    @ConfigEntry.Gui.PrefixText
     public boolean MAX_ENCHANTMENT_TEXT = true;
-
     public boolean EASTER_EGGS = false;
 
     @ConfigEntry.Category("all_goblin_traders_config")

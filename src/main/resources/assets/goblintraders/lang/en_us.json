@@ -10,13 +10,14 @@
   "stat.goblintraders.trade_with_goblin": "Traded with Goblins",
   "stat.goblintraders.talk_with_goblin": "Talked with Goblins",
 
-  "text.autoconfig.goblintraders.title": "Goblin Traders Config (<RR> = Requires Game Restart, <!> = Unstable, <?> Unsure)",
+  "text.autoconfig.goblintraders.title": "Goblin Traders Config",
 
   "text.autoconfig.goblintraders.category.default": "Misc",
   "text.autoconfig.goblintraders.category.all_goblin_traders_config": "All Goblin Traders",
   "text.autoconfig.goblintraders.category.goblin_trader_config": "Goblin Trader",
   "text.autoconfig.goblintraders.category.vein_goblin_trader_config": "Vein Goblin Trader",
 
+  "text.autoconfig.goblintraders.option.MAX_ENCHANTMENT_TEXT.@PrefixText": "<RR> = Requires Game Restart, <!> = Unstable, <?> Unsure",
   "text.autoconfig.goblintraders.option.MAX_ENCHANTMENT_TEXT": "Over Max Enchants have purple text",
   "text.autoconfig.goblintraders.option.EASTER_EGGS": "Enable Easter Eggs",
 
