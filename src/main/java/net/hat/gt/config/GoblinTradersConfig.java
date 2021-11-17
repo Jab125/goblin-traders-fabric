@@ -9,7 +9,7 @@ import net.minecraft.block.Blocks;
 
 @Config(name = GobT.MODID)
 @Config.Gui.Background("textures/block/dirt.png")
-@Config.Gui.CategoryBackground(category = "all_goblin_traders_config", background = "textures/config/netherstone.png")
+@Config.Gui.CategoryBackground(category = "all_goblin_traders_config", background = "goblintraders:textures/config/netherstone.png")
 @Config.Gui.CategoryBackground(category = "goblin_trader_config", background = "textures/block/stone.png")
 @Config.Gui.CategoryBackground(category = "vein_goblin_trader_config", background = "textures/block/netherrack.png")
 public class GoblinTradersConfig implements ConfigData {
