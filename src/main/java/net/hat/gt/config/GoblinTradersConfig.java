@@ -35,7 +35,7 @@ public class GoblinTradersConfig implements ConfigData {
         public int SPAWN_CHANCE = 25;
         public int SPAWN_DELAY = 24000;
         public int MAX_SPAWN_HEIGHT = 63;
-        public int MIN_SPAWN_HEIGHT = -64;
+        public int MIN_SPAWN_HEIGHT = 0;
     }
 
     public static class VeinGoblinTrader {
