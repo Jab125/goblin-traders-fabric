@@ -1,6 +1,5 @@
 package net.hat.gt.entities.ai;
 
-import net.hat.gt.GobT;
 import net.hat.gt.entities.AbstractGoblinEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.goal.Goal;

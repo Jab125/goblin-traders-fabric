@@ -2,8 +2,6 @@ package net.hat.gt.spawning;
 
 import com.jab125.util.forgehelper.util.Constants;
 import net.minecraft.nbt.NbtCompound;
-import net.hat.gt.spawning.GoblinTraderSpawner;
-import net.hat.gt.spawning.GoblinTraderData;
 
 /**
  * Reworked for fabric

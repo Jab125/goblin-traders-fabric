@@ -10,6 +10,7 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3f;
+
 // No. I refuse to rename this class. This is Goblins without the L. So basically a better version.
 public class GobinTraderRenderer extends MobEntityRenderer<AbstractGoblinEntity, GoblinTraderModel<GoblinTraderEntity>> {
         public static final Identifier TEXTURE = GobT.id("textures/entity/goblintrader/goblin_trader.png");
