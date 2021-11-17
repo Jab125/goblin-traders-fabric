@@ -38,7 +38,6 @@ public class GobT implements ModInitializer {
     private static final boolean doDataGen = false;
     public static GoblinTradersConfig config;
     public static final Logger LOGGER = LogManager.getLogger("goblintraders");
-    public static final String THING = (String) random_background.toArray()[0];
 
     @Override
     public void onInitialize() {
