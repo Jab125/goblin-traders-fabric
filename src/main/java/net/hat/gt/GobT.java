@@ -5,6 +5,7 @@ import com.jab125.util.datagen.DataGeneraton;
 import com.jab125.util.tradehelper.TradeManager;
 import com.jab125.util.tradehelper.type.BasicTrade;
 import me.shedaniel.autoconfig.AutoConfig;
+import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
 import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
@@ -35,7 +36,7 @@ public class GobT implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        AutoConfig.register(GoblinTradersConfig.class, Toml4jConfigSerializer::new);
+        AutoConfig.register(GoblinTradersConfig.class, JanksonConfigSerializer::new);
         config = AutoConfig.getConfigHolder(GoblinTradersConfig.class).getConfig();
 
         TradeManager manager = TradeManager.instance();
