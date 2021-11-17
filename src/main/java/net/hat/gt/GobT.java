@@ -19,7 +19,6 @@ import net.hat.gt.spawning.SpawnHandler;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resource.ResourceType;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.math.MathHelper;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
