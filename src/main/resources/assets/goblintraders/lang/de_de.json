@@ -27,16 +27,16 @@
 
   "text.autoconfig.goblintraders.option.GOBLIN_TRADER_CONFIG.CAN_SPAWN": "Kobolde spawnen <RR>",
   "text.autoconfig.goblintraders.option.GOBLIN_TRADER_CONFIG.SPAWN_DELAY": "Spawn Delay <RR?>",
-  "text.autoconfig.goblintraders.option.GOBLIN_TRADER_CONFIG.MAX_SPAWN_HEIGHT": "Max Spawn Height <RR?>",
-  "text.autoconfig.goblintraders.option.GOBLIN_TRADER_CONFIG.MIN_SPAWN_HEIGHT": "Min Spawn Height <RR?>",
-  "text.autoconfig.goblintraders.option.GOBLIN_TRADER_CONFIG.SPAWN_CHANCE": "Spawn Chance <RR?>",
+  "text.autoconfig.goblintraders.option.GOBLIN_TRADER_CONFIG.MAX_SPAWN_HEIGHT": "Max Spawn Height <RR>",
+  "text.autoconfig.goblintraders.option.GOBLIN_TRADER_CONFIG.MIN_SPAWN_HEIGHT": "Min Spawn Height <RR>",
+  "text.autoconfig.goblintraders.option.GOBLIN_TRADER_CONFIG.SPAWN_CHANCE": "Spawn Chance <RR>",
   "text.autoconfig.goblintraders.option.GOBLIN_TRADER_CONFIG.HIT_BACK": "Kobolde schlagen zurück",
 
   "text.autoconfig.goblintraders.option.VEIN_GOBLIN_TRADER_CONFIG.CAN_SPAWN": "Ader-Kobolde spawnen <RR>",
   "text.autoconfig.goblintraders.option.VEIN_GOBLIN_TRADER_CONFIG.SPAWN_DELAY": "Spawn Delay <RR?>",
-  "text.autoconfig.goblintraders.option.VEIN_GOBLIN_TRADER_CONFIG.MAX_SPAWN_HEIGHT": "Max Spawn Height <RR?>",
-  "text.autoconfig.goblintraders.option.VEIN_GOBLIN_TRADER_CONFIG.MIN_SPAWN_HEIGHT": "Min Spawn Height <RR?>",
-  "text.autoconfig.goblintraders.option.VEIN_GOBLIN_TRADER_CONFIG.SPAWN_CHANCE": "Spawn Chance <RR?>",
+  "text.autoconfig.goblintraders.option.VEIN_GOBLIN_TRADER_CONFIG.MAX_SPAWN_HEIGHT": "Max Spawn Height <RR>",
+  "text.autoconfig.goblintraders.option.VEIN_GOBLIN_TRADER_CONFIG.MIN_SPAWN_HEIGHT": "Min Spawn Height <RR>",
+  "text.autoconfig.goblintraders.option.VEIN_GOBLIN_TRADER_CONFIG.SPAWN_CHANCE": "Spawn Chance <RR>",
   "text.autoconfig.goblintraders.option.VEIN_GOBLIN_TRADER_CONFIG.DAMAGED_IN_WATER": "Ader-Kobolde sterben in Wasser",
   "text.autoconfig.goblintraders.option.VEIN_GOBLIN_TRADER_CONFIG.HIT_BACK": "Hit Back",
 
