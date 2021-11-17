@@ -266,7 +266,7 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
     public boolean damage(DamageSource source, float amount)
     {
         boolean attacked = super.damage(source, amount);
-        if(attacked && source.getAttacker() instanceof PlayerEntity && GobT.config.ALL_GOBLIN_TRADERS_CONFIG.GOBLINS_FALL)
+        if(attacked && source.getAttacker() instanceof PlayerEntity && GobT.config.ALL_GOBLIN_TRADERS_CONFIG.FALL)
         {
             this.getNavigation().stop();
             this.dataTracker.set(STUNNED, true);
@@ -323,7 +323,7 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
             if (this.stunDelay == 0) {
                 this.dataTracker.set(STUNNED, false);
                 this.world.playSound(null, this.getX(), this.getY(), this.getZ(), ModSounds.ANNOYED_GRUNT, SoundCategory.NEUTRAL, 1.0F, 0.9F + this.getRandom().nextFloat() * 0.2F);
-                if (GobT.config.ALL_GOBLIN_TRADERS_CONFIG.GOBLIN_NO_ATTACK_CREATIVE) {
+                if (GobT.config.ALL_GOBLIN_TRADERS_CONFIG.NO_ATTACK_CREATIVE) {
                     try {
                         if (this.getAttacker() != null) {
                             if (this.getAttacker().isPlayer()) {
@@ -455,4 +455,6 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
     public abstract int spawnDelay();
 
     public abstract int spawnChance();
+
+    public abstract boolean canSpawn();
 }

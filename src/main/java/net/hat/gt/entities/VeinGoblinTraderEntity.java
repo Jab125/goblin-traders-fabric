@@ -1,23 +1,16 @@
 package net.hat.gt.entities;
 
 import com.jab125.thonkutil.util.Util;
-import com.mojang.bridge.game.PackType;
 import net.hat.gt.GobT;
-import net.minecraft.SharedConstants;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.SpawnReason;
-import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.passive.MerchantEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.particle.ParticleTypes;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraft.world.WorldAccess;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 
@@ -42,7 +35,7 @@ public class VeinGoblinTraderEntity extends AbstractGoblinEntity{
     @Override
     public boolean canAttackBack()
     {
-        return GobT.config.VEIN_GOBLIN_TRADER_CONFIG.VEIN_GOBLIN_HIT_BACK;
+        return GobT.config.VEIN_GOBLIN_TRADER_CONFIG.HIT_BACK;
     }
 
 
@@ -69,7 +62,7 @@ public class VeinGoblinTraderEntity extends AbstractGoblinEntity{
     }
 
     public boolean hurtByWater() {
-        return GobT.config.VEIN_GOBLIN_TRADER_CONFIG.VEIN_GOBLINS_DIE_IN_WATER;
+        return GobT.config.VEIN_GOBLIN_TRADER_CONFIG.DAMAGED_IN_WATER;
     }
 
     @Override
@@ -77,29 +70,28 @@ public class VeinGoblinTraderEntity extends AbstractGoblinEntity{
         return this.isTouchingWater();
     }
 
-    @SuppressWarnings("unused") // Required for the query, IntelliJ marks it though.
-    public static boolean canVeinGoblinSpawn(EntityType<? extends MobEntity> type, WorldAccess world, SpawnReason spawnReason, BlockPos pos, Random random) {
-        BlockPos blockPos = pos.down();
-        return spawnReason == SpawnReason.SPAWNER || ThreadLocalRandom.current().nextInt(1, GobT.config.VEIN_GOBLIN_SPAWN_RATE_D + 1) == 1;
-    }
-
     @Override
     public int minSpawnHeight() {
-        return GobT.config.VEIN_GOBLIN_TRADER_CONFIG.VEIN_GOBLIN_TRADER_MIN_SPAWN_HEIGHT;
+        return GobT.config.VEIN_GOBLIN_TRADER_CONFIG.MIN_SPAWN_HEIGHT;
     }
 
     @Override
     public int maxSpawnHeight() {
-        return GobT.config.VEIN_GOBLIN_TRADER_CONFIG.VEIN_GOBLIN_TRADER_MAX_SPAWN_HEIGHT;
+        return GobT.config.VEIN_GOBLIN_TRADER_CONFIG.MAX_SPAWN_HEIGHT;
     }
 
     @Override
     public int spawnDelay() {
-        return GobT.config.VEIN_GOBLIN_TRADER_CONFIG.VEIN_GOBLIN_TRADER_SPAWN_DELAY;
+        return GobT.config.VEIN_GOBLIN_TRADER_CONFIG.SPAWN_DELAY;
     }
 
     @Override
     public int spawnChance() {
-        return GobT.config.VEIN_GOBLIN_TRADER_CONFIG.VEIN_GOBLIN_TRADER_SPAWN_CHANCE;
+        return GobT.config.VEIN_GOBLIN_TRADER_CONFIG.SPAWN_CHANCE;
+    }
+
+    @Override
+    public boolean canSpawn() {
+        return GobT.config.VEIN_GOBLIN_TRADER_CONFIG.CAN_SPAWN;
     }
 }

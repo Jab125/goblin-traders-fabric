@@ -2,7 +2,6 @@
   "item.minecraft.acacia_boat.desc": "Aah ja, ein Boot.",
   "item.goblintraders.knockback_stick": "Rückschlagstock",
   "item.goblintraders.beg_paper": "Bitte töte mich nicht, nachdem du mit dem Handel fertig bist",
-  "text.autoconfig.goblintraders.option.EASTER_EGGS": "Easter-Eggs aktivieren",
 
   "entity.goblintraders.goblin_trader": "Kobold-Händler",
   "item.goblintraders.goblin_trader_spawn_egg": "Kobold-Händler-Spawn-Ei",
@@ -11,22 +10,34 @@
   "stat.goblintraders.trade_with_goblin": "Mit Kobold gehandelt",
   "stat.goblintraders.talk_with_goblin": "Mit Kobold gesprochen",
 
-  "text.autoconfig.goblintraders.title": "Kobold-Händler Konfiguration (<RR> = Erfordert einen Neustart des Spiels, <!> = Instabil)",
-  "text.autoconfig.goblintraders.option.GOBLINS_CAN_SPAWN": "Kobolde spawnen <RR>",
-  "text.autoconfig.goblintraders.option.VEIN_GOBLINS_CAN_SPAWN": "Ader-Kobolde spawnen <RR>",
-  "text.autoconfig.goblintraders.option.GOBLIN_HIT_BACK": "Kobolde schlagen zurück",
-  "text.autoconfig.goblintraders.option.GOBLIN_SPAWN_RATE": "Kobold-Spawn-Gewichtung <RR>",
-  "text.autoconfig.goblintraders.option.VEIN_GOBLIN_SPAWN_RATE": "Ader-Kobold-Spawn-Gewichtung <RR>",
-  "text.autoconfig.goblintraders.option.GOBLIN_SPAWN_RATE_D": "Kobold-Spawn-Rate 1/x <RR>",
-  "text.autoconfig.goblintraders.option.VEIN_GOBLIN_SPAWN_RATE_D": "Ader-Kobold-Spawn-Rate 1/x <RR>",
-  "text.autoconfig.goblintraders.option.GOBLINS_FALL": "Kobolde fallen hin",
-  "text.autoconfig.goblintraders.option.VEIN_GOBLINS_DIE_IN_WATER": "Ader-Kobolde sterben in Wasser",
-  "text.autoconfig.goblintraders.option.GOBLIN_GROUP_SIZE": "Max. Kobold-Spawn-Gruppengröße <RR>",
-  "text.autoconfig.goblintraders.option.VEIN_GOBLIN_GROUP_SIZE": "Max. Ader-Kobold-Spawn-Gruppengröße <RR>",
+  "text.autoconfig.goblintraders.title": "Kobold-Händler Konfiguration (<RR> = Erfordert einen Neustart des Spiels, <!> = Instabil, <?> Unsicher)",
+
+  "text.autoconfig.goblintraders.category.default": "Misc",
+  "text.autoconfig.goblintraders.category.all_goblin_traders_config": "Alle Kobold-Händler",
+  "text.autoconfig.goblintraders.category.goblin_trader_config": "Kobold-Händler",
+  "text.autoconfig.goblintraders.category.vein_goblin_trader_config": "Ader-Kobold-Händler",
+
   "text.autoconfig.goblintraders.option.MAX_ENCHANTMENT_TEXT": "Höher als Max. Verzauberungen mit violettem Text darstellen",
-  "text.autoconfig.goblintraders.option.GOBLIN_NO_ATTACK_CREATIVE": "Attackierende Kobolde im Kreativmodus beheben",
-  "text.autoconfig.goblintraders.option.GOBLIN_VANILLA_TRADES": "Vanillamäßige Handelsangebote <RR>",
-  "text.autoconfig.goblintraders.option.CAN_GET_KNOCKED_OUT": "Kann ausgeknockt werden",
+  "text.autoconfig.goblintraders.option.EASTER_EGGS": "Easter-Eggs aktivieren",
+
+  "text.autoconfig.goblintraders.option.ALL_GOBLIN_TRADERS_CONFIG.FALL": "Kobolde fallen hin",
+  "text.autoconfig.goblintraders.option.ALL_GOBLIN_TRADERS_CONFIG.NO_ATTACK_CREATIVE": "Attackierende Kobolde im Kreativmodus beheben",
+  "text.autoconfig.goblintraders.option.ALL_GOBLIN_TRADERS_CONFIG.CAN_GET_KNOCKED_OUT": "Kann ausgeknockt werden",
+
+  "text.autoconfig.goblintraders.option.GOBLIN_TRADER_CONFIG.CAN_SPAWN": "Kobolde spawnen <RR>",
+  "text.autoconfig.goblintraders.option.GOBLIN_TRADER_CONFIG.SPAWN_DELAY": "Spawn Delay <RR?>",
+  "text.autoconfig.goblintraders.option.GOBLIN_TRADER_CONFIG.MAX_SPAWN_HEIGHT": "Max Spawn Height <RR?>",
+  "text.autoconfig.goblintraders.option.GOBLIN_TRADER_CONFIG.MIN_SPAWN_HEIGHT": "Min Spawn Height <RR?>",
+  "text.autoconfig.goblintraders.option.GOBLIN_TRADER_CONFIG.SPAWN_CHANCE": "Spawn Chance <RR?>",
+  "text.autoconfig.goblintraders.option.GOBLIN_TRADER_CONFIG.HIT_BACK": "Kobolde schlagen zurück",
+
+  "text.autoconfig.goblintraders.option.VEIN_GOBLIN_TRADER_CONFIG.CAN_SPAWN": "Ader-Kobolde spawnen <RR>",
+  "text.autoconfig.goblintraders.option.VEIN_GOBLIN_TRADER_CONFIG.SPAWN_DELAY": "Spawn Delay <RR?>",
+  "text.autoconfig.goblintraders.option.VEIN_GOBLIN_TRADER_CONFIG.MAX_SPAWN_HEIGHT": "Max Spawn Height <RR?>",
+  "text.autoconfig.goblintraders.option.VEIN_GOBLIN_TRADER_CONFIG.MIN_SPAWN_HEIGHT": "Min Spawn Height <RR?>",
+  "text.autoconfig.goblintraders.option.VEIN_GOBLIN_TRADER_CONFIG.SPAWN_CHANCE": "Spawn Chance <RR?>",
+  "text.autoconfig.goblintraders.option.VEIN_GOBLIN_TRADER_CONFIG.DAMAGED_IN_WATER": "Ader-Kobolde sterben in Wasser",
+  "text.autoconfig.goblintraders.option.VEIN_GOBLIN_TRADER_CONFIG.HIT_BACK": "Hit Back",
 
   "item.minecraft.potion.effect.gtextended_water_breathing": "Trank der Unterwasseratmung",
   "item.minecraft.potion.effect.gtextended_fire_resistance": "Trank der Feuerresistenz",
@@ -147,5 +158,5 @@
   "gamerule.goblinTradersPickUpFoods": "Kobold-Händler Lebensmittel abholen",
   "gamerule.goblinTradersPunchBack": "Kobold Händler schlagen zurück",
   "gamerule.goblinTradersSpawn": "Kobold Händler spawnen",
-  "gamerule.veinGoblinTradersSpawn": "Ader Kobold Händler spawnen",
+  "gamerule.veinGoblinTradersSpawn": "Ader Kobold Händler spawnen"
 }

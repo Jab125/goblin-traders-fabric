@@ -2,7 +2,6 @@ package net.hat.gt.entities;
 
 import net.hat.gt.GobT;
 import net.hat.gt.GobTClient;
-import net.hat.gt.*;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.MobEntityRenderer;
@@ -37,7 +36,7 @@ public class GobinTraderRenderer extends MobEntityRenderer<AbstractGoblinEntity,
         {
             matrixStack.translate(0, -0.15, 0);
         }
-        if(mobEntity.isStunned() && mobEntity.isAlive() && GobT.config.ALL_GOBLIN_TRADERS_CONFIG.GOBLINS_FALL)
+        if(mobEntity.isStunned() && mobEntity.isAlive() && GobT.config.ALL_GOBLIN_TRADERS_CONFIG.FALL)
         {
             float progress = Math.min(10F, mobEntity.getFallCounter() + g) / 10F;
             matrixStack.multiply(Vec3f.POSITIVE_Y.getDegreesQuaternion(-mobEntity.getStunRotation()));
