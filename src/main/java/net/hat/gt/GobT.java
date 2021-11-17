@@ -6,7 +6,6 @@ import com.jab125.util.tradehelper.TradeManager;
 import com.jab125.util.tradehelper.type.BasicTrade;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
-import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
@@ -20,19 +19,26 @@ import net.hat.gt.spawning.SpawnHandler;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resource.ResourceType;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.MathHelper;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.File;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
+
+import static com.jab125.thonkutil.util.Util.isModInstalled;
 
 public class GobT implements ModInitializer {
 
     public static final String MODID = "goblintraders";
+    private static final Set<String> random_background = new HashSet<>();
     // Mental Note: don't remove this
     private static final boolean doDataGen = false;
     public static GoblinTradersConfig config;
     public static final Logger LOGGER = LogManager.getLogger("goblintraders");
+    public static final String THING = (String) random_background.toArray()[0];
 
     @Override
     public void onInitialize() {
@@ -48,6 +54,16 @@ public class GobT implements ModInitializer {
         ServerLifecycleEvents.SERVER_STOPPED.register(new SpawnHandler.ServerStopped());
         ServerTickEvents.END_WORLD_TICK.register(new SpawnHandler.OnWorldTick());
         manager.registerTypeSerializer(BasicTrade.SERIALIZER);
+
+        if (isModInstalled("endgoblintraders")) {
+            GobT.addToRandomBackground("textures/config/rack_stone.png");
+            GobT.addToRandomBackground("textures/config/stone_end.png");
+            GobT.addToRandomBackground("textures/config/cheese.png");
+        }
+
+        GobT.addToRandomBackground("textures/config/stone_grey.png");
+        GobT.addToRandomBackground("textures/config/netherstone.png");
+        GobT.addToRandomBackground("textures/config/stoneyrack.png");
         ModGameRules.registerGameRules();
         ModSounds.registerSounds();
         ModEntities.registerEntities();
@@ -66,5 +82,14 @@ public class GobT implements ModInitializer {
     }
     public static Identifier id(String path) {
         return new Identifier(MODID, path);
+    }
+
+    private static void addToRandomBackground(String identifier) {
+        random_background.add(identifier);
+        new Identifier(identifier);
+    }
+
+    public static String getRandomBackground() {
+        return (String) random_background.toArray()[(int) (Math.random() * random_background.toArray().length)];
     }
 }
