@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableMap;
 import com.jab125.util.datagen.TradeProvider;
 import com.jab125.util.tradehelper.TradeRarity;
 import com.jab125.util.tradehelper.type.BasicTrade;
+import com.jab125.util.tradehelper.type.PotionTrade;
 import net.hat.gt.init.ModEntities;
 import net.hat.gt.init.ModPotions;
 import net.minecraft.data.DataGenerator;
@@ -500,18 +501,17 @@ public class GoblinTradeProvider extends TradeProvider
         };
         for(Potion potion : rarePotions)
         {
-            ItemStack potionStack = new ItemStack(Items.POTION);
-            PotionUtil.setPotion(potionStack, potion);
             ItemStack awkwardPotion = new ItemStack(Items.POTION);
             PotionUtil.setPotion(awkwardPotion, Potions.AWKWARD);
-            this.addTrade(ModEntities.VEIN_GOBLIN_TRADER, TradeRarity.RARE, isVanilla, BasicTrade.Builder.create()
-                    .setOfferStack(potionStack)
+            this.addTrade(ModEntities.VEIN_GOBLIN_TRADER, TradeRarity.RARE, isVanilla, PotionTrade.Builder.create()
+                    .setOfferStack(new ItemStack(Items.POTION))
                     .setPaymentStack(new ItemStack(Items.EMERALD, isVanilla ? 10 : 15))
                     .setSecondaryPaymentStack(awkwardPotion)
                     .setPriceMultiplier(0.5F)
                     .setMaxTrades(8)
                     .setPlayerExperience(200)
                     .setMerchantExperience(9)
+                    .setPotion(potion)
                     .build());
         }
     }
@@ -531,12 +531,11 @@ public class GoblinTradeProvider extends TradeProvider
         };
         for(Potion potion : epicPotions)
         {
-            ItemStack potionStack = new ItemStack(Items.POTION);
-            PotionUtil.setPotion(potionStack, potion);
             ItemStack awkwardPotion = new ItemStack(Items.POTION);
             PotionUtil.setPotion(awkwardPotion, Potions.AWKWARD);
-            this.addTrade(ModEntities.VEIN_GOBLIN_TRADER, TradeRarity.EPIC, isVanilla, BasicTrade.Builder.create()
-                    .setOfferStack(potionStack)
+            this.addTrade(ModEntities.VEIN_GOBLIN_TRADER, TradeRarity.EPIC, isVanilla, PotionTrade.Builder.create()
+                    .setOfferStack(new ItemStack(Items.POTION))
+                    .setPotion(potion)
                     .setPaymentStack(new ItemStack(Items.EMERALD, isVanilla ? 15 : 25))
                     .setSecondaryPaymentStack(awkwardPotion)
                     .setPriceMultiplier(0.5F)
