@@ -677,11 +677,10 @@
       ]
     },
     {
-      "type": "goblintraders:basic",
+      "type": "goblintraders:potion",
       "offer_item": {
         "item": "minecraft:potion",
-        "count": 1,
-        "nbt": "{Potion:\"goblintraders:gtextended_night_vision\"}"
+        "count": 1
       },
       "payment_item": {
         "item": "minecraft:emerald",
@@ -694,14 +693,14 @@
       },
       "price_multiplier": 0.5,
       "max_trades": 8,
-      "experience": 9
+      "experience": 9,
+      "potion": "goblintraders:gtextended_night_vision"
     },
     {
-      "type": "goblintraders:basic",
+      "type": "goblintraders:potion",
       "offer_item": {
         "item": "minecraft:potion",
-        "count": 1,
-        "nbt": "{Potion:\"goblintraders:gtextended_invisibility\"}"
+        "count": 1
       },
       "payment_item": {
         "item": "minecraft:emerald",
@@ -714,14 +713,14 @@
       },
       "price_multiplier": 0.5,
       "max_trades": 8,
-      "experience": 9
+      "experience": 9,
+      "potion": "goblintraders:gtextended_invisibility"
     },
     {
-      "type": "goblintraders:basic",
+      "type": "goblintraders:potion",
       "offer_item": {
         "item": "minecraft:potion",
-        "count": 1,
-        "nbt": "{Potion:\"goblintraders:gtpowerful_jump_boost\"}"
+        "count": 1
       },
       "payment_item": {
         "item": "minecraft:emerald",
@@ -734,14 +733,14 @@
       },
       "price_multiplier": 0.5,
       "max_trades": 8,
-      "experience": 9
+      "experience": 9,
+      "potion": "goblintraders:gtpowerful_jump_boost"
     },
     {
-      "type": "goblintraders:basic",
+      "type": "goblintraders:potion",
       "offer_item": {
         "item": "minecraft:potion",
-        "count": 1,
-        "nbt": "{Potion:\"goblintraders:gtextended_fire_resistance\"}"
+        "count": 1
       },
       "payment_item": {
         "item": "minecraft:emerald",
@@ -754,14 +753,14 @@
       },
       "price_multiplier": 0.5,
       "max_trades": 8,
-      "experience": 9
+      "experience": 9,
+      "potion": "goblintraders:gtextended_fire_resistance"
     },
     {
-      "type": "goblintraders:basic",
+      "type": "goblintraders:potion",
       "offer_item": {
         "item": "minecraft:potion",
-        "count": 1,
-        "nbt": "{Potion:\"goblintraders:gtpowerful_speed\"}"
+        "count": 1
       },
       "payment_item": {
         "item": "minecraft:emerald",
@@ -774,14 +773,14 @@
       },
       "price_multiplier": 0.5,
       "max_trades": 8,
-      "experience": 9
+      "experience": 9,
+      "potion": "goblintraders:gtpowerful_speed"
     },
     {
-      "type": "goblintraders:basic",
+      "type": "goblintraders:potion",
       "offer_item": {
         "item": "minecraft:potion",
-        "count": 1,
-        "nbt": "{Potion:\"goblintraders:gtextended_water_breathing\"}"
+        "count": 1
       },
       "payment_item": {
         "item": "minecraft:emerald",
@@ -794,14 +793,14 @@
       },
       "price_multiplier": 0.5,
       "max_trades": 8,
-      "experience": 9
+      "experience": 9,
+      "potion": "goblintraders:gtextended_water_breathing"
     },
     {
-      "type": "goblintraders:basic",
+      "type": "goblintraders:potion",
       "offer_item": {
         "item": "minecraft:potion",
-        "count": 1,
-        "nbt": "{Potion:\"goblintraders:gtpowerful_instant_health\"}"
+        "count": 1
       },
       "payment_item": {
         "item": "minecraft:emerald",
@@ -814,14 +813,14 @@
       },
       "price_multiplier": 0.5,
       "max_trades": 8,
-      "experience": 9
+      "experience": 9,
+      "potion": "goblintraders:gtpowerful_instant_health"
     },
     {
-      "type": "goblintraders:basic",
+      "type": "goblintraders:potion",
       "offer_item": {
         "item": "minecraft:potion",
-        "count": 1,
-        "nbt": "{Potion:\"goblintraders:gtpowerful_regeneration\"}"
+        "count": 1
       },
       "payment_item": {
         "item": "minecraft:emerald",
@@ -834,14 +833,14 @@
       },
       "price_multiplier": 0.5,
       "max_trades": 8,
-      "experience": 9
+      "experience": 9,
+      "potion": "goblintraders:gtpowerful_regeneration"
     },
     {
-      "type": "goblintraders:basic",
+      "type": "goblintraders:potion",
       "offer_item": {
         "item": "minecraft:potion",
-        "count": 1,
-        "nbt": "{Potion:\"goblintraders:gtextended_slow_falling\"}"
+        "count": 1
       },
       "payment_item": {
         "item": "minecraft:emerald",
@@ -854,7 +853,8 @@
       },
       "price_multiplier": 0.5,
       "max_trades": 8,
-      "experience": 9
+      "experience": 9,
+      "potion": "goblintraders:gtextended_slow_falling"
     }
   ]
 }
