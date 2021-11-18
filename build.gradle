@@ -1,5 +1,5 @@
 plugins {
-	id 'fabric-loom' version '0.9-SNAPSHOT'
+	id 'fabric-loom' version '0.10-SNAPSHOT'
 	id 'maven-publish'
 }
 
@@ -44,6 +44,15 @@ processResources {
 
 loom {
 	accessWidenerPath =  file("src/main/resources/GobTFabric.accesswidener")
+	runs {
+		data {
+			server()
+			name "Data Gen"
+			vmArg "-Dfabric-api.datagen"
+			runDir "datagen"
+			ideConfigGenerated = true
+		}
+	}
 }
 
 tasks.withType(JavaCompile).configureEach {
@@ -94,9 +103,4 @@ publishing {
 }
 sourceSets.main.resources {
 	srcDirs = ['src/main/resources', 'src/main/generated/resources']
-}
-
-
-task runData {
-
 }

@@ -76,10 +76,6 @@ public class GobT implements ModInitializer {
         ModPotions.registerPotionRecipes();
         //ModSpawns.init();
         // Mental Note: don't remove this
-        if (doDataGen) {
-            DataGenerator dataGenerator = new DataGenerator(new File("../src/main/generated/resources").toPath(), null);
-            DataGeneraton.registerCommonProviders(dataGenerator);
-        }
         boolean a;
             a = ResourceManagerHelper.registerBuiltinResourcePack(id("gobtvanillaish"), Objects.requireNonNull(FabricLoader.getInstance().getModContainer(MODID)).get(), ResourcePackActivationType.NORMAL);
     }

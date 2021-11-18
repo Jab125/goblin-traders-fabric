@@ -8,6 +8,8 @@
     "EnchantmentMixin",
     "FabricPackMixinTemp",
     "ItemMixin",
+    "MainMixin",
+    "MinecraftMixin",
     "SpawnRestrictionMixin",
     "TradeOutputSlotMixin"
   ],
