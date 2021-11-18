@@ -8,6 +8,7 @@ import com.jab125.util.tradehelper.type.BundleTrade;
 import com.jab125.util.tradehelper.type.PotionTrade;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
+import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
@@ -42,7 +43,7 @@ public class GobT implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        AutoConfig.register(GoblinTradersConfig.class, JanksonConfigSerializer::new);
+        AutoConfig.register(GoblinTradersConfig.class, Toml4jConfigSerializer::new);
         config = AutoConfig.getConfigHolder(GoblinTradersConfig.class).getConfig();
 
         TradeManager manager = TradeManager.instance();
