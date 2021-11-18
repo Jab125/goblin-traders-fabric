@@ -1,5 +1,5 @@
 plugins {
-	id 'fabric-loom' version '0.10-SNAPSHOT'
+	id 'fabric-loom' version '0.10.56'
 	id 'maven-publish'
 }
 
@@ -104,3 +104,4 @@ publishing {
 sourceSets.main.resources {
 	srcDirs = ['src/main/resources', 'src/main/generated/resources']
 }
+assemble.dependsOn runData
