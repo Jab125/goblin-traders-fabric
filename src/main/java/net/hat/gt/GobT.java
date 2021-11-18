@@ -4,6 +4,8 @@ package net.hat.gt;
 import com.jab125.util.datagen.DataGeneraton;
 import com.jab125.util.tradehelper.TradeManager;
 import com.jab125.util.tradehelper.type.BasicTrade;
+import com.jab125.util.tradehelper.type.BundleTrade;
+import com.jab125.util.tradehelper.type.PotionTrade;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
 import net.fabricmc.api.ModInitializer;
@@ -52,6 +54,8 @@ public class GobT implements ModInitializer {
         ServerLifecycleEvents.SERVER_STOPPED.register(new SpawnHandler.ServerStopped());
         ServerTickEvents.END_WORLD_TICK.register(new SpawnHandler.OnWorldTick());
         manager.registerTypeSerializer(BasicTrade.SERIALIZER);
+        manager.registerTypeSerializer(BundleTrade.SERIALIZER);
+        manager.registerTypeSerializer(PotionTrade.SERIALIZER);
 
         if (isModInstalled("endgoblintraders")) {
             GobT.addToRandomBackground("textures/config/rack_stone.png");
