@@ -259,17 +259,16 @@ public class GoblinTradeProvider extends TradeProvider
 
         for (EnchantmentLevelEntry fishing_enchant : FISHING_ROD_ENCHANTS) {
             ItemStack enchantedBook = new ItemStack(Items.ENCHANTED_BOOK);
-            ItemStack fishingRod = new ItemStack(Items.FISHING_ROD);
             EnchantmentHelper.set(toHashMap(fishing_enchant, isVanilla ? 2 : fishing_enchant.level), enchantedBook);
-            EnchantmentHelper.set(toHashMap(fishing_enchant,  isVanilla ? 3 : 5), fishingRod);
             this.addTrade(ModEntities.GOBLIN_TRADER, TradeRarity.RARE, isVanilla, BasicTrade.Builder.create()
                     .setPaymentStack(new ItemStack(Items.FISHING_ROD))
                     .setSecondaryPaymentStack(enchantedBook)
-                    .setOfferStack(fishingRod)
+                    .setOfferStack(new ItemStack(Items.FISHING_ROD))
                     .setPriceMultiplier(0F)
                     .setMaxTrades(1)
                     .setMerchantExperience(7)
                     .setPlayerExperience(100)
+                    .addEnchantment(new EnchantmentLevelEntry(fishing_enchant.enchantment, isVanilla ? 3 : 5))
                     .build());
         }
 
@@ -277,17 +276,16 @@ public class GoblinTradeProvider extends TradeProvider
 
         for (EnchantmentLevelEntry pickaxe_enchant : PICKAXE_ENCHANTS) {
             ItemStack enchantedBook = new ItemStack(Items.ENCHANTED_BOOK);
-            ItemStack pickaxe = new ItemStack(Items.DIAMOND_PICKAXE);
             EnchantmentHelper.set(toHashMap(pickaxe_enchant, pickaxe_enchant.level - (isVanilla ? 1 : 0)), enchantedBook);
-            EnchantmentHelper.set(toHashMap(pickaxe_enchant, pickaxe_enchant.enchantment.getMaxLevel() + (isVanilla ?  0 : 1)), pickaxe);
             this.addTrade(ModEntities.GOBLIN_TRADER, TradeRarity.RARE, isVanilla, BasicTrade.Builder.create()
                     .setPaymentStack(new ItemStack(Items.DIAMOND_PICKAXE))
                     .setSecondaryPaymentStack(enchantedBook)
-                    .setOfferStack(pickaxe)
+                    .setOfferStack(new ItemStack(Items.DIAMOND_PICKAXE))
                     .setPriceMultiplier(0F)
                     .setMaxTrades(1)
                     .setMerchantExperience(7)
                     .setPlayerExperience(100)
+                    .addEnchantment(new EnchantmentLevelEntry(pickaxe_enchant.enchantment, pickaxe_enchant.enchantment.getMaxLevel() + (isVanilla ?  0 : 1)))
                     .build());
         }
 
@@ -295,33 +293,31 @@ public class GoblinTradeProvider extends TradeProvider
 
         for (EnchantmentLevelEntry axe_enchant : AXE_AND_SHOVEL_ENCHANTS) {
             ItemStack enchantedBook = new ItemStack(Items.ENCHANTED_BOOK);
-            ItemStack axe = new ItemStack(Items.DIAMOND_AXE);
             EnchantmentHelper.set(toHashMap(axe_enchant, axe_enchant.level - (isVanilla ? 1 : 0)), enchantedBook);
-            EnchantmentHelper.set(toHashMap(axe_enchant, axe_enchant.enchantment.getMaxLevel() + (isVanilla ?  0 : 1)), axe);
             this.addTrade(ModEntities.GOBLIN_TRADER, TradeRarity.RARE, isVanilla, BasicTrade.Builder.create()
                     .setPaymentStack(new ItemStack(Items.DIAMOND_AXE))
                     .setSecondaryPaymentStack(enchantedBook)
-                    .setOfferStack(axe)
+                    .setOfferStack(new ItemStack(Items.DIAMOND_AXE))
                     .setPriceMultiplier(0F)
                     .setMaxTrades(1)
                     .setMerchantExperience(7)
                     .setPlayerExperience(100)
+                    .addEnchantment(new EnchantmentLevelEntry(axe_enchant.enchantment, axe_enchant.enchantment.getMaxLevel() + (isVanilla ?  0 : 1)))
                     .build());
         }
 
         for (EnchantmentLevelEntry shovel_enchant : AXE_AND_SHOVEL_ENCHANTS) {
             ItemStack enchantedBook = new ItemStack(Items.ENCHANTED_BOOK);
-            ItemStack shovel = new ItemStack(Items.DIAMOND_SHOVEL);
             EnchantmentHelper.set(toHashMap(shovel_enchant, shovel_enchant.level - (isVanilla ? 1 : 0)), enchantedBook);
-            EnchantmentHelper.set(toHashMap(shovel_enchant, shovel_enchant.enchantment.getMaxLevel() + (isVanilla ?  0 : 1)), shovel);
             this.addTrade(ModEntities.GOBLIN_TRADER, TradeRarity.RARE, isVanilla, BasicTrade.Builder.create()
                     .setPaymentStack(new ItemStack(Items.DIAMOND_SHOVEL))
                     .setSecondaryPaymentStack(enchantedBook)
-                    .setOfferStack(shovel)
+                    .setOfferStack(new ItemStack(Items.DIAMOND_SHOVEL))
                     .setPriceMultiplier(0F)
                     .setMaxTrades(1)
                     .setMerchantExperience(7)
                     .setPlayerExperience(100)
+                    .addEnchantment(new EnchantmentLevelEntry(shovel_enchant.enchantment, shovel_enchant.enchantment.getMaxLevel() + (isVanilla ?  0 : 1)))
                     .build());
         }
 
@@ -484,7 +480,16 @@ public class GoblinTradeProvider extends TradeProvider
             {
                 ItemStack enchantedBook = new ItemStack(Items.ENCHANTED_BOOK);
                 EnchantmentHelper.set(ImmutableMap.of(armorEnchant.enchantment, armorEnchant.level), enchantedBook);
-                this.addTrade(ModEntities.VEIN_GOBLIN_TRADER, TradeRarity.RARE, isVanilla, BasicTrade.Builder.create().setOfferStack(new ItemStack(piece)).setPaymentStack(new ItemStack(piece)).setSecondaryPaymentStack(enchantedBook).setPriceMultiplier(0F).setMaxTrades(1).setMerchantExperience(7).setPlayerExperience(100).addEnchantment(new EnchantmentLevelEntry(armorEnchant.enchantment, armorEnchant.level + 1)).build());
+                this.addTrade(ModEntities.VEIN_GOBLIN_TRADER, TradeRarity.RARE, isVanilla, BasicTrade.Builder.create()
+                        .setOfferStack(new ItemStack(piece))
+                        .setPaymentStack(new ItemStack(piece))
+                        .setSecondaryPaymentStack(enchantedBook)
+                        .setPriceMultiplier(0F)
+                        .setMaxTrades(1)
+                        .setMerchantExperience(7)
+                        .setPlayerExperience(100)
+                        .addEnchantment(new EnchantmentLevelEntry(armorEnchant.enchantment, armorEnchant.level + 1))
+                        .build());
             }
         }
 

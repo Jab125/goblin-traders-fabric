@@ -122,7 +122,7 @@
       "offer_item": {
         "item": "minecraft:fishing_rod",
         "count": 1,
-        "nbt": "{Damage:0,Enchantments:[{id:\"minecraft:luck_of_the_sea\",lvl:3s}]}"
+        "nbt": "{Damage:0}"
       },
       "payment_item": {
         "item": "minecraft:fishing_rod",
@@ -136,14 +136,20 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 100
+      "experience": 100,
+      "enchantments": [
+        {
+          "id": "minecraft:luck_of_the_sea",
+          "level": 3
+        }
+      ]
     },
     {
       "type": "goblintraders:basic",
       "offer_item": {
         "item": "minecraft:fishing_rod",
         "count": 1,
-        "nbt": "{Damage:0,Enchantments:[{id:\"minecraft:lure\",lvl:3s}]}"
+        "nbt": "{Damage:0}"
       },
       "payment_item": {
         "item": "minecraft:fishing_rod",
@@ -157,14 +163,20 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 100
+      "experience": 100,
+      "enchantments": [
+        {
+          "id": "minecraft:lure",
+          "level": 3
+        }
+      ]
     },
     {
       "type": "goblintraders:basic",
       "offer_item": {
         "item": "minecraft:diamond_pickaxe",
         "count": 1,
-        "nbt": "{Damage:0,Enchantments:[{id:\"minecraft:efficiency\",lvl:5s}]}"
+        "nbt": "{Damage:0}"
       },
       "payment_item": {
         "item": "minecraft:diamond_pickaxe",
@@ -178,14 +190,20 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 100
+      "experience": 100,
+      "enchantments": [
+        {
+          "id": "minecraft:efficiency",
+          "level": 5
+        }
+      ]
     },
     {
       "type": "goblintraders:basic",
       "offer_item": {
         "item": "minecraft:diamond_pickaxe",
         "count": 1,
-        "nbt": "{Damage:0,Enchantments:[{id:\"minecraft:unbreaking\",lvl:3s}]}"
+        "nbt": "{Damage:0}"
       },
       "payment_item": {
         "item": "minecraft:diamond_pickaxe",
@@ -199,14 +217,20 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 100
+      "experience": 100,
+      "enchantments": [
+        {
+          "id": "minecraft:unbreaking",
+          "level": 3
+        }
+      ]
     },
     {
       "type": "goblintraders:basic",
       "offer_item": {
         "item": "minecraft:diamond_pickaxe",
         "count": 1,
-        "nbt": "{Damage:0,Enchantments:[{id:\"minecraft:fortune\",lvl:3s}]}"
+        "nbt": "{Damage:0}"
       },
       "payment_item": {
         "item": "minecraft:diamond_pickaxe",
@@ -220,14 +244,20 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 100
+      "experience": 100,
+      "enchantments": [
+        {
+          "id": "minecraft:fortune",
+          "level": 3
+        }
+      ]
     },
     {
       "type": "goblintraders:basic",
       "offer_item": {
         "item": "minecraft:diamond_axe",
         "count": 1,
-        "nbt": "{Damage:0,Enchantments:[{id:\"minecraft:efficiency\",lvl:5s}]}"
+        "nbt": "{Damage:0}"
       },
       "payment_item": {
         "item": "minecraft:diamond_axe",
@@ -241,14 +271,20 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 100
+      "experience": 100,
+      "enchantments": [
+        {
+          "id": "minecraft:efficiency",
+          "level": 5
+        }
+      ]
     },
     {
       "type": "goblintraders:basic",
       "offer_item": {
         "item": "minecraft:diamond_axe",
         "count": 1,
-        "nbt": "{Damage:0,Enchantments:[{id:\"minecraft:unbreaking\",lvl:3s}]}"
+        "nbt": "{Damage:0}"
       },
       "payment_item": {
         "item": "minecraft:diamond_axe",
@@ -262,14 +298,20 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 100
+      "experience": 100,
+      "enchantments": [
+        {
+          "id": "minecraft:unbreaking",
+          "level": 3
+        }
+      ]
     },
     {
       "type": "goblintraders:basic",
       "offer_item": {
         "item": "minecraft:diamond_shovel",
         "count": 1,
-        "nbt": "{Damage:0,Enchantments:[{id:\"minecraft:efficiency\",lvl:5s}]}"
+        "nbt": "{Damage:0}"
       },
       "payment_item": {
         "item": "minecraft:diamond_shovel",
@@ -283,14 +325,20 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 100
+      "experience": 100,
+      "enchantments": [
+        {
+          "id": "minecraft:efficiency",
+          "level": 5
+        }
+      ]
     },
     {
       "type": "goblintraders:basic",
       "offer_item": {
         "item": "minecraft:diamond_shovel",
         "count": 1,
-        "nbt": "{Damage:0,Enchantments:[{id:\"minecraft:unbreaking\",lvl:3s}]}"
+        "nbt": "{Damage:0}"
       },
       "payment_item": {
         "item": "minecraft:diamond_shovel",
@@ -304,7 +352,13 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 100
+      "experience": 100,
+      "enchantments": [
+        {
+          "id": "minecraft:unbreaking",
+          "level": 3
+        }
+      ]
     }
   ]
 }
