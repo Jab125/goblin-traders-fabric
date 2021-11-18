@@ -31,5 +31,7 @@ bin/
 # fabric
 
 run/
-datagen/logs/
+datagen/
 logs/
+oblintraders.datagen/
+goblintraders.datagen/
