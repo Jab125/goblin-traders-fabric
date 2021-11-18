@@ -19,7 +19,7 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 10,
+      "experience": 500,
       "enchantments": [
         {
           "id": "minecraft:sharpness",

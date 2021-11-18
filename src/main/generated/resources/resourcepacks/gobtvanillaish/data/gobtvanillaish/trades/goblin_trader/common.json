@@ -2,6 +2,45 @@
   "replace": true,
   "trades": [
     {
+      "type": "goblintraders:bundle",
+      "offer_item": {
+        "item": "minecraft:bundle",
+        "count": 1
+      },
+      "payment_item": {
+        "item": "minecraft:diamond_sword",
+        "count": 1,
+        "nbt": "{Damage:0}"
+      },
+      "price_multiplier": 0.0,
+      "experience": 10,
+      "bundle_items": [
+        {
+          "item": "minecraft:emerald",
+          "count": 3
+        },
+        {
+          "item": "minecraft:diamond",
+          "count": 7
+        }
+      ]
+    },
+    {
+      "type": "goblintraders:potion",
+      "offer_item": {
+        "item": "minecraft:potion",
+        "count": 1
+      },
+      "payment_item": {
+        "item": "minecraft:diamond_sword",
+        "count": 1,
+        "nbt": "{Damage:0}"
+      },
+      "price_multiplier": 0.0,
+      "experience": 10,
+      "potion": "goblintraders:gtpowerful_instant_health"
+    },
+    {
       "type": "goblintraders:basic",
       "offer_item": {
         "item": "minecraft:emerald",
@@ -27,7 +66,7 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 30,
-      "experience": 10
+      "experience": 20
     },
     {
       "type": "goblintraders:basic",
@@ -41,7 +80,7 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 30,
-      "experience": 10
+      "experience": 30
     },
     {
       "type": "goblintraders:basic",

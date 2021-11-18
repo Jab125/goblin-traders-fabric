@@ -296,13 +296,13 @@ public class BasicTrade implements ITradeType<GoblinTrade>
 
         public Builder setMerchantExperience(int merchantExperience)
         {
-            this.experience = experience;
+            this.experience = merchantExperience;
             return this;
         }
 
         public Builder setPlayerExperience(int playerExperience)
         {
-            this.experience = experience;
+            this.experience = playerExperience;
             return this;
         }
 
