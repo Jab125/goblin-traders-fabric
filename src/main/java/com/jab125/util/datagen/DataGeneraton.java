@@ -6,7 +6,6 @@ import net.minecraft.data.DataGenerator;
 
 public class DataGeneraton {
     public static void registerCommonProviders(DataGenerator generator) {
-        System.out.println("REGISTERED");
         generator.install(new GoblinTradeProvider(generator));
         try {
             generator.run();

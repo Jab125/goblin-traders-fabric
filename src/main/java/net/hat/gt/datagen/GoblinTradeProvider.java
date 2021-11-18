@@ -35,15 +35,12 @@ public class GoblinTradeProvider extends TradeProvider
      * Feel free to mixin into this for stuff (like for addons)
      */
     @Override
-    public void registerTrades()
-    {
-        System.out.println("TRADES REGISTERED");
+    public void registerTrades() {
         this.registerGoblinTraderTrades();
         this.registerVeinGoblinTraderTrades();
     }
     @Override
     public void registerVanillaTrades() {
-        System.out.println("TRADES REGISTERED");
         this.registerGoblinTraderVanillaTrades();
         this.registerVeinGoblinTraderVanillaTrades();
     }

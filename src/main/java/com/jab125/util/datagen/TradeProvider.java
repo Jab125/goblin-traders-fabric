@@ -27,7 +27,7 @@ import java.util.*;
  */
 public abstract class TradeProvider implements DataProvider
 {
-    private static final Logger LOGGER = LogManager.getLogger();
+    private static final Logger LOGGER = GobT.LOGGER;
     private static final Gson GSON = (new GsonBuilder()).setPrettyPrinting().create();
 
     private final DataGenerator generator;
@@ -115,7 +115,6 @@ public abstract class TradeProvider implements DataProvider
                 try
                 {
                     String rawJson = GSON.toJson(object);
-                    System.out.println(rawJson);
                     String hash = SHA1.hashUnencodedChars(rawJson).toString();
                     if(!Objects.equals(cache.getOldSha1(path), hash) || !Files.exists(path))
                     {

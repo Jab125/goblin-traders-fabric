@@ -36,8 +36,6 @@ public class GobT implements ModInitializer {
 
     public static final String MODID = "goblintraders";
     private static final Set<String> random_background = new HashSet<>();
-    // Mental Note: don't remove this
-    private static final boolean doDataGen = false;
     public static GoblinTradersConfig config;
     public static final Logger LOGGER = LogManager.getLogger("goblintraders");
 
@@ -74,7 +72,6 @@ public class GobT implements ModInitializer {
         ModStats.registerStats();
         ModPotions.registerPotions();
         ModPotions.registerPotionRecipes();
-        //ModSpawns.init();
         // Mental Note: don't remove this
         boolean a;
             a = ResourceManagerHelper.registerBuiltinResourcePack(id("gobtvanillaish"), Objects.requireNonNull(FabricLoader.getInstance().getModContainer(MODID)).get(), ResourcePackActivationType.NORMAL);

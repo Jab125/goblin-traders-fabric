@@ -105,3 +105,5 @@ sourceSets.main.resources {
 	srcDirs = ['src/main/resources', 'src/main/generated/resources']
 }
 assemble.dependsOn runData
+runClient.dependsOn runData
+runServer.dependsOn runData
