@@ -19,7 +19,7 @@
       "price_multiplier": 0.5,
       "max_trades": 8,
       "experience": 200,
-      "potion": "goblintraders:gtdig_speed"
+      "potion": "goblintraders:dig_speed"
     },
     {
       "type": "goblintraders:potion",
@@ -39,7 +39,7 @@
       "price_multiplier": 0.5,
       "max_trades": 8,
       "experience": 200,
-      "potion": "goblintraders:gtabsorption"
+      "potion": "goblintraders:absorption"
     },
     {
       "type": "goblintraders:potion",
@@ -79,7 +79,7 @@
       "price_multiplier": 0.5,
       "max_trades": 8,
       "experience": 200,
-      "potion": "goblintraders:gtdolphins_grace"
+      "potion": "goblintraders:dolphins_grace"
     },
     {
       "type": "goblintraders:potion",
@@ -99,7 +99,7 @@
       "price_multiplier": 0.5,
       "max_trades": 8,
       "experience": 200,
-      "potion": "goblintraders:gtlevitation"
+      "potion": "goblintraders:levitation"
     },
     {
       "type": "goblintraders:potion",
@@ -139,7 +139,7 @@
       "price_multiplier": 0.5,
       "max_trades": 8,
       "experience": 200,
-      "potion": "goblintraders:gtblindness"
+      "potion": "goblintraders:blindness"
     }
   ]
 }

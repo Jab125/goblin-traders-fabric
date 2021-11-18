@@ -694,7 +694,7 @@
       "price_multiplier": 0.5,
       "max_trades": 8,
       "experience": 9,
-      "potion": "goblintraders:gtextended_night_vision"
+      "potion": "goblintraders:extended_night_vision"
     },
     {
       "type": "goblintraders:potion",
@@ -714,7 +714,7 @@
       "price_multiplier": 0.5,
       "max_trades": 8,
       "experience": 9,
-      "potion": "goblintraders:gtextended_invisibility"
+      "potion": "goblintraders:extended_invisibility"
     },
     {
       "type": "goblintraders:potion",
@@ -734,7 +734,7 @@
       "price_multiplier": 0.5,
       "max_trades": 8,
       "experience": 9,
-      "potion": "goblintraders:gtpowerful_jump_boost"
+      "potion": "goblintraders:powerful_jump_boost"
     },
     {
       "type": "goblintraders:potion",
@@ -754,7 +754,7 @@
       "price_multiplier": 0.5,
       "max_trades": 8,
       "experience": 9,
-      "potion": "goblintraders:gtextended_fire_resistance"
+      "potion": "goblintraders:extended_fire_resistance"
     },
     {
       "type": "goblintraders:potion",
@@ -774,7 +774,7 @@
       "price_multiplier": 0.5,
       "max_trades": 8,
       "experience": 9,
-      "potion": "goblintraders:gtpowerful_speed"
+      "potion": "goblintraders:powerful_speed"
     },
     {
       "type": "goblintraders:potion",
@@ -794,7 +794,7 @@
       "price_multiplier": 0.5,
       "max_trades": 8,
       "experience": 9,
-      "potion": "goblintraders:gtextended_water_breathing"
+      "potion": "goblintraders:extended_water_breathing"
     },
     {
       "type": "goblintraders:potion",
@@ -814,7 +814,7 @@
       "price_multiplier": 0.5,
       "max_trades": 8,
       "experience": 9,
-      "potion": "goblintraders:gtpowerful_instant_health"
+      "potion": "goblintraders:powerful_instant_health"
     },
     {
       "type": "goblintraders:potion",
@@ -834,7 +834,7 @@
       "price_multiplier": 0.5,
       "max_trades": 8,
       "experience": 9,
-      "potion": "goblintraders:gtpowerful_regeneration"
+      "potion": "goblintraders:powerful_regeneration"
     },
     {
       "type": "goblintraders:potion",
@@ -854,7 +854,7 @@
       "price_multiplier": 0.5,
       "max_trades": 8,
       "experience": 9,
-      "potion": "goblintraders:gtextended_slow_falling"
+      "potion": "goblintraders:extended_slow_falling"
     }
   ]
 }
