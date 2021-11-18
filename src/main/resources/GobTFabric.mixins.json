@@ -9,12 +9,12 @@
     "FabricPackMixinTemp",
     "ItemMixin",
     "MainMixin",
-    "MinecraftMixin",
     "SpawnRestrictionMixin",
     "TradeOutputSlotMixin"
   ],
   "client": [
-    "SplashScreenMixin"
+    "SplashScreenMixin",
+    "MinecraftMixin"
   ],
   "injectors": {
     "defaultRequire": 1
