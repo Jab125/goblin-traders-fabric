@@ -5,6 +5,7 @@ import com.jab125.util.datagen.DataGeneraton;
 import com.jab125.util.tradehelper.TradeManager;
 import com.jab125.util.tradehelper.type.BasicTrade;
 import com.jab125.util.tradehelper.type.BundleTrade;
+import com.jab125.util.tradehelper.type.ContainerTrade;
 import com.jab125.util.tradehelper.type.PotionTrade;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
@@ -55,6 +56,7 @@ public class GobT implements ModInitializer {
         manager.registerTypeSerializer(BasicTrade.SERIALIZER);
         manager.registerTypeSerializer(BundleTrade.SERIALIZER);
         manager.registerTypeSerializer(PotionTrade.SERIALIZER);
+        manager.registerTypeSerializer(ContainerTrade.SERIALIZER);
 
         if (isModInstalled("endgoblintraders")) {
             GobT.addToRandomBackground("textures/config/rack_stone.png");
