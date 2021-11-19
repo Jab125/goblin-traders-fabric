@@ -23,7 +23,7 @@ import static com.jab125.thonkutil.util.Util.isOverflowInstalled;
  * efficiency pickaxe with a level six efficiency pickaxe (which is higher than the max) will
  * keep the enchantment at level six instead of changing to it's max level of five.
  *
- * Author: MrCrayfish remapped by Jab125
+ * Remapped by Jab125
  */
 @Mixin(AnvilScreenHandler.class)
 public class AnvilMenuMixin
