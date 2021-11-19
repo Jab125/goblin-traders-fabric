@@ -36,12 +36,13 @@
   ],
   "accessWidener": "GobTFabric.accesswidener",
   "depends": {
-    "fabricloader": ">=0.11.3",
+    "fabricloader": ">=0.12.1",
     "fabric": "*",
-    "minecraft": "1.17.x",
-    "java": ">=16"
+    "minecraft": ">=1.17",
+    "java": ">=16",
+    "cloth-config2": ">=5.0.38"
   },
   "suggests": {
-    "endgoblintraders": ">=1.2.1"
+    "endgoblintraders": ">=1.3.0"
   }
 }
