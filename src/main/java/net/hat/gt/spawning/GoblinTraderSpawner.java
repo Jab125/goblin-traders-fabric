@@ -15,6 +15,7 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Reworked for fabric
@@ -40,6 +41,9 @@ public class GoblinTraderSpawner
         this.traderSpawnChance = entity.canSpawn() ? 0 : entity.spawnChance();
         this.traderSpawnDelay = entity.spawnDelay();
         this.minLevel = Math.min(entity.minSpawnHeight(), entity.maxSpawnHeight());
+        if (Objects.requireNonNull(server.getWorld(World.OVERWORLD)).getDimension().getMinimumY() >= minLevel) {
+            this.minLevel = Objects.requireNonNull(server.getWorld(World.OVERWORLD)).getDimension().getMinimumY();
+        }
         this.maxLevel = Math.max(entity.minSpawnHeight(), entity.maxSpawnHeight());
         if(this.currentTraderSpawnDelay == 0 && this.currentTraderSpawnChance == 0)
         {

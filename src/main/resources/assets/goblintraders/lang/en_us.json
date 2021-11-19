@@ -29,6 +29,7 @@
   "text.autoconfig.goblintraders.option.GOBLIN_TRADER_CONFIG.SPAWN_DELAY": "Spawn Delay <RR>",
   "text.autoconfig.goblintraders.option.GOBLIN_TRADER_CONFIG.MAX_SPAWN_HEIGHT": "Max Spawn Height <RR>",
   "text.autoconfig.goblintraders.option.GOBLIN_TRADER_CONFIG.MIN_SPAWN_HEIGHT": "Min Spawn Height <RR>",
+  "text.autoconfig.goblintraders.option.GOBLIN_TRADER_CONFIG.MIN_SPAWN_HEIGHT.@PrefixText": "They won't spawn under the world, so it's fine (1.18 thing)",
   "text.autoconfig.goblintraders.option.GOBLIN_TRADER_CONFIG.SPAWN_CHANCE": "Spawn Chance <RR>",
   "text.autoconfig.goblintraders.option.GOBLIN_TRADER_CONFIG.HIT_BACK": "Hit Back",
 
