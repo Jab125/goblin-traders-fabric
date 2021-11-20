@@ -21,6 +21,10 @@
   "text.autoconfig.goblintraders.option.MAX_ENCHANTMENT_TEXT": "Over Max Enchants have purple text",
   "text.autoconfig.goblintraders.option.EASTER_EGGS": "Enable Easter Eggs",
 
+  "text.autoconfig.goblintraders.option.ALL_GOBLIN_TRADERS_CONFIG.FIND_COOLDOWN.@Tooltip[0]": "The amount of ticks a goblin",
+  "text.autoconfig.goblintraders.option.ALL_GOBLIN_TRADERS_CONFIG.FIND_COOLDOWN.@Tooltip[1]": "trader will wait before",
+  "text.autoconfig.goblintraders.option.ALL_GOBLIN_TRADERS_CONFIG.FIND_COOLDOWN.@Tooltip[2]": "looking for a new customer",
+  "text.autoconfig.goblintraders.option.ALL_GOBLIN_TRADERS_CONFIG.FIND_COOLDOWN": "Find Cooldown",
   "text.autoconfig.goblintraders.option.ALL_GOBLIN_TRADERS_CONFIG.FALL": "Fall Over",
   "text.autoconfig.goblintraders.option.ALL_GOBLIN_TRADERS_CONFIG.NO_ATTACK_CREATIVE": "Fix Creative Change attack",
   "text.autoconfig.goblintraders.option.ALL_GOBLIN_TRADERS_CONFIG.CAN_GET_KNOCKED_OUT": "Can be Knocked Out",

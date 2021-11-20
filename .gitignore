@@ -35,3 +35,5 @@ datagen/
 logs/
 oblintraders.datagen/
 goblintraders.datagen/
+datagen/config/
+datagen/config/goblintraders.toml

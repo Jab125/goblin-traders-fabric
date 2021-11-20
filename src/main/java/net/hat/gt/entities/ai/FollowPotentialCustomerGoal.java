@@ -1,5 +1,6 @@
 package net.hat.gt.entities.ai;
 
+import net.hat.gt.GobT;
 import net.hat.gt.entities.AbstractGoblinEntity;
 import net.minecraft.entity.ai.goal.Goal;
 import net.minecraft.entity.player.PlayerEntity;
@@ -33,6 +34,9 @@ public class FollowPotentialCustomerGoal extends Goal
             this.coolDown--;
             return false;
         }
+        if (this.entity.isStunned()) {
+            return false;
+        }
         this.findCustomer();
         return this.potentialCustomer != null && this.potentialCustomer.isAlive() && this.entity.isPreviousCustomer(this.potentialCustomer) && !this.potentialCustomer.isTouchingWater();
     }
@@ -60,7 +64,7 @@ public class FollowPotentialCustomerGoal extends Goal
         this.entity.getNavigation().stop();
         this.potentialCustomer = null;
         this.timeout = 600;
-        this.coolDown = 2400;
+        this.coolDown = GobT.config.ALL_GOBLIN_TRADERS_CONFIG.FIND_COOLDOWN;
     }
 
     private void findCustomer()

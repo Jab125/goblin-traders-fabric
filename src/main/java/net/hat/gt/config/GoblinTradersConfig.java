@@ -28,6 +28,8 @@ public class GoblinTradersConfig implements ConfigData {
     public VeinGoblinTrader VEIN_GOBLIN_TRADER_CONFIG = new VeinGoblinTrader();
 
     public static class AllGoblinTraders {
+        @ConfigEntry.Gui.Tooltip(count = 3)
+        public int FIND_COOLDOWN = 2400;
         public boolean FALL = true;
         public boolean NO_ATTACK_CREATIVE = true;
         public boolean CAN_GET_KNOCKED_OUT = false;
