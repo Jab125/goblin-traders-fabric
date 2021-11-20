@@ -10,6 +10,7 @@ import net.minecraft.client.render.entity.model.ModelWithArms;
 import net.minecraft.client.render.entity.model.ModelWithHead;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Arm;
+import net.minecraft.util.Hand;
 import net.minecraft.util.math.MathHelper;
 
 @Environment(EnvType.CLIENT)
@@ -28,6 +29,7 @@ public class GoblinTraderModel<G extends AbstractGoblinEntity> extends Composite
     private final ModelPart leftLeg;
     private final ModelPart rightLeg;
     private final ModelPart bag;
+    private AbstractGoblinEntity entity;
 
     public GoblinTraderModel(ModelPart root) {
         this.root = root;
@@ -69,6 +71,7 @@ public class GoblinTraderModel<G extends AbstractGoblinEntity> extends Composite
 
     @Override
     public void setAngles(AbstractGoblinEntity entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headroll) {
+        this.entity = entity;
         this.leftEar.yaw = 0.7854F;
         this.rightEar.yaw = -0.7854F;
         float rotateFactor;
@@ -117,17 +120,29 @@ public class GoblinTraderModel<G extends AbstractGoblinEntity> extends Composite
             arm.roll += MathHelper.sin(this.handSwingProgress * (float) Math.PI) * -0.4F;
         }
 
-        if(entity.isUsingItem())
-        {
+        if(entity.isUsingItem()) {
             double rotateX = Math.toRadians(-90F + 5F * Math.sin(animationProgress));
             this.leftArm.pitch = (float) rotateX;
             this.rightArm.pitch = (float) rotateX;
             this.rightLeg.yaw = (float) Math.toRadians(25F);
             this.leftLeg.pitch = (float) Math.toRadians(-90F);
             this.leftLeg.yaw = (float) Math.toRadians(-25F);
-        }
-        else
-        {
+            this.rightLeg.pitch = (float) Math.toRadians(-90F);
+        } else {
+            if (entity.isHoldingItem(Hand.MAIN_HAND)) {
+                if (entity.getMainArm().equals(Arm.RIGHT)) {
+                    this.rightArm.pitch = (float) Math.toRadians(-50F);
+                } else {
+                    this.leftArm.pitch = (float) Math.toRadians(-50F);
+                }
+            }
+            if (entity.isHoldingItem(Hand.OFF_HAND)) {
+                if (entity.getMainArm().equals(Arm.LEFT)) {
+                    this.rightArm.pitch = (float) Math.toRadians(-50F);
+                } else {
+                    this.leftArm.pitch = (float) Math.toRadians(-50F);
+                }
+            }
             this.rightLeg.yaw = (float) Math.toRadians(0);
             this.leftLeg.yaw = (float) Math.toRadians(0);
         }
@@ -150,6 +165,22 @@ public class GoblinTraderModel<G extends AbstractGoblinEntity> extends Composite
     @Override
     public void setArmAngle(Arm arm, MatrixStack matrices)
     {
+        if (this.entity != null) {
+            if (!this.entity.isUsingItem()) {
+                switch (arm) {
+                    case LEFT -> {
+                        this.leftArm.rotate(matrices);
+                        matrices.translate(-0.10 / 2, -0.15, 0.25);
+                    }
+                    case RIGHT -> {
+                        this.rightArm.rotate(matrices);
+                        matrices.translate(0.10 / 2, -0.15, 0.25);
+                    }
+                }
+                matrices.scale(0.75F, 0.75F, 0.75F);
+                return;
+            }
+        }
         switch(arm)
         {
             case LEFT -> {
@@ -164,6 +195,7 @@ public class GoblinTraderModel<G extends AbstractGoblinEntity> extends Composite
             }
         }
     }
+
 
 
     @Override

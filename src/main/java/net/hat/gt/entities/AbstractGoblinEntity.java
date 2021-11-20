@@ -316,6 +316,10 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
         return (boolean) this.dataTracker.get(RAINING);
     }
 
+    public boolean isHoldingItem(Hand hand) {
+        return !this.getStackInHand(hand).isEmpty();
+    }
+
     public void tick() {
         if (this.isStunned()) this.resetCustomer();
         if (this.stunDelay > 0) {
@@ -367,6 +371,11 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
         {
             this.remove(RemovalReason.KILLED);
         }
+    }
+
+    @Override
+    protected float getActiveEyeHeight(EntityPose pose, EntityDimensions dimensions) {
+        return 0.62F;
     }
 
     public abstract ItemStack getFavouriteFood();
