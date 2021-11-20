@@ -18,7 +18,7 @@
       },
       "price_multiplier": 0.5,
       "max_trades": 8,
-      "experience": 200,
+      "experience": 9,
       "potion": "goblintraders:dig_speed"
     },
     {
@@ -38,7 +38,7 @@
       },
       "price_multiplier": 0.5,
       "max_trades": 8,
-      "experience": 200,
+      "experience": 9,
       "potion": "goblintraders:absorption"
     },
     {
@@ -58,7 +58,7 @@
       },
       "price_multiplier": 0.5,
       "max_trades": 8,
-      "experience": 200,
+      "experience": 9,
       "potion": "minecraft:luck"
     },
     {
@@ -78,7 +78,7 @@
       },
       "price_multiplier": 0.5,
       "max_trades": 8,
-      "experience": 200,
+      "experience": 9,
       "potion": "goblintraders:dolphins_grace"
     },
     {
@@ -98,7 +98,7 @@
       },
       "price_multiplier": 0.5,
       "max_trades": 8,
-      "experience": 200,
+      "experience": 9,
       "potion": "goblintraders:levitation"
     },
     {
@@ -118,7 +118,7 @@
       },
       "price_multiplier": 0.5,
       "max_trades": 8,
-      "experience": 200,
+      "experience": 9,
       "potion": "minecraft:strong_strength"
     },
     {
@@ -138,7 +138,7 @@
       },
       "price_multiplier": 0.5,
       "max_trades": 8,
-      "experience": 200,
+      "experience": 9,
       "potion": "goblintraders:blindness"
     }
   ]

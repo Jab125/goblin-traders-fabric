@@ -264,7 +264,6 @@ public class ContainerTrade implements ITradeType<GoblinTrade> {
         }
 
         public Builder setPlayerExperience(int playerExperience) {
-            this.experience = playerExperience;
             return this;
         }
         public Builder setContainerItem(ItemStack itemStack, int slot) {

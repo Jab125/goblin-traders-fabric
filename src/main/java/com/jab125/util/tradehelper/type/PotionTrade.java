@@ -173,7 +173,6 @@ public class PotionTrade implements ITradeType<GoblinTrade> {
         }
 
         public Builder setPlayerExperience(int playerExperience) {
-            this.experience = playerExperience;
             return this;
         }
 

@@ -219,7 +219,6 @@ public class BundleTrade implements ITradeType<GoblinTrade> {
         }
 
         public BundleTrade.Builder setPlayerExperience(int playerExperience) {
-            this.experience = playerExperience;
             return this;
         }
         public BundleTrade.Builder addToBundle(ItemStack itemStack) {
