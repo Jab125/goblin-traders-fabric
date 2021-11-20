@@ -121,7 +121,7 @@ public class GoblinTraderModel<G extends AbstractGoblinEntity> extends Composite
         {
             double rotateX = Math.toRadians(-90F + 5F * Math.sin(animationProgress));
             this.leftArm.pitch = (float) rotateX;
-            this.rightArm.pitch = (float) Math.toRadians(-90F);
+            this.rightArm.pitch = (float) rotateX;
             this.rightLeg.yaw = (float) Math.toRadians(25F);
             this.leftLeg.pitch = (float) Math.toRadians(-90F);
             this.leftLeg.yaw = (float) Math.toRadians(-25F);
