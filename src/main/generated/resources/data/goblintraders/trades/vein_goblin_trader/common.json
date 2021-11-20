@@ -2,7 +2,7 @@
   "replace": false,
   "trades": [
     {
-      "type": "goblintraders:basic",
+      "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:emerald",
         "count": 1
@@ -13,10 +13,11 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 24,
-      "experience": 10
+      "merchant_experience": 1,
+      "player_experience": 10
     },
     {
-      "type": "goblintraders:basic",
+      "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:glowstone_dust",
         "count": 4
@@ -27,10 +28,11 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 32,
-      "experience": 20
+      "merchant_experience": 2,
+      "player_experience": 20
     },
     {
-      "type": "goblintraders:basic",
+      "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:emerald",
         "count": 1
@@ -41,10 +43,11 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 64,
-      "experience": 10
+      "merchant_experience": 1,
+      "player_experience": 10
     },
     {
-      "type": "goblintraders:basic",
+      "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:nether_wart",
         "count": 2
@@ -54,10 +57,11 @@
         "count": 1
       },
       "price_multiplier": 0.0,
-      "experience": 10
+      "merchant_experience": 1,
+      "player_experience": 10
     },
     {
-      "type": "goblintraders:basic",
+      "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:warped_fungus",
         "count": 5
@@ -67,10 +71,11 @@
         "count": 1
       },
       "price_multiplier": 0.0,
-      "experience": 10
+      "merchant_experience": 1,
+      "player_experience": 10
     },
     {
-      "type": "goblintraders:basic",
+      "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:golden_apple",
         "count": 1
@@ -80,7 +85,8 @@
         "count": 6
       },
       "price_multiplier": 0.0,
-      "experience": 10
+      "merchant_experience": 1,
+      "player_experience": 10
     }
   ]
 }

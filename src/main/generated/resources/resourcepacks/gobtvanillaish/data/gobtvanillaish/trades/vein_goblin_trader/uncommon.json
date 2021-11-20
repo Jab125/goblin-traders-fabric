@@ -2,7 +2,7 @@
   "replace": true,
   "trades": [
     {
-      "type": "goblintraders:basic",
+      "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:lodestone",
         "count": 2
@@ -12,10 +12,11 @@
         "count": 1
       },
       "price_multiplier": 0.0,
-      "experience": 20
+      "merchant_experience": 2,
+      "player_experience": 20
     },
     {
-      "type": "goblintraders:basic",
+      "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:netherite_scrap",
         "count": 5
@@ -26,10 +27,11 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 2,
-      "experience": 50
+      "merchant_experience": 5,
+      "player_experience": 50
     },
     {
-      "type": "goblintraders:basic",
+      "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:red_nether_bricks",
         "count": 1
@@ -44,10 +46,11 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 128,
-      "experience": 30
+      "merchant_experience": 3,
+      "player_experience": 30
     },
     {
-      "type": "goblintraders:basic",
+      "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:sponge",
         "count": 8
@@ -62,7 +65,8 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 4,
-      "experience": 30
+      "merchant_experience": 3,
+      "player_experience": 30
     }
   ]
 }

@@ -2,7 +2,7 @@
   "replace": true,
   "trades": [
     {
-      "type": "goblintraders:basic",
+      "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:diamond_sword",
         "count": 1,
@@ -19,7 +19,8 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 500,
+      "merchant_experience": 12,
+      "player_experience": 500,
       "enchantments": [
         {
           "id": "minecraft:sharpness",

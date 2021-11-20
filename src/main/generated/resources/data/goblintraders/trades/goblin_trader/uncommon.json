@@ -2,7 +2,7 @@
   "replace": false,
   "trades": [
     {
-      "type": "goblintraders:basic",
+      "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:gunpowder",
         "count": 2
@@ -13,10 +13,11 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 32,
-      "experience": 20
+      "merchant_experience": 2,
+      "player_experience": 20
     },
     {
-      "type": "goblintraders:basic",
+      "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:emerald",
         "count": 6
@@ -27,10 +28,11 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 2,
-      "experience": 50
+      "merchant_experience": 5,
+      "player_experience": 50
     },
     {
-      "type": "goblintraders:basic",
+      "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:emerald",
         "count": 8
@@ -41,10 +43,11 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 4,
-      "experience": 30
+      "merchant_experience": 3,
+      "player_experience": 30
     },
     {
-      "type": "goblintraders:basic",
+      "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:sponge",
         "count": 8
@@ -55,10 +58,11 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 8,
-      "experience": 30
+      "merchant_experience": 3,
+      "player_experience": 30
     },
     {
-      "type": "goblintraders:basic",
+      "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:chipped_anvil",
         "count": 1
@@ -73,10 +77,11 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 32,
-      "experience": 20
+      "merchant_experience": 2,
+      "player_experience": 20
     },
     {
-      "type": "goblintraders:basic",
+      "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:hay_block",
         "count": 1
@@ -87,7 +92,8 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 10
+      "merchant_experience": 1,
+      "player_experience": 10
     }
   ]
 }

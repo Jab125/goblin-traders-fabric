@@ -2,7 +2,7 @@
   "replace": false,
   "trades": [
     {
-      "type": "goblintraders:basic",
+      "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:diamond_sword",
         "count": 1,
@@ -20,7 +20,8 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 100,
+      "merchant_experience": 7,
+      "player_experience": 100,
       "enchantments": [
         {
           "id": "minecraft:sharpness",
@@ -29,7 +30,7 @@
       ]
     },
     {
-      "type": "goblintraders:basic",
+      "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:diamond_sword",
         "count": 1,
@@ -47,7 +48,8 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 100,
+      "merchant_experience": 7,
+      "player_experience": 100,
       "enchantments": [
         {
           "id": "minecraft:looting",
@@ -56,7 +58,7 @@
       ]
     },
     {
-      "type": "goblintraders:basic",
+      "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:diamond_sword",
         "count": 1,
@@ -74,7 +76,8 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 100,
+      "merchant_experience": 7,
+      "player_experience": 100,
       "enchantments": [
         {
           "id": "minecraft:sweeping",
@@ -83,7 +86,7 @@
       ]
     },
     {
-      "type": "goblintraders:basic",
+      "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:diamond_sword",
         "count": 1,
@@ -101,7 +104,8 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 100,
+      "merchant_experience": 7,
+      "player_experience": 100,
       "enchantments": [
         {
           "id": "minecraft:fire_aspect",
@@ -110,7 +114,7 @@
       ]
     },
     {
-      "type": "goblintraders:basic",
+      "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:diamond_sword",
         "count": 1,
@@ -128,7 +132,8 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 100,
+      "merchant_experience": 7,
+      "player_experience": 100,
       "enchantments": [
         {
           "id": "minecraft:bane_of_arthropods",
@@ -137,7 +142,7 @@
       ]
     },
     {
-      "type": "goblintraders:basic",
+      "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:diamond_helmet",
         "count": 1,
@@ -155,7 +160,8 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 100,
+      "merchant_experience": 7,
+      "player_experience": 100,
       "enchantments": [
         {
           "id": "minecraft:blast_protection",
@@ -164,7 +170,7 @@
       ]
     },
     {
-      "type": "goblintraders:basic",
+      "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:diamond_helmet",
         "count": 1,
@@ -182,7 +188,8 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 100,
+      "merchant_experience": 7,
+      "player_experience": 100,
       "enchantments": [
         {
           "id": "minecraft:fire_protection",
@@ -191,7 +198,7 @@
       ]
     },
     {
-      "type": "goblintraders:basic",
+      "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:diamond_helmet",
         "count": 1,
@@ -209,7 +216,8 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 100,
+      "merchant_experience": 7,
+      "player_experience": 100,
       "enchantments": [
         {
           "id": "minecraft:projectile_protection",
@@ -218,7 +226,7 @@
       ]
     },
     {
-      "type": "goblintraders:basic",
+      "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:diamond_helmet",
         "count": 1,
@@ -236,7 +244,8 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 100,
+      "merchant_experience": 7,
+      "player_experience": 100,
       "enchantments": [
         {
           "id": "minecraft:protection",
@@ -245,7 +254,7 @@
       ]
     },
     {
-      "type": "goblintraders:basic",
+      "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:diamond_helmet",
         "count": 1,
@@ -263,7 +272,8 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 100,
+      "merchant_experience": 7,
+      "player_experience": 100,
       "enchantments": [
         {
           "id": "minecraft:unbreaking",
@@ -272,7 +282,7 @@
       ]
     },
     {
-      "type": "goblintraders:basic",
+      "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:diamond_chestplate",
         "count": 1,
@@ -290,7 +300,8 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 100,
+      "merchant_experience": 7,
+      "player_experience": 100,
       "enchantments": [
         {
           "id": "minecraft:blast_protection",
@@ -299,7 +310,7 @@
       ]
     },
     {
-      "type": "goblintraders:basic",
+      "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:diamond_chestplate",
         "count": 1,
@@ -317,7 +328,8 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 100,
+      "merchant_experience": 7,
+      "player_experience": 100,
       "enchantments": [
         {
           "id": "minecraft:fire_protection",
@@ -326,7 +338,7 @@
       ]
     },
     {
-      "type": "goblintraders:basic",
+      "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:diamond_chestplate",
         "count": 1,
@@ -344,7 +356,8 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 100,
+      "merchant_experience": 7,
+      "player_experience": 100,
       "enchantments": [
         {
           "id": "minecraft:projectile_protection",
@@ -353,7 +366,7 @@
       ]
     },
     {
-      "type": "goblintraders:basic",
+      "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:diamond_chestplate",
         "count": 1,
@@ -371,7 +384,8 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 100,
+      "merchant_experience": 7,
+      "player_experience": 100,
       "enchantments": [
         {
           "id": "minecraft:protection",
@@ -380,7 +394,7 @@
       ]
     },
     {
-      "type": "goblintraders:basic",
+      "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:diamond_chestplate",
         "count": 1,
@@ -398,7 +412,8 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 100,
+      "merchant_experience": 7,
+      "player_experience": 100,
       "enchantments": [
         {
           "id": "minecraft:unbreaking",
@@ -407,7 +422,7 @@
       ]
     },
     {
-      "type": "goblintraders:basic",
+      "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:diamond_leggings",
         "count": 1,
@@ -425,7 +440,8 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 100,
+      "merchant_experience": 7,
+      "player_experience": 100,
       "enchantments": [
         {
           "id": "minecraft:blast_protection",
@@ -434,7 +450,7 @@
       ]
     },
     {
-      "type": "goblintraders:basic",
+      "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:diamond_leggings",
         "count": 1,
@@ -452,7 +468,8 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 100,
+      "merchant_experience": 7,
+      "player_experience": 100,
       "enchantments": [
         {
           "id": "minecraft:fire_protection",
@@ -461,7 +478,7 @@
       ]
     },
     {
-      "type": "goblintraders:basic",
+      "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:diamond_leggings",
         "count": 1,
@@ -479,7 +496,8 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 100,
+      "merchant_experience": 7,
+      "player_experience": 100,
       "enchantments": [
         {
           "id": "minecraft:projectile_protection",
@@ -488,7 +506,7 @@
       ]
     },
     {
-      "type": "goblintraders:basic",
+      "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:diamond_leggings",
         "count": 1,
@@ -506,7 +524,8 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 100,
+      "merchant_experience": 7,
+      "player_experience": 100,
       "enchantments": [
         {
           "id": "minecraft:protection",
@@ -515,7 +534,7 @@
       ]
     },
     {
-      "type": "goblintraders:basic",
+      "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:diamond_leggings",
         "count": 1,
@@ -533,7 +552,8 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 100,
+      "merchant_experience": 7,
+      "player_experience": 100,
       "enchantments": [
         {
           "id": "minecraft:unbreaking",
@@ -542,7 +562,7 @@
       ]
     },
     {
-      "type": "goblintraders:basic",
+      "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:diamond_boots",
         "count": 1,
@@ -560,7 +580,8 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 100,
+      "merchant_experience": 7,
+      "player_experience": 100,
       "enchantments": [
         {
           "id": "minecraft:blast_protection",
@@ -569,7 +590,7 @@
       ]
     },
     {
-      "type": "goblintraders:basic",
+      "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:diamond_boots",
         "count": 1,
@@ -587,7 +608,8 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 100,
+      "merchant_experience": 7,
+      "player_experience": 100,
       "enchantments": [
         {
           "id": "minecraft:fire_protection",
@@ -596,7 +618,7 @@
       ]
     },
     {
-      "type": "goblintraders:basic",
+      "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:diamond_boots",
         "count": 1,
@@ -614,7 +636,8 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 100,
+      "merchant_experience": 7,
+      "player_experience": 100,
       "enchantments": [
         {
           "id": "minecraft:projectile_protection",
@@ -623,7 +646,7 @@
       ]
     },
     {
-      "type": "goblintraders:basic",
+      "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:diamond_boots",
         "count": 1,
@@ -641,7 +664,8 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 100,
+      "merchant_experience": 7,
+      "player_experience": 100,
       "enchantments": [
         {
           "id": "minecraft:protection",
@@ -650,7 +674,7 @@
       ]
     },
     {
-      "type": "goblintraders:basic",
+      "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:diamond_boots",
         "count": 1,
@@ -668,7 +692,8 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 100,
+      "merchant_experience": 7,
+      "player_experience": 100,
       "enchantments": [
         {
           "id": "minecraft:unbreaking",
