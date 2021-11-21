@@ -465,6 +465,19 @@ public class GoblinTradeProvider extends TradeProvider
                     .build());
         }
 
+        ItemStack enchantedBookofStuff = new ItemStack(Items.ENCHANTED_BOOK);
+        EnchantmentHelper.set(ImmutableMap.of(Enchantments.POWER, isVanilla ? 4 : 5), enchantedBookofStuff);
+        this.addTrade(ModEntities.VEIN_GOBLIN_TRADER, TradeRarity.RARE, isVanilla, UpgradedBasicTrade.Builder.create()
+                .setOfferStack(new ItemStack(Items.BOW))
+                .setPaymentStack(new ItemStack(Items.BOW))
+                .setSecondaryPaymentStack(enchantedBookofStuff)
+                .setPriceMultiplier(0F)
+                .setMaxTrades(1)
+                .setMerchantExperience(7)
+                .setPlayerExperience(100)
+                .addEnchantment(new EnchantmentLevelEntry(Enchantments.POWER, isVanilla ? 5 : 6))
+                .build());
+
         Item[] diamondArmorSet = new Item[] {Items.DIAMOND_HELMET, Items.DIAMOND_CHESTPLATE, Items.DIAMOND_LEGGINGS, Items.DIAMOND_BOOTS};
         EnchantmentLevelEntry[] armorEnchantments = new EnchantmentLevelEntry[] {
                 new EnchantmentLevelEntry(Enchantments.BLAST_PROTECTION, isVanilla ? 3 : 4),

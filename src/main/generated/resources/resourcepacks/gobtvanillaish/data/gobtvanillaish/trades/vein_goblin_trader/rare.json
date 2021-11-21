@@ -144,6 +144,34 @@
     {
       "type": "goblintraders:upgraded_basic",
       "offer_item": {
+        "item": "minecraft:bow",
+        "count": 1,
+        "nbt": "{Damage:0}"
+      },
+      "payment_item": {
+        "item": "minecraft:bow",
+        "count": 1,
+        "nbt": "{Damage:0}"
+      },
+      "secondary_payment_item": {
+        "item": "minecraft:enchanted_book",
+        "count": 1,
+        "nbt": "{StoredEnchantments:[{id:\"minecraft:power\",lvl:4s}]}"
+      },
+      "price_multiplier": 0.0,
+      "max_trades": 1,
+      "merchant_experience": 7,
+      "player_experience": 100,
+      "enchantments": [
+        {
+          "id": "minecraft:power",
+          "level": 5
+        }
+      ]
+    },
+    {
+      "type": "goblintraders:upgraded_basic",
+      "offer_item": {
         "item": "minecraft:diamond_helmet",
         "count": 1,
         "nbt": "{Damage:0}"
