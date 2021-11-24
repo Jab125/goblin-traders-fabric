@@ -4,11 +4,13 @@ import com.google.common.collect.ImmutableMap;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
+import com.jab125.limeappleboat.gobt.api.TradeLoadedCallback;
 import net.fabricmc.fabric.api.resource.IdentifiableResourceReloadListener;
 import net.hat.gt.GobT;
 import net.hat.gt.entities.AbstractGoblinEntity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.resource.ResourceManager;
+import net.minecraft.util.ActionResult;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.JsonHelper;
 import net.minecraft.util.profiler.Profiler;
@@ -102,7 +104,13 @@ public class TradeManager implements IdentifiableResourceReloadListener {
                     });
                 });
                 EntityTrades.Builder builder = EntityTrades.Builder.create();
-                Arrays.stream(TradeRarity.values()).forEach(rarity -> this.deserializeTrades(manager, builder, rarity, tradeResources.get(rarity)));
+                Arrays.stream(TradeRarity.values()).forEach(rarity -> {
+                    ActionResult result = TradeLoadedCallback.EVENT.invoker().interact(null, rarity);
+                    if (result == ActionResult.FAIL) {
+                        return;
+                    }
+                    this.deserializeTrades(manager, builder, rarity, tradeResources.get(rarity));
+                });
                 entityToResourceList.put(entityType, builder.build());
                 this.tradeMap = ImmutableMap.copyOf(entityToResourceList);
             });
