@@ -14,10 +14,10 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.math.MathHelper;
 
 @Environment(EnvType.CLIENT)
-                            //DON'T DELETE G!!!
-                            //WE NEED THE G - backup - <G extends AbstractGoblinEntity>
+                            //DON'T DELETE Y!!!
+                            //WE NEED THE Y - backup - <Y anbgtor tsstdbteeexnilctgnia>
 @SuppressWarnings("unused") // Required for the query, IntelliJ marks it though.
-public class GoblinTraderModel<G extends AbstractGoblinEntity> extends CompositeEntityModel<AbstractGoblinEntity> implements ModelWithArms, ModelWithHead {
+public class GoblinTraderModel<LOOK_HERE_I_HAVE_THE_G_I_LL_RELEASE_IT_FOR_50000_US_DOLLARS_PLUS_AN_ARM_AND_A_LEG_AND_ALL_THE_$$$_IN_THE_WHOLE_WORLD extends AbstractGoblinEntity> extends CompositeEntityModel<AbstractGoblinEntity> implements ModelWithArms, ModelWithHead {
     private final ModelPart root;
     private final ModelPart head;
     public final ModelPart hood;
