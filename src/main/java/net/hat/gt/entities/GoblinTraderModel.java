@@ -185,12 +185,20 @@ public class GoblinTraderModel<G extends AbstractGoblinEntity> extends Composite
         {
             case LEFT -> {
                 this.leftArm.rotate(matrices);
-                matrices.translate(-0.235, -0.15, 0.25);
+                if (this.entity.isHoldingItem(Hand.MAIN_HAND) && this.entity.isHoldingItem(Hand.OFF_HAND)) {
+                    matrices.translate(-0.10 / 2, -0.15, 0.25);
+                } else {
+                    matrices.translate(-0.235, -0.15, 0.25);
+                }
                 matrices.scale(0.75F, 0.75F, 0.75F);
             }
             case RIGHT -> {
                 this.rightArm.rotate(matrices);
-                matrices.translate(0.235, -0.15, 0.25);
+                if (this.entity.isHoldingItem(Hand.MAIN_HAND) && this.entity.isHoldingItem(Hand.OFF_HAND)) {
+                    matrices.translate(0.10 / 2, -0.15, 0.25);
+                } else {
+                    matrices.translate(0.235, -0.15, 0.25);
+                }
                 matrices.scale(0.75F, 0.75F, 0.75F);
             }
         }
