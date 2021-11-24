@@ -21,11 +21,6 @@ public class GobinTraderRenderer extends MobEntityRenderer<AbstractGoblinEntity,
         this.addFeature(new HeldItemFeatureRenderer<>(this));
     }
 
-    /** if someone wants to add a texture to the test goblin trader make a resource pack (and optionally sumbit a pull request)
-     * 
-     * @param entity is the entity
-     * @return the texture
-     */
     @Override
     public Identifier getTexture(AbstractGoblinEntity entity) {
         return entity instanceof VeinGoblinTraderEntity ? TEXTUREVEIN : TEXTURE;
