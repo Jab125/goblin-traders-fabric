@@ -2,732 +2,368 @@
   "replace": false,
   "trades": [
     {
-      "type": "goblintraders:upgraded_basic",
-      "offer_item": {
+      "type": "goblintraders:enchanted_item",
+      "item": {
         "item": "minecraft:diamond_sword",
         "count": 1,
         "nbt": "{Damage:0}"
-      },
-      "payment_item": {
-        "item": "minecraft:diamond_sword",
-        "count": 1,
-        "nbt": "{Damage:0}"
-      },
-      "secondary_payment_item": {
-        "item": "minecraft:enchanted_book",
-        "count": 1,
-        "nbt": "{StoredEnchantments:[{id:\"minecraft:sharpness\",lvl:5s}]}"
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "merchant_experience": 7,
-      "player_experience": 100,
-      "enchantments": [
-        {
-          "id": "minecraft:sharpness",
-          "level": 6
-        }
-      ]
+      "experience": 7,
+      "enchantment": "minecraft:sharpness",
+      "offer_level": 6,
+      "payment_level": 5
     },
     {
-      "type": "goblintraders:upgraded_basic",
-      "offer_item": {
+      "type": "goblintraders:enchanted_item",
+      "item": {
         "item": "minecraft:diamond_sword",
         "count": 1,
         "nbt": "{Damage:0}"
-      },
-      "payment_item": {
-        "item": "minecraft:diamond_sword",
-        "count": 1,
-        "nbt": "{Damage:0}"
-      },
-      "secondary_payment_item": {
-        "item": "minecraft:enchanted_book",
-        "count": 1,
-        "nbt": "{StoredEnchantments:[{id:\"minecraft:looting\",lvl:3s}]}"
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "merchant_experience": 7,
-      "player_experience": 100,
-      "enchantments": [
-        {
-          "id": "minecraft:looting",
-          "level": 4
-        }
-      ]
+      "experience": 7,
+      "enchantment": "minecraft:looting",
+      "offer_level": 4,
+      "payment_level": 3
     },
     {
-      "type": "goblintraders:upgraded_basic",
-      "offer_item": {
+      "type": "goblintraders:enchanted_item",
+      "item": {
         "item": "minecraft:diamond_sword",
         "count": 1,
         "nbt": "{Damage:0}"
-      },
-      "payment_item": {
-        "item": "minecraft:diamond_sword",
-        "count": 1,
-        "nbt": "{Damage:0}"
-      },
-      "secondary_payment_item": {
-        "item": "minecraft:enchanted_book",
-        "count": 1,
-        "nbt": "{StoredEnchantments:[{id:\"minecraft:sweeping\",lvl:3s}]}"
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "merchant_experience": 7,
-      "player_experience": 100,
-      "enchantments": [
-        {
-          "id": "minecraft:sweeping",
-          "level": 4
-        }
-      ]
+      "experience": 7,
+      "enchantment": "minecraft:sweeping",
+      "offer_level": 4,
+      "payment_level": 3
     },
     {
-      "type": "goblintraders:upgraded_basic",
-      "offer_item": {
+      "type": "goblintraders:enchanted_item",
+      "item": {
         "item": "minecraft:diamond_sword",
         "count": 1,
         "nbt": "{Damage:0}"
-      },
-      "payment_item": {
-        "item": "minecraft:diamond_sword",
-        "count": 1,
-        "nbt": "{Damage:0}"
-      },
-      "secondary_payment_item": {
-        "item": "minecraft:enchanted_book",
-        "count": 1,
-        "nbt": "{StoredEnchantments:[{id:\"minecraft:fire_aspect\",lvl:2s}]}"
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "merchant_experience": 7,
-      "player_experience": 100,
-      "enchantments": [
-        {
-          "id": "minecraft:fire_aspect",
-          "level": 3
-        }
-      ]
+      "experience": 7,
+      "enchantment": "minecraft:fire_aspect",
+      "offer_level": 3,
+      "payment_level": 2
     },
     {
-      "type": "goblintraders:upgraded_basic",
-      "offer_item": {
+      "type": "goblintraders:enchanted_item",
+      "item": {
         "item": "minecraft:diamond_sword",
         "count": 1,
         "nbt": "{Damage:0}"
-      },
-      "payment_item": {
-        "item": "minecraft:diamond_sword",
-        "count": 1,
-        "nbt": "{Damage:0}"
-      },
-      "secondary_payment_item": {
-        "item": "minecraft:enchanted_book",
-        "count": 1,
-        "nbt": "{StoredEnchantments:[{id:\"minecraft:bane_of_arthropods\",lvl:5s}]}"
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "merchant_experience": 7,
-      "player_experience": 100,
-      "enchantments": [
-        {
-          "id": "minecraft:bane_of_arthropods",
-          "level": 6
-        }
-      ]
+      "experience": 7,
+      "enchantment": "minecraft:bane_of_arthropods",
+      "offer_level": 6,
+      "payment_level": 5
     },
     {
-      "type": "goblintraders:upgraded_basic",
-      "offer_item": {
+      "type": "goblintraders:enchanted_item",
+      "item": {
         "item": "minecraft:bow",
         "count": 1,
         "nbt": "{Damage:0}"
       },
-      "payment_item": {
-        "item": "minecraft:bow",
-        "count": 1,
-        "nbt": "{Damage:0}"
-      },
-      "secondary_payment_item": {
-        "item": "minecraft:enchanted_book",
-        "count": 1,
-        "nbt": "{StoredEnchantments:[{id:\"minecraft:power\",lvl:5s}]}"
-      },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "merchant_experience": 7,
-      "player_experience": 100,
-      "enchantments": [
-        {
-          "id": "minecraft:power",
-          "level": 6
-        }
-      ]
+      "experience": 7,
+      "enchantment": "minecraft:power",
+      "offer_level": 6,
+      "payment_level": 5
     },
     {
-      "type": "goblintraders:upgraded_basic",
-      "offer_item": {
+      "type": "goblintraders:enchanted_item",
+      "item": {
         "item": "minecraft:diamond_helmet",
         "count": 1,
         "nbt": "{Damage:0}"
       },
-      "payment_item": {
+      "price_multiplier": 0.0,
+      "max_trades": 1,
+      "experience": 7,
+      "enchantment": "minecraft:blast_protection",
+      "offer_level": 5,
+      "payment_level": 4
+    },
+    {
+      "type": "goblintraders:enchanted_item",
+      "item": {
         "item": "minecraft:diamond_helmet",
         "count": 1,
         "nbt": "{Damage:0}"
       },
-      "secondary_payment_item": {
-        "item": "minecraft:enchanted_book",
-        "count": 1,
-        "nbt": "{StoredEnchantments:[{id:\"minecraft:blast_protection\",lvl:4s}]}"
-      },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "merchant_experience": 7,
-      "player_experience": 100,
-      "enchantments": [
-        {
-          "id": "minecraft:blast_protection",
-          "level": 5
-        }
-      ]
+      "experience": 7,
+      "enchantment": "minecraft:fire_protection",
+      "offer_level": 5,
+      "payment_level": 4
     },
     {
-      "type": "goblintraders:upgraded_basic",
-      "offer_item": {
+      "type": "goblintraders:enchanted_item",
+      "item": {
         "item": "minecraft:diamond_helmet",
         "count": 1,
         "nbt": "{Damage:0}"
       },
-      "payment_item": {
+      "price_multiplier": 0.0,
+      "max_trades": 1,
+      "experience": 7,
+      "enchantment": "minecraft:projectile_protection",
+      "offer_level": 5,
+      "payment_level": 4
+    },
+    {
+      "type": "goblintraders:enchanted_item",
+      "item": {
         "item": "minecraft:diamond_helmet",
         "count": 1,
         "nbt": "{Damage:0}"
       },
-      "secondary_payment_item": {
-        "item": "minecraft:enchanted_book",
-        "count": 1,
-        "nbt": "{StoredEnchantments:[{id:\"minecraft:fire_protection\",lvl:4s}]}"
-      },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "merchant_experience": 7,
-      "player_experience": 100,
-      "enchantments": [
-        {
-          "id": "minecraft:fire_protection",
-          "level": 5
-        }
-      ]
+      "experience": 7,
+      "enchantment": "minecraft:protection",
+      "offer_level": 5,
+      "payment_level": 4
     },
     {
-      "type": "goblintraders:upgraded_basic",
-      "offer_item": {
+      "type": "goblintraders:enchanted_item",
+      "item": {
         "item": "minecraft:diamond_helmet",
         "count": 1,
         "nbt": "{Damage:0}"
       },
-      "payment_item": {
-        "item": "minecraft:diamond_helmet",
-        "count": 1,
-        "nbt": "{Damage:0}"
-      },
-      "secondary_payment_item": {
-        "item": "minecraft:enchanted_book",
-        "count": 1,
-        "nbt": "{StoredEnchantments:[{id:\"minecraft:projectile_protection\",lvl:4s}]}"
-      },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "merchant_experience": 7,
-      "player_experience": 100,
-      "enchantments": [
-        {
-          "id": "minecraft:projectile_protection",
-          "level": 5
-        }
-      ]
+      "experience": 7,
+      "enchantment": "minecraft:unbreaking",
+      "offer_level": 4,
+      "payment_level": 3
     },
     {
-      "type": "goblintraders:upgraded_basic",
-      "offer_item": {
-        "item": "minecraft:diamond_helmet",
-        "count": 1,
-        "nbt": "{Damage:0}"
-      },
-      "payment_item": {
-        "item": "minecraft:diamond_helmet",
-        "count": 1,
-        "nbt": "{Damage:0}"
-      },
-      "secondary_payment_item": {
-        "item": "minecraft:enchanted_book",
-        "count": 1,
-        "nbt": "{StoredEnchantments:[{id:\"minecraft:protection\",lvl:4s}]}"
-      },
-      "price_multiplier": 0.0,
-      "max_trades": 1,
-      "merchant_experience": 7,
-      "player_experience": 100,
-      "enchantments": [
-        {
-          "id": "minecraft:protection",
-          "level": 5
-        }
-      ]
-    },
-    {
-      "type": "goblintraders:upgraded_basic",
-      "offer_item": {
-        "item": "minecraft:diamond_helmet",
-        "count": 1,
-        "nbt": "{Damage:0}"
-      },
-      "payment_item": {
-        "item": "minecraft:diamond_helmet",
-        "count": 1,
-        "nbt": "{Damage:0}"
-      },
-      "secondary_payment_item": {
-        "item": "minecraft:enchanted_book",
-        "count": 1,
-        "nbt": "{StoredEnchantments:[{id:\"minecraft:unbreaking\",lvl:3s}]}"
-      },
-      "price_multiplier": 0.0,
-      "max_trades": 1,
-      "merchant_experience": 7,
-      "player_experience": 100,
-      "enchantments": [
-        {
-          "id": "minecraft:unbreaking",
-          "level": 4
-        }
-      ]
-    },
-    {
-      "type": "goblintraders:upgraded_basic",
-      "offer_item": {
+      "type": "goblintraders:enchanted_item",
+      "item": {
         "item": "minecraft:diamond_chestplate",
         "count": 1,
         "nbt": "{Damage:0}"
       },
-      "payment_item": {
+      "price_multiplier": 0.0,
+      "max_trades": 1,
+      "experience": 7,
+      "enchantment": "minecraft:blast_protection",
+      "offer_level": 5,
+      "payment_level": 4
+    },
+    {
+      "type": "goblintraders:enchanted_item",
+      "item": {
         "item": "minecraft:diamond_chestplate",
         "count": 1,
         "nbt": "{Damage:0}"
       },
-      "secondary_payment_item": {
-        "item": "minecraft:enchanted_book",
-        "count": 1,
-        "nbt": "{StoredEnchantments:[{id:\"minecraft:blast_protection\",lvl:4s}]}"
-      },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "merchant_experience": 7,
-      "player_experience": 100,
-      "enchantments": [
-        {
-          "id": "minecraft:blast_protection",
-          "level": 5
-        }
-      ]
+      "experience": 7,
+      "enchantment": "minecraft:fire_protection",
+      "offer_level": 5,
+      "payment_level": 4
     },
     {
-      "type": "goblintraders:upgraded_basic",
-      "offer_item": {
+      "type": "goblintraders:enchanted_item",
+      "item": {
         "item": "minecraft:diamond_chestplate",
         "count": 1,
         "nbt": "{Damage:0}"
       },
-      "payment_item": {
+      "price_multiplier": 0.0,
+      "max_trades": 1,
+      "experience": 7,
+      "enchantment": "minecraft:projectile_protection",
+      "offer_level": 5,
+      "payment_level": 4
+    },
+    {
+      "type": "goblintraders:enchanted_item",
+      "item": {
         "item": "minecraft:diamond_chestplate",
         "count": 1,
         "nbt": "{Damage:0}"
       },
-      "secondary_payment_item": {
-        "item": "minecraft:enchanted_book",
-        "count": 1,
-        "nbt": "{StoredEnchantments:[{id:\"minecraft:fire_protection\",lvl:4s}]}"
-      },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "merchant_experience": 7,
-      "player_experience": 100,
-      "enchantments": [
-        {
-          "id": "minecraft:fire_protection",
-          "level": 5
-        }
-      ]
+      "experience": 7,
+      "enchantment": "minecraft:protection",
+      "offer_level": 5,
+      "payment_level": 4
     },
     {
-      "type": "goblintraders:upgraded_basic",
-      "offer_item": {
+      "type": "goblintraders:enchanted_item",
+      "item": {
         "item": "minecraft:diamond_chestplate",
         "count": 1,
         "nbt": "{Damage:0}"
       },
-      "payment_item": {
-        "item": "minecraft:diamond_chestplate",
-        "count": 1,
-        "nbt": "{Damage:0}"
-      },
-      "secondary_payment_item": {
-        "item": "minecraft:enchanted_book",
-        "count": 1,
-        "nbt": "{StoredEnchantments:[{id:\"minecraft:projectile_protection\",lvl:4s}]}"
-      },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "merchant_experience": 7,
-      "player_experience": 100,
-      "enchantments": [
-        {
-          "id": "minecraft:projectile_protection",
-          "level": 5
-        }
-      ]
+      "experience": 7,
+      "enchantment": "minecraft:unbreaking",
+      "offer_level": 4,
+      "payment_level": 3
     },
     {
-      "type": "goblintraders:upgraded_basic",
-      "offer_item": {
-        "item": "minecraft:diamond_chestplate",
-        "count": 1,
-        "nbt": "{Damage:0}"
-      },
-      "payment_item": {
-        "item": "minecraft:diamond_chestplate",
-        "count": 1,
-        "nbt": "{Damage:0}"
-      },
-      "secondary_payment_item": {
-        "item": "minecraft:enchanted_book",
-        "count": 1,
-        "nbt": "{StoredEnchantments:[{id:\"minecraft:protection\",lvl:4s}]}"
-      },
-      "price_multiplier": 0.0,
-      "max_trades": 1,
-      "merchant_experience": 7,
-      "player_experience": 100,
-      "enchantments": [
-        {
-          "id": "minecraft:protection",
-          "level": 5
-        }
-      ]
-    },
-    {
-      "type": "goblintraders:upgraded_basic",
-      "offer_item": {
-        "item": "minecraft:diamond_chestplate",
-        "count": 1,
-        "nbt": "{Damage:0}"
-      },
-      "payment_item": {
-        "item": "minecraft:diamond_chestplate",
-        "count": 1,
-        "nbt": "{Damage:0}"
-      },
-      "secondary_payment_item": {
-        "item": "minecraft:enchanted_book",
-        "count": 1,
-        "nbt": "{StoredEnchantments:[{id:\"minecraft:unbreaking\",lvl:3s}]}"
-      },
-      "price_multiplier": 0.0,
-      "max_trades": 1,
-      "merchant_experience": 7,
-      "player_experience": 100,
-      "enchantments": [
-        {
-          "id": "minecraft:unbreaking",
-          "level": 4
-        }
-      ]
-    },
-    {
-      "type": "goblintraders:upgraded_basic",
-      "offer_item": {
+      "type": "goblintraders:enchanted_item",
+      "item": {
         "item": "minecraft:diamond_leggings",
         "count": 1,
         "nbt": "{Damage:0}"
       },
-      "payment_item": {
+      "price_multiplier": 0.0,
+      "max_trades": 1,
+      "experience": 7,
+      "enchantment": "minecraft:blast_protection",
+      "offer_level": 5,
+      "payment_level": 4
+    },
+    {
+      "type": "goblintraders:enchanted_item",
+      "item": {
         "item": "minecraft:diamond_leggings",
         "count": 1,
         "nbt": "{Damage:0}"
       },
-      "secondary_payment_item": {
-        "item": "minecraft:enchanted_book",
-        "count": 1,
-        "nbt": "{StoredEnchantments:[{id:\"minecraft:blast_protection\",lvl:4s}]}"
-      },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "merchant_experience": 7,
-      "player_experience": 100,
-      "enchantments": [
-        {
-          "id": "minecraft:blast_protection",
-          "level": 5
-        }
-      ]
+      "experience": 7,
+      "enchantment": "minecraft:fire_protection",
+      "offer_level": 5,
+      "payment_level": 4
     },
     {
-      "type": "goblintraders:upgraded_basic",
-      "offer_item": {
+      "type": "goblintraders:enchanted_item",
+      "item": {
         "item": "minecraft:diamond_leggings",
         "count": 1,
         "nbt": "{Damage:0}"
       },
-      "payment_item": {
+      "price_multiplier": 0.0,
+      "max_trades": 1,
+      "experience": 7,
+      "enchantment": "minecraft:projectile_protection",
+      "offer_level": 5,
+      "payment_level": 4
+    },
+    {
+      "type": "goblintraders:enchanted_item",
+      "item": {
         "item": "minecraft:diamond_leggings",
         "count": 1,
         "nbt": "{Damage:0}"
       },
-      "secondary_payment_item": {
-        "item": "minecraft:enchanted_book",
-        "count": 1,
-        "nbt": "{StoredEnchantments:[{id:\"minecraft:fire_protection\",lvl:4s}]}"
-      },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "merchant_experience": 7,
-      "player_experience": 100,
-      "enchantments": [
-        {
-          "id": "minecraft:fire_protection",
-          "level": 5
-        }
-      ]
+      "experience": 7,
+      "enchantment": "minecraft:protection",
+      "offer_level": 5,
+      "payment_level": 4
     },
     {
-      "type": "goblintraders:upgraded_basic",
-      "offer_item": {
+      "type": "goblintraders:enchanted_item",
+      "item": {
         "item": "minecraft:diamond_leggings",
         "count": 1,
         "nbt": "{Damage:0}"
       },
-      "payment_item": {
-        "item": "minecraft:diamond_leggings",
-        "count": 1,
-        "nbt": "{Damage:0}"
-      },
-      "secondary_payment_item": {
-        "item": "minecraft:enchanted_book",
-        "count": 1,
-        "nbt": "{StoredEnchantments:[{id:\"minecraft:projectile_protection\",lvl:4s}]}"
-      },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "merchant_experience": 7,
-      "player_experience": 100,
-      "enchantments": [
-        {
-          "id": "minecraft:projectile_protection",
-          "level": 5
-        }
-      ]
+      "experience": 7,
+      "enchantment": "minecraft:unbreaking",
+      "offer_level": 4,
+      "payment_level": 3
     },
     {
-      "type": "goblintraders:upgraded_basic",
-      "offer_item": {
-        "item": "minecraft:diamond_leggings",
+      "type": "goblintraders:enchanted_item",
+      "item": {
+        "item": "minecraft:diamond_boots",
         "count": 1,
         "nbt": "{Damage:0}"
-      },
-      "payment_item": {
-        "item": "minecraft:diamond_leggings",
-        "count": 1,
-        "nbt": "{Damage:0}"
-      },
-      "secondary_payment_item": {
-        "item": "minecraft:enchanted_book",
-        "count": 1,
-        "nbt": "{StoredEnchantments:[{id:\"minecraft:protection\",lvl:4s}]}"
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "merchant_experience": 7,
-      "player_experience": 100,
-      "enchantments": [
-        {
-          "id": "minecraft:protection",
-          "level": 5
-        }
-      ]
+      "experience": 7,
+      "enchantment": "minecraft:blast_protection",
+      "offer_level": 5,
+      "payment_level": 4
     },
     {
-      "type": "goblintraders:upgraded_basic",
-      "offer_item": {
-        "item": "minecraft:diamond_leggings",
+      "type": "goblintraders:enchanted_item",
+      "item": {
+        "item": "minecraft:diamond_boots",
         "count": 1,
         "nbt": "{Damage:0}"
-      },
-      "payment_item": {
-        "item": "minecraft:diamond_leggings",
-        "count": 1,
-        "nbt": "{Damage:0}"
-      },
-      "secondary_payment_item": {
-        "item": "minecraft:enchanted_book",
-        "count": 1,
-        "nbt": "{StoredEnchantments:[{id:\"minecraft:unbreaking\",lvl:3s}]}"
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "merchant_experience": 7,
-      "player_experience": 100,
-      "enchantments": [
-        {
-          "id": "minecraft:unbreaking",
-          "level": 4
-        }
-      ]
+      "experience": 7,
+      "enchantment": "minecraft:fire_protection",
+      "offer_level": 5,
+      "payment_level": 4
     },
     {
-      "type": "goblintraders:upgraded_basic",
-      "offer_item": {
+      "type": "goblintraders:enchanted_item",
+      "item": {
         "item": "minecraft:diamond_boots",
         "count": 1,
         "nbt": "{Damage:0}"
-      },
-      "payment_item": {
-        "item": "minecraft:diamond_boots",
-        "count": 1,
-        "nbt": "{Damage:0}"
-      },
-      "secondary_payment_item": {
-        "item": "minecraft:enchanted_book",
-        "count": 1,
-        "nbt": "{StoredEnchantments:[{id:\"minecraft:blast_protection\",lvl:4s}]}"
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "merchant_experience": 7,
-      "player_experience": 100,
-      "enchantments": [
-        {
-          "id": "minecraft:blast_protection",
-          "level": 5
-        }
-      ]
+      "experience": 7,
+      "enchantment": "minecraft:projectile_protection",
+      "offer_level": 5,
+      "payment_level": 4
     },
     {
-      "type": "goblintraders:upgraded_basic",
-      "offer_item": {
+      "type": "goblintraders:enchanted_item",
+      "item": {
         "item": "minecraft:diamond_boots",
         "count": 1,
         "nbt": "{Damage:0}"
-      },
-      "payment_item": {
-        "item": "minecraft:diamond_boots",
-        "count": 1,
-        "nbt": "{Damage:0}"
-      },
-      "secondary_payment_item": {
-        "item": "minecraft:enchanted_book",
-        "count": 1,
-        "nbt": "{StoredEnchantments:[{id:\"minecraft:fire_protection\",lvl:4s}]}"
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "merchant_experience": 7,
-      "player_experience": 100,
-      "enchantments": [
-        {
-          "id": "minecraft:fire_protection",
-          "level": 5
-        }
-      ]
+      "experience": 7,
+      "enchantment": "minecraft:protection",
+      "offer_level": 5,
+      "payment_level": 4
     },
     {
-      "type": "goblintraders:upgraded_basic",
-      "offer_item": {
+      "type": "goblintraders:enchanted_item",
+      "item": {
         "item": "minecraft:diamond_boots",
         "count": 1,
         "nbt": "{Damage:0}"
-      },
-      "payment_item": {
-        "item": "minecraft:diamond_boots",
-        "count": 1,
-        "nbt": "{Damage:0}"
-      },
-      "secondary_payment_item": {
-        "item": "minecraft:enchanted_book",
-        "count": 1,
-        "nbt": "{StoredEnchantments:[{id:\"minecraft:projectile_protection\",lvl:4s}]}"
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "merchant_experience": 7,
-      "player_experience": 100,
-      "enchantments": [
-        {
-          "id": "minecraft:projectile_protection",
-          "level": 5
-        }
-      ]
-    },
-    {
-      "type": "goblintraders:upgraded_basic",
-      "offer_item": {
-        "item": "minecraft:diamond_boots",
-        "count": 1,
-        "nbt": "{Damage:0}"
-      },
-      "payment_item": {
-        "item": "minecraft:diamond_boots",
-        "count": 1,
-        "nbt": "{Damage:0}"
-      },
-      "secondary_payment_item": {
-        "item": "minecraft:enchanted_book",
-        "count": 1,
-        "nbt": "{StoredEnchantments:[{id:\"minecraft:protection\",lvl:4s}]}"
-      },
-      "price_multiplier": 0.0,
-      "max_trades": 1,
-      "merchant_experience": 7,
-      "player_experience": 100,
-      "enchantments": [
-        {
-          "id": "minecraft:protection",
-          "level": 5
-        }
-      ]
-    },
-    {
-      "type": "goblintraders:upgraded_basic",
-      "offer_item": {
-        "item": "minecraft:diamond_boots",
-        "count": 1,
-        "nbt": "{Damage:0}"
-      },
-      "payment_item": {
-        "item": "minecraft:diamond_boots",
-        "count": 1,
-        "nbt": "{Damage:0}"
-      },
-      "secondary_payment_item": {
-        "item": "minecraft:enchanted_book",
-        "count": 1,
-        "nbt": "{StoredEnchantments:[{id:\"minecraft:unbreaking\",lvl:3s}]}"
-      },
-      "price_multiplier": 0.0,
-      "max_trades": 1,
-      "merchant_experience": 7,
-      "player_experience": 100,
-      "enchantments": [
-        {
-          "id": "minecraft:unbreaking",
-          "level": 4
-        }
-      ]
+      "experience": 7,
+      "enchantment": "minecraft:unbreaking",
+      "offer_level": 4,
+      "payment_level": 3
     },
     {
       "type": "goblintraders:upgraded_potion",
