@@ -139,9 +139,6 @@ public class EnchantedItemTrade implements ITradeType<GoblinTrade> {
         }
 
         public Builder setStack(ItemStack offerStack) {
-            if (!(offerStack.getItem() instanceof PotionItem)) {
-                throw new RuntimeException("ItemStack need to be of minecraft:potion!");
-            }
             this.offerStack = offerStack;
             return this;
         }
