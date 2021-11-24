@@ -4,7 +4,7 @@ import com.google.common.collect.ImmutableMap;
 import com.jab125.util.datagen.TradeProvider;
 import com.jab125.util.tradehelper.TradeRarity;
 import com.jab125.util.tradehelper.type.BasicTrade;
-import com.jab125.util.tradehelper.type.PotionTrade;
+import com.jab125.util.tradehelper.type.UpgradedPotionTrade;
 import com.jab125.util.tradehelper.type.UpgradedBasicTrade;
 import net.hat.gt.init.ModEntities;
 import net.hat.gt.init.ModPotions;
@@ -520,7 +520,7 @@ public class GoblinTradeProvider extends TradeProvider
         {
             ItemStack awkwardPotion = new ItemStack(Items.POTION);
             PotionUtil.setPotion(awkwardPotion, Potions.AWKWARD);
-            this.addTrade(ModEntities.VEIN_GOBLIN_TRADER, TradeRarity.RARE, isVanilla, PotionTrade.Builder.create()
+            this.addTrade(ModEntities.VEIN_GOBLIN_TRADER, TradeRarity.RARE, isVanilla, UpgradedPotionTrade.Builder.create()
                     .setOfferStack(new ItemStack(Items.POTION))
                     .setPaymentStack(new ItemStack(Items.EMERALD, isVanilla ? 10 : 15))
                     .setSecondaryPaymentStack(awkwardPotion)
@@ -550,7 +550,7 @@ public class GoblinTradeProvider extends TradeProvider
         {
             ItemStack awkwardPotion = new ItemStack(Items.POTION);
             PotionUtil.setPotion(awkwardPotion, Potions.AWKWARD);
-            this.addTrade(ModEntities.VEIN_GOBLIN_TRADER, TradeRarity.EPIC, isVanilla, PotionTrade.Builder.create()
+            this.addTrade(ModEntities.VEIN_GOBLIN_TRADER, TradeRarity.EPIC, isVanilla, UpgradedPotionTrade.Builder.create()
                     .setOfferStack(new ItemStack(Items.POTION))
                     .setPotion(potion)
                     .setPaymentStack(new ItemStack(Items.EMERALD, isVanilla ? 15 : 25))

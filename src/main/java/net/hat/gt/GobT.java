@@ -50,11 +50,14 @@ public class GobT implements ModInitializer {
         ServerWorldEvents.LOAD.register(new SpawnHandler.WorldLoad());
         ServerLifecycleEvents.SERVER_STOPPED.register(new SpawnHandler.ServerStopped());
         ServerTickEvents.END_WORLD_TICK.register(new SpawnHandler.OnWorldTick());
+
         manager.registerTypeSerializer(BasicTrade.SERIALIZER);
         manager.registerTypeSerializer(BundleTrade.SERIALIZER);
         manager.registerTypeSerializer(PotionTrade.SERIALIZER);
         manager.registerTypeSerializer(ContainerTrade.SERIALIZER);
         manager.registerTypeSerializer(UpgradedBasicTrade.SERIALIZER);
+        manager.registerTypeSerializer(UpgradedBundleTrade.SERIALIZER);
+        manager.registerTypeSerializer(UpgradedPotionTrade.SERIALIZER);
 
         if (isModInstalled("endgoblintraders")) {
             GobT.addToRandomBackground("textures/config/rack_stone.png");

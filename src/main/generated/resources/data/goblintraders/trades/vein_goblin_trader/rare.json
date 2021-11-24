@@ -730,7 +730,7 @@
       ]
     },
     {
-      "type": "goblintraders:potion",
+      "type": "goblintraders:upgraded_potion",
       "offer_item": {
         "item": "minecraft:potion",
         "count": 1
@@ -746,11 +746,12 @@
       },
       "price_multiplier": 0.5,
       "max_trades": 8,
-      "experience": 9,
+      "merchant_experience": 9,
+      "player_experience": 200,
       "potion": "goblintraders:extended_night_vision"
     },
     {
-      "type": "goblintraders:potion",
+      "type": "goblintraders:upgraded_potion",
       "offer_item": {
         "item": "minecraft:potion",
         "count": 1
@@ -766,11 +767,12 @@
       },
       "price_multiplier": 0.5,
       "max_trades": 8,
-      "experience": 9,
+      "merchant_experience": 9,
+      "player_experience": 200,
       "potion": "goblintraders:extended_invisibility"
     },
     {
-      "type": "goblintraders:potion",
+      "type": "goblintraders:upgraded_potion",
       "offer_item": {
         "item": "minecraft:potion",
         "count": 1
@@ -786,11 +788,12 @@
       },
       "price_multiplier": 0.5,
       "max_trades": 8,
-      "experience": 9,
+      "merchant_experience": 9,
+      "player_experience": 200,
       "potion": "goblintraders:powerful_jump_boost"
     },
     {
-      "type": "goblintraders:potion",
+      "type": "goblintraders:upgraded_potion",
       "offer_item": {
         "item": "minecraft:potion",
         "count": 1
@@ -806,11 +809,12 @@
       },
       "price_multiplier": 0.5,
       "max_trades": 8,
-      "experience": 9,
+      "merchant_experience": 9,
+      "player_experience": 200,
       "potion": "goblintraders:extended_fire_resistance"
     },
     {
-      "type": "goblintraders:potion",
+      "type": "goblintraders:upgraded_potion",
       "offer_item": {
         "item": "minecraft:potion",
         "count": 1
@@ -826,11 +830,12 @@
       },
       "price_multiplier": 0.5,
       "max_trades": 8,
-      "experience": 9,
+      "merchant_experience": 9,
+      "player_experience": 200,
       "potion": "goblintraders:powerful_speed"
     },
     {
-      "type": "goblintraders:potion",
+      "type": "goblintraders:upgraded_potion",
       "offer_item": {
         "item": "minecraft:potion",
         "count": 1
@@ -846,11 +851,12 @@
       },
       "price_multiplier": 0.5,
       "max_trades": 8,
-      "experience": 9,
+      "merchant_experience": 9,
+      "player_experience": 200,
       "potion": "goblintraders:extended_water_breathing"
     },
     {
-      "type": "goblintraders:potion",
+      "type": "goblintraders:upgraded_potion",
       "offer_item": {
         "item": "minecraft:potion",
         "count": 1
@@ -866,11 +872,12 @@
       },
       "price_multiplier": 0.5,
       "max_trades": 8,
-      "experience": 9,
+      "merchant_experience": 9,
+      "player_experience": 200,
       "potion": "goblintraders:powerful_instant_health"
     },
     {
-      "type": "goblintraders:potion",
+      "type": "goblintraders:upgraded_potion",
       "offer_item": {
         "item": "minecraft:potion",
         "count": 1
@@ -886,11 +893,12 @@
       },
       "price_multiplier": 0.5,
       "max_trades": 8,
-      "experience": 9,
+      "merchant_experience": 9,
+      "player_experience": 200,
       "potion": "goblintraders:powerful_regeneration"
     },
     {
-      "type": "goblintraders:potion",
+      "type": "goblintraders:upgraded_potion",
       "offer_item": {
         "item": "minecraft:potion",
         "count": 1
@@ -906,7 +914,8 @@
       },
       "price_multiplier": 0.5,
       "max_trades": 8,
-      "experience": 9,
+      "merchant_experience": 9,
+      "player_experience": 200,
       "potion": "goblintraders:extended_slow_falling"
     }
   ]

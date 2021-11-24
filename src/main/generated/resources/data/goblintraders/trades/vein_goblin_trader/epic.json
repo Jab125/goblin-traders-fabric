@@ -2,7 +2,7 @@
   "replace": false,
   "trades": [
     {
-      "type": "goblintraders:potion",
+      "type": "goblintraders:upgraded_potion",
       "offer_item": {
         "item": "minecraft:potion",
         "count": 1
@@ -18,11 +18,12 @@
       },
       "price_multiplier": 0.5,
       "max_trades": 8,
-      "experience": 9,
+      "merchant_experience": 9,
+      "player_experience": 200,
       "potion": "goblintraders:dig_speed"
     },
     {
-      "type": "goblintraders:potion",
+      "type": "goblintraders:upgraded_potion",
       "offer_item": {
         "item": "minecraft:potion",
         "count": 1
@@ -38,11 +39,12 @@
       },
       "price_multiplier": 0.5,
       "max_trades": 8,
-      "experience": 9,
+      "merchant_experience": 9,
+      "player_experience": 200,
       "potion": "goblintraders:absorption"
     },
     {
-      "type": "goblintraders:potion",
+      "type": "goblintraders:upgraded_potion",
       "offer_item": {
         "item": "minecraft:potion",
         "count": 1
@@ -58,11 +60,12 @@
       },
       "price_multiplier": 0.5,
       "max_trades": 8,
-      "experience": 9,
+      "merchant_experience": 9,
+      "player_experience": 200,
       "potion": "goblintraders:luck"
     },
     {
-      "type": "goblintraders:potion",
+      "type": "goblintraders:upgraded_potion",
       "offer_item": {
         "item": "minecraft:potion",
         "count": 1
@@ -78,11 +81,12 @@
       },
       "price_multiplier": 0.5,
       "max_trades": 8,
-      "experience": 9,
+      "merchant_experience": 9,
+      "player_experience": 200,
       "potion": "goblintraders:dolphins_grace"
     },
     {
-      "type": "goblintraders:potion",
+      "type": "goblintraders:upgraded_potion",
       "offer_item": {
         "item": "minecraft:potion",
         "count": 1
@@ -98,11 +102,12 @@
       },
       "price_multiplier": 0.5,
       "max_trades": 8,
-      "experience": 9,
+      "merchant_experience": 9,
+      "player_experience": 200,
       "potion": "goblintraders:levitation"
     },
     {
-      "type": "goblintraders:potion",
+      "type": "goblintraders:upgraded_potion",
       "offer_item": {
         "item": "minecraft:potion",
         "count": 1
@@ -118,11 +123,12 @@
       },
       "price_multiplier": 0.5,
       "max_trades": 8,
-      "experience": 9,
+      "merchant_experience": 9,
+      "player_experience": 200,
       "potion": "goblintraders:powerful_strength"
     },
     {
-      "type": "goblintraders:potion",
+      "type": "goblintraders:upgraded_potion",
       "offer_item": {
         "item": "minecraft:potion",
         "count": 1
@@ -138,7 +144,8 @@
       },
       "price_multiplier": 0.5,
       "max_trades": 8,
-      "experience": 9,
+      "merchant_experience": 9,
+      "player_experience": 200,
       "potion": "goblintraders:blindness"
     }
   ]
