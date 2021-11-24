@@ -5,6 +5,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
 import com.jab125.limeappleboat.gobt.api.TradeLoadedCallback;
+import io.netty.util.internal.UnstableApi;
 import net.fabricmc.fabric.api.resource.IdentifiableResourceReloadListener;
 import net.hat.gt.GobT;
 import net.hat.gt.entities.AbstractGoblinEntity;
@@ -25,6 +26,7 @@ import java.util.concurrent.Executor;
 /**
  * Remapped by Jab125
  */
+@UnstableApi
 public class TradeManager implements IdentifiableResourceReloadListener {
     private static final int FILE_TYPE_LENGTH_VALUE = ".json".length();
     private static final Gson GSON = new GsonBuilder().create();

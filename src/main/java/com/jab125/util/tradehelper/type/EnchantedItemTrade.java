@@ -1,9 +1,11 @@
 package com.jab125.util.tradehelper.type;
 
+import com.google.common.annotations.Beta;
 import com.google.gson.JsonObject;
 import com.jab125.util.forgehelper.CraftingHelper;
 import com.jab125.util.tradehelper.GoblinTrade;
 import com.jab125.util.tradehelper.TradeSerializer;
+import io.netty.util.internal.UnstableApi;
 import net.hat.gt.GobT;
 import net.hat.gt.datagen.GoblinTradeProvider;
 import net.minecraft.enchantment.Enchantment;
@@ -29,6 +31,7 @@ import java.util.Objects;
 /**
  * Use for simple enchantment trades
  */
+@UnstableApi
 public class EnchantedItemTrade implements ITradeType<GoblinTrade> {
     public static final Serializer SERIALIZER = new Serializer();
 
