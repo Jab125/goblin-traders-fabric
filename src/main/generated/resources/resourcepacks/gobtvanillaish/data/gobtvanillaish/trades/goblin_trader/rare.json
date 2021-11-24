@@ -134,7 +134,8 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 7,
+      "merchant_experience": 7,
+      "player_experience": 100,
       "enchantment": "minecraft:luck_of_the_sea",
       "offer_level": 3,
       "payment_level": 2
@@ -148,7 +149,8 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 7,
+      "merchant_experience": 7,
+      "player_experience": 100,
       "enchantment": "minecraft:lure",
       "offer_level": 3,
       "payment_level": 2
@@ -162,7 +164,8 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 7,
+      "merchant_experience": 7,
+      "player_experience": 100,
       "enchantment": "minecraft:efficiency",
       "offer_level": 5,
       "payment_level": 4
@@ -176,7 +179,8 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 7,
+      "merchant_experience": 7,
+      "player_experience": 100,
       "enchantment": "minecraft:unbreaking",
       "offer_level": 3,
       "payment_level": 2
@@ -190,7 +194,8 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 7,
+      "merchant_experience": 7,
+      "player_experience": 100,
       "enchantment": "minecraft:fortune",
       "offer_level": 3,
       "payment_level": 2
@@ -204,7 +209,8 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 7,
+      "merchant_experience": 7,
+      "player_experience": 100,
       "enchantment": "minecraft:efficiency",
       "offer_level": 5,
       "payment_level": 4
@@ -218,7 +224,8 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 7,
+      "merchant_experience": 7,
+      "player_experience": 100,
       "enchantment": "minecraft:unbreaking",
       "offer_level": 3,
       "payment_level": 2
@@ -232,7 +239,8 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 7,
+      "merchant_experience": 7,
+      "player_experience": 100,
       "enchantment": "minecraft:efficiency",
       "offer_level": 5,
       "payment_level": 4
@@ -246,7 +254,8 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 7,
+      "merchant_experience": 7,
+      "player_experience": 100,
       "enchantment": "minecraft:unbreaking",
       "offer_level": 3,
       "payment_level": 2

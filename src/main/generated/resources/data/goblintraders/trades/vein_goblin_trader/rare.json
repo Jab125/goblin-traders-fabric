@@ -10,7 +10,8 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 7,
+      "merchant_experience": 7,
+      "player_experience": 100,
       "enchantment": "minecraft:sharpness",
       "offer_level": 6,
       "payment_level": 5
@@ -24,7 +25,8 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 7,
+      "merchant_experience": 7,
+      "player_experience": 100,
       "enchantment": "minecraft:looting",
       "offer_level": 4,
       "payment_level": 3
@@ -38,7 +40,8 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 7,
+      "merchant_experience": 7,
+      "player_experience": 100,
       "enchantment": "minecraft:sweeping",
       "offer_level": 4,
       "payment_level": 3
@@ -52,7 +55,8 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 7,
+      "merchant_experience": 7,
+      "player_experience": 100,
       "enchantment": "minecraft:fire_aspect",
       "offer_level": 3,
       "payment_level": 2
@@ -66,7 +70,8 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 7,
+      "merchant_experience": 7,
+      "player_experience": 100,
       "enchantment": "minecraft:bane_of_arthropods",
       "offer_level": 6,
       "payment_level": 5
@@ -80,7 +85,8 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 7,
+      "merchant_experience": 7,
+      "player_experience": 100,
       "enchantment": "minecraft:power",
       "offer_level": 6,
       "payment_level": 5
@@ -94,7 +100,8 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 7,
+      "merchant_experience": 7,
+      "player_experience": 100,
       "enchantment": "minecraft:blast_protection",
       "offer_level": 5,
       "payment_level": 4
@@ -108,7 +115,8 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 7,
+      "merchant_experience": 7,
+      "player_experience": 100,
       "enchantment": "minecraft:fire_protection",
       "offer_level": 5,
       "payment_level": 4
@@ -122,7 +130,8 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 7,
+      "merchant_experience": 7,
+      "player_experience": 100,
       "enchantment": "minecraft:projectile_protection",
       "offer_level": 5,
       "payment_level": 4
@@ -136,7 +145,8 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 7,
+      "merchant_experience": 7,
+      "player_experience": 100,
       "enchantment": "minecraft:protection",
       "offer_level": 5,
       "payment_level": 4
@@ -150,7 +160,8 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 7,
+      "merchant_experience": 7,
+      "player_experience": 100,
       "enchantment": "minecraft:unbreaking",
       "offer_level": 4,
       "payment_level": 3
@@ -164,7 +175,8 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 7,
+      "merchant_experience": 7,
+      "player_experience": 100,
       "enchantment": "minecraft:blast_protection",
       "offer_level": 5,
       "payment_level": 4
@@ -178,7 +190,8 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 7,
+      "merchant_experience": 7,
+      "player_experience": 100,
       "enchantment": "minecraft:fire_protection",
       "offer_level": 5,
       "payment_level": 4
@@ -192,7 +205,8 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 7,
+      "merchant_experience": 7,
+      "player_experience": 100,
       "enchantment": "minecraft:projectile_protection",
       "offer_level": 5,
       "payment_level": 4
@@ -206,7 +220,8 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 7,
+      "merchant_experience": 7,
+      "player_experience": 100,
       "enchantment": "minecraft:protection",
       "offer_level": 5,
       "payment_level": 4
@@ -220,7 +235,8 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 7,
+      "merchant_experience": 7,
+      "player_experience": 100,
       "enchantment": "minecraft:unbreaking",
       "offer_level": 4,
       "payment_level": 3
@@ -234,7 +250,8 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 7,
+      "merchant_experience": 7,
+      "player_experience": 100,
       "enchantment": "minecraft:blast_protection",
       "offer_level": 5,
       "payment_level": 4
@@ -248,7 +265,8 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 7,
+      "merchant_experience": 7,
+      "player_experience": 100,
       "enchantment": "minecraft:fire_protection",
       "offer_level": 5,
       "payment_level": 4
@@ -262,7 +280,8 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 7,
+      "merchant_experience": 7,
+      "player_experience": 100,
       "enchantment": "minecraft:projectile_protection",
       "offer_level": 5,
       "payment_level": 4
@@ -276,7 +295,8 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 7,
+      "merchant_experience": 7,
+      "player_experience": 100,
       "enchantment": "minecraft:protection",
       "offer_level": 5,
       "payment_level": 4
@@ -290,7 +310,8 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 7,
+      "merchant_experience": 7,
+      "player_experience": 100,
       "enchantment": "minecraft:unbreaking",
       "offer_level": 4,
       "payment_level": 3
@@ -304,7 +325,8 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 7,
+      "merchant_experience": 7,
+      "player_experience": 100,
       "enchantment": "minecraft:blast_protection",
       "offer_level": 5,
       "payment_level": 4
@@ -318,7 +340,8 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 7,
+      "merchant_experience": 7,
+      "player_experience": 100,
       "enchantment": "minecraft:fire_protection",
       "offer_level": 5,
       "payment_level": 4
@@ -332,7 +355,8 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 7,
+      "merchant_experience": 7,
+      "player_experience": 100,
       "enchantment": "minecraft:projectile_protection",
       "offer_level": 5,
       "payment_level": 4
@@ -346,7 +370,8 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 7,
+      "merchant_experience": 7,
+      "player_experience": 100,
       "enchantment": "minecraft:protection",
       "offer_level": 5,
       "payment_level": 4
@@ -360,7 +385,8 @@
       },
       "price_multiplier": 0.0,
       "max_trades": 1,
-      "experience": 7,
+      "merchant_experience": 7,
+      "player_experience": 100,
       "enchantment": "minecraft:unbreaking",
       "offer_level": 4,
       "payment_level": 3

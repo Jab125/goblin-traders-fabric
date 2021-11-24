@@ -59,6 +59,7 @@ public class GobT implements ModInitializer {
         manager.registerTypeSerializer(UpgradedBasicTrade.SERIALIZER);
         manager.registerTypeSerializer(UpgradedBundleTrade.SERIALIZER);
         manager.registerTypeSerializer(UpgradedPotionTrade.SERIALIZER);
+        manager.registerTypeSerializer(UpgradedEnchantedItemTrade.SERIALIZER);
 
         if (isModInstalled("endgoblintraders")) {
             GobT.addToRandomBackground("textures/config/rack_stone.png");

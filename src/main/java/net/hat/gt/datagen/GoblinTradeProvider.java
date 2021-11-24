@@ -4,7 +4,7 @@ import com.google.common.collect.ImmutableMap;
 import com.jab125.util.datagen.TradeProvider;
 import com.jab125.util.tradehelper.TradeRarity;
 import com.jab125.util.tradehelper.type.BasicTrade;
-import com.jab125.util.tradehelper.type.EnchantedItemTrade;
+import com.jab125.util.tradehelper.type.UpgradedEnchantedItemTrade;
 import com.jab125.util.tradehelper.type.UpgradedPotionTrade;
 import com.jab125.util.tradehelper.type.UpgradedBasicTrade;
 import net.hat.gt.init.ModEntities;
@@ -257,7 +257,7 @@ public class GoblinTradeProvider extends TradeProvider
         EnchantmentLevelEntry[] FISHING_ROD_ENCHANTS = new EnchantmentLevelEntry[]{new EnchantmentLevelEntry(Enchantments.LUCK_OF_THE_SEA, 3), new EnchantmentLevelEntry(Enchantments.LURE, 3)};
 
         for (EnchantmentLevelEntry fishing_enchant : FISHING_ROD_ENCHANTS) {
-            this.addTrade(ModEntities.GOBLIN_TRADER, TradeRarity.RARE, isVanilla, EnchantedItemTrade.Builder.create()
+            this.addTrade(ModEntities.GOBLIN_TRADER, TradeRarity.RARE, isVanilla, UpgradedEnchantedItemTrade.Builder.create()
                     .setStack(new ItemStack(Items.FISHING_ROD))
                     .setPriceMultiplier(0F)
                     .setMaxTrades(1)
@@ -272,7 +272,7 @@ public class GoblinTradeProvider extends TradeProvider
         EnchantmentLevelEntry[] PICKAXE_ENCHANTS = new EnchantmentLevelEntry[]{new EnchantmentLevelEntry(Enchantments.EFFICIENCY, 5), new EnchantmentLevelEntry(Enchantments.UNBREAKING, 3), new EnchantmentLevelEntry(Enchantments.FORTUNE, 3)};
 
         for (EnchantmentLevelEntry pickaxe_enchant : PICKAXE_ENCHANTS) {
-            this.addTrade(ModEntities.GOBLIN_TRADER, TradeRarity.RARE, isVanilla, EnchantedItemTrade.Builder.create()
+            this.addTrade(ModEntities.GOBLIN_TRADER, TradeRarity.RARE, isVanilla, UpgradedEnchantedItemTrade.Builder.create()
                     .setStack(new ItemStack(Items.DIAMOND_PICKAXE))
                     .setPriceMultiplier(0F)
                     .setMaxTrades(1)
@@ -287,7 +287,7 @@ public class GoblinTradeProvider extends TradeProvider
         EnchantmentLevelEntry[] AXE_AND_SHOVEL_ENCHANTS = new EnchantmentLevelEntry[]{new EnchantmentLevelEntry(Enchantments.EFFICIENCY, 5), new EnchantmentLevelEntry(Enchantments.UNBREAKING, 3)};
 
         for (EnchantmentLevelEntry axe_enchant : AXE_AND_SHOVEL_ENCHANTS) {
-            this.addTrade(ModEntities.GOBLIN_TRADER, TradeRarity.RARE, isVanilla, EnchantedItemTrade.Builder.create()
+            this.addTrade(ModEntities.GOBLIN_TRADER, TradeRarity.RARE, isVanilla, UpgradedEnchantedItemTrade.Builder.create()
                     .setStack(new ItemStack(Items.DIAMOND_AXE))
                     .setPriceMultiplier(0F)
                     .setMaxTrades(1)
@@ -300,7 +300,7 @@ public class GoblinTradeProvider extends TradeProvider
         }
 
         for (EnchantmentLevelEntry shovel_enchant : AXE_AND_SHOVEL_ENCHANTS) {
-            this.addTrade(ModEntities.GOBLIN_TRADER, TradeRarity.RARE, isVanilla, EnchantedItemTrade.Builder.create()
+            this.addTrade(ModEntities.GOBLIN_TRADER, TradeRarity.RARE, isVanilla, UpgradedEnchantedItemTrade.Builder.create()
                     .setStack(new ItemStack(Items.DIAMOND_SHOVEL))
                     .setPriceMultiplier(0F)
                     .setMaxTrades(1)
@@ -444,7 +444,7 @@ public class GoblinTradeProvider extends TradeProvider
         };
         for(EnchantmentLevelEntry swordEnchant : swordEnchantments)
         {
-            this.addTrade(ModEntities.VEIN_GOBLIN_TRADER, TradeRarity.RARE, isVanilla, EnchantedItemTrade.Builder.create()
+            this.addTrade(ModEntities.VEIN_GOBLIN_TRADER, TradeRarity.RARE, isVanilla, UpgradedEnchantedItemTrade.Builder.create()
                     .setStack(new ItemStack(Items.DIAMOND_SWORD))
                     .setPriceMultiplier(0F)
                     .setMaxTrades(1)
@@ -456,7 +456,7 @@ public class GoblinTradeProvider extends TradeProvider
                     .build());
         }
 
-        this.addTrade(ModEntities.VEIN_GOBLIN_TRADER, TradeRarity.RARE, isVanilla, EnchantedItemTrade.Builder.create()
+        this.addTrade(ModEntities.VEIN_GOBLIN_TRADER, TradeRarity.RARE, isVanilla, UpgradedEnchantedItemTrade.Builder.create()
                 .setStack(new ItemStack(Items.BOW))
                 .setPriceMultiplier(0F)
                 .setMaxTrades(1)
@@ -479,7 +479,7 @@ public class GoblinTradeProvider extends TradeProvider
         {
             for(EnchantmentLevelEntry armorEnchant : armorEnchantments)
             {
-                this.addTrade(ModEntities.VEIN_GOBLIN_TRADER, TradeRarity.RARE, isVanilla, EnchantedItemTrade.Builder.create()
+                this.addTrade(ModEntities.VEIN_GOBLIN_TRADER, TradeRarity.RARE, isVanilla, UpgradedEnchantedItemTrade.Builder.create()
                         .setStack(new ItemStack(piece))
                         .setPriceMultiplier(0F)
                         .setMaxTrades(1)
