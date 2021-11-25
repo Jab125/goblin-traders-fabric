@@ -63,7 +63,7 @@ public class UpgradedEnchantedItemTrade implements ITradeType<UpgradedGoblinTrad
     public static class Serializer extends TradeSerializer<UpgradedEnchantedItemTrade> {
 
         Serializer() {
-            super(new Identifier(GobT.MODID, "enchanted_item"));
+            super(new Identifier(GobT.MODID, "upgraded_enchanted_item"));
         }
 
         @Override

@@ -126,7 +126,7 @@
       "player_experience": 50
     },
     {
-      "type": "goblintraders:enchanted_item",
+      "type": "goblintraders:upgraded_enchanted_item",
       "item": {
         "item": "minecraft:fishing_rod",
         "count": 1,
@@ -141,7 +141,7 @@
       "payment_level": 2
     },
     {
-      "type": "goblintraders:enchanted_item",
+      "type": "goblintraders:upgraded_enchanted_item",
       "item": {
         "item": "minecraft:fishing_rod",
         "count": 1,
@@ -156,7 +156,7 @@
       "payment_level": 2
     },
     {
-      "type": "goblintraders:enchanted_item",
+      "type": "goblintraders:upgraded_enchanted_item",
       "item": {
         "item": "minecraft:diamond_pickaxe",
         "count": 1,
@@ -171,7 +171,7 @@
       "payment_level": 4
     },
     {
-      "type": "goblintraders:enchanted_item",
+      "type": "goblintraders:upgraded_enchanted_item",
       "item": {
         "item": "minecraft:diamond_pickaxe",
         "count": 1,
@@ -186,7 +186,7 @@
       "payment_level": 2
     },
     {
-      "type": "goblintraders:enchanted_item",
+      "type": "goblintraders:upgraded_enchanted_item",
       "item": {
         "item": "minecraft:diamond_pickaxe",
         "count": 1,
@@ -201,7 +201,7 @@
       "payment_level": 2
     },
     {
-      "type": "goblintraders:enchanted_item",
+      "type": "goblintraders:upgraded_enchanted_item",
       "item": {
         "item": "minecraft:diamond_axe",
         "count": 1,
@@ -216,7 +216,7 @@
       "payment_level": 4
     },
     {
-      "type": "goblintraders:enchanted_item",
+      "type": "goblintraders:upgraded_enchanted_item",
       "item": {
         "item": "minecraft:diamond_axe",
         "count": 1,
@@ -231,7 +231,7 @@
       "payment_level": 2
     },
     {
-      "type": "goblintraders:enchanted_item",
+      "type": "goblintraders:upgraded_enchanted_item",
       "item": {
         "item": "minecraft:diamond_shovel",
         "count": 1,
@@ -246,7 +246,7 @@
       "payment_level": 4
     },
     {
-      "type": "goblintraders:enchanted_item",
+      "type": "goblintraders:upgraded_enchanted_item",
       "item": {
         "item": "minecraft:diamond_shovel",
         "count": 1,
