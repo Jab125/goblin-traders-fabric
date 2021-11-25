@@ -2,7 +2,7 @@
   "replace": true,
   "trades": [
     {
-      "type": "goblintraders:enchanted_item",
+      "type": "goblintraders:upgraded_enchanted_item",
       "item": {
         "item": "minecraft:diamond_sword",
         "count": 1,
@@ -17,7 +17,7 @@
       "payment_level": 4
     },
     {
-      "type": "goblintraders:enchanted_item",
+      "type": "goblintraders:upgraded_enchanted_item",
       "item": {
         "item": "minecraft:diamond_sword",
         "count": 1,
@@ -32,7 +32,7 @@
       "payment_level": 2
     },
     {
-      "type": "goblintraders:enchanted_item",
+      "type": "goblintraders:upgraded_enchanted_item",
       "item": {
         "item": "minecraft:diamond_sword",
         "count": 1,
@@ -47,7 +47,7 @@
       "payment_level": 2
     },
     {
-      "type": "goblintraders:enchanted_item",
+      "type": "goblintraders:upgraded_enchanted_item",
       "item": {
         "item": "minecraft:diamond_sword",
         "count": 1,
@@ -62,7 +62,7 @@
       "payment_level": 1
     },
     {
-      "type": "goblintraders:enchanted_item",
+      "type": "goblintraders:upgraded_enchanted_item",
       "item": {
         "item": "minecraft:diamond_sword",
         "count": 1,
@@ -77,7 +77,7 @@
       "payment_level": 4
     },
     {
-      "type": "goblintraders:enchanted_item",
+      "type": "goblintraders:upgraded_enchanted_item",
       "item": {
         "item": "minecraft:bow",
         "count": 1,
@@ -92,7 +92,7 @@
       "payment_level": 4
     },
     {
-      "type": "goblintraders:enchanted_item",
+      "type": "goblintraders:upgraded_enchanted_item",
       "item": {
         "item": "minecraft:diamond_helmet",
         "count": 1,
@@ -107,7 +107,7 @@
       "payment_level": 3
     },
     {
-      "type": "goblintraders:enchanted_item",
+      "type": "goblintraders:upgraded_enchanted_item",
       "item": {
         "item": "minecraft:diamond_helmet",
         "count": 1,
@@ -122,7 +122,7 @@
       "payment_level": 3
     },
     {
-      "type": "goblintraders:enchanted_item",
+      "type": "goblintraders:upgraded_enchanted_item",
       "item": {
         "item": "minecraft:diamond_helmet",
         "count": 1,
@@ -137,7 +137,7 @@
       "payment_level": 3
     },
     {
-      "type": "goblintraders:enchanted_item",
+      "type": "goblintraders:upgraded_enchanted_item",
       "item": {
         "item": "minecraft:diamond_helmet",
         "count": 1,
@@ -152,7 +152,7 @@
       "payment_level": 3
     },
     {
-      "type": "goblintraders:enchanted_item",
+      "type": "goblintraders:upgraded_enchanted_item",
       "item": {
         "item": "minecraft:diamond_helmet",
         "count": 1,
@@ -167,7 +167,7 @@
       "payment_level": 2
     },
     {
-      "type": "goblintraders:enchanted_item",
+      "type": "goblintraders:upgraded_enchanted_item",
       "item": {
         "item": "minecraft:diamond_chestplate",
         "count": 1,
@@ -182,7 +182,7 @@
       "payment_level": 3
     },
     {
-      "type": "goblintraders:enchanted_item",
+      "type": "goblintraders:upgraded_enchanted_item",
       "item": {
         "item": "minecraft:diamond_chestplate",
         "count": 1,
@@ -197,7 +197,7 @@
       "payment_level": 3
     },
     {
-      "type": "goblintraders:enchanted_item",
+      "type": "goblintraders:upgraded_enchanted_item",
       "item": {
         "item": "minecraft:diamond_chestplate",
         "count": 1,
@@ -212,7 +212,7 @@
       "payment_level": 3
     },
     {
-      "type": "goblintraders:enchanted_item",
+      "type": "goblintraders:upgraded_enchanted_item",
       "item": {
         "item": "minecraft:diamond_chestplate",
         "count": 1,
@@ -227,7 +227,7 @@
       "payment_level": 3
     },
     {
-      "type": "goblintraders:enchanted_item",
+      "type": "goblintraders:upgraded_enchanted_item",
       "item": {
         "item": "minecraft:diamond_chestplate",
         "count": 1,
@@ -242,7 +242,7 @@
       "payment_level": 2
     },
     {
-      "type": "goblintraders:enchanted_item",
+      "type": "goblintraders:upgraded_enchanted_item",
       "item": {
         "item": "minecraft:diamond_leggings",
         "count": 1,
@@ -257,7 +257,7 @@
       "payment_level": 3
     },
     {
-      "type": "goblintraders:enchanted_item",
+      "type": "goblintraders:upgraded_enchanted_item",
       "item": {
         "item": "minecraft:diamond_leggings",
         "count": 1,
@@ -272,7 +272,7 @@
       "payment_level": 3
     },
     {
-      "type": "goblintraders:enchanted_item",
+      "type": "goblintraders:upgraded_enchanted_item",
       "item": {
         "item": "minecraft:diamond_leggings",
         "count": 1,
@@ -287,7 +287,7 @@
       "payment_level": 3
     },
     {
-      "type": "goblintraders:enchanted_item",
+      "type": "goblintraders:upgraded_enchanted_item",
       "item": {
         "item": "minecraft:diamond_leggings",
         "count": 1,
@@ -302,7 +302,7 @@
       "payment_level": 3
     },
     {
-      "type": "goblintraders:enchanted_item",
+      "type": "goblintraders:upgraded_enchanted_item",
       "item": {
         "item": "minecraft:diamond_leggings",
         "count": 1,
@@ -317,7 +317,7 @@
       "payment_level": 2
     },
     {
-      "type": "goblintraders:enchanted_item",
+      "type": "goblintraders:upgraded_enchanted_item",
       "item": {
         "item": "minecraft:diamond_boots",
         "count": 1,
@@ -332,7 +332,7 @@
       "payment_level": 3
     },
     {
-      "type": "goblintraders:enchanted_item",
+      "type": "goblintraders:upgraded_enchanted_item",
       "item": {
         "item": "minecraft:diamond_boots",
         "count": 1,
@@ -347,7 +347,7 @@
       "payment_level": 3
     },
     {
-      "type": "goblintraders:enchanted_item",
+      "type": "goblintraders:upgraded_enchanted_item",
       "item": {
         "item": "minecraft:diamond_boots",
         "count": 1,
@@ -362,7 +362,7 @@
       "payment_level": 3
     },
     {
-      "type": "goblintraders:enchanted_item",
+      "type": "goblintraders:upgraded_enchanted_item",
       "item": {
         "item": "minecraft:diamond_boots",
         "count": 1,
@@ -377,7 +377,7 @@
       "payment_level": 3
     },
     {
-      "type": "goblintraders:enchanted_item",
+      "type": "goblintraders:upgraded_enchanted_item",
       "item": {
         "item": "minecraft:diamond_boots",
         "count": 1,
