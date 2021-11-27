@@ -61,7 +61,7 @@ public class GoblinTraderSpawner
         {
             if(--this.delayBeforeSpawnLogic <= 0)
             {
-                System.out.println("DELAY :)");
+                //System.out.println("DELAY :)");
                 int delay = Math.max(this.traderSpawnDelay / 20, 1);
                 this.delayBeforeSpawnLogic = delay;
                 this.currentTraderSpawnDelay -= delay;
@@ -69,11 +69,11 @@ public class GoblinTraderSpawner
                 System.out.println(currentTraderSpawnDelay);
                 if(this.currentTraderSpawnDelay <= 0)
                 {
-                    System.out.println("TRADER DELAY :)");
+                    //System.out.println("TRADER DELAY :)");
                     this.currentTraderSpawnDelay = this.traderSpawnDelay;
                     if(level.getGameRules().getBoolean(GameRules.DO_MOB_SPAWNING))
                     {
-                        System.out.println("MOB SPAWNING");
+                        //System.out.println("MOB SPAWNING");
                         int spawnChance = this.currentTraderSpawnChance;
                         this.currentTraderSpawnChance = MathHelper.clamp(this.currentTraderSpawnChance + this.traderSpawnChance, this.traderSpawnChance, 100);
                         this.data.setGoblinTraderSpawnChance(this.currentTraderSpawnChance);
@@ -81,10 +81,10 @@ public class GoblinTraderSpawner
                         System.out.println(this.currentTraderSpawnChance);
                         if(level.getRandom().nextInt(100) <= spawnChance)
                         {
-                            System.out.println("YES RNG");
+                            //System.out.println("YES RNG");
                             if(this.spawnTrader(level))
                             {
-                                System.out.println("SUCCESS SPAWN");
+                                //System.out.println("SUCCESS SPAWN");
                                 this.currentTraderSpawnChance = this.traderSpawnChance;
                             }
                         }

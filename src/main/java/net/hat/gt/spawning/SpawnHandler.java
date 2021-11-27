@@ -25,7 +25,7 @@ public class SpawnHandler {
         @Override
         public void onWorldLoad(MinecraftServer server, ServerWorld world) {
             if (loaded) return;
-            System.out.println("WORLD LOAD");
+            //System.out.println("WORLD LOAD");
             addToSpawners(DimensionType.OVERWORLD_REGISTRY_KEY.getValue(), new GoblinTraderSpawner(server, "GoblinTrader", ModEntities.GOBLIN_TRADER, Objects.requireNonNull(ModEntities.GOBLIN_TRADER.create(world))));
             addToSpawners(DimensionType.THE_NETHER_REGISTRY_KEY.getValue(), new GoblinTraderSpawner(server, "VeinGoblinTrader", ModEntities.VEIN_GOBLIN_TRADER, Objects.requireNonNull(ModEntities.GOBLIN_TRADER.create(world))));
             loaded = true;
@@ -52,11 +52,13 @@ public class SpawnHandler {
                 for (var spawner : spawnerList) {
                     if (spawner != null) {
                         spawner.tick(world);
-                        System.out.println("TICK");
+                        //System.out.println("TICK");
                     }
                 }
-                System.out.println("NOT-NULL");
-            } else System.out.println("NULL");
+                //System.out.println("NOT-NULL");
+            } else
+                //System.out.println("NULL")
+                        ;
         }
     }
 
