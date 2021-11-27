@@ -1,5 +1,6 @@
 package net.hat.gt.spawning;
 
+import net.fabricmc.loader.api.FabricLoader;
 import net.hat.gt.entities.AbstractGoblinEntity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
@@ -35,10 +36,10 @@ public class GoblinTraderSpawner
     public GoblinTraderSpawner(MinecraftServer server, String key, EntityType<? extends AbstractGoblinEntity> entityType, AbstractGoblinEntity entity) {
         this.data = GoblinTraderData.get(server).getGoblinData(key);
         this.entityType = entityType;
-        this.delayBeforeSpawnLogic = 600;
+        this.delayBeforeSpawnLogic = FabricLoader.getInstance().isDevelopmentEnvironment() ? 0 : 600;
         this.currentTraderSpawnDelay = this.data.getGoblinTraderSpawnDelay();
         this.currentTraderSpawnChance = this.data.getGoblinTraderSpawnChance();
-        this.traderSpawnChance = entity.canSpawn() ? 0 : entity.spawnChance();
+        this.traderSpawnChance = !entity.canSpawn() ? 0 : entity.spawnChance();
         this.traderSpawnDelay = entity.spawnDelay();
         this.minLevel = Math.min(entity.minSpawnHeight(), entity.maxSpawnHeight());
         if (Objects.requireNonNull(server.getWorld(World.OVERWORLD)).getDimension().getMinimumY() >= minLevel) {
@@ -60,22 +61,30 @@ public class GoblinTraderSpawner
         {
             if(--this.delayBeforeSpawnLogic <= 0)
             {
+                System.out.println("DELAY :)");
                 int delay = Math.max(this.traderSpawnDelay / 20, 1);
                 this.delayBeforeSpawnLogic = delay;
                 this.currentTraderSpawnDelay -= delay;
                 this.data.setGoblinTraderSpawnDelay(this.currentTraderSpawnDelay);
+                System.out.println(currentTraderSpawnDelay);
                 if(this.currentTraderSpawnDelay <= 0)
                 {
+                    System.out.println("TRADER DELAY :)");
                     this.currentTraderSpawnDelay = this.traderSpawnDelay;
                     if(level.getGameRules().getBoolean(GameRules.DO_MOB_SPAWNING))
                     {
+                        System.out.println("MOB SPAWNING");
                         int spawnChance = this.currentTraderSpawnChance;
                         this.currentTraderSpawnChance = MathHelper.clamp(this.currentTraderSpawnChance + this.traderSpawnChance, this.traderSpawnChance, 100);
                         this.data.setGoblinTraderSpawnChance(this.currentTraderSpawnChance);
+                        System.out.println(this.traderSpawnChance);
+                        System.out.println(this.currentTraderSpawnChance);
                         if(level.getRandom().nextInt(100) <= spawnChance)
                         {
+                            System.out.println("YES RNG");
                             if(this.spawnTrader(level))
                             {
+                                System.out.println("SUCCESS SPAWN");
                                 this.currentTraderSpawnChance = this.traderSpawnChance;
                             }
                         }
