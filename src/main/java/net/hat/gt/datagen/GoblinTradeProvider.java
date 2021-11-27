@@ -1,17 +1,14 @@
 package net.hat.gt.datagen;
 
-import com.google.common.collect.ImmutableMap;
 import com.jab125.util.datagen.TradeProvider;
 import com.jab125.util.tradehelper.TradeRarity;
-import com.jab125.util.tradehelper.type.BasicTrade;
+import com.jab125.util.tradehelper.type.UpgradedBasicTrade;
 import com.jab125.util.tradehelper.type.UpgradedEnchantedItemTrade;
 import com.jab125.util.tradehelper.type.UpgradedPotionTrade;
-import com.jab125.util.tradehelper.type.UpgradedBasicTrade;
 import net.hat.gt.init.ModEntities;
 import net.hat.gt.init.ModPotions;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.EnchantmentLevelEntry;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.Item;
