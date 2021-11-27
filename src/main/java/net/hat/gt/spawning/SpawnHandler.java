@@ -55,7 +55,7 @@ public class SpawnHandler {
     }
 
     /* Since i can do this, i am gonna do this */
-    public Map<Identifier, GoblinTraderSpawner> getSpawners() {
+    public static Map<Identifier, GoblinTraderSpawner> getSpawners() {
         return spawners;
     }
 }
