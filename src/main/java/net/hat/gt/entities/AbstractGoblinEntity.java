@@ -457,8 +457,14 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
 
     }
 
+    /**
+     * specify minSpawnHeight Here
+     */
     public abstract int minSpawnHeight();
 
+    /**
+     * specify maxSpawnHeight Here
+     */
     public abstract int maxSpawnHeight();
 
     public abstract int spawnDelay();

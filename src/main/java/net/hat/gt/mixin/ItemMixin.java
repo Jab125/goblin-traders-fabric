@@ -18,6 +18,9 @@ import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 
 import java.util.List;
 
+/**
+ * Add a tiny little easter egg
+ */
 @Mixin(Item.class)
 public abstract class ItemMixin {
     @Shadow public abstract String getTranslationKey();

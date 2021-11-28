@@ -13,6 +13,8 @@ import java.util.*;
 
 /**
  * Reworked for fabric
+ * <p>
+ * So basically, there is not {@code SubscribeEvent} in fabric, so we rely on Fabric API's events.
  */
 public class SpawnHandler {
     private static Map<Identifier, ArrayList<GoblinTraderSpawner>> spawners = new HashMap<>();

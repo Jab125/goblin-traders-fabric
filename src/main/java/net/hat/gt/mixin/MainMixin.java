@@ -9,6 +9,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.io.IOException;
 
+/**
+ * Makes the datagen run is correct conditions
+ */
 @Mixin(Main.class)
 public class MainMixin {
     @Inject(method = "main", at = @At(value = "NEW", target = "net/minecraft/server/dedicated/ServerPropertiesLoader"), cancellable = true)

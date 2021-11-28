@@ -1,6 +1,7 @@
 package net.hat.gt.entities;
 
 /**
+ * Gobin is better, it has no 'l'
  * @deprecated use {@link net.hat.gt.entities.GobinTraderRenderer}
  */
 // if you want a goblin trader renderer (a bad one) come here :P
