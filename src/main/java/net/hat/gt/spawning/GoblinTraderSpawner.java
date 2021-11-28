@@ -1,5 +1,6 @@
 package net.hat.gt.spawning;
 
+import com.jab125.limeappleboat.gobt.api.GobTEvents;
 import net.fabricmc.loader.api.FabricLoader;
 import net.hat.gt.entities.AbstractGoblinEntity;
 import net.minecraft.entity.EntityType;
@@ -8,6 +9,7 @@ import net.minecraft.entity.SpawnRestriction;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.util.ActionResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.GameRules;
@@ -115,6 +117,10 @@ public class GoblinTraderSpawner
             {
                 if(safestPos.getY() < this.minLevel || safestPos.getY() >= this.maxLevel)
                 {
+                    return false;
+                }
+                ActionResult result = GobTEvents.ON_ATTEMPT_SPAWN.invoker().interact(this.entityType, safestPos);
+                if (result == ActionResult.FAIL) {
                     return false;
                 }
                 AbstractGoblinEntity goblin = this.entityType.spawn((ServerWorld) randomPlayer.world, null, null, null, safestPos, SpawnReason.EVENT, false, false);
