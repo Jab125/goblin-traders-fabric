@@ -13,7 +13,7 @@ import static com.jab125.thonkutil.util.Util.isModInstalled;
 @Environment(EnvType.CLIENT)
 @Mixin(SplashTextResourceSupplier.class)
 public class SplashScreenMixin {
-    @Inject(method = "get", at = @At(value = "RETURN"), cancellable = true)
+    @Inject(method = "get", at = @At(value = "TAIL"), cancellable = true)
     private void append(CallbackInfoReturnable<String> cir) {
         if ((int) (Math.random() * 70) == 0 && !isModInstalled("endgoblintraders")) {
             if ((int) (Math.random() * 2) == 0) {

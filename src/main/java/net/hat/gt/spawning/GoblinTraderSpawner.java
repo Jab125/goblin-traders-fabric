@@ -12,6 +12,7 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.registry.Registry;
 import net.minecraft.world.GameRules;
 import net.minecraft.world.SpawnHelper;
 import net.minecraft.world.World;
@@ -68,7 +69,11 @@ public class GoblinTraderSpawner
                 this.delayBeforeSpawnLogic = delay;
                 this.currentTraderSpawnDelay -= delay;
                 this.data.setGoblinTraderSpawnDelay(this.currentTraderSpawnDelay);
-                System.out.println(currentTraderSpawnDelay);
+                System.out.println(Registry.ENTITY_TYPE.getId(this.entityType).toString() + currentTraderSpawnDelay);
+                System.out.println(Registry.ENTITY_TYPE.getId(this.entityType) + ": " + currentTraderSpawnChance);
+                System.out.println();
+                System.out.println(Registry.ENTITY_TYPE.getId(this.entityType) + ": " + traderSpawnDelay);
+                System.out.println(Registry.ENTITY_TYPE.getId(this.entityType) + ": " + traderSpawnChance);
                 if(this.currentTraderSpawnDelay <= 0)
                 {
                     //System.out.println("TRADER DELAY :)");
