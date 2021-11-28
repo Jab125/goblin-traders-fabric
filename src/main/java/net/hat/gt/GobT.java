@@ -1,6 +1,7 @@
 package net.hat.gt;
 
 
+import com.jab125.limeappleboat.gobt.api.GobTEvents;
 import com.jab125.util.tradehelper.TradeManager;
 import com.jab125.util.tradehelper.type.*;
 import me.shedaniel.autoconfig.AutoConfig;
@@ -15,7 +16,9 @@ import net.fabricmc.loader.api.FabricLoader;
 import net.hat.gt.config.GoblinTradersConfig;
 import net.hat.gt.init.*;
 import net.hat.gt.spawning.SpawnHandler;
+import net.minecraft.block.Blocks;
 import net.minecraft.resource.ResourceType;
+import net.minecraft.util.ActionResult;
 import net.minecraft.util.Identifier;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -73,6 +76,13 @@ public class GobT implements ModInitializer {
         ModStats.registerStats();
         ModPotions.registerPotions();
         ModPotions.registerPotionRecipes();
+
+        GobTEvents.ON_ATTEMPT_SPAWN.register(((goblinTraderType, world, safestPos) -> {
+            if (world.getBlockState(safestPos.down()).getBlock().equals(Blocks.BEDROCK)) {
+                return ActionResult.FAIL;
+            }
+            return ActionResult.PASS;
+        }));
         // Mental Note: don't remove this
         boolean a;
             a = ResourceManagerHelper.registerBuiltinResourcePack(id("gobtvanillaish"), Objects.requireNonNull(FabricLoader.getInstance().getModContainer(MODID)).get(), ResourcePackActivationType.NORMAL);

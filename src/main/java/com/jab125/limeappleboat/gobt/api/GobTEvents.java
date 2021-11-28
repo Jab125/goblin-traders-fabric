@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.event.Event;
 import net.fabricmc.fabric.api.event.EventFactory;
 import net.hat.gt.entities.AbstractGoblinEntity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.math.BlockPos;
 
@@ -21,9 +22,9 @@ public interface GobTEvents {
     });
 
     Event<OnAttemptSpawn> ON_ATTEMPT_SPAWN = EventFactory.createArrayBacked(OnAttemptSpawn.class,
-            (listeners) -> (goblinType, pos) -> {
+            (listeners) -> (goblinType, serverWorld, pos) -> {
                 for(OnAttemptSpawn listener : listeners) {
-                    ActionResult result = listener.interact(goblinType, pos);
+                    ActionResult result = listener.interact(goblinType, serverWorld, pos);
                     if (result != ActionResult.PASS) {
                         return result;
                     }
@@ -37,6 +38,6 @@ public interface GobTEvents {
     }
 
     interface OnAttemptSpawn {
-        ActionResult interact(EntityType goblinTraderType, BlockPos safestPos);
+        ActionResult interact(EntityType goblinTraderType, ServerWorld world, BlockPos safestPos);
     }
 }

@@ -119,7 +119,7 @@ public class GoblinTraderSpawner
                 {
                     return false;
                 }
-                ActionResult result = GobTEvents.ON_ATTEMPT_SPAWN.invoker().interact(this.entityType, safestPos);
+                ActionResult result = GobTEvents.ON_ATTEMPT_SPAWN.invoker().interact(this.entityType, (ServerWorld) randomPlayer.world, safestPos);
                 if (result == ActionResult.FAIL) {
                     return false;
                 }
