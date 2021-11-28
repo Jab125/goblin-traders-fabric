@@ -77,8 +77,10 @@ public class GobT implements ModInitializer {
         ModPotions.registerPotions();
         ModPotions.registerPotionRecipes();
 
+
+        // Restrict spawning on bedrock
         GobTEvents.ON_ATTEMPT_SPAWN.register(((goblinTraderType, world, safestPos) -> {
-            if (world.getBlockState(safestPos.down()).getBlock().equals(Blocks.BEDROCK)) {
+            if (world.getBlockState(safestPos.down()).getBlock().equals(Blocks.BEDROCK) && (goblinTraderType.equals(ModEntities.GOBLIN_TRADER) || goblinTraderType.equals(ModEntities.VEIN_GOBLIN_TRADER))) {
                 return ActionResult.FAIL;
             }
             return ActionResult.PASS;
