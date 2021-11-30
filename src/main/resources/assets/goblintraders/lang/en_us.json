@@ -17,7 +17,7 @@
   "text.autoconfig.goblintraders.category.goblin_trader_config": "Goblin Trader",
   "text.autoconfig.goblintraders.category.vein_goblin_trader_config": "Vein Goblin Trader",
 
-  "text.autoconfig.goblintraders.option.MAX_ENCHANTMENT_TEXT.@PrefixText": "<RR> = Requires Game Restart, <!> = Unstable, <?> Unsure",
+  "text.autoconfig.goblintraders.option.MAX_ENCHANTMENT_TEXT.@PrefixText": "<RR> = Requires Game Restart",
   "text.autoconfig.goblintraders.option.MAX_ENCHANTMENT_TEXT": "Over Max Enchants have purple text",
   "text.autoconfig.goblintraders.option.EASTER_EGGS": "Enable Easter Eggs",
 

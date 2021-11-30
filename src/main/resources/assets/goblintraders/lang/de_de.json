@@ -17,7 +17,7 @@
   "text.autoconfig.goblintraders.category.goblin_trader_config": "Kobold-Händler",
   "text.autoconfig.goblintraders.category.vein_goblin_trader_config": "Ader-Kobold-Händler",
 
-  "text.autoconfig.goblintraders.option.MAX_ENCHANTMENT_TEXT.@PrefixText": "<RR> = Erfordert einen Neustart des Spiels, <!> = Instabil, <?> Unsicher",
+  "text.autoconfig.goblintraders.option.MAX_ENCHANTMENT_TEXT.@PrefixText": "<RR> = Erfordert einen Neustart des Spiels",
   "text.autoconfig.goblintraders.option.MAX_ENCHANTMENT_TEXT": "Höher als Max. Verzauberungen mit violettem Text darstellen",
   "text.autoconfig.goblintraders.option.EASTER_EGGS": "Easter-Eggs aktivieren",
 
