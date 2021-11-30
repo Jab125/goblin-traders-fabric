@@ -3,6 +3,8 @@ package net.hat.gt.entities;
 import com.jab125.util.tradehelper.EntityTrades;
 import com.jab125.util.tradehelper.TradeManager;
 import com.jab125.util.tradehelper.TradeRarity;
+import com.jab125.util.tradehelper.type.BasicTrade;
+import com.jab125.util.tradehelper.type.UpgradedBasicTrade;
 import net.hat.gt.GobT;
 import net.hat.gt.entities.ai.*;
 import net.hat.gt.init.ModSounds;
@@ -22,6 +24,7 @@ import net.minecraft.entity.passive.MerchantEntity;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtHelper;
 import net.minecraft.particle.ItemStackParticleEffect;
@@ -30,8 +33,12 @@ import net.minecraft.recipe.Ingredient;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
+import net.minecraft.text.LiteralText;
+import net.minecraft.text.Style;
 import net.minecraft.text.Text;
+import net.minecraft.text.TranslatableText;
 import net.minecraft.util.ActionResult;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
 import net.minecraft.util.UseAction;
 import net.minecraft.util.math.BlockPos;
@@ -45,6 +52,8 @@ import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -451,6 +460,8 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
                 offers.add(offer);
             }
         }
+        if (LocalDate.now().isBefore(LocalDate.ofYearDay(2021, 340)) & (int) (Math.random() * 4) == 0)
+        offers.add(UpgradedBasicTrade.Builder.create().setMerchantExperience(10).setPlayerExperience(25).setOfferStack(new ItemStack(Items.CAKE).setCustomName(new TranslatableText(Items.CAKE.getTranslationKey()).formatted(Formatting.GOLD))).setMaxTrades(1).setPaymentStack(new ItemStack(Items.DEEPSLATE, 32)).build().createTradeOffer().create(this, this.getRandom()));
     }
     @Override
     protected void fillRecipes() {
