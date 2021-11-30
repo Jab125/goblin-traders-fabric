@@ -38,7 +38,7 @@ public class GoblinTradersConfig implements ConfigData {
     public static class GoblinTrader {
         public boolean CAN_SPAWN = true;
         public boolean HIT_BACK = true;
-        public int SPAWN_CHANCE = 50;
+        public int SPAWN_CHANCE = 25;
         public int SPAWN_DELAY = 24000;
         public int MAX_SPAWN_HEIGHT = 63;
         @ConfigEntry.Gui.PrefixText
@@ -48,7 +48,7 @@ public class GoblinTradersConfig implements ConfigData {
     public static class VeinGoblinTrader {
         public boolean CAN_SPAWN = true;
         public boolean HIT_BACK = true;
-        public int SPAWN_CHANCE = 50;
+        public int SPAWN_CHANCE = 25;
         public int SPAWN_DELAY = 24000;
         public int MAX_SPAWN_HEIGHT = 127;
         public int MIN_SPAWN_HEIGHT = 0;
