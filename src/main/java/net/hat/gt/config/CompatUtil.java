@@ -1,10 +1,10 @@
-package net.hat.gt.util;
+package net.hat.gt.config;
 
 import net.hat.gt.GobT;
 
 import static com.jab125.thonkutil.util.Util.isEnchantmentDisplaysInstalled;
 
-public class Util {
+public class CompatUtil {
 
     public static boolean maxEnchantTextConfig() {
         return GobT.config.MAX_ENCHANTMENT_TEXT && !isEnchantmentDisplaysInstalled();
