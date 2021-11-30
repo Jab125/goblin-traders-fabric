@@ -6,7 +6,6 @@
   "mixins": [
     "AnvilMenuMixin",
     "EnchantmentMixin",
-    "FabricPackMixinTemp",
     "ItemMixin",
     "MainMixin",
     "SpawnRestrictionMixin",
