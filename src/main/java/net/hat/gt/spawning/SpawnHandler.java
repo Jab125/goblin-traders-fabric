@@ -73,6 +73,6 @@ public class SpawnHandler {
             spawners.put(world, new ArrayList<>());
         }
         spawners.get(world).add(spawner);
-        System.out.println(Arrays.toString(spawners.get(world).toArray()));
+        //System.out.println(Arrays.toString(spawners.get(world).toArray()));
     }
 }
