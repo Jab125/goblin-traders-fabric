@@ -69,11 +69,11 @@ public class GoblinTraderSpawner
                 this.delayBeforeSpawnLogic = delay;
                 this.currentTraderSpawnDelay -= delay;
                 this.data.setGoblinTraderSpawnDelay(this.currentTraderSpawnDelay);
-                System.out.println(Registry.ENTITY_TYPE.getId(this.entityType).toString() + currentTraderSpawnDelay);
-                System.out.println(Registry.ENTITY_TYPE.getId(this.entityType) + ": " + currentTraderSpawnChance);
-                System.out.println();
-                System.out.println(Registry.ENTITY_TYPE.getId(this.entityType) + ": " + traderSpawnDelay);
-                System.out.println(Registry.ENTITY_TYPE.getId(this.entityType) + ": " + traderSpawnChance);
+                //System.out.println(Registry.ENTITY_TYPE.getId(this.entityType).toString() + currentTraderSpawnDelay);
+                //System.out.println(Registry.ENTITY_TYPE.getId(this.entityType) + ": " + currentTraderSpawnChance);
+                //System.out.println();
+                //System.out.println(Registry.ENTITY_TYPE.getId(this.entityType) + ": " + traderSpawnDelay);
+                //System.out.println(Registry.ENTITY_TYPE.getId(this.entityType) + ": " + traderSpawnChance);
                 if(this.currentTraderSpawnDelay <= 0)
                 {
                     //System.out.println("TRADER DELAY :)");
@@ -84,8 +84,8 @@ public class GoblinTraderSpawner
                         int spawnChance = this.currentTraderSpawnChance;
                         this.currentTraderSpawnChance = MathHelper.clamp(this.currentTraderSpawnChance + this.traderSpawnChance, this.traderSpawnChance, 100);
                         this.data.setGoblinTraderSpawnChance(this.currentTraderSpawnChance);
-                        System.out.println(this.traderSpawnChance);
-                        System.out.println(this.currentTraderSpawnChance);
+                        //System.out.println(this.traderSpawnChance);
+                        //System.out.println(this.currentTraderSpawnChance);
                         if(level.getRandom().nextInt(100) <= spawnChance)
                         {
                             //System.out.println("YES RNG");
