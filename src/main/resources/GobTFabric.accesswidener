@@ -11,7 +11,6 @@ accessible class net/minecraft/village/TradeOffers$SellEnchantedToolFactory
 accessible class net/minecraft/village/TradeOffers$ProcessItemFactory
 accessible field net/minecraft/world/biome/SpawnSettings spawners Ljava/util/Map;
 mutable field net/minecraft/world/biome/SpawnSettings spawners Ljava/util/Map;
-accessible    method    net/minecraft/item/BundleItem    addToBundle    (Lnet/minecraft/item/ItemStack;Lnet/minecraft/item/ItemStack;)I
 accessible    method    net/minecraft/entity/damage/DamageSource    setBypassesArmor    ()Lnet/minecraft/entity/damage/DamageSource;
 accessible    method    net/minecraft/entity/damage/DamageSource    setOutOfWorld    ()Lnet/minecraft/entity/damage/DamageSource;
 accessible field net/minecraft/world/dimension/DimensionType OVERWORLD Lnet/minecraft/world/dimension/DimensionType;
