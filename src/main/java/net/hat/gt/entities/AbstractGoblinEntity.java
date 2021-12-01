@@ -11,10 +11,7 @@ import net.hat.gt.init.ModSounds;
 import net.hat.gt.init.ModStats;
 import net.hat.gt.trades.UpgradedTradeOffer;
 import net.minecraft.entity.*;
-import net.minecraft.entity.ai.goal.LookAtCustomerGoal;
-import net.minecraft.entity.ai.goal.LookAtEntityGoal;
-import net.minecraft.entity.ai.goal.TemptGoal;
-import net.minecraft.entity.ai.goal.WanderAroundFarGoal;
+import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.data.TrackedData;
@@ -85,7 +82,7 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
     protected void initGoals() {
         this.goalSelector.add(0, new StunGoal(this));
         this.goalSelector.add(1, new GoblinSwimGoal(this));
-        this.goalSelector.add(1, new FirePanicGoal(this, 0.5F));
+        this.goalSelector.add(1, new EscapeDangerGoal(this, 0.5F));
         this.goalSelector.add(2, new TradeWithPlayerGoal(this));
         this.goalSelector.add(2, new LookAtCustomerGoal(this));
         this.goalSelector.add(2, new AttackRevengeTargetGoal(this));
@@ -307,7 +304,7 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
 
     private float getStunRotation(@Nullable Entity entity)
     {
-        return entity != null ? entity.getYaw() : 0F;
+        return entity != null ? entity.yaw : 0F;
     }
 
     public boolean isStunned()
@@ -339,7 +336,7 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
                 if (GobT.config.ALL_GOBLIN_TRADERS_CONFIG.NO_ATTACK_CREATIVE) {
                     try {
                         if (this.getAttacker() != null) {
-                            if (this.getAttacker().isPlayer()) {
+                            if (this.getAttacker() instanceof PlayerEntity) {
                                 if (((PlayerEntity) Objects.requireNonNull(this.getAttacker())).isCreative()) {
                                     this.setAttacker(null);
                                 }
@@ -378,7 +375,7 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
     {
         if(this.despawnDelay > 0 && !this.hasCustomer() && --this.despawnDelay == 0)
         {
-            this.remove(RemovalReason.KILLED);
+            this.remove();
         }
     }
 
@@ -461,7 +458,7 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
             }
         }
         if (LocalDate.now().isBefore(LocalDate.ofYearDay(2021, 340)) & (int) (Math.random() * 4) == 0)
-        offers.add(UpgradedBasicTrade.Builder.create().setMerchantExperience(10).setPlayerExperience(25).setOfferStack(new ItemStack(Items.CAKE).setCustomName(new TranslatableText(Items.CAKE.getTranslationKey()).formatted(Formatting.GOLD))).setMaxTrades(1).setPaymentStack(new ItemStack(Items.DEEPSLATE, 32)).build().createTradeOffer().create(this, this.getRandom()));
+        offers.add(UpgradedBasicTrade.Builder.create().setMerchantExperience(10).setPlayerExperience(25).setOfferStack(new ItemStack(Items.CAKE).setCustomName(new TranslatableText(Items.CAKE.getTranslationKey()).formatted(Formatting.GOLD))).setMaxTrades(1).setPaymentStack(new ItemStack(Items.STONE, 32)).build().createTradeOffer().create(this, this.getRandom()));
     }
     @Override
     protected void fillRecipes() {

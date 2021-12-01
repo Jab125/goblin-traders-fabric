@@ -51,7 +51,7 @@ public class SpawnHandler {
             }
             ArrayList<GoblinTraderSpawner> spawnerList = spawners.get(world.getRegistryKey().getValue());
             if (spawnerList != null) {
-                for (var spawner : spawnerList) {
+                for (GoblinTraderSpawner spawner : spawnerList) {
                     if (spawner != null) {
                         spawner.tick(world);
                         //System.out.println("TICK");

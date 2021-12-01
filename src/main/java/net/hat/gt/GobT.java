@@ -14,6 +14,7 @@ import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
 import net.fabricmc.loader.api.FabricLoader;
 import net.hat.gt.config.GoblinTradersConfig;
+import net.hat.gt.datagen.DataGen;
 import net.hat.gt.init.*;
 import net.hat.gt.spawning.SpawnHandler;
 import net.minecraft.block.Blocks;
@@ -23,6 +24,7 @@ import net.minecraft.util.Identifier;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.io.IOException;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -51,12 +53,10 @@ public class GobT implements ModInitializer {
         ServerTickEvents.END_WORLD_TICK.register(new SpawnHandler.OnWorldTick());
 
         manager.registerTypeSerializer(BasicTrade.SERIALIZER);
-        manager.registerTypeSerializer(BundleTrade.SERIALIZER);
         manager.registerTypeSerializer(PotionTrade.SERIALIZER);
         manager.registerTypeSerializer(ContainerTrade.SERIALIZER);
         manager.registerTypeSerializer(EnchantedItemTrade.SERIALIZER);
         manager.registerTypeSerializer(UpgradedBasicTrade.SERIALIZER);
-        manager.registerTypeSerializer(UpgradedBundleTrade.SERIALIZER);
         manager.registerTypeSerializer(UpgradedPotionTrade.SERIALIZER);
         manager.registerTypeSerializer(UpgradedEnchantedItemTrade.SERIALIZER);
 
@@ -86,6 +86,12 @@ public class GobT implements ModInitializer {
             return ActionResult.PASS;
         }));
         // Mental Note: don't remove this
+
+//        try {
+//            DataGen.run();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
         boolean a;
             a = ResourceManagerHelper.registerBuiltinResourcePack(id("gobtvanillaish"), Objects.requireNonNull(FabricLoader.getInstance().getModContainer(MODID)).get(), ResourcePackActivationType.NORMAL);
     }

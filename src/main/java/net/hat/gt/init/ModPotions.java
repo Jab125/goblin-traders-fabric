@@ -15,7 +15,7 @@ import static com.jab125.thonkutil.util.Util.minutesToTick;
 import static com.jab125.thonkutil.util.Util.secondsToTick;
 import static com.jab125.thonkutil.util.PotionUtil.registerPotionRecipe;
 
-public class ModPotions extends Potions {
+public class ModPotions {
     public static final Potion EXTENDED_NIGHT_VISION;
     public static final Potion EXTENDED_INVISIBILITY;
     public static final Potion POWERFUL_JUMP_BOOST ;
@@ -90,7 +90,7 @@ public class ModPotions extends Potions {
         
     }
     public static void registerPotionRecipes() {
-        registerPotionRecipe(ModPotions.NIGHT_VISION, Items.FERMENTED_SPIDER_EYE, ModPotions.INVISIBILITY);
+        registerPotionRecipe(Potions.NIGHT_VISION, Items.FERMENTED_SPIDER_EYE, Potions.INVISIBILITY);
         registerPotionRecipe(ModPotions.POWERFUL_JUMP_BOOST, Items.FERMENTED_SPIDER_EYE, ModPotions.POWERFUL_SLOWNESS);
         registerPotionRecipe(ModPotions.POWERFUL_SPEED, Items.FERMENTED_SPIDER_EYE, ModPotions.POWERFUL_SLOWNESS);
         registerPotionRecipe(ModPotions.POWERFUL_INSTANT_HEALTH, Items.FERMENTED_SPIDER_EYE, Potions.STRONG_HARMING);

@@ -21,7 +21,9 @@ public class GoblinTraderData extends PersistentState
 
     protected final Map<String, GoblinData> data = new HashMap<>();
 
-    public GoblinTraderData() {}
+    public GoblinTraderData() {
+        super(DATA_NAME);
+    }
 
     public GoblinData getGoblinData(String key)
     {
@@ -54,6 +56,11 @@ public class GoblinTraderData extends PersistentState
     }
 
     @Override
+    public void fromTag(NbtCompound tag) {
+        read(tag);
+    }
+
+    @Override
     public NbtCompound writeNbt(NbtCompound compound)
     {
         NbtList list = new NbtList();
@@ -71,6 +78,6 @@ public class GoblinTraderData extends PersistentState
     {
         ServerWorld level = server.getWorld(World.OVERWORLD);
         assert level != null;
-        return level.getPersistentStateManager().getOrCreate(tag -> new GoblinTraderData().read(tag), GoblinTraderData::new, DATA_NAME);
+        return level.getPersistentStateManager().getOrCreate(GoblinTraderData::new, DATA_NAME);
     }
 }

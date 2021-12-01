@@ -16,3 +16,5 @@ accessible    method    net/minecraft/entity/damage/DamageSource    setBypassesA
 accessible    method    net/minecraft/entity/damage/DamageSource    setOutOfWorld    ()Lnet/minecraft/entity/damage/DamageSource;
 accessible field net/minecraft/world/dimension/DimensionType OVERWORLD Lnet/minecraft/world/dimension/DimensionType;
 accessible field net/minecraft/world/dimension/DimensionType THE_NETHER Lnet/minecraft/world/dimension/DimensionType;
+accessible field net/minecraft/client/model/ModelPart children Lit/unimi/dsi/fastutil/objects/ObjectList;
+accessible method net/minecraft/entity/Entity getLandingPos ()Lnet/minecraft/util/math/BlockPos;

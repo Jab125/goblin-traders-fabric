@@ -2,18 +2,16 @@
   "required": true,
   "minVersion": "0.8",
   "package": "net.hat.gt.mixin",
-  "compatibilityLevel": "JAVA_16",
+  "compatibilityLevel": "JAVA_8",
   "mixins": [
     "AnvilMenuMixin",
     "EnchantmentMixin",
     "ItemMixin",
-    "MainMixin",
     "SpawnRestrictionMixin",
     "TradeOutputSlotMixin"
   ],
   "client": [
     "SplashScreenMixin",
-    "MinecraftMixin"
   ],
   "injectors": {
     "defaultRequire": 1

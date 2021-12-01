@@ -38,9 +38,9 @@
   "depends": {
     "fabricloader": ">=0.12.1",
     "fabric": "*",
-    "minecraft": ">=1.17",
-    "java": ">=16",
-    "cloth-config2": ">=5.0.38",
+    "minecraft": "1.16.x",
+    "java": ">=8",
+    "cloth-config2": ">=4.12.41",
     "thonkutil": ">=1.3"
   },
   "suggests": {

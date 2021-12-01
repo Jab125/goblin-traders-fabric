@@ -53,7 +53,7 @@ public class ContainerTrade implements ITradeType<GoblinTrade> {
         ItemStack container = offerStack.copy();
         NbtList itemList = new NbtList();
         for (SlotItem slotItem : this.slotItems) {
-            NbtCompound nbtCompound = container.getOrCreateNbt();
+            NbtCompound nbtCompound = container.getOrCreateTag();
             NbtCompound itemCompound = new NbtCompound();
             writeNbt(itemCompound, slotItem);
             itemList.add(itemCompound);
@@ -73,8 +73,8 @@ public class ContainerTrade implements ITradeType<GoblinTrade> {
         nbt.putString("id", identifier == null ? "minecraft:air" : identifier.toString());
         nbt.putByte("Slot", (byte) item.getSlot());
         nbt.putByte("Count", (byte) item.getItemStack().getCount());
-        if (item.getItemStack().getNbt() != null) {
-            nbt.put("tag", item.getItemStack().getNbt().copy());
+        if (item.getItemStack().getTag() != null) {
+            nbt.put("tag", item.getItemStack().getTag().copy());
         }
 
         return nbt;
@@ -162,9 +162,9 @@ public class ContainerTrade implements ITradeType<GoblinTrade> {
             JsonObject object = new JsonObject();
             object.addProperty("item", Objects.requireNonNull(Registry.ITEM.getId(stack.getItem())).toString());
             object.addProperty("count", stack.getCount());
-            if(stack.hasNbt())
+            if(stack.hasTag())
             {
-                object.addProperty("nbt", Objects.requireNonNull(stack.getNbt()).toString());
+                object.addProperty("nbt", Objects.requireNonNull(stack.getTag()).toString());
             }
             return object;
         }
@@ -174,9 +174,9 @@ public class ContainerTrade implements ITradeType<GoblinTrade> {
             object.addProperty("slot", stack.getSlot());
             object.addProperty("item", Objects.requireNonNull(Registry.ITEM.getId(stack.getItemStack().getItem())).toString());
             object.addProperty("count", stack.getItemStack().getCount());
-            if(stack.getItemStack().hasNbt())
+            if(stack.getItemStack().hasTag())
             {
-                object.addProperty("nbt", Objects.requireNonNull(stack.getItemStack().getNbt()).toString());
+                object.addProperty("nbt", Objects.requireNonNull(stack.getItemStack().getTag()).toString());
             }
             return object;
         }
@@ -267,7 +267,7 @@ public class ContainerTrade implements ITradeType<GoblinTrade> {
             return this;
         }
         public Builder setContainerItem(ItemStack itemStack, int slot) {
-            for (var slotItem : slotItems) {
+            for (SlotItem slotItem : slotItems) {
                 if (slot == slotItem.getSlot()) {
                     throw new RuntimeException("WHAT?!?!?!");
                 }

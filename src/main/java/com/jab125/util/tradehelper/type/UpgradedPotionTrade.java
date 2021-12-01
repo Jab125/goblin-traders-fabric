@@ -103,9 +103,9 @@ public class UpgradedPotionTrade implements ITradeType<UpgradedGoblinTrade> {
             JsonObject object = new JsonObject();
             object.addProperty("item", Objects.requireNonNull(Registry.ITEM.getId(stack.getItem())).toString());
             object.addProperty("count", stack.getCount());
-            if(stack.hasNbt())
+            if(stack.hasTag())
             {
-                object.addProperty("nbt", Objects.requireNonNull(stack.getNbt()).toString());
+                object.addProperty("nbt", Objects.requireNonNull(stack.getTag()).toString());
             }
             return object;
         }

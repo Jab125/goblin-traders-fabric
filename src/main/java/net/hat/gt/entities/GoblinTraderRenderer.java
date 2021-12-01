@@ -1,5 +1,7 @@
 package net.hat.gt.entities;
 
+import net.minecraft.client.render.entity.EntityRenderDispatcher;
+
 /**
  * Gobin is better, it has no 'l'
  * @deprecated use {@link net.hat.gt.entities.GobinTraderRenderer}
@@ -9,7 +11,7 @@ package net.hat.gt.entities;
 @com.jab125.util.Bad(since = "1/1/1970")
 @Deprecated
 public class GoblinTraderRenderer extends GobinTraderRenderer {
-    public GoblinTraderRenderer(net.minecraft.client.render.entity.EntityRendererFactory.Context context) {
-        super(context);
+    public GoblinTraderRenderer(EntityRenderDispatcher entityRenderDispatcher) {
+        super(entityRenderDispatcher);
     }
 }

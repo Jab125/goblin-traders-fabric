@@ -92,7 +92,7 @@ public class GoblinTradeProvider extends TradeProvider
                 .build());
 
         this.addTrade(ModEntities.GOBLIN_TRADER, TradeRarity.COMMON, isVanilla, UpgradedBasicTrade.Builder.create()
-                .setPaymentStack(new ItemStack(Items.RAW_IRON))
+                .setPaymentStack(new ItemStack(Items.IRON_ORE))
                 .setOfferStack(new ItemStack(Items.IRON_INGOT, 2))
                 .setPriceMultiplier(0F)
                 .setMaxTrades(30)
@@ -101,7 +101,7 @@ public class GoblinTradeProvider extends TradeProvider
                 .build());
 
         this.addTrade(ModEntities.GOBLIN_TRADER, TradeRarity.COMMON, isVanilla, UpgradedBasicTrade.Builder.create()
-                .setPaymentStack(new ItemStack(Items.RAW_GOLD, 2))
+                .setPaymentStack(new ItemStack(Items.GOLD_ORE, 2))
                 .setOfferStack(new ItemStack(Items.GOLD_INGOT, 3))
                 .setPriceMultiplier(0F)
                 .setMaxTrades(30)

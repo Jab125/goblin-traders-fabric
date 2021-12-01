@@ -46,7 +46,7 @@ public class TradeWithPlayerGoal extends Goal
             {
                 return false;
             }
-            return player.getInventory() != null;
+            return player.inventory != null;
         }
     }
 

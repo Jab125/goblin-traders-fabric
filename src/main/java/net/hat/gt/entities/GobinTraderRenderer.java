@@ -1,9 +1,10 @@
 package net.hat.gt.entities;
 
+import net.fabricmc.fabric.api.client.rendereregistry.v1.EntityRendererRegistry;
 import net.hat.gt.GobT;
 import net.hat.gt.GobTClient;
 import net.minecraft.client.render.VertexConsumerProvider;
-import net.minecraft.client.render.entity.EntityRendererFactory;
+import net.minecraft.client.render.entity.EntityRenderDispatcher;
 import net.minecraft.client.render.entity.MobEntityRenderer;
 import net.minecraft.client.render.entity.feature.HeldItemFeatureRenderer;
 import net.minecraft.client.util.math.MatrixStack;
@@ -16,9 +17,14 @@ public class GobinTraderRenderer extends MobEntityRenderer<AbstractGoblinEntity,
         public static final Identifier TEXTURE = GobT.id("textures/entity/goblintrader/goblin_trader.png");
         public static final Identifier TEXTUREVEIN = GobT.id("textures/entity/goblintrader/vein_goblin_trader.png");
 
-    public GobinTraderRenderer(EntityRendererFactory.Context context) {
-        super(context, new GoblinTraderModel<>(context.getPart(GobTClient.GOBLIN_MODEL_LAYER)), .5F);
+    public GobinTraderRenderer(EntityRenderDispatcher entityRenderDispatcher) {
+        super(entityRenderDispatcher, new GoblinTraderModel<>(), .5F);
         this.addFeature(new HeldItemFeatureRenderer<>(this));
+    }
+
+    public GobinTraderRenderer(EntityRenderDispatcher entityRenderDispatcher, EntityRendererRegistry.Context context) {
+        super(entityRenderDispatcher, new GoblinTraderModel<>(), .5F);
+
     }
 
     @Override

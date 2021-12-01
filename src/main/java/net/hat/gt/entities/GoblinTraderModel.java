@@ -5,7 +5,6 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.model.*;
 import net.minecraft.client.render.entity.model.CompositeEntityModel;
-import net.minecraft.client.render.entity.model.EntityModelPartNames;
 import net.minecraft.client.render.entity.model.ModelWithArms;
 import net.minecraft.client.render.entity.model.ModelWithHead;
 import net.minecraft.client.util.math.MatrixStack;
@@ -13,11 +12,12 @@ import net.minecraft.util.Arm;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.MathHelper;
 
+import java.util.NoSuchElementException;
+
 @Environment(EnvType.CLIENT)
                             //I will murder several penguins if you remove the G again
 @SuppressWarnings("unused") // Required for the query, IntelliJ marks it though.
 public class GoblinTraderModel<G extends AbstractGoblinEntity> extends CompositeEntityModel<AbstractGoblinEntity> implements ModelWithArms, ModelWithHead {
-    private final ModelPart root;
     private final ModelPart head;
     public final ModelPart hood;
     private final ModelPart body;
@@ -30,43 +30,83 @@ public class GoblinTraderModel<G extends AbstractGoblinEntity> extends Composite
     private final ModelPart bag;
     private AbstractGoblinEntity entity;
 
-    public GoblinTraderModel(ModelPart root) {
-        this.root = root;
-        this.head = root.getChild(EntityModelPartNames.HEAD);
-        this.hood = root.getChild("hood");
-        // leaving this non-coverted for future use
-        ModelPart nose = this.head.getChild("nose");
-        this.rightEar = this.head.getChild("rightEar");
-        this.leftEar = this.head.getChild("leftEar");
-        this.body = root.getChild(EntityModelPartNames.BODY);
-        this.bag = this.body.getChild("bag");
-        this.rightArm = root.getChild(EntityModelPartNames.RIGHT_ARM);
-        this.leftArm = root.getChild(EntityModelPartNames.LEFT_ARM);
-        this.leftLeg = root.getChild(EntityModelPartNames.LEFT_LEG);
-        this.rightLeg = root.getChild(EntityModelPartNames.RIGHT_LEG);
-    }
+    public GoblinTraderModel() {
+        textureHeight = 46;
+        textureWidth = 46;
+        head = new ModelPart(this, 0, 0);
+        head.addCuboid(-4.0F, -6.0F, -3.0F, 8.0F, 6.0F, 6.0F);
+        head.setPivot(0.0F, 16.0F, 0.0F);
 
-    public static TexturedModelData getTexturedModelData() {
-        ModelData modelData = new ModelData();
-        ModelPartData root = modelData.getRoot();
-        ModelPartData body = root.addChild(EntityModelPartNames.BODY, ModelPartBuilder.create().uv(12,12).cuboid(-2.0F, 0.0F, -2.0F, 4.0F, 4.0F, 4.0F), ModelTransform.pivot(0.0F, 16.0F, 0.0F));
-        body.addChild("bag", ModelPartBuilder.create().uv(0,20).cuboid(-2.5F, -2.0F, 2.0F, 5.0F, 7.0F, 3.0F), ModelTransform.NONE);
-        ModelPartData head = root.addChild(EntityModelPartNames.HEAD, ModelPartBuilder.create().uv(0,0).cuboid(-4.0F, -6.0F, -3.0F, 8.0F, 6.0F, 6.0F), ModelTransform.pivot(0.0F, 16.0F, 0.0F));
-        head.addChild("leftEar", ModelPartBuilder.create().uv(0,8).cuboid(0.0F, -2.0F, 0.0F, 0.0F, 4.0F, 4.0F), ModelTransform.pivot(4.0F, -3.0F, 1.0F));
-        head.addChild("rightEar", ModelPartBuilder.create().uv(8,8).cuboid(0.0F, -2.0F, 0.0F, 0.0F, 4.0F, 4.0F), ModelTransform.pivot(-4.0F, -3.0F, 1.0F));
-        head.addChild("nose", ModelPartBuilder.create().uv(22, 0).cuboid(-1.0F, 0.0F, -2.0F, 2.0F, 4.0F, 2.0F), ModelTransform.pivot(0.0F, -3.0F, -3.0F));
-        root.addChild(EntityModelPartNames.RIGHT_ARM, ModelPartBuilder.create().uv(30,0).cuboid(-1.0F, -1.0F, -1.0F, 2.0F, 5.0F, 2.0F), ModelTransform.pivot(-3.0F, 17.0F, 0.0F));
-        root.addChild(EntityModelPartNames.LEFT_ARM, ModelPartBuilder.create().uv(38,0).cuboid(-1.0F, -1.0F, -1.0F, 2.0F, 5.0F, 2.0F), ModelTransform.pivot(3.0F, 17.0F, 0.0F));
-        root.addChild(EntityModelPartNames.LEFT_LEG, ModelPartBuilder.create().uv(36,9).cuboid(-1.0F, 0.0F, -1.5F, 2.0F, 4.0F, 3.0F), ModelTransform.pivot(1.0F, 20.0F, 0.0F));
-        root.addChild(EntityModelPartNames.RIGHT_LEG, ModelPartBuilder.create().uv(26,9).cuboid(-1.0F, 0.0F, -1.5F, 2.0F, 4.0F, 3.0F), ModelTransform.pivot(-1.0F, 20.0F, 0.0F));
-        root.addChild("hood", ModelPartBuilder.create().uv(0, 32).cuboid(-4.0F, -6.0F, -3.0F, 8.0F, 8.0F, 6.0F, new Dilation(0.5F)), ModelTransform.pivot(0.0F, 16.0F, 0.0F));
-        return TexturedModelData.of(modelData,46,46);
+        this.hood = new ModelPart(this, 0, 32);
+        this.hood.addCuboid(-4.0F, -6.0F, -3.0F, 8.0F, 8.0F, 6.0F, 0.5F);
+        this.hood.setPivot(0.0F, 16.0F, 0.0F);
+        //head.addChild(hood);
+        // leaving this non-coverted for future use
+
+        ModelPart nose = new ModelPart(this, 22, 0);
+        nose.addCuboid(-1.0F, 0.0F, -2.0F, 2.0F, 4.0F, 2.0F);
+        nose.setPivot(0.0F, -3.0F, -3.0F);
+        head.addChild(nose);
+
+        this.rightEar = new ModelPart(this, 8,8);
+        this.rightEar.addCuboid(0.0F, -2.0F, 0.0F, 0.0F, 4.0F, 4.0F);
+        this.rightEar.setPivot(-4.0F, -3.0F, 1.0F);
+        head.addChild(rightEar);
+
+        this.leftEar = new ModelPart(this, 0,8);
+        this.leftEar.addCuboid(0.0F, -2.0F, 0.0F, 0.0F, 4.0F, 4.0F);
+        this.leftEar.setPivot(4.0F, -3.0F, 1.0F);
+        head.addChild(leftEar);
+
+        this.body = new ModelPart(this, 12, 12);
+        this.body.addCuboid(-2.0F, 0.0F, -2.0F, 4.0F, 4.0F, 4.0F);
+        this.body.setPivot(0.0F, 16.0F, 0.0F);
+
+        this.bag = new ModelPart(this,0,20);
+        this.bag.addCuboid(-2.5F, -2.0F, 2.0F, 5.0F, 7.0F, 3.0F);
+        this.bag.setPivot(0.0F, 0.0F, 0.0F);
+        this.bag.yaw = 0.0F;
+        this.bag.pitch = 0.0F;
+        this.bag.roll = 0.0F;
+        this.body.addChild(bag);
+
+        this.rightArm = new ModelPart(this,30,0);
+        this.rightArm.addCuboid(-1.0F, -1.0F, -1.0F, 2.0F, 5.0F, 2.0F);
+        this.rightArm.setPivot(-3.0F, 17.0F, 0.0F);
+
+        this.leftArm = new ModelPart(this,38,0);
+        this.leftArm.addCuboid(-1.0F, -1.0F, -1.0F, 2.0F, 5.0F, 2.0F);
+        this.leftArm.setPivot(3.0F, 17.0F, 0.0F);
+
+        this.leftLeg = new ModelPart(this,36,9);
+        this.leftLeg.addCuboid(-1.0F, 0.0F, -1.5F, 2.0F, 4.0F, 3.0F);
+        this.leftLeg.setPivot(1.0F, 20.0F, 0.0F);
+
+        this.rightLeg = new ModelPart(this,26,9);
+        this.rightLeg.addCuboid(-1.0F, 0.0F, -1.5F, 2.0F, 4.0F, 3.0F);
+        this.rightLeg.setPivot(-1.0F, 20.0F, 0.0F);
     }
 
     @Override
     public Iterable<ModelPart> getParts() {
-        return ImmutableList.of(this.root);
+        return ImmutableList.of(this.head, this.hood, this.body, this.rightArm, this.leftArm, this.leftLeg, this.rightLeg);
     }
+
+//    public static TexturedModelData getTexturedModelData() {
+//        ModelData modelData = new ModelData();
+//        ModelPartData root = modelData.getRoot();
+//        ModelPartData body = root.addChild(EntityModelPartNames.BODY, ModelPartBuilder.create().uv(12,12).cuboid(-2.0F, 0.0F, -2.0F, 4.0F, 4.0F, 4.0F), ModelTransform.pivot(0.0F, 16.0F, 0.0F));
+//        body.addChild("bag", ModelPartBuilder.create().uv(0,20).cuboid(-2.5F, -2.0F, 2.0F, 5.0F, 7.0F, 3.0F), ModelTransform.NONE);
+//        //ModelPartData head = root.addChild(EntityModelPartNames.HEAD, ModelPartBuilder.create().uv(0,0).cuboid(-4.0F, -6.0F, -3.0F, 8.0F, 6.0F, 6.0F), ModelTransform.pivot(0.0F, 16.0F, 0.0F));
+//        //head.addChild("leftEar", ModelPartBuilder.create().uv(0,8).cuboid(0.0F, -2.0F, 0.0F, 0.0F, 4.0F, 4.0F), ModelTransform.pivot(4.0F, -3.0F, 1.0F));
+//        //head.addChild("rightEar", ModelPartBuilder.create().uv(8,8).cuboid(0.0F, -2.0F, 0.0F, 0.0F, 4.0F, 4.0F), ModelTransform.pivot(-4.0F, -3.0F, 1.0F));
+//        head.addChild("nose", ModelPartBuilder.create().uv(22, 0).cuboid(-1.0F, 0.0F, -2.0F, 2.0F, 4.0F, 2.0F), ModelTransform.pivot(0.0F, -3.0F, -3.0F));
+//        root.addChild(EntityModelPartNames.LEFT_ARM, ModelPartBuilder.create().uv(38,0).cuboid(-1.0F, -1.0F, -1.0F, 2.0F, 5.0F, 2.0F), ModelTransform.pivot(3.0F, 17.0F, 0.0F));
+    //    root.addChild(EntityModelPartNames.LEFT_LEG, ModelPartBuilder.create().uv(36,9).cuboid(-1.0F, 0.0F, -1.5F, 2.0F, 4.0F, 3.0F), ModelTransform.pivot(1.0F, 20.0F, 0.0F));
+   //     root.addChild(EntityModelPartNames.RIGHT_LEG, ModelPartBuilder.create().uv(26,9).cuboid(-1.0F, 0.0F, -1.5F, 2.0F, 4.0F, 3.0F), ModelTransform.pivot(-1.0F, 20.0F, 0.0F));
+//        //root.addChild("hood", ModelPartBuilder.create().uv(0, 32).cuboid(-4.0F, -6.0F, -3.0F, 8.0F, 8.0F, 6.0F, new Dilation(0.5F)), ModelTransform.pivot(0.0F, 16.0F, 0.0F));
+//        return TexturedModelData.of(modelData,46,46);
+//    }
 
     @Override
     public void setAngles(AbstractGoblinEntity entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headroll) {
@@ -166,40 +206,36 @@ public class GoblinTraderModel<G extends AbstractGoblinEntity> extends Composite
     {
         if (this.entity != null) {
             if (!this.entity.isUsingItem()) {
-                switch (arm) {
-                    case LEFT -> {
-                        this.leftArm.rotate(matrices);
-                        matrices.translate(-0.10 / 2, -0.15, 0.25);
-                    }
-                    case RIGHT -> {
-                        this.rightArm.rotate(matrices);
-                        matrices.translate(0.10 / 2, -0.15, 0.25);
-                    }
+                if (arm.equals(Arm.LEFT)) {
+                    this.leftArm.rotate(matrices);
+                    matrices.translate(-0.10 / 2, -0.15, 0.25);
+                }
+                if (arm.equals(Arm.RIGHT)) {
+                    this.rightArm.rotate(matrices);
+                    matrices.translate(0.10 / 2, -0.15, 0.25);
                 }
                 matrices.scale(0.75F, 0.75F, 0.75F);
                 return;
             }
         }
-        switch(arm)
-        {
-            case LEFT -> {
-                this.leftArm.rotate(matrices);
-                if (this.entity.isHoldingItem(Hand.MAIN_HAND) && this.entity.isHoldingItem(Hand.OFF_HAND)) {
-                    matrices.translate(-0.10 / 2, -0.15, 0.25);
-                } else {
-                    matrices.translate(-0.235, -0.15, 0.25);
-                }
-                matrices.scale(0.75F, 0.75F, 0.75F);
+
+        if (arm.equals(Arm.LEFT)) {
+            this.leftArm.rotate(matrices);
+            if (this.entity.isHoldingItem(Hand.MAIN_HAND) && this.entity.isHoldingItem(Hand.OFF_HAND)) {
+                matrices.translate(-0.10 / 2, -0.15, 0.25);
+            } else {
+                matrices.translate(-0.235, -0.15, 0.25);
             }
-            case RIGHT -> {
-                this.rightArm.rotate(matrices);
-                if (this.entity.isHoldingItem(Hand.MAIN_HAND) && this.entity.isHoldingItem(Hand.OFF_HAND)) {
-                    matrices.translate(0.10 / 2, -0.15, 0.25);
-                } else {
-                    matrices.translate(0.235, -0.15, 0.25);
-                }
-                matrices.scale(0.75F, 0.75F, 0.75F);
+            matrices.scale(0.75F, 0.75F, 0.75F);
+        }
+        if (arm.equals(Arm.RIGHT)) {
+            this.rightArm.rotate(matrices);
+            if (this.entity.isHoldingItem(Hand.MAIN_HAND) && this.entity.isHoldingItem(Hand.OFF_HAND)) {
+                matrices.translate(0.10 / 2, -0.15, 0.25);
+            } else {
+                matrices.translate(0.235, -0.15, 0.25);
             }
+            matrices.scale(0.75F, 0.75F, 0.75F);
         }
     }
 
@@ -208,5 +244,14 @@ public class GoblinTraderModel<G extends AbstractGoblinEntity> extends Composite
     @Override
     public ModelPart getHead() {
         return this.head;
+    }
+
+    private ModelPart getChild(String name, ModelPart modelPar) {
+        ModelPart modelPart = (ModelPart)modelPar.children.get(1);
+        if (modelPart == null) {
+            throw new NoSuchElementException("Can't find part " + name);
+        } else {
+            return modelPart;
+        }
     }
 }

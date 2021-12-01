@@ -27,7 +27,7 @@ public abstract class ItemMixin {
 
     @Inject(method = "appendTooltip", at = @At(value = "HEAD"), locals = LocalCapture.CAPTURE_FAILSOFT)
     public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context, CallbackInfo ci) {
-        if (stack.isOf(Items.ACACIA_BOAT) && GobT.config.EASTER_EGGS) {
+        if (stack.getItem().equals(Items.ACACIA_BOAT) && GobT.config.EASTER_EGGS) {
             tooltip.add(new TranslatableText(this.getTranslationKey() + ".desc").formatted(Formatting.GRAY));
         }
     }

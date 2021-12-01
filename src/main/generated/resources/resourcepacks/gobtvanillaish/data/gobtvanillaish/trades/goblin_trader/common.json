@@ -23,7 +23,7 @@
         "count": 2
       },
       "payment_item": {
-        "item": "minecraft:raw_iron",
+        "item": "minecraft:iron_ore",
         "count": 1
       },
       "price_multiplier": 0.0,
@@ -38,7 +38,7 @@
         "count": 3
       },
       "payment_item": {
-        "item": "minecraft:raw_gold",
+        "item": "minecraft:gold_ore",
         "count": 2
       },
       "price_multiplier": 0.0,

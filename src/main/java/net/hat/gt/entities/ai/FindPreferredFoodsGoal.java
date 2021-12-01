@@ -46,7 +46,7 @@ public class FindPreferredFoodsGoal extends Goal
             // +++ Mental note: /execute at @e run summon creeper ~ ~ ~ {ExplosionRadius:127,powered:1,Fuse:0}
             if (this.entity.getInventory().canInsert(fakeItem) && false) {
                 ItemStack item = this.itemEntity.getStack();
-                this.itemEntity.remove(Entity.RemovalReason.KILLED);
+                this.itemEntity.remove();
                 this.entity.world.playSound(null, this.itemEntity.getX(), this.itemEntity.getY(), this.itemEntity.getZ(), SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.NEUTRAL, 1.0F, 0.75F);
                 this.entity.addFoodToStorage(item);
             } else {
