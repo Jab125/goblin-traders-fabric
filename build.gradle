@@ -48,9 +48,18 @@ loom {
 		data {
 			server()
 			name "Data Gen"
-			vmArg "-Dgoblintraders.datagen"
-			runDir "datagen"
+			vmArg "-Dfabric-api.datagen"
+			vmArg "-Dfabric-api.datagen.output-dir=${file("src/main/generated")}"
 			ideConfigGenerated = true
+		}
+	}
+}
+sourceSets {
+	main{
+		resources {
+			srcDirs += [
+					'src/main/generated'
+			]
 		}
 	}
 }

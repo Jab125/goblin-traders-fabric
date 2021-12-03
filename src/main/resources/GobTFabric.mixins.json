@@ -7,13 +7,11 @@
     "AnvilMenuMixin",
     "EnchantmentMixin",
     "ItemMixin",
-    "MainMixin",
     "SpawnRestrictionMixin",
     "TradeOutputSlotMixin"
   ],
   "client": [
-    "SplashScreenMixin",
-    "MinecraftMixin"
+    "SplashScreenMixin"
   ],
   "injectors": {
     "defaultRequire": 1

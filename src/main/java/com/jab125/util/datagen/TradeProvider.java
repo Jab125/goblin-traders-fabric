@@ -78,7 +78,7 @@ public abstract class TradeProvider implements DataProvider
                 tradeList.forEach(trade -> tradeArray.add(trade.serialize()));
                 object.add("trades", tradeArray);
                 Identifier id = Objects.requireNonNull(Registry.ENTITY_TYPE.getId(entityType));
-                Path path = this.generator.getOutput().resolve("data/" + id.getNamespace() + "/trades/" + id.getPath() + "/" + tradeRarity.getKey() + ".json");
+                Path path = this.generator.getOutput().resolve("resources/data/" + id.getNamespace() + "/trades/" + id.getPath() + "/" + tradeRarity.getKey() + ".json");
                 try
                 {
                     String rawJson = GSON.toJson(object);
@@ -111,7 +111,7 @@ public abstract class TradeProvider implements DataProvider
                 tradeList.forEach(trade -> tradeArray.add(trade.serialize()));
                 object.add("trades", tradeArray);
                 Identifier id = Objects.requireNonNull(Registry.ENTITY_TYPE.getId(entityType));
-                Path path = this.generator.getOutput().resolve("resourcepacks/gobtvanillaish/data/" + "gobtvanillaish" + "/trades/" + id.getPath() + "/" + tradeRarity.getKey() + ".json");
+                Path path = this.generator.getOutput().resolve("resources/resourcepacks/gobtvanillaish/data/" + "gobtvanillaish" + "/trades/" + id.getPath() + "/" + tradeRarity.getKey() + ".json");
                 try
                 {
                     String rawJson = GSON.toJson(object);

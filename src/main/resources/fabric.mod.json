@@ -29,6 +29,9 @@
     ],
     "modmenu": [
       "net.hat.gt.config.ModMenuIntegration"
+    ],
+    "fabric-datagen": [
+      "net.hat.gt.datagen.DataGenEntrypoint"
     ]
   },
   "mixins": [
