@@ -1,8 +1,8 @@
 package net.hat.gt.init;
 
 
-import com.jab125.thonkutil.api.RemoveTippedPotionRecipe;
-import com.jab125.thonkutil.api.SkipPotion;
+import com.jab125.thonkutil.api.potion.RemovePotionRecipe;
+import com.jab125.thonkutil.api.potion.SkipPotion;
 import net.hat.gt.GobT;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
@@ -48,7 +48,7 @@ public class ModPotions extends Potions {
 
 
     private static Potion register(String name, Potion potion) {
-        RemoveTippedPotionRecipe.remove(potion);
+        RemovePotionRecipe.removeTippedArrow(potion);
         SkipPotion.skipPotion(potion, SkipPotion.TIPPED_ARROW);
         return Registry.register(Registry.POTION, GobT.id(name), potion);
     }

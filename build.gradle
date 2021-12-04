@@ -104,6 +104,8 @@ publishing {
 		// retrieving dependencies.
 	}
 }
+
+
 sourceSets.main.resources {
 	srcDirs = ['src/main/resources', 'src/main/generated/resources']
 }

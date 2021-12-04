@@ -1,5 +1,6 @@
 package net.hat.gt.entities;
 
+import com.jab125.thonkutil.api.tradeoffer.IdentifiableTrade;
 import com.jab125.util.tradehelper.EntityTrades;
 import com.jab125.util.tradehelper.TradeManager;
 import com.jab125.util.tradehelper.TradeRarity;
@@ -34,10 +35,7 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Formatting;
-import net.minecraft.util.Hand;
-import net.minecraft.util.UseAction;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.village.TradeOffer;
@@ -102,7 +100,7 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
     @Override
     protected void afterUsing(TradeOffer offer) {
         if (offer.shouldRewardPlayerExperience()) {
-            int i = offer instanceof UpgradedTradeOffer ? ((UpgradedTradeOffer) offer).getPlayerExperience() : offer.getMerchantExperience() * 10;
+            int i = IdentifiableTrade.getIdOf(offer).equals(new Identifier("goblintraders", "upgraded_trad_offer")) ? ((UpgradedTradeOffer) offer).getPlayerExperience() : offer.getMerchantExperience() * 10;
             this.world.spawnEntity(new ExperienceOrbEntity(this.world, this.getX(), this.getY() + 0.5D, this.getZ(), i));
         }
     }

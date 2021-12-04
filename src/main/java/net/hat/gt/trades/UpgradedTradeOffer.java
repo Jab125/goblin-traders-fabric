@@ -1,10 +1,13 @@
 package net.hat.gt.trades;
 
+import com.jab125.thonkutil.api.tradeoffer.IdentifiableTrade;
+import net.hat.gt.GobT;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.util.Identifier;
 import net.minecraft.village.TradeOffer;
 
-public class UpgradedTradeOffer extends TradeOffer {
+public class UpgradedTradeOffer extends TradeOffer implements IdentifiableTrade {
     private final int playerExperience;
 
     public UpgradedTradeOffer(NbtCompound nbt) {
@@ -44,6 +47,12 @@ public class UpgradedTradeOffer extends TradeOffer {
     public NbtCompound toNbt() {
         NbtCompound nbtCompound = super.toNbt();
         nbtCompound.putInt("playerXp", this.playerExperience);
+        nbtCompound.putString("id", GobT.id("upgraded_trade_offer").toString());
         return nbtCompound;
+    }
+
+    @Override
+    public Identifier getId() {
+        return GobT.id("upgraded_trade_offer");
     }
 }
