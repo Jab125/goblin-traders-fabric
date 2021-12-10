@@ -100,7 +100,7 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
     @Override
     protected void afterUsing(TradeOffer offer) {
         if (offer.shouldRewardPlayerExperience()) {
-            int i = IdentifiableTrade.getIdOf(offer).equals(new Identifier("goblintraders", "upgraded_trad_offer")) ? ((UpgradedTradeOffer) offer).getPlayerExperience() : offer.getMerchantExperience() * 10;
+            int i = IdentifiableTrade.getIdOf(offer).equals(new Identifier("goblintraders", "upgraded_trade_offer")) ? ((UpgradedTradeOffer) offer).getPlayerExperience() : offer.getMerchantExperience() * 10;
             this.world.spawnEntity(new ExperienceOrbEntity(this.world, this.getX(), this.getY() + 0.5D, this.getZ(), i));
         }
     }
