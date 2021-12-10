@@ -1,6 +1,6 @@
 package net.hat.gt.trades;
 
-import com.jab125.thonkutil.api.tradeoffer.IdentifiableTrade;
+import com.jab125.thonkutil.api.IdentifiableTrade;
 import net.hat.gt.GobT;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;

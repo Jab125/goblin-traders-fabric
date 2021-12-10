@@ -6,7 +6,7 @@ import net.minecraft.data.DataGenerator;
 
 public class DataGeneraton {
     public static void registerCommonProviders(DataGenerator generator) {
-        generator.install(new GoblinTradeProvider(generator));
+        generator.addProvider(new GoblinTradeProvider(generator));
         try {
             generator.run();
         } catch (Exception e) {

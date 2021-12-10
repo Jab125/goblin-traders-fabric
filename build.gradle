@@ -28,11 +28,14 @@ dependencies {
 		exclude(group: "net.fabricmc.fabric-api")
 	}
 
-	modImplementation "com.terraformersmc:modmenu:2.0.2", {
+	modImplementation "com.terraformersmc:modmenu:3.0.0", {
 		exclude module: "fabric-api"
 	}
 
-	modApi include("com.jab125:thonkutil-${project.thonkutil_version}")
+	//modApi include("com.jab125:thonkutil-${project.thonkutil_version}")
+	modApi "com.jab125:thonkutil-base-1.0.0+${project.thonkutil_commit_version}"
+	modApi "com.jab125:thonkutil-potions-v0-1.0.0+${project.thonkutil_commit_version}"
+	modApi "com.jab125:thonkutil-trades-v1-1.0.0+${project.thonkutil_commit_version}"
 }
 
 processResources {

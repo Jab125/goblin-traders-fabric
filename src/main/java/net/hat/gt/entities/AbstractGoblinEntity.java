@@ -1,6 +1,6 @@
 package net.hat.gt.entities;
 
-import com.jab125.thonkutil.api.tradeoffer.IdentifiableTrade;
+import com.jab125.thonkutil.api.IdentifiableTrade;
 import com.jab125.util.tradehelper.EntityTrades;
 import com.jab125.util.tradehelper.TradeManager;
 import com.jab125.util.tradehelper.TradeRarity;
@@ -99,6 +99,7 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
 
     @Override
     protected void afterUsing(TradeOffer offer) {
+        System.out.println(IdentifiableTrade.getIdOf(offer));
         if (offer.shouldRewardPlayerExperience()) {
             int i = IdentifiableTrade.getIdOf(offer).equals(new Identifier("goblintraders", "upgraded_trad_offer")) ? ((UpgradedTradeOffer) offer).getPlayerExperience() : offer.getMerchantExperience() * 10;
             this.world.spawnEntity(new ExperienceOrbEntity(this.world, this.getX(), this.getY() + 0.5D, this.getZ(), i));

@@ -1,8 +1,8 @@
 package net.hat.gt.init;
 
 
-import com.jab125.thonkutil.api.potion.RemovePotionRecipe;
-import com.jab125.thonkutil.api.potion.SkipPotion;
+import com.jab125.thonkutil.api.RemovePotionRecipe;
+import com.jab125.thonkutil.api.SkipPotion;
 import net.hat.gt.GobT;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
@@ -13,7 +13,7 @@ import net.minecraft.util.registry.Registry;
 
 import static com.jab125.thonkutil.util.Util.minutesToTick;
 import static com.jab125.thonkutil.util.Util.secondsToTick;
-import static com.jab125.thonkutil.util.PotionUtil.registerPotionRecipe;
+import static com.jab125.thonkutil.api.BrewingRecipeRegistry.registerPotionRecipe;
 
 public class ModPotions extends Potions {
     public static final Potion EXTENDED_NIGHT_VISION;
