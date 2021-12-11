@@ -31,6 +31,24 @@
           "level": 4
         }
       ]
+    },
+    {
+      "type": "goblintraders:upgraded_only_in_end_basic",
+      "offer_item": {
+        "item": "minecraft:music_disc_otherside",
+        "count": 1
+      },
+      "payment_item": {
+        "item": "minecraft:ender_eye",
+        "count": 13
+      },
+      "secondary_payment_item": {
+        "item": "minecraft:wither_skeleton_skull",
+        "count": 3
+      },
+      "price_multiplier": 0.0,
+      "merchant_experience": 15,
+      "player_experience": 66
     }
   ]
 }

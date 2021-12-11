@@ -38,6 +38,6 @@ public interface GobTEvents {
     }
 
     interface OnAttemptSpawn {
-        ActionResult interact(EntityType goblinTraderType, ServerWorld world, BlockPos safestPos);
+        ActionResult interact(EntityType<?> goblinTraderType, ServerWorld world, BlockPos safestPos);
     }
 }

@@ -4,6 +4,7 @@ import com.jab125.util.datagen.TradeProvider;
 import com.jab125.util.tradehelper.TradeRarity;
 import com.jab125.util.tradehelper.type.UpgradedBasicTrade;
 import com.jab125.util.tradehelper.type.UpgradedEnchantedItemTrade;
+import com.jab125.util.tradehelper.type.UpgradedOnlyInEndBasicTrade;
 import com.jab125.util.tradehelper.type.UpgradedPotionTrade;
 import net.hat.gt.init.ModEntities;
 import net.hat.gt.init.ModPotions;
@@ -30,9 +31,6 @@ public class GoblinTradeProvider extends TradeProvider
         super(generator);
     }
 
-    /**
-     * Feel free to mixin into this for stuff (like for addons)
-     */
     @Override
     public void registerTrades() {
         this.registerGoblinTraderTrades();
@@ -310,6 +308,8 @@ public class GoblinTradeProvider extends TradeProvider
         }
 
     }
+
+    @SuppressWarnings("unused")
     public void registerEpicGoblinTrades(boolean isVanilla) {
         // RIP NO EPIC TRADES
     }
@@ -559,6 +559,14 @@ public class GoblinTradeProvider extends TradeProvider
                 .addEnchantment(new EnchantmentLevelEntry(Enchantments.UNBREAKING, isVanilla ? 3 : 4))
                 .addEnchantment(new EnchantmentLevelEntry(Enchantments.MENDING, 1), isVanilla)
                 .build());
+
+        this.addTrade(ModEntities.VEIN_GOBLIN_TRADER, TradeRarity.LEGENDARY, isVanilla, UpgradedOnlyInEndBasicTrade.Builder.create()
+                .setOfferStack(new ItemStack(Items.MUSIC_DISC_OTHERSIDE))
+                .setPaymentStack(new ItemStack(Items.ENDER_EYE, 13))
+                .setSecondaryPaymentStack(new ItemStack(Items.WITHER_SKELETON_SKULL, 3))
+                .setMerchantExperience(15)
+                .setPlayerExperience(66)
+                .build());
     }
 
 
@@ -571,6 +579,7 @@ public class GoblinTradeProvider extends TradeProvider
         return hashMap;
     }
 
+    @SuppressWarnings("unused")
     public static HashMap<Enchantment, Integer> toHashMap(EnchantmentLevelEntry enchantmentLevelEntry, int level) {
         HashMap<Enchantment, Integer> hashMap = new HashMap<>();
         hashMap.put(enchantmentLevelEntry.enchantment, level);

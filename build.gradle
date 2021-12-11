@@ -33,9 +33,9 @@ dependencies {
 	}
 
 	//modApi include("com.jab125:thonkutil-${project.thonkutil_version}")
-	modApi "com.jab125:thonkutil-base-1.0.0+${project.thonkutil_commit_version}"
-	modApi "com.jab125:thonkutil-potions-v0-1.0.0+${project.thonkutil_commit_version}"
-	modApi "com.jab125:thonkutil-trades-v1-1.0.0+${project.thonkutil_commit_version}"
+	modApi include("com.jab125:thonkutil-base-1.1.0+d5f23f2ac8")
+	modApi include("com.jab125:thonkutil-potions-v0-1.2.0+e4c51c01c8")
+	modApi include("com.jab125:thonkutil-trades-v1-1.1.0+769eee82c8")
 }
 
 processResources {

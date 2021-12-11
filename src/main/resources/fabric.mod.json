@@ -31,7 +31,7 @@
       "net.hat.gt.config.ModMenuIntegration"
     ],
     "fabric-datagen": [
-      "net.hat.gt.datagen.DataGenEntrypoint"
+      "com.jab125.util.datagen.DataGeneration"
     ]
   },
   "mixins": [
@@ -39,13 +39,13 @@
   ],
   "accessWidener": "GobTFabric.accesswidener",
   "depends": {
-    "fabricloader": ">=0.12.1",
+    "fabricloader": ">=0.12.8",
     "fabric": "*",
-    "minecraft": ">=1.17",
-    "java": ">=16",
-    "thonkutil-base": ">=1.0.0",
-    "thonkutil-potions-v0": ">=1.0.0",
-    "thonkutil-trades-v1": ">=1.0.0",
+    "minecraft": ">=1.18",
+    "java": ">=17",
+    "thonkutil-base": ">=1.1.0",
+    "thonkutil-potions-v0": ">=1.2.0",
+    "thonkutil-trades-v1": ">=1.1.0",
     "cloth-config2": ">=5.0.38"
   },
   "suggests": {

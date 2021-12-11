@@ -11,6 +11,7 @@ import net.minecraft.potion.Potion;
 import net.minecraft.potion.Potions;
 import net.minecraft.util.registry.Registry;
 
+import static com.jab125.thonkutil.api.RemovePotionRecipe.removeLingeringPotion;
 import static com.jab125.thonkutil.util.Util.minutesToTick;
 import static com.jab125.thonkutil.util.Util.secondsToTick;
 import static com.jab125.thonkutil.api.BrewingRecipeRegistry.registerPotionRecipe;
@@ -87,7 +88,16 @@ public class ModPotions extends Potions {
 
     }
     public static void registerPotions() {
-        
+        removeSplashAndLingeringPotionRecipes();
+    }
+
+    private static void removeSplashAndLingeringPotionRecipes() {
+        removeSplashAndLingeringPotion(POWERFUL_INSTANT_DAMAGE);
+        removeSplashAndLingeringPotion(POWERFUL_SLOWNESS);
+    }
+    private static void removeSplashAndLingeringPotion(Potion potion) {
+        removeLingeringPotion(potion);
+        RemovePotionRecipe.removeSplashPotion(potion);
     }
     public static void registerPotionRecipes() {
         registerPotionRecipe(ModPotions.NIGHT_VISION, Items.FERMENTED_SPIDER_EYE, ModPotions.INVISIBILITY);
