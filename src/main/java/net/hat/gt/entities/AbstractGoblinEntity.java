@@ -10,6 +10,8 @@ import net.hat.gt.entities.ai.*;
 import net.hat.gt.init.ModSounds;
 import net.hat.gt.init.ModStats;
 import net.hat.gt.trades.UpgradedTradeOffer;
+import net.minecraft.block.FluidBlock;
+import net.minecraft.block.ShapeContext;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.goal.LookAtCustomerGoal;
 import net.minecraft.entity.ai.goal.LookAtEntityGoal;
@@ -33,6 +35,7 @@ import net.minecraft.recipe.Ingredient;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
+import net.minecraft.tag.FluidTags;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.*;
@@ -49,6 +52,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.time.LocalDate;
 import java.util.*;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -57,6 +61,7 @@ import static com.jab125.thonkutil.util.Util.secondsToTick;
 public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc {
     @Nullable
     private BlockPos wanderTarget;
+    private final int fallVelocity = 0;
 
     @SuppressWarnings("MismatchedQueryAndUpdateOfCollection") // this is popping up as an error incorrectly, this is the fix.
     private final Set<UUID> tradedCustomers = new HashSet<>();
@@ -68,6 +73,7 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
     private static final TrackedData<? super Float> STUN_ROTATION = DataTracker.registerData(AbstractGoblinEntity.class, TrackedDataHandlerRegistry.FLOAT);
     private static final TrackedData<? super Boolean> STUNNED = DataTracker.registerData(AbstractGoblinEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
     private static final TrackedData<? super Boolean> RAINING = DataTracker.registerData(AbstractGoblinEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
+    private static final TrackedData<? super Boolean> HAS_BAG = DataTracker.registerData(AbstractGoblinEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
     private static final TrackedData<? super ItemStack> FOODS = DataTracker.registerData(AbstractGoblinEntity.class, TrackedDataHandlerRegistry.ITEM_STACK);
 
     //register Goblin to Exist
@@ -109,6 +115,19 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
     @Override
     public ActionResult interactMob(PlayerEntity player, Hand hand) {
         if (this.isAlive() && !this.hasCustomer() && (this.isFireImmune() || !this.isOnFire()) && !isStunned()) {
+            if (player.getStackInHand(Hand.MAIN_HAND).getItem().equals(this.getFavouriteFood().getItem()) && player.getStackInHand(Hand.MAIN_HAND).getCount() >= 30 && GobT.config.ALL_GOBLIN_TRADERS_CONFIG.CAN_BE_RESTOCKED) {
+
+                if (/*!PotionUtil.getPotion(player.getStackInHand(Hand.MAIN_HAND)).equals(PotionUtil.getPotion(this.getFavouriteFood())) && */this.noStockLeft()) {
+                    player.getStackInHand(Hand.MAIN_HAND).setCount(player.getStackInHand(Hand.MAIN_HAND).getCount() - 30);
+                    this.getOffers().forEach(TradeOffer::resetUses);
+                    this.produceParticles(ParticleTypes.HAPPY_VILLAGER);
+                    return ActionResult.success(this.world.isClient);
+                }
+            }
+            if (this.noStockLeft() && !GobT.config.ALL_GOBLIN_TRADERS_CONFIG.CAN_BE_RESTOCKED) {
+                //this.discardBag();
+                return ActionResult.success(this.world.isClient);
+            }
             if (hand.equals(Hand.MAIN_HAND)) {
                 player.incrementStat(ModStats.TRADE_WITH_GOBLIN);
             }
@@ -122,6 +141,11 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
         } else {
             return super.interactMob(player, hand);
         }
+    }
+
+    @Override
+    public boolean canBeLeashedBy(PlayerEntity player) {
+        return GobT.config.ALL_GOBLIN_TRADERS_CONFIG.CAN_BE_LEASHED;
     }
 
     @Override
@@ -190,6 +214,7 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
         super.writeCustomDataToNbt(nbt);
         nbt.putInt("DespawnDelay", this.despawnDelay);
         nbt.putBoolean("IsStunned", this.isStunned());
+        nbt.putBoolean("HasBag", (boolean) this.dataTracker.get(HAS_BAG));
         nbt.putInt("StunDuration", this.stunDelay);
         nbt.putFloat("StunRotation", this.getStunRotation());
         if (this.wanderTarget != null) {
@@ -216,6 +241,10 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
         if (nbt.contains("StunRotation")) {
             this.dataTracker.set(STUN_ROTATION, nbt.getFloat("StunRotation"));
         }
+        if (nbt.contains("HasBag")) {
+            this.dataTracker.set(HAS_BAG, nbt.getBoolean("HasBag"));
+        }
+
 
         this.setBreedingAge(Math.max(0, this.getBreedingAge()));
     }
@@ -292,6 +321,7 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
         this.dataTracker.startTracking(FOODS, ItemStack.EMPTY);
         this.dataTracker.startTracking(STUN_ROTATION, 0F);
         this.dataTracker.startTracking(RAINING, false);
+        this.dataTracker.startTracking(HAS_BAG, true);
     }
 
     @Override
@@ -305,8 +335,7 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
         return entity != null ? entity.getYaw() : 0F;
     }
 
-    public boolean isStunned()
-    {
+    public boolean isStunned() {
         return (boolean) this.dataTracker.get(STUNNED);
     }
 
@@ -462,6 +491,40 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
     protected void fillRecipes() {
 
     }
+
+    private boolean noStockLeft() {
+        AtomicBoolean b = new AtomicBoolean(true);
+        this.getOffers().forEach((tradeOffer) -> {
+            if (!(tradeOffer.isDisabled())) b.set(false);
+        });
+        return b.get();
+    }
+
+
+    private void discardBag() {
+        if (!GobT.config.ALL_GOBLIN_TRADERS_CONFIG.DISCARD_BAG) return;
+        this.dataTracker.set(HAS_BAG, false);
+    }
+
+    public boolean hasBag() {
+        return (boolean) this.dataTracker.get(HAS_BAG);
+    }
+
+    public void updateFloating() {
+        if (this.isInWater()) {
+            ShapeContext shapeContext = ShapeContext.of(this);
+            if (shapeContext.isAbove(FluidBlock.COLLISION_SHAPE, this.getBlockPos(), true) && !this.world.getFluidState(this.getBlockPos().up()).isIn(FluidTags.WATER)) {
+                this.onGround = true;
+            } else {
+                this.setVelocity(this.getVelocity().multiply(0.5D).add(0.0D, 0.05D, 0.0D));
+            }
+        }
+    }
+    private boolean isInWater() {
+        return !this.firstUpdate && this.fluidHeight.getDouble(FluidTags.WATER) > 0.0D;
+    }
+
+    //protected abstract ItemStack[] questItems();
 
     /**
      * specify minSpawnHeight Here

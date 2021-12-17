@@ -95,6 +95,7 @@ public class GoblinTraderModel<G extends AbstractGoblinEntity> extends Composite
         this.bag.pitch = (float) Math.toRadians(0F);
         this.bag.pivotY = 0;
         this.bag.pivotZ = 0;
+        this.bag.visible = entity.hasBag();
         this.leftArm.pivotZ = 0;
         this.leftArm.pivotY = 17;
         this.rightArm.pivotZ = 0;
@@ -146,7 +147,8 @@ public class GoblinTraderModel<G extends AbstractGoblinEntity> extends Composite
             this.leftLeg.yaw = (float) Math.toRadians(0);
         }
 
-        if(entity.isRaining() && !entity.isStunned() && !entity.isUsingItem()){
+        boolean isRaft = false;
+        if(entity.isRaining() && !entity.isStunned() && !entity.isUsingItem() && entity.hasBag() && !isRaft){
             this.rightArm.pitch = (float) Math.toRadians(-140F);
             this.rightArm.yaw = (float) Math.toRadians(-20F);
             this.leftArm.pitch = (float) Math.toRadians(-140F);
@@ -158,6 +160,16 @@ public class GoblinTraderModel<G extends AbstractGoblinEntity> extends Composite
             this.leftArm.pivotY = 15;
             this.rightArm.pivotZ = -3;
             this.rightArm.pivotY = 15;
+        }
+
+        if (isRaft) {
+            this.rightLeg.yaw = (float) Math.toRadians(25F);
+            this.leftLeg.pitch = (float) Math.toRadians(-90F);
+            this.leftLeg.yaw = (float) Math.toRadians(-25F);
+            this.rightLeg.pitch = (float) Math.toRadians(-90F);
+            this.bag.pitch = (float) Math.toRadians(-90F);
+            this.bag.pivotY = 6;
+            this.bag.pivotZ = 3;
         }
     }
 

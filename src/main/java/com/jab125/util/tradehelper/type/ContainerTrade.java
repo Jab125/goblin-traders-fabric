@@ -8,15 +8,13 @@ import com.jab125.util.tradehelper.GoblinTrade;
 import com.jab125.util.tradehelper.TradeSerializer;
 import net.hat.gt.GobT;
 import net.minecraft.block.BlockWithEntity;
-import net.minecraft.enchantment.EnchantmentLevelEntry;
-import net.minecraft.item.*;
+import net.minecraft.item.BlockItem;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
-import net.minecraft.nbt.NbtElement;
 import net.minecraft.nbt.NbtList;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.JsonHelper;
 import net.minecraft.util.registry.Registry;
-import net.minecraft.village.TradeOffers;
 
 import java.util.ArrayList;
 import java.util.Collection;

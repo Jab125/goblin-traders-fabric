@@ -42,6 +42,7 @@ public class GobinTraderRenderer extends MobEntityRenderer<AbstractGoblinEntity,
         super.render(mobEntity, 0F, g, matrixStack, vertexConsumerProvider, i);
         matrixStack.pop();
     }
+
     protected int getBlockLight(AbstractGoblinEntity goblinEntity, BlockPos blockPos) {
 
         return goblinEntity instanceof VeinGoblinTraderEntity ? Math.max(super.getBlockLight(goblinEntity, blockPos), 10) : super.getBlockLight(goblinEntity, blockPos);

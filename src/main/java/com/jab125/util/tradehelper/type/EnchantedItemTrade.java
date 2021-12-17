@@ -1,6 +1,5 @@
 package com.jab125.util.tradehelper.type;
 
-import com.google.common.annotations.Beta;
 import com.google.gson.JsonObject;
 import com.jab125.util.forgehelper.CraftingHelper;
 import com.jab125.util.tradehelper.GoblinTrade;
@@ -12,20 +11,12 @@ import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.EnchantmentLevelEntry;
 import net.minecraft.enchantment.Enchantments;
-import net.minecraft.potion.Potions;
-import net.minecraft.server.Main;
-import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
-import net.minecraft.item.PotionItem;
-import net.minecraft.potion.Potion;
-import net.minecraft.potion.PotionUtil;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.JsonHelper;
 import net.minecraft.util.registry.Registry;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Objects;
 
 /**

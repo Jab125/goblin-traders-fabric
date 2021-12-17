@@ -3,7 +3,6 @@ package net.hat.gt;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.hat.gt.entities.GobinTraderRenderer;
@@ -24,6 +23,5 @@ public class GobTClient implements ClientModInitializer {
         //EntityLayer
         EntityModelLayerRegistry.registerModelLayer(GOBLIN_MODEL_LAYER, GoblinTraderModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(VEIN_GOBLIN_MODEL_LAYER, GoblinTraderModel::getTexturedModelData);
-
     }
 }

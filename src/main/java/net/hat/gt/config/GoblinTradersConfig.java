@@ -33,7 +33,13 @@ public class GoblinTradersConfig implements ConfigData {
         public int FIND_COOLDOWN = 2400;
         public boolean FALL = true;
         public boolean NO_ATTACK_CREATIVE = true;
+        @ConfigEntry.Gui.Tooltip
+        public boolean CAN_BE_RESTOCKED = true;
+        @ConfigEntry.Gui.Tooltip
+        public boolean DISCARD_BAG = false;
         public boolean CAN_GET_KNOCKED_OUT = false;
+        @ConfigEntry.Gui.Excluded
+        public boolean CAN_BE_LEASHED = true;
     }
 
     public static class GoblinTrader {

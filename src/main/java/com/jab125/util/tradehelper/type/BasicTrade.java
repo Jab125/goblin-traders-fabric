@@ -19,7 +19,6 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.JsonHelper;
 import net.minecraft.util.registry.Registry;
 
-
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;

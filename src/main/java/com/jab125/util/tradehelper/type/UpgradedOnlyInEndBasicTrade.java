@@ -5,7 +5,6 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.jab125.util.forgehelper.CraftingHelper;
 import com.jab125.util.tradehelper.TradeSerializer;
-import com.jab125.util.tradehelper.UpgradedGoblinTrade;
 import com.jab125.util.tradehelper.UpgradedGoblinTradeIfInNotEnd;
 import net.hat.gt.GobT;
 import net.minecraft.enchantment.Enchantment;

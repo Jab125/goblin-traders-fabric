@@ -11,10 +11,10 @@ import net.minecraft.potion.Potion;
 import net.minecraft.potion.Potions;
 import net.minecraft.util.registry.Registry;
 
+import static com.jab125.thonkutil.api.BrewingRecipeRegistry.registerPotionRecipe;
 import static com.jab125.thonkutil.api.RemovePotionRecipe.removeLingeringPotion;
 import static com.jab125.thonkutil.util.Util.minutesToTick;
 import static com.jab125.thonkutil.util.Util.secondsToTick;
-import static com.jab125.thonkutil.api.BrewingRecipeRegistry.registerPotionRecipe;
 
 public class ModPotions extends Potions {
     public static final Potion EXTENDED_NIGHT_VISION;

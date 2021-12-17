@@ -74,7 +74,7 @@ public class GoblinTradeProvider extends TradeProvider
         registerLegendaryVeinGoblinTrades(true);
     }
 
-
+    @SuppressWarnings("ConstantConditions")
     public void registerCommonGoblinTrades(boolean isVanilla) {
         /* ************************************************************************************** *
          *                                     COMMON                                             *
@@ -89,6 +89,26 @@ public class GoblinTradeProvider extends TradeProvider
                 .setPlayerExperience(10)
                 .build());
 
+        if (!isVanilla) {
+            this.addTrade(ModEntities.GOBLIN_TRADER, TradeRarity.COMMON, isVanilla, UpgradedBasicTrade.Builder.create()
+                    .setPaymentStack(new ItemStack(Items.EMERALD))
+                    .setOfferStack(new ItemStack(Items.BLAZE_ROD))
+                    .setPriceMultiplier(0F)
+                    .setMaxTrades(24)
+                    .setMerchantExperience(1)
+                    .setPlayerExperience(10)
+                    .build());
+
+            this.addTrade(ModEntities.GOBLIN_TRADER, TradeRarity.COMMON, isVanilla, UpgradedBasicTrade.Builder.create()
+                    .setPaymentStack(new ItemStack(Items.EMERALD))
+                    .setOfferStack(new ItemStack(Items.ENDER_PEARL))
+                    .setPriceMultiplier(0F)
+                    .setMaxTrades(24)
+                    .setMerchantExperience(1)
+                    .setPlayerExperience(10)
+                    .build());
+        }
+
         this.addTrade(ModEntities.GOBLIN_TRADER, TradeRarity.COMMON, isVanilla, UpgradedBasicTrade.Builder.create()
                 .setPaymentStack(new ItemStack(Items.RAW_IRON))
                 .setOfferStack(new ItemStack(Items.IRON_INGOT, 2))
@@ -101,6 +121,15 @@ public class GoblinTradeProvider extends TradeProvider
         this.addTrade(ModEntities.GOBLIN_TRADER, TradeRarity.COMMON, isVanilla, UpgradedBasicTrade.Builder.create()
                 .setPaymentStack(new ItemStack(Items.RAW_GOLD, 2))
                 .setOfferStack(new ItemStack(Items.GOLD_INGOT, 3))
+                .setPriceMultiplier(0F)
+                .setMaxTrades(30)
+                .setMerchantExperience(3)
+                .setPlayerExperience(30)
+                .build());
+
+        this.addTrade(ModEntities.GOBLIN_TRADER, TradeRarity.COMMON, isVanilla, UpgradedBasicTrade.Builder.create()
+                .setPaymentStack(new ItemStack(Items.RAW_COPPER, 3))
+                .setOfferStack(new ItemStack(Items.COPPER_INGOT, 4))
                 .setPriceMultiplier(0F)
                 .setMaxTrades(30)
                 .setMerchantExperience(3)

@@ -67,7 +67,7 @@ public class VeinGoblinTraderEntity extends AbstractGoblinEntity{
 
     @Override
     public boolean isWet() {
-        return this.isTouchingWater();
+        return this.isTouchingWater() || (this.hasBag() && this.isTouchingWaterOrRain());
     }
 
     @Override

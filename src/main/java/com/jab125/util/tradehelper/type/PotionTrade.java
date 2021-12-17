@@ -5,21 +5,15 @@ import com.jab125.util.forgehelper.CraftingHelper;
 import com.jab125.util.tradehelper.GoblinTrade;
 import com.jab125.util.tradehelper.TradeSerializer;
 import net.hat.gt.GobT;
-import net.minecraft.enchantment.EnchantmentLevelEntry;
-import net.minecraft.potion.Potions;
-import net.minecraft.server.Main;
-import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.item.PotionItem;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionUtil;
+import net.minecraft.potion.Potions;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.JsonHelper;
 import net.minecraft.util.registry.Registry;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Objects;
 
 public class PotionTrade implements ITradeType<GoblinTrade> {
