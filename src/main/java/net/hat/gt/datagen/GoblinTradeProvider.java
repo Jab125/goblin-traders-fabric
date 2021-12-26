@@ -7,6 +7,7 @@ import com.jab125.util.tradehelper.type.UpgradedEnchantedItemTrade;
 import com.jab125.util.tradehelper.type.UpgradedOnlyInEndBasicTrade;
 import com.jab125.util.tradehelper.type.UpgradedPotionTrade;
 import net.hat.gt.init.ModEntities;
+import net.hat.gt.init.ModItems;
 import net.hat.gt.init.ModPotions;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.enchantment.Enchantment;
@@ -341,6 +342,15 @@ public class GoblinTradeProvider extends TradeProvider
     @SuppressWarnings("unused")
     public void registerEpicGoblinTrades(boolean isVanilla) {
         // RIP NO EPIC TRADES
+        this.addTrade(ModEntities.GOBLIN_TRADER, TradeRarity.LEGENDARY, isVanilla, UpgradedBasicTrade.Builder.create()
+                .setPaymentStack(new ItemStack(Items.GOLDEN_APPLE, 3))
+                .setSecondaryPaymentStack(new ItemStack(Items.GREEN_BANNER))
+                .setOfferStack(new ItemStack(ModItems.APPLE_CAPE))
+                .setPriceMultiplier(0F)
+                .setMaxTrades(120)
+                .setMerchantExperience(15)
+                .setPlayerExperience(200)
+                .build());
     }
     public void registerLegendaryGoblinTrades(boolean isVanilla) {
         this.addTrade(ModEntities.GOBLIN_TRADER, TradeRarity.LEGENDARY, isVanilla, UpgradedBasicTrade.Builder.create()

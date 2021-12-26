@@ -70,6 +70,8 @@
   "item.minecraft.tipped_arrow.effect.levitation": "Arrow of Levitation",
   "item.minecraft.tipped_arrow.effect.blindness": "Arrow of Blindness",
 
+  "cape.goblintraders.apple_cape": "Apple Cape",
+
   "gamerule.goblinTradersPickUpFoods": "Goblin Traders pick up foods",
   "gamerule.goblinTradersPunchBack": "Goblin Traders punch back",
   "gamerule.goblinTradersSpawn": "Goblin Traders spawn",

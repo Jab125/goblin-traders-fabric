@@ -19,6 +19,36 @@
     {
       "type": "goblintraders:upgraded_basic",
       "offer_item": {
+        "item": "minecraft:blaze_rod",
+        "count": 1
+      },
+      "payment_item": {
+        "item": "minecraft:emerald",
+        "count": 1
+      },
+      "price_multiplier": 0.0,
+      "max_trades": 24,
+      "merchant_experience": 1,
+      "player_experience": 10
+    },
+    {
+      "type": "goblintraders:upgraded_basic",
+      "offer_item": {
+        "item": "minecraft:ender_pearl",
+        "count": 1
+      },
+      "payment_item": {
+        "item": "minecraft:emerald",
+        "count": 1
+      },
+      "price_multiplier": 0.0,
+      "max_trades": 24,
+      "merchant_experience": 1,
+      "player_experience": 10
+    },
+    {
+      "type": "goblintraders:upgraded_basic",
+      "offer_item": {
         "item": "minecraft:iron_ingot",
         "count": 2
       },
@@ -40,6 +70,21 @@
       "payment_item": {
         "item": "minecraft:raw_gold",
         "count": 2
+      },
+      "price_multiplier": 0.0,
+      "max_trades": 30,
+      "merchant_experience": 3,
+      "player_experience": 30
+    },
+    {
+      "type": "goblintraders:upgraded_basic",
+      "offer_item": {
+        "item": "minecraft:copper_ingot",
+        "count": 4
+      },
+      "payment_item": {
+        "item": "minecraft:raw_copper",
+        "count": 3
       },
       "price_multiplier": 0.0,
       "max_trades": 30,

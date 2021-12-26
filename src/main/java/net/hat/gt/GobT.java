@@ -2,6 +2,8 @@ package net.hat.gt;
 
 
 import com.jab125.limeappleboat.gobt.api.GobTEvents;
+import com.jab125.thonkutil.api.CapeItem;
+import com.jab125.thonkutil.util.Util;
 import com.jab125.util.tradehelper.TradeManager;
 import com.jab125.util.tradehelper.type.*;
 import me.shedaniel.autoconfig.AutoConfig;
@@ -17,9 +19,11 @@ import net.hat.gt.config.GoblinTradersConfig;
 import net.hat.gt.init.*;
 import net.hat.gt.spawning.SpawnHandler;
 import net.minecraft.block.Blocks;
+import net.minecraft.item.Item;
 import net.minecraft.resource.ResourceType;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.Rarity;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -40,7 +44,6 @@ public class GobT implements ModInitializer {
     public void onInitialize() {
         AutoConfig.register(GoblinTradersConfig.class, Toml4jConfigSerializer::new);
         config = AutoConfig.getConfigHolder(GoblinTradersConfig.class).getConfig();
-
         TradeManager manager = TradeManager.instance();
         manager.registerTrader(ModEntities.GOBLIN_TRADER);
         manager.registerTrader(ModEntities.VEIN_GOBLIN_TRADER);

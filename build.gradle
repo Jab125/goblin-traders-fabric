@@ -14,6 +14,11 @@ repositories {
 	maven { url "https://maven.terraformersmc.com/releases" }
 	maven { url "https://maven.shedaniel.me/" }
 	maven { url "https://limeappleboat.jab125.com/" }
+	maven { url 'https://jitpack.io' }
+	maven {
+		name = "Ladysnake Libs"
+		url = "https://ladysnake.jfrog.io/artifactory/mods"
+	}
 	flatDir { dirs 'lib' }
 }
 
@@ -21,6 +26,8 @@ dependencies {
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
 	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+
+	modImplementation "dev.emi:trinkets:3.0.4"
 
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
@@ -33,9 +40,10 @@ dependencies {
 	}
 
 	//modApi include("com.jab125:thonkutil-${project.thonkutil_version}")
-	modApi include("com.jab125:thonkutil-base-1.1.0+d5f23f2ac8")
-	modApi include("com.jab125:thonkutil-potions-v0-1.2.0+e4c51c01c8")
-	modApi include("com.jab125:thonkutil-trades-v1-1.1.0+769eee82c8")
+	modApi include("com.jab125:thonkutil-base-1.4.0+ee0434f8c8")
+	modApi include("com.jab125:thonkutil-capes-v1-1.0.1+52bd28b9c8")
+	modApi include("com.jab125:thonkutil-potions-v0-1.2.5+e4c51c01c8")
+	modApi include("com.jab125:thonkutil-trades-v1-1.1.5+769eee82c8")
 }
 
 processResources {

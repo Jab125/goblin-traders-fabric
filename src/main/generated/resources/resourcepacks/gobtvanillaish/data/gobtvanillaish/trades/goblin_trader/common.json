@@ -49,6 +49,21 @@
     {
       "type": "goblintraders:upgraded_basic",
       "offer_item": {
+        "item": "minecraft:copper_ingot",
+        "count": 4
+      },
+      "payment_item": {
+        "item": "minecraft:raw_copper",
+        "count": 3
+      },
+      "price_multiplier": 0.0,
+      "max_trades": 30,
+      "merchant_experience": 3,
+      "player_experience": 30
+    },
+    {
+      "type": "goblintraders:upgraded_basic",
+      "offer_item": {
         "item": "minecraft:coal",
         "count": 1
       },
