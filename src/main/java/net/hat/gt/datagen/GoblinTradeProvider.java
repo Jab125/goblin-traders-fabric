@@ -342,7 +342,7 @@ public class GoblinTradeProvider extends TradeProvider
     @SuppressWarnings("unused")
     public void registerEpicGoblinTrades(boolean isVanilla) {
         // RIP NO EPIC TRADES
-        this.addTrade(ModEntities.GOBLIN_TRADER, TradeRarity.LEGENDARY, isVanilla, UpgradedBasicTrade.Builder.create()
+        this.addTrade(ModEntities.GOBLIN_TRADER, TradeRarity.EPIC, isVanilla, UpgradedBasicTrade.Builder.create()
                 .setPaymentStack(new ItemStack(Items.GOLDEN_APPLE, 3))
                 .setSecondaryPaymentStack(new ItemStack(Items.GREEN_BANNER))
                 .setOfferStack(new ItemStack(ModItems.APPLE_CAPE))
