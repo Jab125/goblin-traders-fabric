@@ -14,6 +14,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import org.apache.logging.log4j.Logger;
+import org.jetbrains.annotations.ApiStatus;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -31,7 +32,6 @@ public abstract class TradeProvider implements DataProvider
 
     private final DataGenerator generator;
     private Map<EntityType<?>, EnumMap<TradeRarity, List<ITradeType<?>>>> trades = new HashMap<>();
-    private Map<EntityType<?>, EnumMap<TradeRarity, List<ITradeType<?>>>> vanillaTrades = new HashMap<>();
 
     protected TradeProvider(DataGenerator generator)
     {
@@ -40,25 +40,27 @@ public abstract class TradeProvider implements DataProvider
 
     protected abstract void registerTrades();
 
+    @ApiStatus.ScheduledForRemoval
+    @Deprecated
     protected void registerVanillaTrades() {};
 
+    /**
+     * @deprecated use {@link TradeProvider#addTrade(EntityType, TradeRarity, ITradeType)} instead.
+     */
     // Use an access-widener to access this
+    @ApiStatus.ScheduledForRemoval
+    @Deprecated
     protected final void addTrade(EntityType<?> type, TradeRarity rarity, boolean isVanilla, ITradeType<?> trade)
     {
-        if (isVanilla) {
-            this.vanillaTrades.putIfAbsent(type, new EnumMap<>(TradeRarity.class));
-            this.vanillaTrades.get(type).putIfAbsent(rarity, new ArrayList<>());
-            this.vanillaTrades.get(type).get(rarity).add(trade);
-        } else {
-            this.trades.putIfAbsent(type, new EnumMap<>(TradeRarity.class));
-            this.trades.get(type).putIfAbsent(rarity, new ArrayList<>());
-            this.trades.get(type).get(rarity).add(trade);
-        }
+        if (isVanilla) return;
+        this.addTrade(type, rarity, trade);
     }
 
     protected final void addTrade(EntityType<?> type, TradeRarity rarity, ITradeType<?> trade)
     {
-        addTrade(type, rarity, false, trade);
+        this.trades.putIfAbsent(type, new EnumMap<>(TradeRarity.class));
+        this.trades.get(type).putIfAbsent(rarity, new ArrayList<>());
+        this.trades.get(type).get(rarity).add(trade);
     }
 
 
@@ -78,39 +80,6 @@ public abstract class TradeProvider implements DataProvider
                 object.add("trades", tradeArray);
                 Identifier id = Objects.requireNonNull(Registry.ENTITY_TYPE.getId(entityType));
                 Path path = this.generator.getOutput().resolve("resources/data/" + id.getNamespace() + "/trades/" + id.getPath() + "/" + tradeRarity.getKey() + ".json");
-                try
-                {
-                    String rawJson = GSON.toJson(object);
-                    String hash = SHA1.hashUnencodedChars(rawJson).toString();
-                    if(!Objects.equals(cache.getOldSha1(path), hash) || !Files.exists(path))
-                    {
-                        Files.createDirectories(path.getParent());
-                        try(BufferedWriter writer = Files.newBufferedWriter(path))
-                        {
-                            writer.write(rawJson);
-                        }
-                    }
-                    cache.updateSha1(path, hash);
-                }
-                catch(IOException e)
-                {
-                    LOGGER.error("Couldn't save trades to {}", path, e);
-                }
-            });
-        });
-        this.vanillaTrades.clear();
-        this.registerVanillaTrades();
-        this.vanillaTrades.forEach((entityType, tradeRarityListEnumMap) ->
-        {
-            tradeRarityListEnumMap.forEach((tradeRarity, tradeList) ->
-            {
-                JsonObject object = new JsonObject();
-                object.addProperty("replace", true);
-                JsonArray tradeArray = new JsonArray();
-                tradeList.forEach(trade -> tradeArray.add(trade.serialize()));
-                object.add("trades", tradeArray);
-                Identifier id = Objects.requireNonNull(Registry.ENTITY_TYPE.getId(entityType));
-                Path path = this.generator.getOutput().resolve("resources/resourcepacks/gobtvanillaish/data/" + "gobtvanillaish" + "/trades/" + id.getPath() + "/" + tradeRarity.getKey() + ".json");
                 try
                 {
                     String rawJson = GSON.toJson(object);
