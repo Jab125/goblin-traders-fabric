@@ -21,7 +21,7 @@ public class CraftingHelper {
     public static ItemStack getItemStack(JsonObject json, boolean readNBT) {
         String itemName = JsonHelper.getString(json, "item");
 
-        Item item = Registry.ITEM.get(new Identifier(itemName));
+        Item item = Registry.ITEM.getOrEmpty(new Identifier(itemName)).isEmpty() ? null : Registry.ITEM.getOrEmpty(new Identifier(itemName)).get();
 
         if (item == null)
             throw new JsonSyntaxException("Unknown item '" + itemName + "'");

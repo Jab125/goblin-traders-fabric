@@ -570,7 +570,6 @@ public class GoblinTradeProvider extends TradeProvider {
                 .setPlayerExperience(500)
                 .addEnchantment(new EnchantmentLevelEntry(Enchantments.SHARPNESS, 7))
                 .addEnchantment(new EnchantmentLevelEntry(Enchantments.UNBREAKING, 4))
-                .addEnchantment(new EnchantmentLevelEntry(Enchantments.MENDING, 1), false)
                 .build());
 
         this.addTrade(ModEntities.VEIN_GOBLIN_TRADER, TradeRarity.LEGENDARY, UpgradedOnlyInEndBasicTrade.Builder.create()
