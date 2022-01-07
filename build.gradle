@@ -20,6 +20,9 @@ repositories {
 		url = "https://ladysnake.jfrog.io/artifactory/mods"
 	}
 	flatDir { dirs 'lib' }
+	maven {
+		url = "https://minecraft.guntram.de/maven/"
+	}
 }
 
 dependencies {
@@ -44,6 +47,8 @@ dependencies {
 	modApi include("com.jab125:thonkutil-capes-v1-1.0.2+f3406aacc8")
 	modApi include("com.jab125:thonkutil-potions-v0-1.2.5+e4c51c01c8")
 	modApi include("com.jab125:thonkutil-trades-v1-1.1.5+769eee82c8")
+	modImplementation "de.guntram.mcmod:crowdin-translate:1.4+1.18"
+	include "de.guntram.mcmod:crowdin-translate:1.4+1.18"
 }
 
 processResources {

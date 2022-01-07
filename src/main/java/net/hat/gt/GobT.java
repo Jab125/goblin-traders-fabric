@@ -6,6 +6,7 @@ import com.jab125.thonkutil.api.CapeItem;
 import com.jab125.thonkutil.util.Util;
 import com.jab125.util.tradehelper.TradeManager;
 import com.jab125.util.tradehelper.type.*;
+import de.guntram.mcmod.crowdintranslate.CrowdinTranslate;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer;
 import net.fabricmc.api.ModInitializer;
@@ -42,6 +43,7 @@ public class GobT implements ModInitializer {
 
     @Override
     public void onInitialize() {
+        CrowdinTranslate.downloadTranslations("goblin-traders-fabric", "goblintraders");
         AutoConfig.register(GoblinTradersConfig.class, Toml4jConfigSerializer::new);
         config = AutoConfig.getConfigHolder(GoblinTradersConfig.class).getConfig();
         TradeManager manager = TradeManager.instance();
