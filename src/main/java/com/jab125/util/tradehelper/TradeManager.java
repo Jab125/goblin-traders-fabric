@@ -89,15 +89,15 @@ public class TradeManager implements IdentifiableResourceReloadListener {
                     if(r1.getNamespace().equals(r2.getNamespace())) return 0;
                     return r2.getNamespace().equals(GobT.MODID) ? 1 : -1;
                 });
-                Map<TradeRarity, LinkedHashSet<Identifier>> tradeResources = new EnumMap<>(TradeRarity.class);
-                Arrays.stream(TradeRarity.values()).forEach(rarity -> tradeResources.put(rarity, new LinkedHashSet<>()));
+                Map<TradeRarities, LinkedHashSet<Identifier>> tradeResources = new EnumMap<>(TradeRarities.class);
+                Arrays.stream(TradeRarities.values()).forEach(rarity -> tradeResources.put(rarity, new LinkedHashSet<>()));
                 resources.forEach(resource ->
                 {
                     String path = resource.getPath().substring(0, resource.getPath().length() - FILE_TYPE_LENGTH_VALUE);
                     String[] splitPath = path.split("/");
                     if(splitPath.length != 3)
                         return;
-                    Arrays.stream(TradeRarity.values()).forEach(rarity ->
+                    Arrays.stream(TradeRarities.values()).forEach(rarity ->
                     {
                         if(rarity.getKey().equals(splitPath[2]))
                         {
@@ -106,7 +106,7 @@ public class TradeManager implements IdentifiableResourceReloadListener {
                     });
                 });
                 EntityTrades.Builder builder = EntityTrades.Builder.create();
-                Arrays.stream(TradeRarity.values()).forEach(rarity -> {
+                Arrays.stream(TradeRarities.values()).forEach(rarity -> {
                     ActionResult result = GobTEvents.TRADE_LOADED.invoker().interact(null, rarity);
                     if (result == ActionResult.FAIL) {
                         return;
@@ -120,7 +120,7 @@ public class TradeManager implements IdentifiableResourceReloadListener {
     }
 
 
-    private void deserializeTrades(ResourceManager manager, EntityTrades.Builder builder, TradeRarity rarity, LinkedHashSet<Identifier> resources)
+    private void deserializeTrades(ResourceManager manager, EntityTrades.Builder builder, TradeRarities rarity, LinkedHashSet<Identifier> resources)
     {
         for(Identifier resource : resources)
         {

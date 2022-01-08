@@ -17,24 +17,24 @@ import java.util.*;
  */
 public class EntityTrades
 {
-    private final Map<TradeRarity, List<TradeOffers.Factory>> tradeMap;
+    private final Map<TradeRarities, List<TradeOffers.Factory>> tradeMap;
 
-    public EntityTrades(Map<TradeRarity, List<TradeOffers.Factory>> tradeMap)
+    public EntityTrades(Map<TradeRarities, List<TradeOffers.Factory>> tradeMap)
     {
         this.tradeMap = ImmutableMap.copyOf(tradeMap);
     }
 
-    public Map<TradeRarity, List<TradeOffers.Factory>> getTradeMap()
+    public Map<TradeRarities, List<TradeOffers.Factory>> getTradeMap()
     {
         return this.tradeMap;
     }
 
     public static class Builder
     {
-        private final Map<TradeRarity, List<TradeOffers.Factory>> tradeMap = Util.make(() ->
+        private final Map<TradeRarities, List<TradeOffers.Factory>> tradeMap = Util.make(() ->
         {
-            Map<TradeRarity, List<TradeOffers.Factory>> map = new EnumMap<>(TradeRarity.class);
-            Arrays.stream(TradeRarity.values()).forEach(rarity -> map.put(rarity, new ArrayList<>()));
+            Map<TradeRarities, List<TradeOffers.Factory>> map = new EnumMap<>(TradeRarities.class);
+            Arrays.stream(TradeRarities.values()).forEach(rarity -> map.put(rarity, new ArrayList<>()));
             return map;
         });
 
@@ -45,7 +45,7 @@ public class EntityTrades
             return new EntityTrades(this.tradeMap);
         }
 
-        void deserialize(TradeRarity rarity, JsonObject object)
+        void deserialize(TradeRarities rarity, JsonObject object)
         {
             List<TradeOffers.Factory> trades = this.tradeMap.get(rarity);
 

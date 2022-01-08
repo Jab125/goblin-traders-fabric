@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.ModifyVariable;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 
-import static net.hat.gt.config.CompatUtil.maxEnchantTextConfig;
+import static net.hat.gt.compat.CompatUtil.maxEnchantTextConfig;
 
 // Remapped to yarn by Jab125
 @Mixin(Enchantment.class)

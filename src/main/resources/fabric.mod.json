@@ -28,7 +28,7 @@
       "net.hat.gt.GobTClient"
     ],
     "modmenu": [
-      "net.hat.gt.config.ModMenuIntegration"
+      "net.hat.gt.compat.ModMenuCompat"
     ],
     "fabric-datagen": [
       "com.jab125.util.datagen.DataGeneration"

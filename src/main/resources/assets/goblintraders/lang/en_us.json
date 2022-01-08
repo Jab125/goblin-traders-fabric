@@ -75,5 +75,7 @@
   "gamerule.goblinTradersPickUpFoods": "Goblin Traders pick up foods",
   "gamerule.goblinTradersPunchBack": "Goblin Traders punch back",
   "gamerule.goblinTradersSpawn": "Goblin Traders spawn",
-  "gamerule.veinGoblinTradersSpawn": "Vein Goblin Traders spawn"
+  "gamerule.veinGoblinTradersSpawn": "Vein Goblin Traders spawn",
+
+  "goblintraders:tooltip.goblin_food": "Goblin Treat"
 }

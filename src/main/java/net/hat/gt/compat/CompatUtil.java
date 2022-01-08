@@ -1,4 +1,4 @@
-package net.hat.gt.config;
+package net.hat.gt.compat;
 
 import net.hat.gt.GobT;
 

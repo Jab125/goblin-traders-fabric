@@ -43,6 +43,9 @@ public class GobT implements ModInitializer {
 
     @Override
     public void onInitialize() {
+        if (isModInstalled("requiem-api")) {
+
+        }
         CrowdinTranslate.downloadTranslations("goblin-traders-fabric", "goblintraders");
         AutoConfig.register(GoblinTradersConfig.class, Toml4jConfigSerializer::new);
         config = AutoConfig.getConfigHolder(GoblinTradersConfig.class).getConfig();
@@ -91,9 +94,6 @@ public class GobT implements ModInitializer {
             }
             return ActionResult.PASS;
         }));
-        // Mental Note: don't remove this
-        boolean a;
-            a = ResourceManagerHelper.registerBuiltinResourcePack(id("gobtvanillaish"), Objects.requireNonNull(FabricLoader.getInstance().getModContainer(MODID)).get(), ResourcePackActivationType.NORMAL);
     }
     public static Identifier id(String path) {
         return new Identifier(MODID, path);

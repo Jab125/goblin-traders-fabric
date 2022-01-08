@@ -1,6 +1,6 @@
 package com.jab125.limeappleboat.gobt.api;
 
-import com.jab125.util.tradehelper.TradeRarity;
+import com.jab125.util.tradehelper.TradeRarities;
 import net.fabricmc.fabric.api.event.Event;
 import net.fabricmc.fabric.api.event.EventFactory;
 import net.hat.gt.entities.AbstractGoblinEntity;
@@ -34,7 +34,7 @@ public interface GobTEvents {
 
 
     interface TradeLoaded {
-        ActionResult interact(AbstractGoblinEntity goblin, TradeRarity rarity);
+        ActionResult interact(AbstractGoblinEntity goblin, TradeRarities rarity);
     }
 
     interface OnAttemptSpawn {

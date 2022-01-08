@@ -3,7 +3,7 @@ package net.hat.gt.entities;
 import com.jab125.thonkutil.api.IdentifiableTrade;
 import com.jab125.util.tradehelper.EntityTrades;
 import com.jab125.util.tradehelper.TradeManager;
-import com.jab125.util.tradehelper.TradeRarity;
+import com.jab125.util.tradehelper.TradeRarities;
 import com.jab125.util.tradehelper.type.UpgradedBasicTrade;
 import net.hat.gt.GobT;
 import net.hat.gt.entities.ai.*;
@@ -458,8 +458,8 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
         EntityTrades entityTrades = TradeManager.instance().getTrades((EntityType<? extends AbstractGoblinEntity>) this.getType());
         if(entityTrades != null)
         {
-            Map<TradeRarity, List<TradeOffers.Factory>> tradeMap = entityTrades.getTradeMap();
-            for(TradeRarity rarity : TradeRarity.values())
+            Map<TradeRarities, List<TradeOffers.Factory>> tradeMap = entityTrades.getTradeMap();
+            for(TradeRarities rarity : TradeRarities.values())
             {
                 List<TradeOffers.Factory> trades = tradeMap.get(rarity);
                 int min = rarity.getMinimum().apply(trades, this.getRandom());

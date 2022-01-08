@@ -4,7 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import com.jab125.util.tradehelper.TradeRarity;
+import com.jab125.util.tradehelper.TradeRarities;
 import com.jab125.util.tradehelper.type.ITradeType;
 import net.hat.gt.GobT;
 import net.minecraft.data.DataCache;
@@ -31,7 +31,7 @@ public abstract class TradeProvider implements DataProvider
     private static final Gson GSON = (new GsonBuilder()).setPrettyPrinting().create();
 
     private final DataGenerator generator;
-    private Map<EntityType<?>, EnumMap<TradeRarity, List<ITradeType<?>>>> trades = new HashMap<>();
+    private Map<EntityType<?>, EnumMap<TradeRarities, List<ITradeType<?>>>> trades = new HashMap<>();
 
     protected TradeProvider(DataGenerator generator)
     {
@@ -45,20 +45,20 @@ public abstract class TradeProvider implements DataProvider
     protected void registerVanillaTrades() {};
 
     /**
-     * @deprecated use {@link TradeProvider#addTrade(EntityType, TradeRarity, ITradeType)} instead.
+     * @deprecated use {@link TradeProvider#addTrade(EntityType, TradeRarities, ITradeType)} instead.
      */
     // Use an access-widener to access this
     @ApiStatus.ScheduledForRemoval
     @Deprecated
-    protected final void addTrade(EntityType<?> type, TradeRarity rarity, boolean isVanilla, ITradeType<?> trade)
+    protected final void addTrade(EntityType<?> type, TradeRarities rarity, boolean isVanilla, ITradeType<?> trade)
     {
         if (isVanilla) return;
         this.addTrade(type, rarity, trade);
     }
 
-    protected final void addTrade(EntityType<?> type, TradeRarity rarity, ITradeType<?> trade)
+    protected final void addTrade(EntityType<?> type, TradeRarities rarity, ITradeType<?> trade)
     {
-        this.trades.putIfAbsent(type, new EnumMap<>(TradeRarity.class));
+        this.trades.putIfAbsent(type, new EnumMap<>(TradeRarities.class));
         this.trades.get(type).putIfAbsent(rarity, new ArrayList<>());
         this.trades.get(type).get(rarity).add(trade);
     }
