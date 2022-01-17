@@ -13,10 +13,11 @@ import net.minecraft.util.registry.Registry;
 
 import static com.jab125.thonkutil.api.BrewingRecipeRegistry.registerPotionRecipe;
 import static com.jab125.thonkutil.api.RemovePotionRecipe.removeLingeringPotion;
+import static com.jab125.thonkutil.api.RemovePotionRecipe.removeSplashPotion;
 import static com.jab125.thonkutil.util.Util.minutesToTick;
 import static com.jab125.thonkutil.util.Util.secondsToTick;
 
-public class ModPotions extends Potions {
+public class ModPotions {
     public static final Potion EXTENDED_NIGHT_VISION;
     public static final Potion EXTENDED_INVISIBILITY;
     public static final Potion POWERFUL_JUMP_BOOST ;
@@ -35,6 +36,7 @@ public class ModPotions extends Potions {
     public static final Potion LUCK;
     public static final Potion DOLPHINS_GRACE;
     public static final Potion BLINDNESS;
+    public static final Potion MINING_FATIGUE;
 
     public static final Potion LEVITATION_EXTENDED;
     public static final Potion HASTE_EXTENDED;
@@ -42,6 +44,7 @@ public class ModPotions extends Potions {
     public static final Potion LUCK_EXTENDED;
     public static final Potion BLINDNESS_EXTENDED;
     public static final Potion BLINDNESS_EXTENDED_2;
+    public static final Potion MINING_FATIGUE_EXTENDED;
 
     public static final Potion WEAK_NIGHT_VISION;
     public static final Potion WEAK_NIGHT_VISION_EXTENDED;
@@ -72,11 +75,12 @@ public class ModPotions extends Potions {
         HASTE = register("dig_speed", new Potion("haste", new StatusEffectInstance(StatusEffects.HASTE, minutesToTick(3, 0))));
         LUCK = register("luck", new Potion("luck", new StatusEffectInstance(StatusEffects.LUCK, minutesToTick(3, 0))));
         BLINDNESS = register("blindness", new Potion("blindness", new StatusEffectInstance(StatusEffects.BLINDNESS, secondsToTick(15))));
+        MINING_FATIGUE = register("mining_fatigue", new Potion("mining_fatigue", new StatusEffectInstance(StatusEffects.MINING_FATIGUE, minutesToTick(3, 0))));
 
         //Extended (from mod) Potions
         ABSORPTION_EXTENDED = register("absorption_extended", new Potion("absorption", new StatusEffectInstance(StatusEffects.ABSORPTION, minutesToTick(3, 0))));
         LEVITATION_EXTENDED = register("levitation_extended", new Potion("levitation", new StatusEffectInstance(StatusEffects.LEVITATION, minutesToTick(1, 30))));
-        HASTE_EXTENDED = register("dig_speed_extended", new Potion("haste", new StatusEffectInstance(StatusEffects.HASTE, minutesToTick(1, 0))));
+        HASTE_EXTENDED = register("dig_speed_extended", new Potion("haste", new StatusEffectInstance(StatusEffects.HASTE, minutesToTick(8, 0))));
         LUCK_EXTENDED = register("luck_extended", new Potion("luck", new StatusEffectInstance(StatusEffects.LUCK, minutesToTick(8, 0))));
         BLINDNESS_EXTENDED = register("blindness_extended", new Potion("blindness", new StatusEffectInstance(StatusEffects.BLINDNESS, secondsToTick(45))));
         BLINDNESS_EXTENDED_2 = register("blindness_extended_2", new Potion("blindness", new StatusEffectInstance(StatusEffects.BLINDNESS, minutesToTick(1, 30))));
@@ -85,6 +89,8 @@ public class ModPotions extends Potions {
         WEAK_NIGHT_VISION = register("weak_night_vision", new Potion("night_vision", new StatusEffectInstance(StatusEffects.NIGHT_VISION, secondsToTick(15))));
         WEAK_NIGHT_VISION_EXTENDED = register("weak_night_vision_extended", new Potion("night_vision", new StatusEffectInstance(StatusEffects.NIGHT_VISION, secondsToTick(45))));
         WEAK_NIGHT_VISION_EXTENDED_2 = register("weak_night_vision_extended_2", new Potion("night_vision", new StatusEffectInstance(StatusEffects.NIGHT_VISION, secondsToTick(45))));
+
+        MINING_FATIGUE_EXTENDED = register("mining_fatigue_extended", new Potion("mining_fatigue", new StatusEffectInstance(StatusEffects.MINING_FATIGUE, minutesToTick(8, 0))));
 
     }
     public static void registerPotions() {
@@ -97,10 +103,10 @@ public class ModPotions extends Potions {
     }
     private static void removeSplashAndLingeringPotion(Potion potion) {
         removeLingeringPotion(potion);
-        RemovePotionRecipe.removeSplashPotion(potion);
+        removeSplashPotion(potion);
     }
     public static void registerPotionRecipes() {
-        registerPotionRecipe(ModPotions.NIGHT_VISION, Items.FERMENTED_SPIDER_EYE, ModPotions.INVISIBILITY);
+        registerPotionRecipe(Potions.NIGHT_VISION, Items.FERMENTED_SPIDER_EYE, Potions.INVISIBILITY);
         registerPotionRecipe(ModPotions.POWERFUL_JUMP_BOOST, Items.FERMENTED_SPIDER_EYE, ModPotions.POWERFUL_SLOWNESS);
         registerPotionRecipe(ModPotions.POWERFUL_SPEED, Items.FERMENTED_SPIDER_EYE, ModPotions.POWERFUL_SLOWNESS);
         registerPotionRecipe(ModPotions.POWERFUL_INSTANT_HEALTH, Items.FERMENTED_SPIDER_EYE, Potions.STRONG_HARMING);
@@ -110,6 +116,7 @@ public class ModPotions extends Potions {
         registerPotionRecipe(ModPotions.LUCK, Items.REDSTONE, ModPotions.LUCK_EXTENDED);
         registerPotionRecipe(ModPotions.BLINDNESS, Items.REDSTONE, ModPotions.BLINDNESS_EXTENDED);
         registerPotionRecipe(ModPotions.BLINDNESS_EXTENDED, Items.REDSTONE, ModPotions.BLINDNESS_EXTENDED_2);
+        registerPotionRecipe(ModPotions.MINING_FATIGUE, Items.REDSTONE, ModPotions.MINING_FATIGUE_EXTENDED);
 
         //Blindness
         registerPotionRecipe(ModPotions.BLINDNESS, Items.FERMENTED_SPIDER_EYE, ModPotions.WEAK_NIGHT_VISION);
@@ -125,5 +132,9 @@ public class ModPotions extends Potions {
         registerPotionRecipe(ModPotions.WEAK_NIGHT_VISION, Items.FERMENTED_SPIDER_EYE, Potions.INVISIBILITY);
         registerPotionRecipe(ModPotions.WEAK_NIGHT_VISION_EXTENDED, Items.FERMENTED_SPIDER_EYE, Potions.INVISIBILITY);
         registerPotionRecipe(ModPotions.WEAK_NIGHT_VISION_EXTENDED_2, Items.FERMENTED_SPIDER_EYE, Potions.INVISIBILITY);
+
+        //Mining Fatigue from Haste
+        registerPotionRecipe(ModPotions.HASTE, Items.FERMENTED_SPIDER_EYE, ModPotions.MINING_FATIGUE);
+        registerPotionRecipe(ModPotions.HASTE_EXTENDED, Items.FERMENTED_SPIDER_EYE, ModPotions.MINING_FATIGUE_EXTENDED);
     }
 }
