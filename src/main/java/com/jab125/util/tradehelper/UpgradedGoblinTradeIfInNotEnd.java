@@ -10,6 +10,8 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Random;
 
+
+// more of an easter egg
 public record UpgradedGoblinTradeIfInNotEnd(ItemStack offerStack, ItemStack paymentStack, ItemStack secondaryPaymentStack, int maxUses, int merchantExperience, int playerExperience, float priceMultiplier) implements TradeOffers.Factory {
     @Nullable
     @Override

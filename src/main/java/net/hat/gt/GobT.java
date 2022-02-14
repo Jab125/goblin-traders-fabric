@@ -2,11 +2,8 @@ package net.hat.gt;
 
 
 import com.jab125.limeappleboat.gobt.api.GobTEvents;
-import com.jab125.thonkutil.api.CapeItem;
-import com.jab125.thonkutil.util.Util;
 import com.jab125.util.tradehelper.TradeManager;
 import com.jab125.util.tradehelper.type.*;
-import de.guntram.mcmod.crowdintranslate.CrowdinTranslate;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer;
 import net.fabricmc.api.ModInitializer;
@@ -14,22 +11,17 @@ import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerWorldEvents;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
-import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
-import net.fabricmc.loader.api.FabricLoader;
 import net.hat.gt.config.GoblinTradersConfig;
 import net.hat.gt.init.*;
 import net.hat.gt.spawning.SpawnHandler;
 import net.minecraft.block.Blocks;
-import net.minecraft.item.Item;
 import net.minecraft.resource.ResourceType;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.Rarity;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.HashSet;
-import java.util.Objects;
 import java.util.Set;
 
 import static com.jab125.thonkutil.util.Util.isModInstalled;
@@ -46,7 +38,6 @@ public class GobT implements ModInitializer {
         if (isModInstalled("requiem-api")) {
 
         }
-        CrowdinTranslate.downloadTranslations("goblin-traders-fabric", "goblintraders");
         AutoConfig.register(GoblinTradersConfig.class, Toml4jConfigSerializer::new);
         config = AutoConfig.getConfigHolder(GoblinTradersConfig.class).getConfig();
         TradeManager manager = TradeManager.instance();

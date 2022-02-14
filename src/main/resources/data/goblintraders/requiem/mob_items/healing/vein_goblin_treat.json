@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "priority": 100,
+  "enabled": true,
+  "tooltip": {
+    "translate": "goblintraders:tooltip.vein_goblin_food",
+    "color": "dark_gray"
+  },
+  "mob": {
+    "type": "goblintraders:vein_goblin_trader"
+  },
+  "override": {
+    "type": "requiem:healing",
+    "item": {
+      "tag": "goblintraders:vein_goblin_trader_edibles"
+    },
+    "use_time": 32,
+    "cooldown": 150,
+    "usage": "eat_to_heal"
+  }
+}

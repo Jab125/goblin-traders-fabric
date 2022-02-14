@@ -81,5 +81,6 @@
   "gamerule.goblinTradersSpawn": "Goblin Traders spawn",
   "gamerule.veinGoblinTradersSpawn": "Vein Goblin Traders spawn",
 
-  "goblintraders:tooltip.goblin_food": "Goblin Treat"
+  "goblintraders:tooltip.goblin_food": "Goblin Treat",
+  "goblintraders:tooltip.vein_goblin_food": "Vein Goblin Treat"
 }
