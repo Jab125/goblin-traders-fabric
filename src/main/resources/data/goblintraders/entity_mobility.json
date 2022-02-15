@@ -1,0 +1,8 @@
+{
+  "goblintraders:goblin_trader": {
+    "walkSpeedModifier": 0.2142857141
+  },
+  "goblintraders:vein_goblin_trader": {
+    "walkSpeedModifier": 0.2142857141
+  }
+}
