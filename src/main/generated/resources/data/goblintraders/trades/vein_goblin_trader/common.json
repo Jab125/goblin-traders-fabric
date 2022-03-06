@@ -2,6 +2,7 @@
   "replace": false,
   "trades": [
     {
+      "required": true,
       "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:emerald",
@@ -17,6 +18,7 @@
       "player_experience": 10
     },
     {
+      "required": true,
       "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:glowstone_dust",
@@ -32,6 +34,7 @@
       "player_experience": 20
     },
     {
+      "required": true,
       "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:emerald",
@@ -47,6 +50,7 @@
       "player_experience": 10
     },
     {
+      "required": true,
       "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:nether_wart",
@@ -61,6 +65,7 @@
       "player_experience": 10
     },
     {
+      "required": true,
       "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:warped_fungus",
@@ -75,6 +80,7 @@
       "player_experience": 10
     },
     {
+      "required": true,
       "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:golden_apple",

@@ -27,8 +27,14 @@ public class UpgradedPotionTrade implements ITradeType<UpgradedGoblinTrade> {
     private final int merchantExperience;
     private final int playerExperience;
     private final Potion potionType;
+    private final boolean isRequired;
 
-    public UpgradedPotionTrade(ItemStack offerStack, ItemStack paymentStack, ItemStack secondaryPaymentStack, float priceMultiplier, int maxTrades, int merchantExperience, int playerExperience, Potion potionType) {
+    @Override
+    public boolean isRequired() {
+        return isRequired;
+    }
+
+    public UpgradedPotionTrade(ItemStack offerStack, ItemStack paymentStack, ItemStack secondaryPaymentStack, float priceMultiplier, int maxTrades, int merchantExperience, int playerExperience, Potion potionType, boolean isRequired) {
         this.offerStack = offerStack;
         this.paymentStack = paymentStack;
         this.secondaryPaymentStack = secondaryPaymentStack;
@@ -37,6 +43,7 @@ public class UpgradedPotionTrade implements ITradeType<UpgradedGoblinTrade> {
         this.merchantExperience = merchantExperience;
         this.playerExperience = playerExperience;
         this.potionType = potionType;
+        this.isRequired = isRequired;
     }
     @Override
     public JsonObject serialize() {
@@ -123,6 +130,7 @@ public class UpgradedPotionTrade implements ITradeType<UpgradedGoblinTrade> {
         private int maxTrades = 12;
         private int playerExperience;
         private int merchantExperience = 10;
+        private boolean required = true;
 
         private Builder() {
         }
@@ -132,7 +140,7 @@ public class UpgradedPotionTrade implements ITradeType<UpgradedGoblinTrade> {
         }
 
         public UpgradedPotionTrade build() {
-            return new UpgradedPotionTrade(this.offerStack, this.paymentStack, this.secondaryPaymentStack, this.priceMultiplier, this.maxTrades, this.merchantExperience, this.playerExperience, this.potion);
+            return new UpgradedPotionTrade(this.offerStack, this.paymentStack, this.secondaryPaymentStack, this.priceMultiplier, this.maxTrades, this.merchantExperience, this.playerExperience, this.potion, this.required);
         }
 
         public Builder setOfferStack(ItemStack offerStack) {
@@ -180,6 +188,11 @@ public class UpgradedPotionTrade implements ITradeType<UpgradedGoblinTrade> {
 
         public Builder setPotion(Potion potion) {
             this.potion = potion;
+            return this;
+        }
+
+        public Builder setRequired(boolean required) {
+            this.required = required;
             return this;
         }
     }

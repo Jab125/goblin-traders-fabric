@@ -28,6 +28,7 @@ public abstract class TradeSerializer<T extends ITradeType<? extends TradeOffers
     public JsonObject serialize(T trade)
     {
         JsonObject object = new JsonObject();
+        object.addProperty("required", trade.isRequired());
         object.addProperty("type", this.id.toString());
         return object;
     }

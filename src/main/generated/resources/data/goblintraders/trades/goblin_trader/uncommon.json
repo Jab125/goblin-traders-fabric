@@ -2,6 +2,7 @@
   "replace": false,
   "trades": [
     {
+      "required": true,
       "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:gunpowder",
@@ -17,6 +18,7 @@
       "player_experience": 20
     },
     {
+      "required": true,
       "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:emerald",
@@ -32,6 +34,7 @@
       "player_experience": 50
     },
     {
+      "required": true,
       "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:emerald",
@@ -47,6 +50,7 @@
       "player_experience": 30
     },
     {
+      "required": true,
       "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:sponge",
@@ -62,6 +66,7 @@
       "player_experience": 30
     },
     {
+      "required": true,
       "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:chipped_anvil",
@@ -81,6 +86,7 @@
       "player_experience": 20
     },
     {
+      "required": true,
       "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:hay_block",

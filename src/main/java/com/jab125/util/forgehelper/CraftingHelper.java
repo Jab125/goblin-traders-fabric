@@ -18,6 +18,7 @@ import net.minecraft.util.registry.Registry;
  */
 public class CraftingHelper {
     private static Gson GSON = new GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create();
+
     public static ItemStack getItemStack(JsonObject json, boolean readNBT) {
         String itemName = JsonHelper.getString(json, "item");
 

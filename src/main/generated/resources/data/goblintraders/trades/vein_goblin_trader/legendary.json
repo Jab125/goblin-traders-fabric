@@ -2,6 +2,7 @@
   "replace": false,
   "trades": [
     {
+      "required": true,
       "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:diamond_sword",
@@ -33,6 +34,7 @@
       ]
     },
     {
+      "required": false,
       "type": "goblintraders:upgraded_only_in_end_basic",
       "offer_item": {
         "item": "minecraft:music_disc_otherside",

@@ -2,13 +2,14 @@
   "replace": false,
   "trades": [
     {
+      "required": false,
       "type": "goblintraders:upgraded_basic",
       "offer_item": {
-        "item": "minecraft:emerald",
+        "item": "minecraft:emeral",
         "count": 1
       },
       "payment_item": {
-        "item": "minecraft:apple",
+        "item": "minecraft:aple",
         "count": 1
       },
       "price_multiplier": 0.0,
@@ -17,6 +18,7 @@
       "player_experience": 10
     },
     {
+      "required": true,
       "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:blaze_rod",
@@ -32,6 +34,7 @@
       "player_experience": 10
     },
     {
+      "required": true,
       "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:ender_pearl",
@@ -47,6 +50,7 @@
       "player_experience": 10
     },
     {
+      "required": true,
       "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:iron_ingot",
@@ -62,6 +66,7 @@
       "player_experience": 20
     },
     {
+      "required": true,
       "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:gold_ingot",
@@ -77,6 +82,7 @@
       "player_experience": 30
     },
     {
+      "required": true,
       "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:copper_ingot",
@@ -92,6 +98,7 @@
       "player_experience": 30
     },
     {
+      "required": true,
       "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:coal",
@@ -107,6 +114,7 @@
       "player_experience": 10
     },
     {
+      "required": true,
       "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:flint",
@@ -122,6 +130,7 @@
       "player_experience": 10
     },
     {
+      "required": true,
       "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:emerald",
@@ -137,6 +146,7 @@
       "player_experience": 10
     },
     {
+      "required": true,
       "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:bread",

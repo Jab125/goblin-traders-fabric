@@ -11,6 +11,7 @@ import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerWorldEvents;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
+import net.hat.gt.compat.RequiemCompat;
 import net.hat.gt.config.GoblinTradersConfig;
 import net.hat.gt.init.*;
 import net.hat.gt.spawning.SpawnHandler;
@@ -36,7 +37,6 @@ public class GobT implements ModInitializer {
     @Override
     public void onInitialize() {
         if (isModInstalled("requiem-api")) {
-
         }
         AutoConfig.register(GoblinTradersConfig.class, Toml4jConfigSerializer::new);
         config = AutoConfig.getConfigHolder(GoblinTradersConfig.class).getConfig();
@@ -74,8 +74,9 @@ public class GobT implements ModInitializer {
         ModEntities.registerEntities();
         ModItems.registerItems();
         ModStats.registerStats();
-        ModPotions.registerPotions();
+        //ModPotions.registerPotions();
         ModPotions.registerPotionRecipes();
+        ModStatusEffects.registerStatusEffects();
 
 
         // Restrict spawning on bedrock

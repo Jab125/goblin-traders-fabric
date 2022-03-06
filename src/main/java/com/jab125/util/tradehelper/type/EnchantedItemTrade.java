@@ -33,8 +33,14 @@ public class EnchantedItemTrade implements ITradeType<GoblinTrade> {
     private final Enchantment enchantment;
     private final int payLevel;
     private final int sellLevel;
+    private final boolean isRequired;
 
-    public EnchantedItemTrade(ItemStack itemStack, float priceMultiplier, int maxTrades, int experience, Enchantment enchantment, int payLevel, int sellLevel) {
+    @Override
+    public boolean isRequired() {
+        return isRequired;
+    }
+
+    public EnchantedItemTrade(ItemStack itemStack, float priceMultiplier, int maxTrades, int experience, Enchantment enchantment, int payLevel, int sellLevel, boolean isRequired) {
         this.payLevel = payLevel;
         this.sellLevel = sellLevel;
         this.itemStack = itemStack;
@@ -42,6 +48,7 @@ public class EnchantedItemTrade implements ITradeType<GoblinTrade> {
         this.maxTrades = maxTrades;
         this.experience = experience;
         this.enchantment = enchantment;
+        this.isRequired = isRequired;
     }
     @Override
     public JsonObject serialize() {
@@ -117,6 +124,7 @@ public class EnchantedItemTrade implements ITradeType<GoblinTrade> {
         private float priceMultiplier = 0.0F;
         private int maxTrades = 12;
         private int experience = 10;
+        private boolean required = true;
 
         private Builder() {
         }
@@ -126,7 +134,7 @@ public class EnchantedItemTrade implements ITradeType<GoblinTrade> {
         }
 
         public EnchantedItemTrade build() {
-            return new EnchantedItemTrade(this.offerStack, this.priceMultiplier, this.maxTrades, this.experience, this.enchantment, this.paymentLevel, this.offerLevel);
+            return new EnchantedItemTrade(this.offerStack, this.priceMultiplier, this.maxTrades, this.experience, this.enchantment, this.paymentLevel, this.offerLevel, required);
         }
 
         public Builder setStack(ItemStack offerStack) {
@@ -154,6 +162,7 @@ public class EnchantedItemTrade implements ITradeType<GoblinTrade> {
             return this;
         }
 
+        @Deprecated
         public Builder setPlayerExperience(int playerExperience) {
             return this;
         }
@@ -168,6 +177,11 @@ public class EnchantedItemTrade implements ITradeType<GoblinTrade> {
         }
         public Builder setEnchantment(Enchantment enchantment) {
             this.enchantment = enchantment;
+            return this;
+        }
+
+        public Builder setRequired(boolean required) {
+            this.required = required;
             return this;
         }
     }

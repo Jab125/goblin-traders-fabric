@@ -2,6 +2,7 @@
   "replace": false,
   "trades": [
     {
+      "required": true,
       "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:lodestone",
@@ -16,6 +17,7 @@
       "player_experience": 20
     },
     {
+      "required": true,
       "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:netherite_scrap",
@@ -31,6 +33,7 @@
       "player_experience": 50
     },
     {
+      "required": true,
       "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:red_nether_bricks",
@@ -50,6 +53,7 @@
       "player_experience": 30
     },
     {
+      "required": true,
       "type": "goblintraders:upgraded_basic",
       "offer_item": {
         "item": "minecraft:sponge",

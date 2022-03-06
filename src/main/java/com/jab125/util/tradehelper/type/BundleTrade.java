@@ -40,9 +40,16 @@ public class BundleTrade implements ITradeType<GoblinTrade> {
     private final int maxTrades;
     private final int experience;
     private final ItemStack[] bundleItems;
+    private final boolean isRequired;
 
 
-    public BundleTrade(ItemStack offerStack, ItemStack paymentStack, ItemStack secondaryPaymentStack, float priceMultiplier, int maxTrades, int experience, ItemStack[] bundleItems)
+    @Override
+    public boolean isRequired() {
+        return isRequired;
+    }
+
+
+    public BundleTrade(ItemStack offerStack, ItemStack paymentStack, ItemStack secondaryPaymentStack, float priceMultiplier, int maxTrades, int experience, ItemStack[] bundleItems, boolean isRequired)
     {
         this.offerStack = offerStack;
         this.paymentStack = paymentStack;
@@ -51,6 +58,7 @@ public class BundleTrade implements ITradeType<GoblinTrade> {
         this.maxTrades = maxTrades;
         this.experience = experience;
         this.bundleItems = bundleItems;
+        this.isRequired = isRequired;
     }
 
     @Override
@@ -163,6 +171,7 @@ public class BundleTrade implements ITradeType<GoblinTrade> {
         private float priceMultiplier = 0.0F;
         private int maxTrades = 12;
         private int experience = 10;
+        private boolean required = true;
 
 
         private Builder() {
@@ -173,7 +182,7 @@ public class BundleTrade implements ITradeType<GoblinTrade> {
         }
 
         public BundleTrade build() {
-            return new BundleTrade(this.offerStack, this.paymentStack, this.secondaryPaymentStack, this.priceMultiplier, this.maxTrades, this.experience, this.bundleItems.toArray(ItemStack[]::new));
+            return new BundleTrade(this.offerStack, this.paymentStack, this.secondaryPaymentStack, this.priceMultiplier, this.maxTrades, this.experience, this.bundleItems.toArray(ItemStack[]::new), required);
         }
 
         public BundleTrade.Builder setOfferStack(ItemStack offerStack) {
@@ -214,11 +223,18 @@ public class BundleTrade implements ITradeType<GoblinTrade> {
             return this;
         }
 
+        @Deprecated
         public BundleTrade.Builder setPlayerExperience(int playerExperience) {
             return this;
         }
+
         public BundleTrade.Builder addToBundle(ItemStack itemStack) {
             bundleItems.add(itemStack);
+            return this;
+        }
+
+        public BundleTrade.Builder setRequired(boolean required) {
+            this.required = required;
             return this;
         }
     }

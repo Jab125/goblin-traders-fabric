@@ -41,9 +41,14 @@ public class UpgradedBundleTrade implements ITradeType<UpgradedGoblinTrade> {
     private final int merchantExperience;
     private final int playerExperience;
     private final ItemStack[] bundleItems;
+    private final boolean isRequired;
 
+    @Override
+    public boolean isRequired() {
+        return isRequired;
+    }
 
-    public UpgradedBundleTrade(ItemStack offerStack, ItemStack paymentStack, ItemStack secondaryPaymentStack, float priceMultiplier, int maxTrades, int merchantExperience, int playerExperience, ItemStack[] bundleItems)
+    public UpgradedBundleTrade(ItemStack offerStack, ItemStack paymentStack, ItemStack secondaryPaymentStack, float priceMultiplier, int maxTrades, int merchantExperience, int playerExperience, ItemStack[] bundleItems, boolean isRequired)
     {
         this.offerStack = offerStack;
         this.paymentStack = paymentStack;
@@ -53,6 +58,7 @@ public class UpgradedBundleTrade implements ITradeType<UpgradedGoblinTrade> {
         this.merchantExperience = merchantExperience;
         this.playerExperience = playerExperience;
         this.bundleItems = bundleItems;
+        this.isRequired = isRequired;
     }
 
     @Override
@@ -171,6 +177,7 @@ public class UpgradedBundleTrade implements ITradeType<UpgradedGoblinTrade> {
         private int maxTrades = 12;
         private int merchantExperience = 10;
         private int playerExperience = 10;
+        private boolean required = true;
 
 
         private Builder() {
@@ -181,7 +188,7 @@ public class UpgradedBundleTrade implements ITradeType<UpgradedGoblinTrade> {
         }
 
         public UpgradedBundleTrade build() {
-            return new UpgradedBundleTrade(this.offerStack, this.paymentStack, this.secondaryPaymentStack, this.priceMultiplier, this.maxTrades, this.merchantExperience, this.playerExperience, this.bundleItems.toArray(ItemStack[]::new));
+            return new UpgradedBundleTrade(this.offerStack, this.paymentStack, this.secondaryPaymentStack, this.priceMultiplier, this.maxTrades, this.merchantExperience, this.playerExperience, this.bundleItems.toArray(ItemStack[]::new), required);
         }
 
         public UpgradedBundleTrade.Builder setOfferStack(ItemStack offerStack) {
@@ -228,6 +235,11 @@ public class UpgradedBundleTrade implements ITradeType<UpgradedGoblinTrade> {
         }
         public UpgradedBundleTrade.Builder addToBundle(ItemStack itemStack) {
             bundleItems.add(itemStack);
+            return this;
+        }
+
+        public Builder setRequired(boolean required) {
+            this.required = required;
             return this;
         }
     }

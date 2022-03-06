@@ -17,3 +17,4 @@ accessible    method    net/minecraft/entity/damage/DamageSource    setOutOfWorl
 accessible field net/minecraft/world/dimension/DimensionType OVERWORLD Lnet/minecraft/world/dimension/DimensionType;
 accessible field net/minecraft/world/dimension/DimensionType THE_NETHER Lnet/minecraft/world/dimension/DimensionType;
 accessible field net/minecraft/world/dimension/DimensionType THE_END Lnet/minecraft/world/dimension/DimensionType;
+accessible method net/minecraft/entity/mob/ZombieEntity burnsInDaylight ()Z

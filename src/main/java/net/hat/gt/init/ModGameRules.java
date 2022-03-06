@@ -7,7 +7,7 @@ import net.minecraft.world.GameRules;
 public class ModGameRules {
 
     public static final GameRules.Key<GameRules.BooleanRule> GOBLIN_TRADERS_PICK_UP_FOODS =
-            GameRuleRegistry.register("goblinTradersPickUpFoods", GameRules.Category.MOBS, GameRuleFactory.createBooleanRule(true));
+            GameRuleRegistry.register("goblintraders:goblinTradersPickUpFoods", GameRules.Category.MOBS, GameRuleFactory.createBooleanRule(true));
 
     public static void registerGameRules() {
 

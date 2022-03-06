@@ -14,6 +14,7 @@ import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtList;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.JsonHelper;
+import net.minecraft.util.crash.CrashReport;
 import net.minecraft.util.registry.Registry;
 
 import java.util.ArrayList;
@@ -30,8 +31,9 @@ public class ContainerTrade implements ITradeType<GoblinTrade> {
     private final float priceMultiplier;
     private final int maxTrades;
     private final int experience;
+    private final boolean isRequired;
 
-    public ContainerTrade(ItemStack offerStack, ItemStack paymentStack, ItemStack secondaryPaymentStack, float priceMultiplier, int maxTrades, int experience, SlotItem[] slotItems) {
+    public ContainerTrade(ItemStack offerStack, ItemStack paymentStack, ItemStack secondaryPaymentStack, float priceMultiplier, int maxTrades, int experience, SlotItem[] slotItems, boolean isRequired) {
         this.offerStack = offerStack;
         this.paymentStack = paymentStack;
         this.secondaryPaymentStack = secondaryPaymentStack;
@@ -39,6 +41,7 @@ public class ContainerTrade implements ITradeType<GoblinTrade> {
         this.maxTrades = maxTrades;
         this.experience = experience;
         this.slotItems = slotItems;
+        this.isRequired = isRequired;
     }
 
     @Override
@@ -66,6 +69,12 @@ public class ContainerTrade implements ITradeType<GoblinTrade> {
 
         return new GoblinTrade(container, this.paymentStack.copy(), this.secondaryPaymentStack.copy(), this.maxTrades, this.experience, this.priceMultiplier);
     }
+
+    @Override
+    public boolean isRequired() {
+        return isRequired;
+    }
+
     public NbtCompound writeNbt(NbtCompound nbt, SlotItem item) {
         Identifier identifier = Registry.ITEM.getId(item.getItemStack().getItem());
         nbt.putString("id", identifier == null ? "minecraft:air" : identifier.toString());
@@ -205,6 +214,7 @@ public class ContainerTrade implements ITradeType<GoblinTrade> {
         private float priceMultiplier = 0.0F;
         private int maxTrades = 12;
         private int experience = 10;
+        private boolean required = true;
 
 
         private Builder() {
@@ -215,7 +225,7 @@ public class ContainerTrade implements ITradeType<GoblinTrade> {
         }
 
         public ContainerTrade build() {
-            return new ContainerTrade(this.offerStack, this.paymentStack, this.secondaryPaymentStack, this.priceMultiplier, this.maxTrades, this.experience, this.slotItems.toArray(new SlotItem[0]));
+            return new ContainerTrade(this.offerStack, this.paymentStack, this.secondaryPaymentStack, this.priceMultiplier, this.maxTrades, this.experience, this.slotItems.toArray(new SlotItem[0]), required);
         }
 
         public Builder setOfferStack(ItemStack offerStack) {
@@ -261,16 +271,22 @@ public class ContainerTrade implements ITradeType<GoblinTrade> {
             return this;
         }
 
+        @Deprecated
         public Builder setPlayerExperience(int playerExperience) {
             return this;
         }
         public Builder setContainerItem(ItemStack itemStack, int slot) {
             for (var slotItem : slotItems) {
                 if (slot == slotItem.getSlot()) {
-                    throw new RuntimeException("WHAT?!?!?!");
+                    throw new RuntimeException("Tried to override existing slot with another item.");
                 }
             }
             slotItems.add(new SlotItem(slot, itemStack));
+            return this;
+        }
+
+        public Builder setRequired(boolean required) {
+            this.required = required;
             return this;
         }
     }

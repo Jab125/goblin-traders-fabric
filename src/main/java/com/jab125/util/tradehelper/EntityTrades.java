@@ -15,22 +15,18 @@ import java.util.*;
 /**
  * Remapped by Jab125
  */
-public class EntityTrades
-{
+public class EntityTrades {
     private final Map<TradeRarities, List<TradeOffers.Factory>> tradeMap;
 
-    public EntityTrades(Map<TradeRarities, List<TradeOffers.Factory>> tradeMap)
-    {
+    public EntityTrades(Map<TradeRarities, List<TradeOffers.Factory>> tradeMap) {
         this.tradeMap = ImmutableMap.copyOf(tradeMap);
     }
 
-    public Map<TradeRarities, List<TradeOffers.Factory>> getTradeMap()
-    {
+    public Map<TradeRarities, List<TradeOffers.Factory>> getTradeMap() {
         return this.tradeMap;
     }
 
-    public static class Builder
-    {
+    public static class Builder {
         private final Map<TradeRarities, List<TradeOffers.Factory>> tradeMap = Util.make(() ->
         {
             Map<TradeRarities, List<TradeOffers.Factory>> map = new EnumMap<>(TradeRarities.class);
@@ -38,44 +34,43 @@ public class EntityTrades
             return map;
         });
 
-        private Builder() {}
+        private Builder() {
+        }
 
-        public EntityTrades build()
-        {
+        static Builder create() {
+            return new Builder();
+        }
+
+        public EntityTrades build() {
             return new EntityTrades(this.tradeMap);
         }
 
-        void deserialize(TradeRarities rarity, JsonObject object)
-        {
+        void deserialize(TradeRarities rarity, JsonObject object) {
             List<TradeOffers.Factory> trades = this.tradeMap.get(rarity);
 
-            if(JsonHelper.getBoolean(object, "replace", false))
-            {
+            if (JsonHelper.getBoolean(object, "replace", false)) {
                 trades.clear();
             }
 
             JsonArray tradeArray = JsonHelper.getArray(object, "trades");
-            for(JsonElement tradeElement : tradeArray)
-            {
+            for (JsonElement tradeElement : tradeArray) {
                 JsonObject tradeObject = tradeElement.getAsJsonObject();
-                String rawType = JsonHelper.getString(tradeObject, "type");
-                Identifier typeKey = Identifier.tryParse(rawType);
-                if(typeKey == null)
-                {
-                    throw new JsonParseException("");
+                boolean required = !JsonHelper.hasBoolean(tradeObject, "required") || JsonHelper.getBoolean(tradeObject, "required");
+                try {
+                    String rawType = JsonHelper.getString(tradeObject, "type");
+                    Identifier typeKey = Identifier.tryParse(rawType);
+                    if (typeKey == null) {
+                        throw new JsonParseException("");
+                    }
+                    TradeSerializer<?> serializer = TradeManager.instance().getTypeSerializer(typeKey);
+                    if (serializer == null) {
+                        throw new JsonParseException(String.format("Invalid trade type: %s", typeKey));
+                    }
+                    trades.add(serializer.deserialize(tradeObject).createTradeOffer());
+                } catch (Exception error) {
+                    if (required) throw error;
                 }
-                TradeSerializer<?> serializer = TradeManager.instance().getTypeSerializer(typeKey);
-                if(serializer == null)
-                {
-                    throw new JsonParseException(String.format("Invalid trade type: %s", typeKey));
-                }
-                trades.add(serializer.deserialize(tradeObject).createTradeOffer());
             }
-        }
-
-        static Builder create()
-        {
-            return new Builder();
         }
     }
 }

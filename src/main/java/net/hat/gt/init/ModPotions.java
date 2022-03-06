@@ -37,6 +37,8 @@ public class ModPotions {
     public static final Potion DOLPHINS_GRACE;
     public static final Potion BLINDNESS;
     public static final Potion MINING_FATIGUE;
+    //public static final Potion SUNLIGHT_PHOBIA;
+    //public static final Potion SUNLIGHT_RESISTANCE;
 
     public static final Potion LEVITATION_EXTENDED;
     public static final Potion HASTE_EXTENDED;
@@ -76,6 +78,8 @@ public class ModPotions {
         LUCK = register("luck", new Potion("luck", new StatusEffectInstance(StatusEffects.LUCK, minutesToTick(3, 0))));
         BLINDNESS = register("blindness", new Potion("blindness", new StatusEffectInstance(StatusEffects.BLINDNESS, secondsToTick(15))));
         MINING_FATIGUE = register("mining_fatigue", new Potion("mining_fatigue", new StatusEffectInstance(StatusEffects.MINING_FATIGUE, minutesToTick(3, 0))));
+        //SUNLIGHT_PHOBIA = register("sunlight_phobia", new Potion("sunlight_phobia", new StatusEffectInstance(ModStatusEffects.SUN_PHOBIA, Integer.MAX_VALUE)));
+        //SUNLIGHT_RESISTANCE = register("sunlight_resistance", new Potion("sunlight_resistance", new StatusEffectInstance(ModStatusEffects.SUN_RESISTANCE, Integer.MAX_VALUE)));
 
         //Extended (from mod) Potions
         ABSORPTION_EXTENDED = register("absorption_extended", new Potion("absorption", new StatusEffectInstance(StatusEffects.ABSORPTION, minutesToTick(3, 0))));

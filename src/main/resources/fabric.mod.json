@@ -32,6 +32,9 @@
     ],
     "fabric-datagen": [
       "com.jab125.util.datagen.DataGeneration"
+    ],
+    "requiem:plugin": [
+      "net.hat.gt.compat.RequiemCompat"
     ]
   },
   "mixins": [
@@ -51,5 +54,10 @@
   },
   "suggests": {
     "endgoblintraders": ">=1.4.0"
+  },
+  "custom": {
+    "loom:injected_interfaces": {
+      "net/minecraft/class_1293": ["net/hat/gt/util/GobTStatusEffect"]
+    }
   }
 }

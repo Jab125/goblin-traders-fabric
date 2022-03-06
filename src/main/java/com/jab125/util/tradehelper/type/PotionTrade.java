@@ -26,8 +26,14 @@ public class PotionTrade implements ITradeType<GoblinTrade> {
     private final int maxTrades;
     private final int experience;
     private final Potion potionType;
+    private final boolean isRequired;
 
-    public PotionTrade(ItemStack offerStack, ItemStack paymentStack, ItemStack secondaryPaymentStack, float priceMultiplier, int maxTrades, int experience, Potion potionType) {
+    @Override
+    public boolean isRequired() {
+        return isRequired;
+    }
+
+    public PotionTrade(ItemStack offerStack, ItemStack paymentStack, ItemStack secondaryPaymentStack, float priceMultiplier, int maxTrades, int experience, Potion potionType, boolean isRequired) {
         this.offerStack = offerStack;
         this.paymentStack = paymentStack;
         this.secondaryPaymentStack = secondaryPaymentStack;
@@ -35,6 +41,7 @@ public class PotionTrade implements ITradeType<GoblinTrade> {
         this.maxTrades = maxTrades;
         this.experience = experience;
         this.potionType = potionType;
+        this.isRequired = isRequired;
     }
     @Override
     public JsonObject serialize() {
@@ -116,6 +123,7 @@ public class PotionTrade implements ITradeType<GoblinTrade> {
         private float priceMultiplier = 0.0F;
         private int maxTrades = 12;
         private int experience = 10;
+        private boolean required = true;
 
         private Builder() {
         }
@@ -125,7 +133,7 @@ public class PotionTrade implements ITradeType<GoblinTrade> {
         }
 
         public PotionTrade build() {
-            return new PotionTrade(this.offerStack, this.paymentStack, this.secondaryPaymentStack, this.priceMultiplier, this.maxTrades, this.experience, this.potion);
+            return new PotionTrade(this.offerStack, this.paymentStack, this.secondaryPaymentStack, this.priceMultiplier, this.maxTrades, this.experience, this.potion, required);
         }
 
         public Builder setOfferStack(ItemStack offerStack) {
@@ -166,12 +174,18 @@ public class PotionTrade implements ITradeType<GoblinTrade> {
             return this;
         }
 
+        @Deprecated
         public Builder setPlayerExperience(int playerExperience) {
             return this;
         }
 
         public Builder setPotion(Potion potion) {
             this.potion = potion;
+            return this;
+        }
+
+        public Builder setRequired(boolean required) {
+            this.required = required;
             return this;
         }
     }

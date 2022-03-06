@@ -41,8 +41,9 @@ public class BasicTrade implements ITradeType<GoblinTrade>
     private final int experience;
     private final EnchantmentLevelEntry[] enchantments;
     private final Collection<StatusEffectInstance> mobEffects;
+    private final boolean isRequired;
 
-    public BasicTrade(ItemStack offerStack, ItemStack paymentStack, ItemStack secondaryPaymentStack, float priceMultiplier, int maxTrades, int experience, EnchantmentLevelEntry[] enchantments, Collection<StatusEffectInstance> mobEffects)
+    public BasicTrade(ItemStack offerStack, ItemStack paymentStack, ItemStack secondaryPaymentStack, float priceMultiplier, int maxTrades, int experience, EnchantmentLevelEntry[] enchantments, Collection<StatusEffectInstance> mobEffects, boolean isRequired)
     {
         this.offerStack = offerStack;
         this.paymentStack = paymentStack;
@@ -52,6 +53,7 @@ public class BasicTrade implements ITradeType<GoblinTrade>
         this.experience = experience;
         this.enchantments = enchantments;
         this.mobEffects = mobEffects;
+        this.isRequired = isRequired;
     }
 
     @Override
@@ -77,6 +79,11 @@ public class BasicTrade implements ITradeType<GoblinTrade>
             PotionUtil.setCustomPotionEffects(offerStack, this.mobEffects);
         }
         return new GoblinTrade(offerStack, this.paymentStack.copy(), this.secondaryPaymentStack.copy(), this.maxTrades, this.experience, this.priceMultiplier);
+    }
+
+    @Override
+    public boolean isRequired() {
+        return isRequired;
     }
 
     @Override
@@ -244,6 +251,7 @@ public class BasicTrade implements ITradeType<GoblinTrade>
         private int experience = 10;
         private List<EnchantmentLevelEntry> enchantments = new ArrayList<>();
         private List<StatusEffectInstance> modEffects = new ArrayList<>();
+        private boolean required = true;
 
         private Builder() {}
 
@@ -254,7 +262,7 @@ public class BasicTrade implements ITradeType<GoblinTrade>
 
         public BasicTrade build()
         {
-            return new BasicTrade(this.offerStack, this.paymentStack, this.secondaryPaymentStack, this.priceMultiplier, this.maxTrades, this.experience, this.enchantments.toArray(new EnchantmentLevelEntry[0]), this.modEffects);
+            return new BasicTrade(this.offerStack, this.paymentStack, this.secondaryPaymentStack, this.priceMultiplier, this.maxTrades, this.experience, this.enchantments.toArray(new EnchantmentLevelEntry[0]), this.modEffects, this.required);
         }
 
         public Builder setOfferStack(ItemStack offerStack)
@@ -299,6 +307,7 @@ public class BasicTrade implements ITradeType<GoblinTrade>
             return this;
         }
 
+        @Deprecated
         public Builder setPlayerExperience(int playerExperience)
         {
             return this;
@@ -321,6 +330,12 @@ public class BasicTrade implements ITradeType<GoblinTrade>
         public Builder addPotionEffect(StatusEffectInstance effect)
         {
             this.modEffects.add(effect);
+            return this;
+        }
+
+        public Builder setRequired(boolean required)
+        {
+            this.required = required;
             return this;
         }
     }
