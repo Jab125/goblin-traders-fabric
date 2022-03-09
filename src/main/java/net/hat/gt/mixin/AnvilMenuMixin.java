@@ -18,10 +18,10 @@ import static com.jab125.thonkutil.util.Util.isOverflowInstalled;
 
 
 /**
- * Fixes combining tools in an anvil reducing enchantment level to it's max level when the
+ * Fixes combining tools in an anvil reducing enchantment level to its max level when the
  * level of the enchantment is higher than it's max level. For example, combining level five
  * efficiency pickaxe with a level six efficiency pickaxe (which is higher than the max) will
- * keep the enchantment at level six instead of changing to it's max level of five.
+ * keep the enchantment at level six instead of changing to its max level of five.
  *
  * Remapped by Jab125
  */
