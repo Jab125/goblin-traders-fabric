@@ -2,14 +2,14 @@
   "replace": false,
   "trades": [
     {
-      "required": false,
+      "required": true,
       "type": "goblintraders:upgraded_basic",
       "offer_item": {
-        "item": "minecraft:emeral",
+        "item": "minecraft:emerald",
         "count": 1
       },
       "payment_item": {
-        "item": "minecraft:aple",
+        "item": "minecraft:apple",
         "count": 1
       },
       "price_multiplier": 0.0,

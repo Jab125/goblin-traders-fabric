@@ -70,7 +70,7 @@ dependencies {
 	modApi ("com.jab125:thonkutil-capes-v1-1.2.8")
 	modRuntimeOnly ("com.jab125:thonkutil-legacy-1.0.15")
 	modApi ("com.jab125:thonkutil-trades-v1-1.1.15")
-	modApi ("com.jab125:thonkutil-base-1.10.1")
+	modApi ("com.jab125:thonkutil-base-1.10.2")
 }
 
 processResources {
@@ -88,7 +88,7 @@ loom {
 			server()
 			name "Data Gen"
 			vmArg "-Dfabric-api.datagen"
-			vmArg "-Dfabric-api.datagen.output-dir=${file("src/main/generated")}"
+			vmArg "-Dfabric-api.datagen.output-dir=${file("src/main/generated/resources")}"
 			ideConfigGenerated = true
 		}
 	}
