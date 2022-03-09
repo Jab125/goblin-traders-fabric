@@ -29,7 +29,7 @@ public class AttackRevengeTargetGoal extends Goal
     public void tick()
     {
         LivingEntity revengeTarget = this.entity.getAttacker();
-        if(revengeTarget != null && this.entity.getCurrentCustomer() == null)
+        if(revengeTarget != null && this.entity.getCustomer() == null)
         {
             this.entity.getLookControl().lookAt(revengeTarget, 10.0F, this.entity.getHeadRollingTimeLeft());
             if(this.entity.distanceTo(revengeTarget) >= 2.0D)
@@ -48,7 +48,7 @@ public class AttackRevengeTargetGoal extends Goal
     @Override
     public boolean shouldContinue()
     {
-        return this.entity.isAlive() && this.entity.getAttacker() != null && this.entity.getAttacker().isAlive() && this.entity.distanceTo(this.entity.getAttacker()) <= 10.0F && this.entity.getCurrentCustomer() == null;
+        return this.entity.isAlive() && this.entity.getAttacker() != null && this.entity.getAttacker().isAlive() && this.entity.distanceTo(this.entity.getAttacker()) <= 10.0F && this.entity.getCustomer() == null;
     }
 
     @Override

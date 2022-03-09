@@ -25,7 +25,7 @@ public class FollowPotentialCustomerGoal extends Goal
     @Override
     public boolean canStart()
     {
-        if(this.entity.getCurrentCustomer() != null)
+        if(this.entity.getCustomer() != null)
         {
             return false;
         }
@@ -55,7 +55,7 @@ public class FollowPotentialCustomerGoal extends Goal
     @Override
     public boolean shouldContinue()
     {
-        return this.potentialCustomer != null && this.potentialCustomer.isAlive() && this.entity.getCurrentCustomer() == null && !this.potentialCustomer.isSpectator() && !this.potentialCustomer.isCreative() && !this.potentialCustomer.isTouchingWater() && this.entity.isPreviousCustomer(this.potentialCustomer) && this.entity.distanceTo(this.potentialCustomer) <= 10.0D && this.timeout > 0;
+        return this.potentialCustomer != null && this.potentialCustomer.isAlive() && this.entity.getCustomer() == null && !this.potentialCustomer.isSpectator() && !this.potentialCustomer.isCreative() && !this.potentialCustomer.isTouchingWater() && this.entity.isPreviousCustomer(this.potentialCustomer) && this.entity.distanceTo(this.potentialCustomer) <= 10.0D && this.timeout > 0;
     }
 
     @Override

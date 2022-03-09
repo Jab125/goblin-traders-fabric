@@ -37,7 +37,7 @@ public class TradeWithPlayerGoal extends Goal
         }
         else
         {
-            PlayerEntity player = this.entity.getCurrentCustomer();
+            PlayerEntity player = this.entity.getCustomer();
             if(player == null)
             {
                 return false;
@@ -59,6 +59,6 @@ public class TradeWithPlayerGoal extends Goal
     @Override
     public void stop()
     {
-        this.entity.setCurrentCustomer(null);
+        this.entity.setCustomer(null);
     }
 }

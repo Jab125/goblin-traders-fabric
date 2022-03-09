@@ -133,7 +133,7 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
             }
             if (!this.getOffers().isEmpty()) {
                 if (!this.world.isClient) {
-                    this.setCurrentCustomer(player);
+                    this.setCustomer(player);
                     this.sendOffers(player, this.getDisplayName(), 1);
                 }
             }

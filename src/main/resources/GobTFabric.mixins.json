@@ -10,7 +10,6 @@
     "ItemMixin",
     "ModStatusEffectMixin",
     "SpawnRestrictionMixin",
-    "SunlightMixin",
     "TradeOutputSlotMixin",
     "ZombieSunlightMixin"
   ],
