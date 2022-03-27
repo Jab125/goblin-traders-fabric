@@ -57,6 +57,7 @@ public class GobT implements ModInitializer {
         manager.registerTypeSerializer(UpgradedBasicTrade.SERIALIZER);
         manager.registerTypeSerializer(UpgradedBundleTrade.SERIALIZER);
         manager.registerTypeSerializer(UpgradedPotionTrade.SERIALIZER);
+        manager.registerTypeSerializer(UpgradedContainerTrade.SERIALIZER);
         manager.registerTypeSerializer(UpgradedEnchantedItemTrade.SERIALIZER);
         manager.registerTypeSerializer(UpgradedOnlyInEndBasicTrade.SERIALIZER);
 

@@ -16,7 +16,6 @@ public record UpgradedGoblinTradeIfInNotEnd(ItemStack offerStack, ItemStack paym
     @Nullable
     @Override
     public TradeOffer create(Entity entity, Random random) {
-        if (!entity.getEntityWorld().getDimension().equals(DimensionType.THE_END)) return null;
-        return new UpgradedTradeOffer(this.paymentStack, this.secondaryPaymentStack, this.offerStack, this.maxUses, this.merchantExperience, this.priceMultiplier, this.playerExperience);
+        return !entity.getEntityWorld().getDimension().equals(DimensionType.THE_END) ? null : new UpgradedTradeOffer(this.paymentStack, this.secondaryPaymentStack, this.offerStack, this.maxUses, this.merchantExperience, this.priceMultiplier, this.playerExperience);
     }
 }
