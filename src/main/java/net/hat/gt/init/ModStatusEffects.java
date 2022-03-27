@@ -1,14 +1,9 @@
 package net.hat.gt.init;
 
-import net.fabricmc.api.EnvType;
-import net.fabricmc.loader.api.FabricLoader;
 import net.hat.gt.statuseffect.ModStatusEffect;
-import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.crash.CrashReport;
 import net.minecraft.util.registry.Registry;
 
 import java.lang.reflect.Field;
