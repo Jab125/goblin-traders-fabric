@@ -260,7 +260,7 @@ public class UpgradedOnlyInEndBasicTrade implements ITradeType<UpgradedGoblinTra
         private int playerExperience = 10;
         private List<EnchantmentLevelEntry> enchantments = new ArrayList<>();
         private List<StatusEffectInstance> modEffects = new ArrayList<>();
-        private boolean required = false;
+        private boolean required = true;
 
         private Builder() {}
 

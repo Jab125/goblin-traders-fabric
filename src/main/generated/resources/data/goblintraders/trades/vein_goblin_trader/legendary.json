@@ -34,7 +34,7 @@
       ]
     },
     {
-      "required": false,
+      "required": true,
       "type": "goblintraders:upgraded_only_in_end_basic",
       "offer_item": {
         "item": "minecraft:music_disc_otherside",
