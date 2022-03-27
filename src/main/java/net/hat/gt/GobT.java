@@ -11,7 +11,6 @@ import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerWorldEvents;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
-import net.hat.gt.compat.RequiemCompat;
 import net.hat.gt.config.GoblinTradersConfig;
 import net.hat.gt.init.*;
 import net.hat.gt.spawning.SpawnHandler;

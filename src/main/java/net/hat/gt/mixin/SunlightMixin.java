@@ -1,16 +1,11 @@
 package net.hat.gt.mixin;
 
-import dev.emi.trinkets.api.TrinketComponent;
-import ladysnake.requiem.api.v1.RequiemApi;
-import ladysnake.requiem.api.v1.RequiemPlugin;
 import ladysnake.requiem.api.v1.remnant.RemnantState;
 import net.fabricmc.loader.api.FabricLoader;
 import net.hat.gt.init.ModStatusEffects;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffect;
-import net.minecraft.entity.mob.HuskEntity;
 import net.minecraft.entity.mob.ZombieEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -22,7 +17,6 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import java.util.Optional;
 import java.util.Random;
 
 @Mixin(LivingEntity.class)
