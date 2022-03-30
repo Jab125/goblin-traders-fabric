@@ -2,6 +2,7 @@ package net.hat.gt;
 
 
 import com.jab125.limeappleboat.gobt.api.GobTEvents;
+import com.jab125.thonkutil.api.events.EventTaxi;
 import com.jab125.util.tradehelper.TradeManager;
 import com.jab125.util.tradehelper.type.*;
 import me.shedaniel.autoconfig.AutoConfig;
@@ -44,10 +45,10 @@ public class GobT implements ModInitializer {
         manager.registerTrader(ModEntities.VEIN_GOBLIN_TRADER);
         ResourceManagerHelper.get(ResourceType.SERVER_DATA).registerReloadListener(manager);
 
-        ServerWorldEvents.LOAD.register(new SpawnHandler.WorldLoad());
-        ServerLifecycleEvents.SERVER_STOPPED.register(new SpawnHandler.ServerStopped());
-        ServerTickEvents.END_WORLD_TICK.register(new SpawnHandler.OnWorldTick());
-
+//        ServerWorldEvents.LOAD.register(new SpawnHandler.WorldLoad());
+//        ServerLifecycleEvents.SERVER_STOPPED.register(new SpawnHandler.ServerStopped());
+//        ServerTickEvents.END_WORLD_TICK.register(new SpawnHandler.OnWorldTick());
+        EventTaxi.registerEventTaxiSubscriber(SpawnHandler.class);
         manager.registerTypeSerializer(BasicTrade.SERIALIZER);
         manager.registerTypeSerializer(BundleTrade.SERIALIZER);
         manager.registerTypeSerializer(PotionTrade.SERIALIZER);

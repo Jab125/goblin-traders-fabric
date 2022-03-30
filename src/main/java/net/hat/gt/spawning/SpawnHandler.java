@@ -1,5 +1,11 @@
 package net.hat.gt.spawning;
 
+import com.jab125.thonkutil.api.Tick;
+import com.jab125.thonkutil.api.annotations.SubscribeEvent;
+import com.jab125.thonkutil.api.events.server.ServerStartEvent;
+import com.jab125.thonkutil.api.events.server.ServerStopEvent;
+import com.jab125.thonkutil.api.events.server.world.ServerWorldLoadEvent;
+import com.jab125.thonkutil.api.events.world.WorldTickEvent;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerWorldEvents;
@@ -20,54 +26,43 @@ import java.util.Objects;
  * So basically, there is no {@code SubscribeEvent} in fabric, so we rely on Fabric API's events.
  */
 public class SpawnHandler {
-    private static Map<Identifier, ArrayList<GoblinTraderSpawner>> spawners = new HashMap<>();
+    private static final Map<Identifier, ArrayList<GoblinTraderSpawner>> spawners = new HashMap<>();
     public SpawnHandler(){}
 
-    public static class WorldLoad implements ServerWorldEvents.Load {
-        boolean loaded = false;
-        public WorldLoad(){}
+    static boolean loaded = false;
+    @SubscribeEvent
+    public static void onServerStart(ServerStartEvent event) {
 
-        @Override
-        public void onWorldLoad(MinecraftServer server, ServerWorld world) {
-            if (loaded) return;
-            //System.out.println("WORLD LOAD");
-            addToSpawners(DimensionType.OVERWORLD_REGISTRY_KEY.getValue(), new GoblinTraderSpawner(server, "GoblinTrader", ModEntities.GOBLIN_TRADER, Objects.requireNonNull(ModEntities.GOBLIN_TRADER.create(world))));
-            addToSpawners(DimensionType.THE_NETHER_REGISTRY_KEY.getValue(), new GoblinTraderSpawner(server, "VeinGoblinTrader", ModEntities.VEIN_GOBLIN_TRADER, Objects.requireNonNull(ModEntities.GOBLIN_TRADER.create(world))));
-            loaded = true;
-        }
-    }
-    public static class ServerStopped implements ServerLifecycleEvents.ServerStopped {
-        public ServerStopped(){}
-        @Override
-        public void onServerStopped(MinecraftServer server)
-        {
-            spawners.clear();
-        }
+        //System.out.println("WORLD LOAD");
+        addToSpawners(DimensionType.OVERWORLD_REGISTRY_KEY.getValue(), new GoblinTraderSpawner(event.server(), "GoblinTrader", ModEntities.GOBLIN_TRADER, Objects.requireNonNull(ModEntities.GOBLIN_TRADER.create(event.server().getOverworld()))));
+        addToSpawners(DimensionType.THE_NETHER_REGISTRY_KEY.getValue(), new GoblinTraderSpawner(event.server(), "VeinGoblinTrader", ModEntities.VEIN_GOBLIN_TRADER, Objects.requireNonNull(ModEntities.GOBLIN_TRADER.create(event.server().getOverworld()))));
+        loaded = true;
     }
 
-    public static class OnWorldTick implements ServerTickEvents.EndWorldTick {
+    @SubscribeEvent
+    public static void onServerStop(ServerStopEvent event) {
+        spawners.clear();
+    }
 
-        @Override
-        public void onEndTick(ServerWorld world) {
-            if (world.isClient()) {
-                return;
-            }
-            ArrayList<GoblinTraderSpawner> spawnerList = spawners.get(world.getRegistryKey().getValue());
-            if (spawnerList != null) {
-                for (var spawner : spawnerList) {
-                    if (spawner != null) {
-                        spawner.tick(world);
-                        //System.out.println("TICK");
-                    }
+    @SubscribeEvent
+    public static void onWorldTick(WorldTickEvent event) {
+        //System.out.println("WORLD RICK ASTLEY");
+        if(!event.phase().equals(Tick.Phase.END)) return;
+        if (event.isClient()) {
+            return;
+        }
+        ArrayList<GoblinTraderSpawner> spawnerList = spawners.get(event.world().getRegistryKey().getValue());
+        if (spawnerList != null) {
+            for (var spawner : spawnerList) {
+                if (spawner != null) {
+                    spawner.tick(event.world());
+                    //System.out.println("TICK");
                 }
-                //System.out.println("NOT-NULL");
-            } else
-                //System.out.println("NULL")
-                        ;
-        }
+            }
+        } else;
     }
 
-    /* Since i can do this, i am gonna do this */
+    @Deprecated
     public static Map<Identifier, ArrayList<GoblinTraderSpawner>> getSpawners() {
         return spawners;
     }

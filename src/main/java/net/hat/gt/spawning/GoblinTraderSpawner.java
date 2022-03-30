@@ -12,6 +12,7 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.registry.Registry;
 import net.minecraft.world.GameRules;
 import net.minecraft.world.SpawnHelper;
 import net.minecraft.world.World;
@@ -63,34 +64,34 @@ public class GoblinTraderSpawner
         {
             if(--this.delayBeforeSpawnLogic <= 0)
             {
-                //System.out.println("DELAY :)");
+             // System.out.println("DELAY :)");
                 int delay = Math.max(this.traderSpawnDelay / 20, 1);
                 this.delayBeforeSpawnLogic = delay;
                 this.currentTraderSpawnDelay -= delay;
                 this.data.setGoblinTraderSpawnDelay(this.currentTraderSpawnDelay);
-                //System.out.println(Registry.ENTITY_TYPE.getId(this.entityType).toString() + currentTraderSpawnDelay);
-                //System.out.println(Registry.ENTITY_TYPE.getId(this.entityType) + ": " + currentTraderSpawnChance);
-                //System.out.println();
-                //System.out.println(Registry.ENTITY_TYPE.getId(this.entityType) + ": " + traderSpawnDelay);
-                //System.out.println(Registry.ENTITY_TYPE.getId(this.entityType) + ": " + traderSpawnChance);
+             // System.out.println(Registry.ENTITY_TYPE.getId(this.entityType).toString() + currentTraderSpawnDelay);
+             // System.out.println(Registry.ENTITY_TYPE.getId(this.entityType) + ": " + currentTraderSpawnChance);
+             // System.out.println();
+             // System.out.println(Registry.ENTITY_TYPE.getId(this.entityType) + ": " + traderSpawnDelay);
+             // System.out.println(Registry.ENTITY_TYPE.getId(this.entityType) + ": " + traderSpawnChance);
                 if(this.currentTraderSpawnDelay <= 0)
                 {
-                    //System.out.println("TRADER DELAY :)");
+                 // System.out.println("TRADER DELAY :)");
                     this.currentTraderSpawnDelay = this.traderSpawnDelay;
                     if(level.getGameRules().getBoolean(GameRules.DO_MOB_SPAWNING))
                     {
-                        //System.out.println("MOB SPAWNING");
+                     // System.out.println("MOB SPAWNING");
                         int spawnChance = this.currentTraderSpawnChance;
                         this.currentTraderSpawnChance = MathHelper.clamp(this.currentTraderSpawnChance + this.traderSpawnChance, this.traderSpawnChance, 100);
                         this.data.setGoblinTraderSpawnChance(this.currentTraderSpawnChance);
-                        //System.out.println(this.traderSpawnChance);
-                        //System.out.println(this.currentTraderSpawnChance);
+                     // System.out.println(this.traderSpawnChance);
+                     // System.out.println(this.currentTraderSpawnChance);
                         if(level.getRandom().nextInt(100) <= spawnChance)
                         {
-                            //System.out.println("YES RNG");
+                         // System.out.println("YES RNG");
                             if(this.spawnTrader(level))
                             {
-                                //System.out.println("SUCCESS SPAWN");
+                             // System.out.println("SUCCESS SPAWN");
                                 this.currentTraderSpawnChance = this.traderSpawnChance;
                             }
                         }
