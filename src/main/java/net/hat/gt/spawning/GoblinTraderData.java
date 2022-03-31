@@ -23,6 +23,10 @@ public class GoblinTraderData extends PersistentState
 
     public GoblinTraderData() {}
 
+    public void clear() {
+        data.clear();
+    }
+
     public GoblinData getGoblinData(String key)
     {
         return this.data.computeIfAbsent(key, s -> new GoblinData(this));

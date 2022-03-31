@@ -3,15 +3,18 @@ package net.hat.gt;
 
 import com.jab125.limeappleboat.gobt.api.GobTEvents;
 import com.jab125.thonkutil.api.events.EventTaxi;
+import com.jab125.thonkutil.impl.CapeCommand;
 import com.jab125.util.tradehelper.TradeManager;
 import com.jab125.util.tradehelper.type.*;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.command.v1.CommandRegistrationCallback;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerWorldEvents;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
+import net.hat.gt.commands.PurgeGoblinData;
 import net.hat.gt.config.GoblinTradersConfig;
 import net.hat.gt.init.*;
 import net.hat.gt.spawning.SpawnHandler;
@@ -36,6 +39,9 @@ public class GobT implements ModInitializer {
 
     @Override
     public void onInitialize() {
+        CommandRegistrationCallback.EVENT.register(((dispatcher, dedicated) -> {
+            PurgeGoblinData.register(dispatcher);
+        }));
         if (isModInstalled("requiem-api")) {
         }
         AutoConfig.register(GoblinTradersConfig.class, Toml4jConfigSerializer::new);
