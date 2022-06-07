@@ -1,18 +1,24 @@
 package net.hat.gt.entities;
 
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableSet;
 import com.jab125.thonkutil.api.IdentifiableTrade;
 import com.jab125.util.tradehelper.EntityTrades;
 import com.jab125.util.tradehelper.TradeManager;
 import com.jab125.util.tradehelper.TradeRarities;
 import com.jab125.util.tradehelper.type.UpgradedBasicTrade;
+import com.mojang.serialization.Dynamic;
 import net.hat.gt.GobT;
 import net.hat.gt.entities.ai.*;
+import net.hat.gt.init.ModSensorTypes;
 import net.hat.gt.init.ModSounds;
 import net.hat.gt.init.ModStats;
 import net.hat.gt.trades.UpgradedTradeOffer;
 import net.minecraft.block.FluidBlock;
 import net.minecraft.block.ShapeContext;
 import net.minecraft.entity.*;
+import net.minecraft.entity.ai.brain.Brain;
+import net.minecraft.entity.ai.brain.MemoryModuleType;
 import net.minecraft.entity.ai.goal.LookAtCustomerGoal;
 import net.minecraft.entity.ai.goal.LookAtEntityGoal;
 import net.minecraft.entity.ai.goal.TemptGoal;
@@ -21,7 +27,10 @@ import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.data.TrackedDataHandlerRegistry;
+import net.minecraft.entity.mob.HoglinBrain;
+import net.minecraft.entity.mob.HoglinEntity;
 import net.minecraft.entity.mob.MobEntity;
+import net.minecraft.entity.mob.PiglinBrain;
 import net.minecraft.entity.passive.MerchantEntity;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -37,10 +46,10 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.tag.FluidTags;
 import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableText;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.random.Random;
 import net.minecraft.village.TradeOffer;
 import net.minecraft.village.TradeOfferList;
 import net.minecraft.village.TradeOffers;
@@ -62,6 +71,11 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
     @Nullable
     private BlockPos wanderTarget;
     private final int fallVelocity = 0;
+
+    @Override
+    public Random getRandom() {
+        return super.getRandom();
+    }
 
     @SuppressWarnings("MismatchedQueryAndUpdateOfCollection") // this is popping up as an error incorrectly, this is the fix.
     private final Set<UUID> tradedCustomers = new HashSet<>();
@@ -458,14 +472,18 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
         EntityTrades entityTrades = TradeManager.instance().getTrades((EntityType<? extends AbstractGoblinEntity>) this.getType());
         if(entityTrades != null)
         {
+            System.out.println("has trades");
             Map<TradeRarities, List<TradeOffers.Factory>> tradeMap = entityTrades.getTradeMap();
             for(TradeRarities rarity : TradeRarities.values())
             {
                 List<TradeOffers.Factory> trades = tradeMap.get(rarity);
+                System.out.println(trades);
                 int min = rarity.getMinimum().apply(trades, this.getRandom());
                 int max = rarity.getMaximum().apply(trades, this.getRandom());
                 this.addTrades(offers, trades, Math.max(min, max), rarity.shouldShuffle());
             }
+        } else {
+            System.out.println("No Trades!");
         }
     }
     protected void addTrades(TradeOfferList offers, @Nullable List<TradeOffers.Factory> trades, int max, boolean shuffle)
@@ -485,7 +503,7 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
             }
         }
         if (LocalDate.now().isBefore(LocalDate.ofYearDay(2021, 340)) & (int) (Math.random() * 4) == 0)
-        offers.add(UpgradedBasicTrade.Builder.create().setMerchantExperience(10).setPlayerExperience(25).setOfferStack(new ItemStack(Items.CAKE).setCustomName(new TranslatableText(Items.CAKE.getTranslationKey()).formatted(Formatting.GOLD))).setMaxTrades(1).setPaymentStack(new ItemStack(Items.DEEPSLATE, 32)).build().createTradeOffer().create(this, this.getRandom()));
+        offers.add(UpgradedBasicTrade.Builder.create().setMerchantExperience(10).setPlayerExperience(25).setOfferStack(new ItemStack(Items.CAKE).setCustomName(Text.translatable(Items.CAKE.getTranslationKey()).formatted(Formatting.GOLD))).setMaxTrades(1).setPaymentStack(new ItemStack(Items.DEEPSLATE, 32)).build().createTradeOffer().create(this, this.getRandom()));
     }
     @Override
     protected void fillRecipes() {
@@ -541,4 +559,26 @@ public abstract class AbstractGoblinEntity extends MerchantEntity implements Npc
     public abstract int spawnChance();
 
     public abstract boolean canSpawn();
+
+//    protected void mobTick() {
+//        this.world.getProfiler().push("goblinBrain");
+//        this.getBrain().tick((ServerWorld)this.world, this);
+//        this.world.getProfiler().pop();
+//        GoblinTraderBrain.tickActivities(this);
+//        super.mobTick();
+//    }
+//    @Override
+//    protected Brain.Profile<AbstractGoblinEntity> createBrainProfile() {
+//        return Brain.createProfile(ImmutableList.of(MemoryModuleType.AVOID_TARGET, MemoryModuleType.VISIBLE_MOBS), ImmutableList.of(ModSensorTypes.GOAT_TEMPTATIONS));
+//    }
+//
+//    @Override
+//    public Brain<AbstractGoblinEntity> getBrain() {
+//        return (Brain<AbstractGoblinEntity>) super.getBrain();
+//    }
+//
+//    @Override
+//    protected Brain<AbstractGoblinEntity> deserializeBrain(Dynamic<?> dynamic) {
+//        return GoblinTraderBrain.create(this, this.createBrainProfile().deserialize(dynamic));
+//    }
 }

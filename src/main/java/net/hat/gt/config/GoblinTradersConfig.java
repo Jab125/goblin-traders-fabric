@@ -4,7 +4,10 @@ import me.shedaniel.autoconfig.ConfigData;
 import me.shedaniel.autoconfig.annotation.Config;
 import me.shedaniel.autoconfig.annotation.ConfigEntry;
 import net.hat.gt.GobT;
+import net.minecraft.util.registry.Registry;
+import net.minecraft.world.dimension.DimensionOptions;
 import net.minecraft.world.dimension.DimensionType;
+import net.minecraft.world.dimension.DimensionTypes;
 
 
 @Config(name = GobT.MODID)
@@ -48,7 +51,7 @@ public class GoblinTradersConfig implements ConfigData {
         public int SPAWN_CHANCE = 25;
         public int SPAWN_DELAY = 24000;
         public int MAX_SPAWN_HEIGHT = 63;
-        public int MIN_SPAWN_HEIGHT = DimensionType.OVERWORLD.getMinimumY();
+        public int MIN_SPAWN_HEIGHT = -64;
     }
 
     public static class VeinGoblinTrader {

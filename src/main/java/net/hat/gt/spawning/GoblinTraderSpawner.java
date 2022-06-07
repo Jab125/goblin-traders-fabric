@@ -45,8 +45,8 @@ public class GoblinTraderSpawner
         this.traderSpawnChance = !entity.canSpawn() ? 0 : entity.spawnChance();
         this.traderSpawnDelay = entity.spawnDelay();
         this.minLevel = Math.min(entity.minSpawnHeight(), entity.maxSpawnHeight());
-        if (Objects.requireNonNull(server.getWorld(World.OVERWORLD)).getDimension().getMinimumY() >= minLevel) {
-            this.minLevel = Objects.requireNonNull(server.getWorld(World.OVERWORLD)).getDimension().getMinimumY();
+        if (Objects.requireNonNull(server.getWorld(World.OVERWORLD)).getDimension().minY() >= minLevel) {
+            this.minLevel = Objects.requireNonNull(server.getWorld(World.OVERWORLD)).getDimension().minY();
         }
         this.maxLevel = Math.max(entity.minSpawnHeight(), entity.maxSpawnHeight());
         if(this.currentTraderSpawnDelay == 0 && this.currentTraderSpawnChance == 0)

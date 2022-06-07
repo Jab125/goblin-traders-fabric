@@ -14,6 +14,7 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.dimension.DimensionType;
+import net.minecraft.world.dimension.DimensionTypes;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -34,8 +35,8 @@ public class SpawnHandler {
     public static void onServerStart(ServerStartEvent event) {
 
         //System.out.println("WORLD LOAD");
-        addToSpawners(DimensionType.OVERWORLD_REGISTRY_KEY.getValue(), new GoblinTraderSpawner(event.server(), "GoblinTrader", ModEntities.GOBLIN_TRADER, Objects.requireNonNull(ModEntities.GOBLIN_TRADER.create(event.server().getOverworld()))));
-        addToSpawners(DimensionType.THE_NETHER_REGISTRY_KEY.getValue(), new GoblinTraderSpawner(event.server(), "VeinGoblinTrader", ModEntities.VEIN_GOBLIN_TRADER, Objects.requireNonNull(ModEntities.GOBLIN_TRADER.create(event.server().getOverworld()))));
+        addToSpawners(DimensionTypes.OVERWORLD.getValue(), new GoblinTraderSpawner(event.server(), "GoblinTrader", ModEntities.GOBLIN_TRADER, Objects.requireNonNull(ModEntities.GOBLIN_TRADER.create(event.server().getOverworld()))));
+        addToSpawners(DimensionTypes.THE_NETHER.getValue(), new GoblinTraderSpawner(event.server(), "VeinGoblinTrader", ModEntities.VEIN_GOBLIN_TRADER, Objects.requireNonNull(ModEntities.GOBLIN_TRADER.create(event.server().getOverworld()))));
         loaded = true;
     }
 

@@ -6,8 +6,7 @@ import net.hat.gt.spawning.GoblinTraderData;
 import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.text.LiteralText;
-import net.minecraft.text.TranslatableText;
+import net.minecraft.text.Text;
 
 import java.util.Iterator;
 
@@ -19,8 +18,8 @@ public final class PurgeGoblinData {
             GoblinTraderData data = GoblinTraderData.get(context.getSource().getServer());
             context.getSource().getServer().execute(() -> {
                 data.clear();
-                context.getSource().sendFeedback(new TranslatableText("goblintraders.commands.purge_goblin_data.success"), true);
-                context.getSource().sendFeedback(new LiteralText("Restart the server to make changes take effect."), true);
+                context.getSource().sendFeedback(Text.translatable("goblintraders.commands.purge_goblin_data.success"), true);
+                context.getSource().sendFeedback(Text.literal("Restart the server to make changes take effect."), true);
             });
             return 1;
         })));

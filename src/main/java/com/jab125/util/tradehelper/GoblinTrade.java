@@ -2,11 +2,10 @@ package com.jab125.util.tradehelper;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.math.random.Random;
 import net.minecraft.village.TradeOffer;
 import net.minecraft.village.TradeOffers;
 import org.jetbrains.annotations.Nullable;
-
-import java.util.Random;
 
 /**
  * Remapped by Jab125
