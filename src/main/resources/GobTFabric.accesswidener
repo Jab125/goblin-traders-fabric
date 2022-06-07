@@ -14,7 +14,4 @@ mutable field net/minecraft/world/biome/SpawnSettings spawners Ljava/util/Map;
 accessible    method    net/minecraft/item/BundleItem    addToBundle    (Lnet/minecraft/item/ItemStack;Lnet/minecraft/item/ItemStack;)I
 accessible    method    net/minecraft/entity/damage/DamageSource    setBypassesArmor    ()Lnet/minecraft/entity/damage/DamageSource;
 accessible    method    net/minecraft/entity/damage/DamageSource    setOutOfWorld    ()Lnet/minecraft/entity/damage/DamageSource;
-accessible field net/minecraft/world/dimension/DimensionType OVERWORLD Lnet/minecraft/world/dimension/DimensionType;
-accessible field net/minecraft/world/dimension/DimensionType THE_NETHER Lnet/minecraft/world/dimension/DimensionType;
-accessible field net/minecraft/world/dimension/DimensionType THE_END Lnet/minecraft/world/dimension/DimensionType;
 accessible method net/minecraft/entity/mob/ZombieEntity burnsInDaylight ()Z
