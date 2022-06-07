@@ -9,7 +9,7 @@ import com.jab125.util.tradehelper.type.*;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer;
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
+import net.fabricmc.fabric.api.command.v1.CommandRegistrationCallback;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerWorldEvents;
@@ -22,8 +22,6 @@ import net.minecraft.block.Blocks;
 import net.minecraft.resource.ResourceType;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Identifier;
-import net.minecraft.world.biome.BiomeKeys;
-import net.minecraft.world.biome.BuiltinBiomes;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -41,7 +39,7 @@ public class GobT implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        CommandRegistrationCallback.EVENT.register(((dispatcher, dedicated, e) -> {
+        CommandRegistrationCallback.EVENT.register(((dispatcher, dedicated) -> {
             PurgeGoblinData.register(dispatcher);
         }));
         if (isModInstalled("requiem-api")) {
@@ -86,12 +84,11 @@ public class GobT implements ModInitializer {
         //ModPotions.registerPotions();
         ModPotions.registerPotionRecipes();
         ModStatusEffects.registerStatusEffects();
-        ModSensorTypes.registerSensorTypes();
 
 
-        // Restrict spawning on bedrock and the deep dark
+        // Restrict spawning on bedrock
         GobTEvents.ON_ATTEMPT_SPAWN.register(((goblinTraderType, world, safestPos) -> {
-            if (((world.getBlockState(safestPos.down()).getBlock().equals(Blocks.BEDROCK) || world.getBiome(safestPos).getKey().isPresent()) && world.getBiome(safestPos).getKey().get().equals(BiomeKeys.DEEP_DARK)) && (goblinTraderType.equals(ModEntities.GOBLIN_TRADER) || goblinTraderType.equals(ModEntities.VEIN_GOBLIN_TRADER))) {
+            if (world.getBlockState(safestPos.down()).getBlock().equals(Blocks.BEDROCK) && (goblinTraderType.equals(ModEntities.GOBLIN_TRADER) || goblinTraderType.equals(ModEntities.VEIN_GOBLIN_TRADER))) {
                 return ActionResult.FAIL;
             }
             return ActionResult.PASS;

@@ -6,12 +6,10 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
 import com.jab125.limeappleboat.gobt.api.GobTEvents;
 import io.netty.util.internal.UnstableApi;
-import it.unimi.dsi.fastutil.Pair;
 import net.fabricmc.fabric.api.resource.IdentifiableResourceReloadListener;
 import net.hat.gt.GobT;
 import net.hat.gt.entities.AbstractGoblinEntity;
 import net.minecraft.entity.EntityType;
-import net.minecraft.resource.Resource;
 import net.minecraft.resource.ResourceManager;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Identifier;
@@ -85,37 +83,15 @@ public class TradeManager implements IdentifiableResourceReloadListener {
             this.traders.forEach(entityType ->
             {
                 String folder = String.format("trades/%s", Objects.requireNonNull(EntityType.getId(entityType)).getPath());
-                Map<Identifier, Resource> resources = new HashMap<>(manager.findResources(folder, (fileName) -> fileName.getPath().endsWith(".json")));
-                resources.forEach((identifier, resource) -> System.out.println(identifier.toString() + "," + resource.toString()));
-                var news = new HashMap<>(resources);
-                Map<Identifier, Resource> builtin = new HashMap<>();
-                resources.forEach((r1, r2) -> {
-                    if (r1.getNamespace().equals(GobT.MODID)) {
-                        // Priority Load
-                        news.remove(r1);
-                        builtin.put(r1, r2);
-                    }
+                List<Identifier> resources = new ArrayList<>(manager.findResources(folder, (fileName) -> fileName.endsWith(".json")));
+                resources.forEach((identifier) -> System.out.println(identifier.toString()));
+                resources.sort((r1, r2) -> {
+                    if(r1.getNamespace().equals(r2.getNamespace())) return 0;
+                    return r2.getNamespace().equals(GobT.MODID) ? 1 : -1;
                 });
-                resources = news;
                 Map<TradeRarities, LinkedHashSet<Identifier>> tradeResources = new EnumMap<>(TradeRarities.class);
                 Arrays.stream(TradeRarities.values()).forEach(rarity -> tradeResources.put(rarity, new LinkedHashSet<>()));
-
-                builtin.forEach((resource, r) ->
-                {
-                    String path = resource.getPath().substring(0, resource.getPath().length() - FILE_TYPE_LENGTH_VALUE);
-                    String[] splitPath = path.split("/");
-                    if(splitPath.length != 3)
-                        return;
-                    Arrays.stream(TradeRarities.values()).forEach(rarity ->
-                    {
-                        if(rarity.getKey().equals(splitPath[2]))
-                        {
-                            tradeResources.get(rarity).add(resource);
-                        }
-                    });
-                });
-
-                resources.forEach((resource, r) ->
+                resources.forEach(resource ->
                 {
                     String path = resource.getPath().substring(0, resource.getPath().length() - FILE_TYPE_LENGTH_VALUE);
                     String[] splitPath = path.split("/");
@@ -148,7 +124,7 @@ public class TradeManager implements IdentifiableResourceReloadListener {
     {
         for(Identifier resource : resources)
         {
-            try(InputStream inputstream = manager.getResource(resource).get().getInputStream(); Reader reader = new BufferedReader(new InputStreamReader(inputstream, StandardCharsets.UTF_8)))
+            try(InputStream inputstream = manager.getResource(resource).getInputStream(); Reader reader = new BufferedReader(new InputStreamReader(inputstream, StandardCharsets.UTF_8)))
             {
                 JsonObject object = JsonHelper.deserialize(GSON, reader, JsonObject.class);
                 builder.deserialize(rarity, object);

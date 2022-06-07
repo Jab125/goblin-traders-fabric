@@ -9,7 +9,6 @@
     "EnchantmentMixin",
     "ItemMixin",
     "ModStatusEffectMixin",
-    "SensorTypeAccessor",
     "SpawnRestrictionMixin",
     "TradeOutputSlotMixin",
     "ZombieSunlightMixin"

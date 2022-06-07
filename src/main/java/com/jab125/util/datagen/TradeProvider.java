@@ -1,26 +1,23 @@
 package com.jab125.util.datagen;
 
-import com.google.common.hash.Hashing;
-import com.google.common.hash.HashingOutputStream;
-import com.google.gson.*;
-import com.google.gson.stream.JsonWriter;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 import com.jab125.util.tradehelper.TradeRarities;
 import com.jab125.util.tradehelper.type.ITradeType;
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricLootTableProvider;
 import net.hat.gt.GobT;
 import net.minecraft.data.DataCache;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.DataProvider;
-import net.minecraft.data.DataWriter;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.JsonHelper;
 import net.minecraft.util.registry.Registry;
 import org.apache.logging.log4j.Logger;
 import org.jetbrains.annotations.ApiStatus;
 
-import java.io.*;
-import java.nio.charset.StandardCharsets;
+import java.io.BufferedWriter;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.*;
@@ -68,46 +65,41 @@ public abstract class TradeProvider implements DataProvider
 
 
     @Override
-    public void run(DataWriter writer)
+    public void run(DataCache cache)
     {
-        System.out.println("STARING");
-        try {
-            this.trades.clear();
-            this.registerTrades();
-            this.trades.forEach((entityType, tradeRarityListEnumMap) ->
+        this.trades.clear();
+        this.registerTrades();
+        this.trades.forEach((entityType, tradeRarityListEnumMap) ->
+        {
+            tradeRarityListEnumMap.forEach((tradeRarity, tradeList) ->
             {
-                tradeRarityListEnumMap.forEach((tradeRarity, tradeList) ->
+                JsonObject object = new JsonObject();
+                object.addProperty("replace", false);
+                JsonArray tradeArray = new JsonArray();
+                tradeList.forEach(trade -> tradeArray.add(trade.serialize()));
+                object.add("trades", tradeArray);
+                Identifier id = Objects.requireNonNull(Registry.ENTITY_TYPE.getId(entityType));
+                Path path = this.generator.getOutput().resolve("data/" + id.getNamespace() + "/trades/" + id.getPath() + "/" + tradeRarity.getKey() + ".json");
+                try
                 {
-                    JsonObject object = new JsonObject();
-                    object.addProperty("replace", false);
-                    JsonArray tradeArray = new JsonArray();
-                    tradeList.forEach(trade -> tradeArray.add(trade.serialize()));
-                    object.add("trades", tradeArray);
-                    Identifier id = Objects.requireNonNull(Registry.ENTITY_TYPE.getId(entityType));
-                    Path path = this.generator.getOutput().resolve("data/" + id.getNamespace() + "/trades/" + id.getPath() + "/" + tradeRarity.getKey() + ".json");
-                    try {
-                        writeToPath(writer, object, path);
-                    } catch (IOException e) {
-                        LOGGER.error("Couldn't save trades to {}", path, e);
+                    String rawJson = GSON.toJson(object);
+                    String hash = SHA1.hashUnencodedChars(rawJson).toString();
+                    if(!Objects.equals(cache.getOldSha1(path), hash) || !Files.exists(path))
+                    {
+                        Files.createDirectories(path.getParent());
+                        try(BufferedWriter writer = Files.newBufferedWriter(path))
+                        {
+                            writer.write(rawJson);
+                        }
                     }
-                });
+                    cache.updateSha1(path, hash);
+                }
+                catch(IOException e)
+                {
+                    LOGGER.error("Couldn't save trades to {}", path, e);
+                }
             });
-        } catch (Throwable e) {
-            e.printStackTrace();
-            System.exit(-1);
-        }
-    }
-
-    static void writeToPath(DataWriter writer, JsonElement json, Path path) throws IOException {
-        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        HashingOutputStream hashingOutputStream = new HashingOutputStream(Hashing.sha1(), byteArrayOutputStream);
-        Writer writer2 = new OutputStreamWriter(hashingOutputStream, StandardCharsets.UTF_8);
-        JsonWriter jsonWriter = new JsonWriter(writer2);
-        jsonWriter.setSerializeNulls(false);
-        jsonWriter.setIndent("  ");
-        JsonHelper.writeSorted(jsonWriter, json, null);
-        jsonWriter.close();
-        writer.write(path, byteArrayOutputStream.toByteArray(), hashingOutputStream.hash());
+        });
     }
 
     @Override

@@ -87,9 +87,4 @@ public class LanguageProvider extends ThonkUtilLanguageProvider {
         this.addRequiemTooltip("vein_goblin_food", "Vein Goblin Treat");
 
     }
-
-    @Override
-    public String getName() {
-        return "Translations: goblintraders";
-    }
 }
