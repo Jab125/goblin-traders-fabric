@@ -32,6 +32,7 @@ body:
       - 1.4.0
       - 1.5
       - 1.5.1
+      - 1.5.2
       - latest commit
   validations:
     required: true
@@ -40,10 +41,11 @@ body:
     label: Minecraft Version
     multiple: false
     options:
-      - 1.16.*
-      - 1.17.*
-      - 1.18.*
+      - 1.16.x
+      - 1.17.x
+      - 1.18-1.18.1
       - 1.18.2
+      - 1.19.x
 - type: textarea
   attributes:
     label: What did you expect?
